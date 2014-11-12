@@ -1,0 +1,183 @@
+\cleardoublepage
+\chapter{TOPs}
+\label{ch:3}
+
+%------------------------------------------------
+
+\section{Introduction}
+
+\begin{fullwidth}
+Texture Operators, or TOPs, are a fundamental aspect of almost every project. They are the 2D texture Operators that handle everything from movie playback, 3D geometry rendering, compositing, hardware video inputs and outputs, and are used to process everything that will be output to a monitor, projector, or LED display.
+\end{fullwidth}
+
+%------------------------------------------------
+
+\section{Movie In TOP}
+
+\begin{fullwidth}
+The Movie In TOP is one of the most used TOPs. It's function is to load assets into TouchDesigner. It is capable of loading many different types of assets, ranging from still images to a variety of movie codecs. Below is a small list of common file formats used with the Movie In TOP:
+
+\begin{itemize}
+\item .mov
+\item .mp4
+\item .avi
+\item .tiff
+\item .jpeg
+\item .png
+\end{itemize}
+
+There are many more supported file formats, which are listed on the Derivative TouchDesigner 088 wiki under the 'File Types' page.
+
+There are a few of great features built into the Movie In TOP that can significantly reduce the headaches involved with quickly ingesting and outputting assets with different frame-rates. The main feature is that the Movie In TOP's goal is to playback assets while staying true to it's time duration. For example, if the project is set to 60FPS and an asset is made at 30FPS and is 10 seconds long, it will play over the course of 10 seconds, regardless of FPS differences between the project and the asset. The opposite is true as well. If a 10 second asset created at 60 FPS is played in a 30FPS timeline, it will play over the course of 10 seconds. In both of these cases frames are either doubled or discarded to stay true to each asset's real-world time length. This makes interpolation of frames a good idea in some situations.
+
+\end{fullwidth}
+
+%------------------------------------------------
+
+\section{Preloading Movies}
+
+\begin{fullwidth}
+When creating real-time applications, continuous dropped frames can greatly detract from presentation and impact. Diagnosing performance issues is something that will be discussed in a later chapter, but many preventative measures can be taken. Preloading and unloading Movie In TOPs is one of these preventative measures. The simple procedure of preloading and unloading movies is often overlooked by new users because the easiest methods involve scripting.
+
+Open example 'Preloading.toe'. This example has a set of three buttons. The 'Preload' button uses the following Python function to preload the number of frames set in the 'Pre-Read frames' parameter in the 'Tune' parameters of the Operator 'moviein1':
+
+\begin{lstlisting}
+op('moviein1').preload()
+\end{lstlisting}
+
+The 'Play' button starts playback of the Movie In TOP. The 'Unload' button stops 'moviein1' playback, and then unloads the movie, freeing up whatever system resources were being used. This is done with the following Python script:
+
+\begin{lstlisting}
+op('play').click(0)
+
+op('moviein1').unload()
+\end{lstlisting}
+
+It is best practice to preload movies before playing them, otherwise there is a high risk of dropping frames upon playback.
+
+\end{fullwidth}
+
+%------------------------------------------------
+
+\section{Null TOPs and Select TOPs}
+
+\begin{fullwidth}
+In contrast to expensive TOPs, like the Blur TOP, some TOPs are 'free', and should be used generously! Two specific examples are Null TOPs and Select TOPs. These two Operators, although they don't alter any pixel, are incredibly helpful in creating more efficient workflows.
+
+The difference between an illegible network, with wires overlapping and sprawled everywhere, and an easily followable Network are some properly placed Null TOPs and Select TOPs. Open examples 'Null\_1.toe' and 'Null\_2.toe'. The first file is a mish-mash of TOPs which are composited together. In this file, there is little regard for the layout of the Network, and the wires are overlapped by other Operators and other wires, making it difficult to trace any particular series of Operators. In 'Null\_2.toe' a column of Null TOPs are laid out to gather all the signals before they are composited. This column of Null TOPs can serve as a checkpoint, and even at quick glance, makes it much easier to follow series of operations.
+
+The same case can be made for Select TOPs. When working with nested Networks, using the Out TOP and pulling connections between containers can lead to the same situation as above, where Networks become illegible rather quickly. The Select TOPs can quickly and neatly reference other TOPs. Open example 'Select\_1.toe'. This examples demonstrates how using In TOPs and Out TOPs can lead to extra clutter. This example is only replicating the movie 12 times! What would happen if there needed to be 100 of them? This is where the Select TOP comes in handy.
+
+Open example 'Select\_2.toe'. This example exponentially increases the amount of replicated components while being simultaneously more legible. Even more interesting is the dynamic selection system created using the Select TOPs. This is much more efficient than the manual method from before, and allows a Python script in the Select TOP's 'Select' parameter to automatically reference the corresponding replicated TOPs from the Network above, based on the digits in their names. To take this concept one step further, a Select DAT is used to drive a Replicator COMP that creates a new Select TOP, and automatically wires it to the Composite TOP every time a new item is added with the first Replicator COMP. Don't worry if this example seems daunting, Replicators and Scripting will be covered in later examples. For now, the important thing to note is that by using Select TOPs and very simple scripting, this component is relatively future-proof and won't require much maintenance. When it comes time to  replicate more items, it's as easy as adding a row to a table.
+\end{fullwidth}
+
+%------------------------------------------------
+
+\section{Codecs}
+
+\begin{fullwidth}
+Movie playback is a taxing process. It is wise to spend time experimenting with different codecs to see which one suits a project in terms of visual quality and performance.
+
+Before diving into specific codecs, it is important to know the difference between a codec and a container. Codec has taken over as the general term for the file format of audio-video files, which is confusing for beginners, because many containers can hold multiple codecs. 
+
+Codec stands for compressor-decompressor. The codec has two main tasks. The first it to compress video data for storage and transportation, and the second is to decompress the video data for playback. Because of these different tasks, each codec is made for a different purpose. Some prioritize compression for light weight, portable files, while others prioritize quality, for long-term preservation of content. Different projects will have different requirements. Sometimes, the goal is to play back a single piece of content at the highest quality possible, whereas other times, quality must be sacrificed to be able to playback multiple video files simultaneously. Finding the right codec for each project may require a few tests and some forethought, but it is time well spent. 
+
+A container does exactly what its name implies. It holds the compressed video, audio, and all the metadata a movie player needs to properly decompress and playback the content. There are quite a few different containers, but they have much less of an impact on the overall programming workflow, compared to codecs. 
+
+Things can get complicated when different combinations of containers and codecs are used. Imagine a file named 'test\_movie.mov'. In one example, this file could be an Animation codec compressed video file inside of a '.mov' QuickTime container. What's interesting, and what also confuses many beginners, is that in another example, this file could be an H.264 compressed video file inside of a QuickTime container. To add to confusion, the same H.264 file could also be inside of a '.mp4', or MPEG-4 Part 14, container. 
+
+Confusion aside, some popular codec choices are currently the HAP family, H.264, Animation codec, and Cineform. Each codec has its own set of advantages and disadvantages. Below is a very quick point form list of some pros and cons to each:
+
+\vspace{3mm}
+
+\noindent \textbf{HAP family}
+
+\vspace{3mm}
+
+Pros
+\begin{itemize}
+\item Can playback extremely high resolutions and high frame rates
+\item Very little CPU cost
+\item HAP Q is visually lossless
+\item Very little GPU cost
+\end{itemize}
+
+\vspace{3mm}
+
+Cons
+\begin{itemize}
+\item Large file sizes
+\item Difficult to batch encode files on Windows
+\item Must use SSDs or a RAID0 of SSDs for file playback
+\item Main bottleneck is hard drive read speeds
+\end{itemize}
+
+\vspace{6mm}
+
+\noindent \textbf{H.264}
+
+\vspace{3mm}
+
+Pros
+\begin{itemize}
+\item Creates extremely light-weight/low file size videos
+\item Best bang for buck when comparing quality to file size
+\item Low disk usage
+\end{itemize}
+
+\vspace{3mm}
+
+Cons
+\begin{itemize}
+\item Can't playback extremely high resolutions or high frame rate files because each file is limited to use a single CPU core for decoding
+\item Can experience colour quantization if proper care is not taken in encoding
+\item Bit rate is highly dependant on content
+\item 4096 pixel size resolution in both length and width
+\item Difficult to create alpha channels
+\end{itemize}
+
+\vspace{6mm}
+
+\noindent \textbf{Animation Codec}
+
+\vspace{3mm}
+
+Pros
+\begin{itemize}
+\item 100\% quality is a lossless file
+\item Prioritizes quality 
+\item Has native support for Alpha channel 
+\end{itemize}
+
+\vspace{3mm}
+
+Cons
+\begin{itemize}
+\item Large file sizes
+\item Demanding on both hard drives and CPU
+\item Bit rate fluctuates with amount of detail in video content
+\end{itemize}
+
+\vspace{6mm}
+
+\noindent \textbf{Cineform} 
+
+\vspace{3mm}
+
+Pros
+\begin{itemize}
+\item Constant bit rate
+\item High image quality
+\item Native Alpha channel support
+\end{itemize}
+
+\vspace{3mm}
+
+Cons
+\begin{itemize}
+\item Large file sizes
+\item Must purchase encoding software from Cineform
+\end{itemize}
+
+
+\end{fullwidth}

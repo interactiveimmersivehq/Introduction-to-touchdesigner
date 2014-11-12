@@ -1,0 +1,302 @@
+\cleardoublepage
+\chapter{Python}
+\label{ch:9}
+
+%------------------------------------------------
+
+\section{Introduction}
+
+\begin{fullwidth}
+Python scripting is one of the most powerful features of TouchDesigner 088. It is capable of doing incredibly complex operations, like iterating through large data sets, natively communicating with a myriad web APIs, controlling and changing the parameters of other Operators in extremely rapid succession, and much more.
+
+It is important to note that, as of writing, TouchDesigner 088 uses Python 3.3.1. Python 3 differs from Python 2.7 in a number of ways, but most issues can be resolved with a quick Google search. Most questions have probably already been asked, and the solution could be as simple as a set of parentheses.
+
+For example, in Python 2.7, the Print function could be used without parentheses, where in Python 3, this will raise an error. Below is an example of how many Python 2.7 courses use the Print function:
+
+\begin{lstlisting}
+print 'text'
+\end{lstlisting}
+
+This is in contrast to how the Print function is used in Python 3, where the parentheses are required:
+
+\begin{lstlisting}
+print ('text')
+\end{lstlisting}
+
+An incredible feature of Python, aside from it's readability, is that there are many external libraries, many of which can natively connect to most of the webs most active spaces, like Facebook, Twitter, Instagram, Foursquare, etc. These kind of native integrations unlock a world of real-time data driven projects, as well as incredible real-time data sets for visualizations and client presentations.
+
+There will be quite a bit of Python scripting in later examples, and although it is not mandatory to do so, it is highly recommended that some time be spent learning Python through introductory tutorials. There are many fantastic resources for learning Python, some of them gamified, and most of them often quite easy to pick up and put down. Often times, 10-15 minutes a day of tutorials, over the course of a few weeks, can provide a strong fundamental knowledge of Python, and more than enough knowledge to do quite a bit of scripting in TouchDesigner.
+\end{fullwidth}
+
+
+%------------------------------------------------
+
+\section{Textport}
+
+\begin{fullwidth}
+The Textport has a few important roles in regards to scripting inside of TouchDesigner. There are two ways to open the Textport. The first is by using key command 'Alt + T'. The second is by selecting 'Textport' from 'Dialogs' in the menu bar at the top of the TouchDesigner window.
+
+The first is that it can be used similarly to the IDLE shell that comes with Python installations. For example, open the Textport, type the following, and hit 'Enter' on the keyboard:
+
+\begin{lstlisting}
+print(2+2+2+2)
+\end{lstlisting}
+
+Running this in Python would print the result of the equation, which is 8. After hitting 'Enter' in the Textport, the result of the equation is displayed. This is because the Textport works as a Python interpreter. Type Python code into the Textport, it will be processed, and the results will be returned. 
+
+It can similarly do the same for tscript, the scripting language that was used in TouchDesigner 077. Notice that when the Textport is opened, the first thing printed is: 
+
+\begin{lstlisting}
+python >> 
+\end{lstlisting}
+
+This is because in TouchDesigner 088, the Textport interpreter is set to interpret Python by default. To work with tscript in the Textport, the mode of the Textport needs to be changed from Python to tscript. This is done by clicking on the Python logo in the top left corner of the Textport. Once clicked, it will change to the letter 'T' and the next line of the Textport will be:
+
+\begin{lstlisting}
+tscript -> 
+\end{lstlisting}
+
+This means the Textport is now in tscript mode. To confirm this, type the following tscript code into the Textport:
+
+\begin{lstlisting}
+echo Hello!
+\end{lstlisting}
+
+Similar to the Python Print function, the above tscript code will print 'Hello!'' to the Textport.
+
+Another great use of the Textport is as a Python debugger. Open example 'Textport\_1.toe'.
+
+This is a very simple example that highlights how beneficial the Textport becomes when using Python scripts. Open the Textport, and then click on the 'Good Python' button in the middle of the Network. This will run a script that prints to the Textport:
+
+\begin{lstlisting}
+this will not error
+\end{lstlisting}
+
+Now click on the 'Bad Python' button. The Textport will display something very different.
+
+\begin{lstlisting}
+File "/project1/chopexec1", line 11
+	Print(this will error)
+			     ^
+SyntaxError: Invalid syntax
+\end{lstlisting}
+
+This is a Python error, occurring because some of the code being interpreted is invalid. Learning to read these errors can greatly speed up debugging large Python scripts. Let's examine the different portions of this error.
+
+The first line indicates exactly where the error is in the Network, and which line of the script the Python interpreter believes is invalid:
+
+\begin{lstlisting}
+File "/project1/chopexec1", line 11
+\end{lstlisting}
+
+In this example, the Operator with the error is 'chopexec1' inside of the component 'project1'. The Python stops interpreting the script at line 11.
+
+Below that, the Textport prints the line with the error:
+
+\begin{lstlisting}
+Print(this will error)
+\end{lstlisting}
+
+More often that not, spelling mistakes and slip-ups can easily be caught by these two lines. In this case, it is clear that the string being printed is not enclosed in quotation marks. Knowing where the error is, and more specifically what the line the error is occurring on, means this would result in the problem being quickly solved. For the sake of this example look at the last line of the error:
+
+\begin{lstlisting}
+SyntaxError: Invalid syntax
+\end{lstlisting}
+
+The last line of the error is the type of error Python is encountering. More detailed information on the different types of errors can be found by looking through the official Python 3.3 documentation, under the 'Errors and Exceptions' section. The 'SyntaxErrror' is a very common error, and is caused by the Python interpreter encountering code that isn't valid Python syntax. As mentioned, the above line of code is the missing the quotation marks around the string being printed.
+
+Printing to the Textport is an excellent way to take some of the mystery out of scripting. When scripting in larger and larger projects, there are often scripts in every Network, and quite often, many of them are performing backend tasks, such as preloading and unloading movies, that have results that are difficult to view. More often than not, scripts are running in parallel in different Networks, and it becomes incredibly difficult to tell if the timing of scripts are correct, or if actions are happening in the wrong order.
+
+By having simple Print functions spread throughout scripts, it is not only easy to see when scripts are running, but myriad pieces of information can be printed as well. Some of these pieces of information can be as simple as the path to the script that is being run, or as detailed as what values and variables are being worked with and changed.
+
+Open example 'Textport\_2.toe'. In this example, there are two sequences of scripts that run one after another, with a certain amount of pause between them. Click the 'Visual Sequence' button. This sequence has buttons that are clicked into the On position as each script is run. This is solely to make it easier to see the progress of this sequence. How would this progress be monitored from another Network?
+
+Open the Textport and click the 'Textport Sequence' button. Contrary to the first sequence, this sequence prints a message to the Textport as each script is run. There may not be buttons visually changing states in the Network, but a number of new abilities are gained. The first is the ability to monitor these scripts from anywhere in the project. The second is that it is possible to compare the timing of these sequences to any other scripts that are running elsewhere in the project. The third, and possibly the most valuable, is the ability to pause the project and have a written history of the most recent sequence of events.
+
+This history becomes absolutely invaluable when debugging complex logic systems. In a project with 30 Networks and 300 independent scripts, when a series of actions fail without raising any Python errors, without an ordered log of events, it would be impossible to trace bugs. As a script becomes longer and more complex, it is easy to create more of these pseudo-checkpoints throughout the script, such as 'running X section of Y script'.
+
+\end{fullwidth}
+
+%------------------------------------------------
+
+\section{Common Practices}
+
+\begin{fullwidth}
+
+There are some common practices that should be upheld when working with Python. Something that is interesting about the Python language is that it is built around the idea of readability and simplicity. Python has an easter egg built inside of it, which can be accessed by entering the following code into a Python interpreter or the Textport:
+
+\begin{lstlisting}
+import this
+\end{lstlisting}
+
+Python returns a poem named 'The Zen of Python' by Tim Peters. Below is that text:
+
+\begin{lstlisting}
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+\end{lstlisting}
+
+This poem is the motto for many Python developers. Many of its lines try to convey Python's ideals and common developer sense.
+
+Think about the line: 
+
+\begin{lstlisting}
+'Explicit is better than implicit'
+\end{lstlisting}
+
+This can be applied to something that is often done in a hurry: naming. There are many different areas in Python and TouchDesigner where objects reference each other by name. A developer ends up naming variables, functions, Operators, Networks, and more. Without carefully naming Operators, it would be impossible to know each Operator's function. Similarly, without care in naming variables, as demonstrated earlier in the chapter, reading scripts can become quite a tedious task. There are two conventions that are regularly used when naming Operators and variables in TouchDesigner. 
+
+The first involves using underscores in the place of real-world spaces. Here are some examples:
+
+\begin{itemize}
+\item final\_comp
+\item stop\_button
+\item time\_now
+\end{itemize}
+
+The underscores make names easier to read and quickly understand. There are individuals who aren't partial to using underscores, and because of such the second convention involves using capital letters to differentiate between words. Here are some examples:
+
+\begin{itemize}
+\item finalComp
+\item stopButton
+\item timeNow
+\end{itemize}
+
+Both are able to convey the original idea of explicit naming, and should be used to facilitate collaboration.
+
+\end{fullwidth}
+
+%------------------------------------------------
+
+\section{Commenting Code}
+
+\begin{fullwidth}
+
+Commenting is a practice that should not be overlooked by new users of Python. As easy as it is to write a few lines of script, it takes only a few more seconds to quickly document what those lines do. This comes in handy in a multitude of situations such as:
+
+\begin{itemize}
+\item Sharing code and projects with other programmers
+\item Maintaining code in older projects
+\item Changing the functionality inside of a re-usable component
+\end{itemize}
+
+
+It may seem frivolous when scripts are brief, but it is a habit that should be solidified from day 1. Look at the example code below:
+
+\begin{lstlisting}
+a = 10
+b = op('value')[0]
+
+op('op12').par.rx = b
+
+c = str(op('numbers')[0])
+d = 'testing'
+e = 'something'
+
+op('lines').par.text = d + e + c
+\end{lstlisting}
+
+This script is hard to read for a number of reasons. The main reason is that its actions weren't obvious when quickly skimmed. One quick way to increase the readability of this script is to comment it. Let's take the above script and add some basic comments to it:
+
+\begin{lstlisting}
+#Set initial variable
+#get the value from slider input
+a = 10
+b = op('value')[0]
+
+#assign the slider value to video input rotation
+op('op12').par.rx = b
+
+#take numeric input from computer keypad
+c = str(op('numbers')[0])
+d = 'You'
+e = 'pressed'
+
+#create a sentence from variables above
+#add it to a Text TOP to display
+op('lines').par.text = d + e + c
+\end{lstlisting}
+
+Without taking the time to create meaningful variable and Operator names, the above script is still much easier to read through. Even out of context, the function of the script is apparent. 
+
+This kind of simple addition can make collaborating with other developers much easier and more enjoyable.
+
+\end{fullwidth}
+
+
+%------------------------------------------------
+
+\section{Compartmentalizing Code}
+
+\begin{fullwidth}
+
+The more complicated projects become, scripts will slowly become longer and longer. At a certain point, it will take more time to search through code, than it will take to actually change and add to it. Because of this, it is important to compartmentalize all of a projects scripts. 
+
+This means a few different things, and incorporates a few different techniques, but it yields quite a number of benefits. All of these benefits will directly improve one's workflow, but more importantly, they will take a lot of the pain out of collaborative settings. Some of the benefits include:
+
+\begin{itemize}
+\item Easier long-term maintenance of scripts
+\item Less time spent explaining scripts to colleagues
+\item Easier reusability of programmed functionality
+\item Faster short-term edibility and code management
+\end{itemize}
+
+Open example 'Scripting\_1.toe'. In this example, there are 10 Movie In TOPs and there are a series of actions that need to be performed on each of them. First, each one should be unloaded. Secondly, each one will be assigned a new file path. Finally, each movie needs to be preloaded, and prepared for playback. Because this is a Python example, all of these actions will be performed with Python script. Take a look at the Text DAT named 'movies'.
+
+A quick note about this script: For the sake of this example, this script doesn't iterate over all of the Operators using loops. This is to simulate what a longer and more complex script would feel like, even though only a few simple actions are being performed.
+
+Right-click on the Text DAT named 'movies', select 'Run', and all the actions mentioned above will occur in sequence. This script has been lightly commented, but looking through it quickly can be a bit disorienting. To edit a single value somewhere in the code, it would have to be found in the long list of actions. Colleagues would have to spend more time trying to figure out what this script does. To re-use a piece of this script in the future, pieces of it would have to be manually found and extracted. How can these processes become more efficient?
+
+Open example 'Scripting\_2.toe'. This example takes the code from the previous example, but separates each of our 'actions' into its own, isolated, Text DAT. Immediately, even without diving into each of the scripts, it is easy to tell what each one will do. There is one for unloading movies, one for changing paths, and one for preloading movies. At the end of each, there is a line of code that runs each progressive script in the sequence. This is line of code uses the Run class:
+
+\begin{lstlisting}
+op('preload').run()
+\end{lstlisting}
+
+It would be easy to quickly edit a single value, as actions and parameters are much easier to track down now. Passing this component to a colleague would be no trouble at all, as they could quickly see what each script does at first glance. If someone needed a script to start to preload of a set of Movie In TOPs, it could be quickly taken from this project. 
+
+This compartmentalized workflow helps cut hard to manage scripts, some more than 500 lines in length, into smaller scripts that are easy to sort through quickly and share. In the case of the above example, there is third way to handle working with these multiple Operators.
+
+Open example 'Scripting\_3.toe'. This example takes advantage of Python functions. A Python function is a small cluster of code that can be called to perform as series of action. Inside of the Text DAT named 'actions', a function has been defined that contains the set of actions that need to be performed on each Movie In TOP. From the Text DAT named 'set\_movie\_tops', instead of retyping the same set of actions over and over, the new function is called by passing it the name of each Movie In TOP.
+
+Although the series of actions have been slightly arbitrary, the idea is simple: compartmentalize Python scripts for ease of maintenance, easier co-operative workflows, re-usability, and ease of management.
+
+\end{fullwidth}
+
+%------------------------------------------------
+
+\section{Where to Learn Python}
+
+\begin{fullwidth}
+
+Below is a very basic list of some free, online, Python tutorials. (Note: some of the tutorials are for Python 2.7, but are incredibly well made, and thus included).
+
+\begin{description}
+\item[CodeAcademy] \url{http://www.codecademy.com/tracks/python}
+\item[Khan Academy] \url{https://www.khanacademy.org/science/computer-science}
+\item[Coursera] \url{https://www.coursera.org/course/interactivepython}
+\item[Google Developers] \url{https://developers.google.com/edu/python/?csw=1}
+\item[Learn Python The Hard Way] \url{http://learnpythonthehardway.org/}
+\end{description}
+
+\end{fullwidth}
