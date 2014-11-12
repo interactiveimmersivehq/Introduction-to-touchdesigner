@@ -1,6 +1,25 @@
 Introduction To Touchdesigner 088
 =============================
 
+<h4>
+Foreword
+
+Between the artist and the tool are countless techniques and bits of know-how that contribute to the artist becoming more fluid and well-equipped for the challenges of production.
+ 
+When I caught wind of Elburz' TouchDesigner book project, I thought, yes I'd like to know what he knows!
+ 
+Elburz' deep storage of TouchDesigner wisdom was absorbed from multiple sources - helping and conversing with a myriad of users on the forums, red-lining on-the-job on time-critical projects, working with Derivative using beta builds of TouchDesigner, and his purely exploratory endeavors mixed with his side-life as a hip-hop trombonist and VJ.
+ 
+The book is a good keyboard-side or bed-side companion that explores the concepts, techniques and methodology behind TouchDesigner - something I have not had the opportunity to personally present before and am very happy Elburz has presented here. So build your chops with these treats - It can be read end-to-end or by randomly flipping through pages, as I found myself doing - discovering gems of information and insights throughout.
+ 
+Many thanks to Elburz for this initiative to enrich the TouchDesigner community. I'm sure it will trigger a great chain reaction.
+
+Greg Hermanovic, Founder, Derivative
+
+
+<h4>
+Foreword by Author
+
 The purpose of this book is two-fold:
 
 1) to teach the fundamentals of TouchDesigner 088, and 
@@ -29,11 +48,12 @@ Elburz Sorkhabi & nVoid Art-Tech Limited
 
 
 
+
 Access
 =============================
 
 There are multiple ways to access an Introduction to TouchDesigner 088. The first is to download the full package, which includes a PDF of the book, all the example .toe files, as well as hours of HD video content. The link for this is below:
 
+https://d1sztmoqm5lyrj.cloudfront.net/Introduction+to+TouchDesginer.zip
 
-
-The second way is to download the LaTeX source code from this GitHub and build it yourself. You are free to change, edit, add, delete, and modify the text by branching the source files. When you are finished, submit your changes and they will be reviewed by our administration, and merged into the main branch, at which point you will also be added to the list of contributors at the end of the book.
+The second way is to download the LaTeX source code from this GitHub and build it yourself. You are free to change, edit, add, delete, and modify the text by branching the source files. When you are finished, submit your changes and they will be reviewed by our administration, and merged into the main branch, at which point you will be added to the list of contributors in the Contributors chapter of the book, along with your contributions.
