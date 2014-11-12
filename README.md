@@ -57,3 +57,6 @@ There are multiple ways to access an Introduction to TouchDesigner 088. The firs
 https://d1sztmoqm5lyrj.cloudfront.net/Introduction+to+TouchDesginer.zip
 
 The second way is to download the LaTeX source code from this GitHub and build it yourself. You are free to change, edit, add, delete, and modify the text by branching the source files. When you are finished, submit your changes and they will be reviewed by our administration, and merged into the main branch, at which point you will be added to the list of contributors in the Contributors chapter of the book, along with your contributions.
+
+For more general information about this resource, visit http://book.nvoid.com
+
