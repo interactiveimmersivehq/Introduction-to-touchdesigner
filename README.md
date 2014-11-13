@@ -52,7 +52,7 @@ Elburz Sorkhabi & nVoid Art-Tech Limited
 Access
 =============================
 
-There are multiple ways to access an Introduction to TouchDesigner 088. The first is to download the full package, which includes a PDF of the book, all the example .toe files, as well as hours of HD video content. The link for this is below:
+There are multiple ways to access an Introduction to TouchDesigner 088. The first is to download the full package, which includes a PDF of the book, all the example .toe files, as well as hours of HD video content. Note: this is the only way to currenlt get all the HD video content, since they're too large to host on GitHub. The link for this is below:
 
 https://d31vryd1jmut49.cloudfront.net/Introduction+To+TouchDesigner.zip
 
