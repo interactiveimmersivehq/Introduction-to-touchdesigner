@@ -60,3 +60,13 @@ The second way is to download the LaTeX source code from this GitHub and build i
 
 For more general information about this resource, visit http://book.nvoid.com
 
+Attribution and License
+=============================
+
+This resource is licensed under Creative Commons - Attribution-NonCommercial-ShareAlike-4.0 International.
+
+Link: http://creativecommons.org/licenses/by-nc-sa/4.0/
+
+We have used the Tufte-Style Book (Minimal Template) provided by http://www.LaTeXTemplates.com
+
+Thank you!
