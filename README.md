@@ -60,6 +60,33 @@ The second way is to download the LaTeX source code from this GitHub and build i
 
 For more general information about this resource, visit http://book.nvoid.com
 
+
+Setting up your build environment
+=============================
+
+<h4>
+Mac
+
+To compile the book on Mac OS X, it is recommended that you install MacTex from this link: https://tug.org/mactex/
+
+MacTex will come packaged with a LaTex editor that can be used to compile the book. The team behind the book have used Sublime Text 3.0 with the additional package named LaTexTools to compile the book directly from Sublime Text, a very beautiful text editor.
+
+
+<h4>
+Windows
+
+To compile the book on Windows, it is recommended that you install TeX Live from this link: http://www.tug.org/texlive/acquire-netinstall.html
+
+Be sure to follow the installation instructions carefully.
+
+The team behind the book have used Sublime Text 3.0 with the additional package named LaTexTools to compile the book directly from Sublime Text, a very beautiful text editor.
+
+
+Compiling the book
+=============================
+When you have setup your build environment, open the file "Introduction_to_TouchDesigner.tex" in the main "LaTex Source" folder, and compile it. This file is pull all the separate chapter files and builds the book. Whenever you make changes to the specific chapter files in "/LaTex Source/tex", do not try to compile the specific chapter you've edited. Instead, you need to compile "Introduction_to_TouchDesigner.tex".
+
+
 Attribution and License
 =============================
 
