@@ -58,6 +58,10 @@ https://d31vryd1jmut49.cloudfront.net/Introduction+To+TouchDesigner.zip
 
 The second way is to download the LaTeX source code from this GitHub and build it yourself. You are free to change, edit, add, delete, and modify the text by branching the source files. When you are finished, submit your changes and they will be reviewed by our administration, and merged into the main branch, at which point you will be added to the list of contributors in the Contributors chapter of the book, along with your contributions.
 
+All of the current batch of video content has also been uploaded to a single Vimeo channel to help those with slower internet bandwidths:
+
+https://vimeo.com/channels/845218
+
 For more general information about this resource, visit http://book.nvoid.com
 
 
