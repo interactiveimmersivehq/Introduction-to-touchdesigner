@@ -52,15 +52,15 @@ Elburz Sorkhabi & nVoid Art-Tech Limited
 Access
 =============================
 
-There are multiple ways to access an Introduction to TouchDesigner 088. The first is to download the full package, which includes a PDF of the book, all the example .toe files, as well as hours of HD video content. Note: this is the only way to currenlt get all the HD video content, since they're too large to host on GitHub. The link for this is below:
+There are multiple ways to access an Introduction to TouchDesigner 088. The first is to download the package from our website, which includes a PDF of the book, all the example .toe files, and the project files that go along with the hours of HD video tutorials. The link for this is below:
 
-https://d31vryd1jmut49.cloudfront.net/Introduction+To+TouchDesigner.zip
+https://d31vryd1jmut49.cloudfront.net/Introduction_to_TouchDesigner.zip
 
-The second way is to download the LaTeX source code from this GitHub and build it yourself. You are free to change, edit, add, delete, and modify the text by branching the source files. When you are finished, submit your changes and they will be reviewed by our administration, and merged into the main branch, at which point you will be added to the list of contributors in the Contributors chapter of the book, along with your contributions.
-
-All of the current batch of video content has also been uploaded to a single Vimeo channel to help those with slower internet bandwidths:
+The hours of HD video tutorials are available in a single Vimeo channel. All the files can be downloaded from Vimeo for offline viewing. The link for this is below:
 
 https://vimeo.com/channels/845218
+
+You can also download the LaTeX source code from this GitHub and build it yourself. You are free to change, edit, add, delete, and modify the text by branching the source files. When you are finished, submit your changes and they will be reviewed by our administration, and merged into the main branch, at which point you will be added to the list of contributors in the Contributors chapter of the book, along with your contributions.
 
 For more general information about this resource, visit http://book.nvoid.com
 
