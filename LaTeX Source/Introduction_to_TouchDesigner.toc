@@ -57,21 +57,22 @@
 \contentsline {section}{\numberline {10.2}Performing with the Network Editor}{61}{section.10.2}
 \contentsline {section}{\numberline {10.3}Creating an Output Raster}{62}{section.10.3}
 \contentsline {section}{\numberline {10.4}Displays, Tearing, and Stuttering}{65}{section.10.4}
-\contentsline {chapter}{\numberline {11}Optimization}{69}{chapter.11}
-\contentsline {section}{\numberline {11.1}Introduction}{69}{section.11.1}
-\contentsline {section}{\numberline {11.2}Finding the Bottleneck}{69}{section.11.2}
-\contentsline {section}{\numberline {11.3}Using the Performance Monitor}{71}{section.11.3}
-\contentsline {section}{\numberline {11.4}Operator Cooking}{73}{section.11.4}
-\contentsline {section}{\numberline {11.5}Resolution}{74}{section.11.5}
-\contentsline {section}{\numberline {11.6}GPU Memory Fragmentation}{75}{section.11.6}
-\contentsline {section}{\numberline {11.7}Windows System Processes}{77}{section.11.7}
-\contentsline {chapter}{\numberline {12}GLSL}{79}{chapter.12}
-\contentsline {section}{\numberline {12.1}Introduction}{79}{section.12.1}
-\contentsline {section}{\numberline {12.2}Types of Shaders and Rendering Pipeline}{79}{section.12.2}
-\contentsline {section}{\numberline {12.3}Debugging}{80}{section.12.3}
-\contentsline {section}{\numberline {12.4}Shaders in 3D}{80}{section.12.4}
-\contentsline {section}{\numberline {12.5}Shaders in 2D}{85}{section.12.5}
-\contentsline {section}{\numberline {12.6}What Next?}{88}{section.12.6}
-\contentsline {chapter}{\numberline {13}Projects}{89}{chapter.13}
-\contentsline {chapter}{\numberline {14}Credits}{91}{chapter.14}
+\contentsline {section}{\numberline {10.5}Edge Blending}{67}{section.10.5}
+\contentsline {chapter}{\numberline {11}Optimization}{75}{chapter.11}
+\contentsline {section}{\numberline {11.1}Introduction}{75}{section.11.1}
+\contentsline {section}{\numberline {11.2}Finding the Bottleneck}{75}{section.11.2}
+\contentsline {section}{\numberline {11.3}Using the Performance Monitor}{77}{section.11.3}
+\contentsline {section}{\numberline {11.4}Operator Cooking}{79}{section.11.4}
+\contentsline {section}{\numberline {11.5}Resolution}{80}{section.11.5}
+\contentsline {section}{\numberline {11.6}GPU Memory Fragmentation}{81}{section.11.6}
+\contentsline {section}{\numberline {11.7}Windows System Processes}{83}{section.11.7}
+\contentsline {chapter}{\numberline {12}GLSL}{85}{chapter.12}
+\contentsline {section}{\numberline {12.1}Introduction}{85}{section.12.1}
+\contentsline {section}{\numberline {12.2}Types of Shaders and Rendering Pipeline}{85}{section.12.2}
+\contentsline {section}{\numberline {12.3}Debugging}{86}{section.12.3}
+\contentsline {section}{\numberline {12.4}Shaders in 3D}{86}{section.12.4}
+\contentsline {section}{\numberline {12.5}Shaders in 2D}{91}{section.12.5}
+\contentsline {section}{\numberline {12.6}What Next?}{94}{section.12.6}
+\contentsline {chapter}{\numberline {13}Projects}{95}{chapter.13}
+\contentsline {chapter}{\numberline {14}Credits}{97}{chapter.14}
 \contentsfinish 

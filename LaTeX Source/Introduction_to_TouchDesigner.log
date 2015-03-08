@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  17 NOV 2014 18:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  8 MAR 2015 00:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -839,14 +839,14 @@ Overfull \hbox (0.21712pt too wide) in paragraph at lines 10--11
 signer. All projects are made up of nothing more 
  []
 
-<./img/1.1/signal-flow-1.png, id=448, 384.9582pt x 166.4619pt>
+<./img/1.1/signal-flow-1.png, id=453, 384.9582pt x 166.4619pt>
 File: ./img/1.1/signal-flow-1.png Graphic file (type png)
 
 <use ./img/1.1/signal-flow-1.png>
 Package pdftex.def Info: ./img/1.1/signal-flow-1.png used on input line 15.
 (pdftex.def)             Requested size: 480.02177pt x 207.56883pt.
 
-<./img/1.1/signal-flow-2.png, id=449, 398.4486pt x 210.5466pt>
+<./img/1.1/signal-flow-2.png, id=454, 398.4486pt x 210.5466pt>
 File: ./img/1.1/signal-flow-2.png Graphic file (type png)
 
 <use ./img/1.1/signal-flow-2.png>
@@ -862,7 +862,7 @@ t would be pre-wired in-between the Constant
  []
 
 [14 <./img/1.1/signal-flow-2.png>]
-<./img/1.2/creating-operators-1.png, id=459, 424.2249pt x 78.5334pt>
+<./img/1.2/creating-operators-1.png, id=464, 424.2249pt x 78.5334pt>
 File: ./img/1.2/creating-operators-1.png Graphic file (type png)
 
 <use ./img/1.2/creating-operators-1.png>
@@ -870,7 +870,7 @@ Package pdftex.def Info: ./img/1.2/creating-operators-1.png used on input line
 44.
 (pdftex.def)             Requested size: 480.0029pt x 88.85913pt.
 
-<./img/1.2/creating-operators-2.png, id=460, 419.4069pt x 74.679pt>
+<./img/1.2/creating-operators-2.png, id=465, 419.4069pt x 74.679pt>
 File: ./img/1.2/creating-operators-2.png Graphic file (type png)
 
 <use ./img/1.2/creating-operators-2.png>
@@ -878,7 +878,7 @@ Package pdftex.def Info: ./img/1.2/creating-operators-2.png used on input line
 46.
 (pdftex.def)             Requested size: 480.02953pt x 85.47336pt.
 
-<./img/1.2/creating-operators-3.png, id=461, 421.3341pt x 164.0529pt>
+<./img/1.2/creating-operators-3.png, id=466, 421.3341pt x 164.0529pt>
 File: ./img/1.2/creating-operators-3.png Graphic file (type png)
 
 <use ./img/1.2/creating-operators-3.png>
@@ -898,7 +898,7 @@ Overfull \hbox (0.15881pt too wide) in paragraph at lines 86--87
 e desired Operators. Middle click on an Operator 
  []
 
-<./img/1.3/navigation-1.png, id=466, 260.172pt x 103.8279pt>
+<./img/1.3/navigation-1.png, id=471, 260.172pt x 103.8279pt>
 File: ./img/1.3/navigation-1.png Graphic file (type png)
 
 <use ./img/1.3/navigation-1.png>
@@ -922,7 +922,7 @@ Overfull \hbox (0.16579pt too wide) in paragraph at lines 104--105
 oot' level. TouchDe-signer sys-tem and UI el-e-ments can 
  []
 
-<./img/1.4/path-1.png, id=488, 259.9311pt x 17.8266pt>
+<./img/1.4/path-1.png, id=493, 259.9311pt x 17.8266pt>
 File: ./img/1.4/path-1.png Graphic file (type png)
 
 <use ./img/1.4/path-1.png>
@@ -958,14 +958,14 @@ Overfull \hbox (0.16565pt too wide) in paragraph at lines 156--157
 ick the 'Edit Contents' option, and the DAT will 
  []
 
-<./img/1.6/help-1.png, id=511, 260.172pt x 103.8279pt>
+<./img/1.6/help-1.png, id=516, 260.172pt x 103.8279pt>
 File: ./img/1.6/help-1.png Graphic file (type png)
 
 <use ./img/1.6/help-1.png>
 Package pdftex.def Info: ./img/1.6/help-1.png used on input line 175.
 (pdftex.def)             Requested size: 426.81581pt x 170.33112pt.
 
-<./img/1.6/help-2.png, id=512, 260.172pt x 103.8279pt>
+<./img/1.6/help-2.png, id=517, 260.172pt x 103.8279pt>
 File: ./img/1.6/help-2.png Graphic file (type png)
 
 <use ./img/1.6/help-2.png>
@@ -976,7 +976,7 @@ Package pdftex.def Info: ./img/1.6/help-2.png used on input line 177.
 
 ]
 Chapter 2.
-<./img/2.1/parameter-window.png, id=522, 111.5367pt x 73.2336pt>
+<./img/2.1/parameter-window.png, id=527, 111.5367pt x 73.2336pt>
 File: ./img/2.1/parameter-window.png Graphic file (type png)
 
 <use ./img/2.1/parameter-window.png>
@@ -985,7 +985,7 @@ Package pdftex.def Info: ./img/2.1/parameter-window.png used on input line 19.
  [21
 
  <./img/2.1/parameter-window.png>]
-<./img/2.2/parameters-1.PNG, id=527, 111.7776pt x 73.4745pt>
+<./img/2.2/parameters-1.PNG, id=532, 111.7776pt x 73.4745pt>
 File: ./img/2.2/parameters-1.PNG Graphic file (type png)
 
 <use ./img/2.2/parameters-1.PNG>
@@ -1000,7 +1000,7 @@ Overfull \hbox (0.12154pt too wide) in paragraph at lines 57--58
 t will expand, displaying more information and 
  []
 
-<./img/2.2/parameters-2.PNG, id=543, 111.7776pt x 78.2925pt>
+<./img/2.2/parameters-2.PNG, id=548, 111.7776pt x 78.2925pt>
 File: ./img/2.2/parameters-2.PNG Graphic file (type png)
 
 <use ./img/2.2/parameters-2.PNG>
@@ -1009,7 +1009,7 @@ Package pdftex.def Info: ./img/2.2/parameters-2.PNG used on input line 60.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 7.65005pt on input line 65.
  [23 <./img/2.2/parameters-1.PNG> <./img/2.2/parameters-2.PNG>] <./img/2.2/para
-meters-3.PNG, id=550, 111.7776pt x 78.2925pt>
+meters-3.PNG, id=555, 111.7776pt x 78.2925pt>
 File: ./img/2.2/parameters-3.PNG Graphic file (type png)
 
 <use ./img/2.2/parameters-3.PNG>
@@ -1021,7 +1021,7 @@ Overfull \hbox (0.18887pt too wide) in paragraph at lines 75--76
 s colour scheme, and the green box will be filled 
  []
 
-<./img/2.2/parameters-4.PNG, id=551, 111.5367pt x 78.7743pt>
+<./img/2.2/parameters-4.PNG, id=556, 111.5367pt x 78.7743pt>
 File: ./img/2.2/parameters-4.PNG Graphic file (type png)
 
 <use ./img/2.2/parameters-4.PNG>
@@ -1034,28 +1034,28 @@ ays two pieces of information separated by a colon.
  []
 
 [24 <./img/2.2/parameters-3.PNG> <./img/2.2/parameters-4.PNG>]
-<./img/2.3/transport-1.png, id=556, 259.9311pt x 21.9219pt>
+<./img/2.3/transport-1.png, id=561, 259.9311pt x 21.9219pt>
 File: ./img/2.3/transport-1.png Graphic file (type png)
 
 <use ./img/2.3/transport-1.png>
 Package pdftex.def Info: ./img/2.3/transport-1.png used on input line 92.
 (pdftex.def)             Requested size: 480.04398pt x 40.48563pt.
 
-<./img/2.4/timeline.png, id=557, 66.4884pt x 21.9219pt>
+<./img/2.4/timeline.png, id=562, 66.4884pt x 21.9219pt>
 File: ./img/2.4/timeline.png Graphic file (type png)
 
 <use ./img/2.4/timeline.png>
 Package pdftex.def Info: ./img/2.4/timeline.png used on input line 119.
 (pdftex.def)             Requested size: 227.63515pt x 75.0536pt.
  [25 <./img/2.3/transport-1.png>]
-<./img/2.5/panes-1.png, id=571, 812.28468pt x 55.70813pt>
+<./img/2.5/panes-1.png, id=576, 812.28468pt x 55.70813pt>
 File: ./img/2.5/panes-1.png Graphic file (type png)
 
 <use ./img/2.5/panes-1.png>
 Package pdftex.def Info: ./img/2.5/panes-1.png used on input line 131.
 (pdftex.def)             Requested size: 479.99988pt x 32.91934pt.
 
-<./img/2.5/panes-2.png, id=573, 1444.64719pt x 794.97pt>
+<./img/2.5/panes-2.png, id=578, 1444.64719pt x 794.97pt>
 File: ./img/2.5/panes-2.png Graphic file (type png)
 
 <use ./img/2.5/panes-2.png>
@@ -1085,7 +1085,7 @@ Overfull \hbox (0.21173pt too wide) in paragraph at lines 162--163
 om the top portion of the browser. Then drag 
  []
 
-<./img/2.6/palette-1.png, id=580, 286.06876pt x 678.28406pt>
+<./img/2.6/palette-1.png, id=585, 286.06876pt x 678.28406pt>
 File: ./img/2.6/palette-1.png Graphic file (type png)
 
 <use ./img/2.6/palette-1.png>
@@ -1106,7 +1106,7 @@ Overfull \hbox (0.20898pt too wide) in paragraph at lines 187--188
 wed, and simple changes can be made within this 
  []
 
-<./img/2.8/realtime-1.png, id=592, 812.28468pt x 54.9553pt>
+<./img/2.8/realtime-1.png, id=597, 812.28468pt x 54.9553pt>
 File: ./img/2.8/realtime-1.png Graphic file (type png)
 
 <use ./img/2.8/realtime-1.png>
@@ -1195,7 +1195,7 @@ Overfull \hbox (0.14233pt too wide) in paragraph at lines 75--76
 ing that is over-looked by many be-gin-ners, but is es-sen- 
  []
 
-<./img/4.4/sample-rate.png, id=643, 1125.003pt x 232.2276pt>
+<./img/4.4/sample-rate.png, id=648, 1125.003pt x 232.2276pt>
 File: ./img/4.4/sample-rate.png Graphic file (type png)
 
 <use ./img/4.4/sample-rate.png>
@@ -1219,7 +1219,7 @@ Overfull \hbox (0.19765pt too wide) in paragraph at lines 100--101
 he dotted-blue line is a non-Time sliced CHOP, 
  []
 
-<./img/4.4/Timeslice.png, id=648, 1022.6205pt x 396.0396pt>
+<./img/4.4/Timeslice.png, id=653, 1022.6205pt x 396.0396pt>
 File: ./img/4.4/Timeslice.png Graphic file (type png)
 
 <use ./img/4.4/Timeslice.png>
@@ -1271,14 +1271,14 @@ Overfull \hbox (0.22307pt too wide) in paragraph at lines 60--61
 fully set the to 0, to demonstrate how important 
  []
 
-[44] <./img/6.2/rendering-1.png, id=673, 280.6485pt x 123.5817pt>
+[44] <./img/6.2/rendering-1.png, id=678, 280.6485pt x 123.5817pt>
 File: ./img/6.2/rendering-1.png Graphic file (type png)
 
 <use ./img/6.2/rendering-1.png>
 Package pdftex.def Info: ./img/6.2/rendering-1.png used on input line 69.
 (pdftex.def)             Requested size: 480.0381pt x 211.38155pt.
 
-<./img/6.2/rendering-2.png, id=674, 358.941pt x 135.1449pt>
+<./img/6.2/rendering-2.png, id=679, 358.941pt x 135.1449pt>
 File: ./img/6.2/rendering-2.png Graphic file (type png)
 
 <use ./img/6.2/rendering-2.png>
@@ -1337,14 +1337,14 @@ Overfull \hbox (0.16978pt too wide) in paragraph at lines 61--62
 nclude co-ordinates indicating to other applications 
  []
 
-<./img/8.3/3D-geo.png, id=696, 913.4125pt x 673.51625pt>
+<./img/8.3/3D-geo.png, id=701, 913.4125pt x 673.51625pt>
 File: ./img/8.3/3D-geo.png Graphic file (type png)
 
 <use ./img/8.3/3D-geo.png>
 Package pdftex.def Info: ./img/8.3/3D-geo.png used on input line 66.
 (pdftex.def)             Requested size: 426.78125pt x 314.69254pt.
 
-<./img/8.3/Geo-map.png, id=697, 1027.84pt x 552.0625pt>
+<./img/8.3/Geo-map.png, id=702, 1027.84pt x 552.0625pt>
 Underfull \vbox (badness 2503) has occurred while \output is active []
 
  [50]
@@ -1486,14 +1486,14 @@ Overfull \hbox (0.21973pt too wide) in paragraph at lines 12--13
 such as external data inputs and outputs. The 
  []
 
-<./img/10.1/perform.png, id=831, 812.28468pt x 54.9553pt>
+<./img/10.1/perform.png, id=836, 812.28468pt x 54.9553pt>
 File: ./img/10.1/perform.png Graphic file (type png)
 
 <use ./img/10.1/perform.png>
 Package pdftex.def Info: ./img/10.1/perform.png used on input line 19.
 (pdftex.def)             Requested size: 479.99988pt x 32.47449pt.
 
-<./img/10.2/performing-network-1.png, id=832, 770.88pt x 442.65375pt>
+<./img/10.2/performing-network-1.png, id=837, 770.88pt x 442.65375pt>
 File: ./img/10.2/performing-network-1.png Graphic file (type png)
 
 <use ./img/10.2/performing-network-1.png>
@@ -1501,7 +1501,7 @@ Package pdftex.def Info: ./img/10.2/performing-network-1.png used on input line
  33.
 (pdftex.def)             Requested size: 341.42316pt x 196.05156pt.
 
-<./img/10.2/performing-network-2.png, id=833, 763.35187pt x 445.665pt> [61
+<./img/10.2/performing-network-2.png, id=838, 763.35187pt x 445.665pt> [61
 
  <./img/10.1/perform.png>]
 File: ./img/10.2/performing-network-2.png Graphic file (type png)
@@ -1511,21 +1511,21 @@ Package pdftex.def Info: ./img/10.2/performing-network-2.png used on input line
 (pdftex.def)             Requested size: 341.43185pt x 199.33694pt.
  [62 <./img/10.2/performing-network-1.png> <./img/10.2/performing-network-2.png
 >]
-<./img/10.3/raster-1.png, id=846, 999.735pt x 541.27219pt>
+<./img/10.3/raster-1.png, id=851, 999.735pt x 541.27219pt>
 File: ./img/10.3/raster-1.png Graphic file (type png)
 
 <use ./img/10.3/raster-1.png>
 Package pdftex.def Info: ./img/10.3/raster-1.png used on input line 57.
 (pdftex.def)             Requested size: 480.00464pt x 259.88202pt.
 
-<./img/10.3/raster-2.png, id=847, 900.966pt x 261.8583pt>
+<./img/10.3/raster-2.png, id=852, 900.966pt x 261.8583pt>
 File: ./img/10.3/raster-2.png Graphic file (type png)
 
 <use ./img/10.3/raster-2.png>
 Package pdftex.def Info: ./img/10.3/raster-2.png used on input line 63.
 (pdftex.def)             Requested size: 480.01178pt x 139.51143pt.
 
-<./img/10.3/raster-3.png, id=848, 553.5882pt x 411.2163pt>
+<./img/10.3/raster-3.png, id=853, 553.5882pt x 411.2163pt>
 File: ./img/10.3/raster-3.png Graphic file (type png)
 
 <use ./img/10.3/raster-3.png>
@@ -1549,7 +1549,7 @@ Overfull \hbox (0.24117pt too wide) in paragraph at lines 98--99
 he signal flow, can cause what is called 'tearing'. 
  []
 
-<./img/10.4/tearing.jpg, id=858, 640.3925pt x 481.8pt>
+<./img/10.4/tearing.jpg, id=863, 640.3925pt x 481.8pt>
 File: ./img/10.4/tearing.jpg Graphic file (type jpg)
 
 <use ./img/10.4/tearing.jpg>
@@ -1576,7 +1576,87 @@ Overfull \hbox (0.11484pt too wide) in paragraph at lines 117--118
 an tear. Enough em-pha-sis can-not be put on pre-ven-ta- 
  []
 
-[66 <./img/10.4/tearing.jpg>]) (./tex/Optimization.tex [67] [68
+[66 <./img/10.4/tearing.jpg>]
+Overfull \hbox (0.14145pt too wide) in paragraph at lines 152--153
+\T1/pplj/m/n/10 (+19) creating arrays of projectors with overlapping edges that
+ are blended together to create a seamless canvas. 
+ []
+
+[67]
+Overfull \hbox (3.84058pt too wide) in paragraph at lines 159--160
+[][][]$\T1/fvm/m/n/10 http : / / paulbourke . net / texture _ colour / edgeblen
+d/$[][]  
+ []
+
+<./img/10.5/blending_layout.png, id=878, 392.667pt x 106.9596pt>
+File: ./img/10.5/blending_layout.png Graphic file (type png)
+
+<use ./img/10.5/blending_layout.png>
+Package pdftex.def Info: ./img/10.5/blending_layout.png used on input line 165.
+
+(pdftex.def)             Requested size: 480.0117pt x 130.75162pt.
+
+Overfull \hbox (0.11841pt too wide) in paragraph at lines 168--169
+[]\T1/pplj/m/n/10 (+20) The act of blending both of these projectors will requi
+re an overlapping section. The amount of overlap 
+ []
+
+<./img/10.5/blended_edge_layout.png, id=879, 392.667pt x 132.495pt>
+File: ./img/10.5/blended_edge_layout.png Graphic file (type png)
+
+<use ./img/10.5/blended_edge_layout.png>
+Package pdftex.def Info: ./img/10.5/blended_edge_layout.png used on input line 
+173.
+(pdftex.def)             Requested size: 480.0117pt x 161.96712pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [68 <./img/10.5/blending_layout.png>]
+<./img/10.5/discarded_edge_layout.png, id=885, 392.667pt x 135.8676pt>
+File: ./img/10.5/discarded_edge_layout.png Graphic file (type png)
+
+<use ./img/10.5/discarded_edge_layout.png>
+Package pdftex.def Info: ./img/10.5/discarded_edge_layout.png used on input lin
+e 183.
+(pdftex.def)             Requested size: 480.0117pt x 166.0899pt.
+ [69 <./img/10.5/blended_edge_layout.png> <./img/10.5/discarded_edge_layout.png
+>]
+Overfull \hbox (0.13634pt too wide) in paragraph at lines 192--193
+\T1/pplj/m/n/10 (+5) (3840 x 1080) and subtract the size of the blend zone (256
+ pixels). This leaves 3584 x 1080 for content, or the 
+ []
+
+<./img/10.5/full_layout.png, id=892, 358.4592pt x 126.2316pt>
+File: ./img/10.5/full_layout.png Graphic file (type png)
+
+<use ./img/10.5/full_layout.png>
+Package pdftex.def Info: ./img/10.5/full_layout.png used on input line 197.
+(pdftex.def)             Requested size: 480.02652pt x 169.04158pt.
+
+<./img/10.5/full_image_layout.png, id=893, 335.3328pt x 137.313pt>
+File: ./img/10.5/full_image_layout.png Graphic file (type png)
+
+<use ./img/10.5/full_image_layout.png>
+Package pdftex.def Info: ./img/10.5/full_image_layout.png used on input line 20
+1.
+(pdftex.def)             Requested size: 480.0237pt x 196.56142pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [70 <./img/10.5/full_layout.png>] [71 <./img/10.5/full_image_layout.png>]
+Overfull \hbox (0.13821pt too wide) in paragraph at lines 222--223
+[]\T1/pplj/m/n/10 (+12) With these outputs prepared, it's a matter of sending t
+he correct texture to the correct projector. How to 
+ []
+
+<./img/10.5/projectors.png, id=904, 341.1144pt x 137.313pt>
+File: ./img/10.5/projectors.png Graphic file (type png)
+
+<use ./img/10.5/projectors.png>
+Package pdftex.def Info: ./img/10.5/projectors.png used on input line 225.
+(pdftex.def)             Requested size: 480.02403pt x 193.23001pt.
+ [72 <./img/10.5/projectors.png>])
+(./tex/Optimization.tex [73] [74
 
 ]
 Chapter 11.
@@ -1586,7 +1666,7 @@ Overfull \hbox (0.21722pt too wide) in paragraph at lines 12--13
 at every millisecond makes a difference. These all 
  []
 
-[69
+[75
 
 ]
 Overfull \hbox (0.10559pt too wide) in paragraph at lines 32--33
@@ -1618,15 +1698,15 @@ Overfull \hbox (0.17422pt too wide) in paragraph at lines 40--41
  in that inconsistent results will appear in the 
  []
 
-[70] <./img/11.3/performance-monitor-1.png, id=886, 160.1985pt x 155.1396pt>
+[76] <./img/11.3/performance-monitor-1.png, id=929, 160.1985pt x 155.1396pt>
 File: ./img/11.3/performance-monitor-1.png Graphic file (type png)
 
 <use ./img/11.3/performance-monitor-1.png>
 Package pdftex.def Info: ./img/11.3/performance-monitor-1.png used on input lin
 e 70.
 (pdftex.def)             Requested size: 327.22594pt x 316.89246pt.
- [71 <./img/11.3/performance-monitor-1.png>]
-<./img/11.3/performance-monitor-2.png, id=900, 652.3572pt x 592.1322pt>
+ [77 <./img/11.3/performance-monitor-1.png>]
+<./img/11.3/performance-monitor-2.png, id=943, 652.3572pt x 592.1322pt>
 File: ./img/11.3/performance-monitor-2.png Graphic file (type png)
 
 <use ./img/11.3/performance-monitor-2.png>
@@ -1639,13 +1719,13 @@ Overfull \hbox (0.1911pt too wide) in paragraph at lines 94--95
  of Over TOPs can be traced. They are all located 
  []
 
-[72 <./img/11.3/performance-monitor-2.png>]
+[78 <./img/11.3/performance-monitor-2.png>]
 Overfull \hbox (0.17403pt too wide) in paragraph at lines 109--110
 \T1/pplj/m/n/10 (+7) static. Operators only cook when they need to perform an o
 peration or change. A still picture is static, and 
  []
 
-<./img/11.4/operator-cooking-1.png, id=906, 480.8364pt x 321.1197pt>
+<./img/11.4/operator-cooking-1.png, id=949, 480.8364pt x 321.1197pt>
 File: ./img/11.4/operator-cooking-1.png Graphic file (type png)
 
 <use ./img/11.4/operator-cooking-1.png>
@@ -1658,16 +1738,16 @@ Overfull \hbox (0.20209pt too wide) in paragraph at lines 117--118
 need to cook once, and some-thing to note is that many 
  []
 
-[73 <./img/11.4/operator-cooking-1.png (PNG copy)>]
-<./img/11.4/operator-cooking-2.png, id=912, 480.8364pt x 321.1197pt>
+[79 <./img/11.4/operator-cooking-1.png (PNG copy)>]
+<./img/11.4/operator-cooking-2.png, id=955, 480.8364pt x 321.1197pt>
 File: ./img/11.4/operator-cooking-2.png Graphic file (type png)
 
 <use ./img/11.4/operator-cooking-2.png>
 Package pdftex.def Info: ./img/11.4/operator-cooking-2.png used on input line 1
 22.
 (pdftex.def)             Requested size: 341.44759pt x 228.03087pt.
- [74 <./img/11.4/operator-cooking-2.png (PNG copy)>] <./img/11.6/memory-frag-1.
-png, id=917, 363.2772pt x 112.5003pt>
+ [80 <./img/11.4/operator-cooking-2.png (PNG copy)>] <./img/11.6/memory-frag-1.
+png, id=961, 363.2772pt x 112.5003pt>
 File: ./img/11.6/memory-frag-1.png Graphic file (type png)
 
 <use ./img/11.6/memory-frag-1.png>
@@ -1676,7 +1756,7 @@ Package pdftex.def Info: ./img/11.6/memory-frag-1.png used on input line 164.
 
 Underfull \vbox (badness 4621) has occurred while \output is active []
 
- [75]
+ [81]
 Overfull \hbox (0.21489pt too wide) in paragraph at lines 167--168
 \T1/pplj/m/n/10 (+11) called static textures because once they've allocated to 
 memory, they aren't changed. This is the equivalent 
@@ -1688,31 +1768,31 @@ Overfull \hbox (0.10004pt too wide) in paragraph at lines 169--170
  3GB of free RAM on a graph-ics card that only has 
  []
 
-<./img/11.6/memory-frag-2.png, id=922, 363.2772pt x 112.5003pt>
+<./img/11.6/memory-frag-2.png, id=966, 363.2772pt x 112.5003pt>
 File: ./img/11.6/memory-frag-2.png Graphic file (type png)
 
 <use ./img/11.6/memory-frag-2.png>
 Package pdftex.def Info: ./img/11.6/memory-frag-2.png used on input line 184.
 (pdftex.def)             Requested size: 480.03183pt x 148.65704pt.
- [76 <./img/11.6/memory-frag-1.png (PNG copy)> <./img/11.6/memory-frag-2.png (P
+ [82 <./img/11.6/memory-frag-1.png (PNG copy)> <./img/11.6/memory-frag-2.png (P
 NG copy)>]
-<./img/11.6/memory-frag-3.png, id=932, 363.2772pt x 112.5003pt>
+<./img/11.6/memory-frag-3.png, id=976, 363.2772pt x 112.5003pt>
 File: ./img/11.6/memory-frag-3.png Graphic file (type png)
 
 <use ./img/11.6/memory-frag-3.png>
 Package pdftex.def Info: ./img/11.6/memory-frag-3.png used on input line 190.
 (pdftex.def)             Requested size: 480.03183pt x 148.65704pt.
-) (./tex/GLSL.tex [77 <./img/11.6/memory-frag-3.png (PNG copy)>] [78
+) (./tex/GLSL.tex [83 <./img/11.6/memory-frag-3.png (PNG copy)>] [84
 
 ]
 Chapter 12.
-<./img/12.2/pipeline.png, id=941, 1033.9428pt x 168.63pt>
+<./img/12.2/pipeline.png, id=985, 1033.9428pt x 168.63pt>
 File: ./img/12.2/pipeline.png Graphic file (type png)
 
 <use ./img/12.2/pipeline.png>
 Package pdftex.def Info: ./img/12.2/pipeline.png used on input line 26.
 (pdftex.def)             Requested size: 479.9896pt x 78.28348pt.
- [79
+ [85
 
  <./img/12.2/pipeline.png>]
 Overfull \hbox (0.22417pt too wide) in paragraph at lines 52--53
@@ -1720,7 +1800,7 @@ Overfull \hbox (0.22417pt too wide) in paragraph at lines 52--53
  warning flag on the Operator. Upon clicking and 
  []
 
-[80] [81]
+[86] [87]
 Overfull \hbox (0.21748pt too wide) in paragraph at lines 154--155
 \T1/pplj/m/n/10 (+18) ity. For starters, let's re-size the box. This is as sim-
 ple as mul-ti-ply-ing each of the ver-tex po-si-tions, or 'P', by 
@@ -1732,13 +1812,13 @@ Overfull \hbox (0.20926pt too wide) in paragraph at lines 185--186
 alues need to be added or subtracted to the various 
  []
 
-[82]
+[88]
 Overfull \hbox (0.16106pt too wide) in paragraph at lines 226--227
 \T1/pplj/m/n/10 (+3) parameter in the GLSL MAT. In the GLSL MAT, we named the u
 niform 'lfoCHOP', so to access it, the same 
  []
 
-[83]
+[89]
 Overfull \hbox (0.14249pt too wide) in paragraph at lines 234--235
 []\T1/pplj/m/n/10 (+2) With those small changes, a CHOP is controlling the x-ax
 is position of the shader. Pixel shaders function 
@@ -1762,7 +1842,7 @@ Overfull \hbox (0.17259pt too wide) in paragraph at lines 251--252
 rst component of the vector. To take this another step 
  []
 
-[84]
+[90]
 Overfull \hbox (0.11923pt too wide) in paragraph at lines 309--310
 \T1/pplj/m/n/10 (+6) shader. In this example, a Movie In TOP and a Constant TOP
  are input into the GLSL TOP. The GLSL code 
@@ -1780,13 +1860,13 @@ Overfull \hbox (0.10507pt too wide) in paragraph at lines 323--324
 d. In this example there are two inputs, and there 
  []
 
-[85]
+[91]
 Overfull \hbox (0.10747pt too wide) in paragraph at lines 332--333
 \T1/pplj/m/n/10 (+2) used. This array is accessed by index. In this case, there
  are two TOP inputs, so 'sTD2DInputs[0]' is used to 
  []
 
-[86]
+[92]
 Overfull \hbox (0.10257pt too wide) in paragraph at lines 378--379
 []\T1/pplj/m/n/10 (+1) In the above example, three of the textures are being tr
 ansformed. The first is being scaled up by a factor 
@@ -1798,18 +1878,18 @@ Overfull \hbox (0.16412pt too wide) in paragraph at lines 384--385
 . Thus when the tex-ture co-ordinates move 0.5 on the 
  []
 
-[87]) (./tex/Projects.tex [88]
+[93]) (./tex/Projects.tex [94]
 Chapter 13.
-) (./tex/Credits.tex [89
+) (./tex/Credits.tex [95
 
 
-] [90
+] [96
 
 ]
 Chapter 14.
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 231.
- [91
+ [97
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 231.
@@ -1818,7 +1898,7 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 231.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 231.
 Package rerunfilecheck Info: File `Introduction_to_TouchDesigner.out' has not c
 hanged.
-(rerunfilecheck)             Checksum: 7EE3DC76BB26A23FE1548F83EFC4467C;10219.
+(rerunfilecheck)             Checksum: 37BE436CB97EA556787AB7BDAF3CF35A;10344.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1826,10 +1906,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 231.
  ) 
 Here is how much of TeX's memory you used:
- 16258 strings out of 493117
- 239189 string characters out of 6135433
+ 16297 strings out of 493117
+ 240231 string characters out of 6135433
  402751 words of memory out of 5000000
- 18731 multiletter control sequences out of 15000+600000
+ 18756 multiletter control sequences out of 15000+600000
  76250 words of font info for 212 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,13n,72p,1135b,1817s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1842,10 +1922,10 @@ pe1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw
 /palatino/uplb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/palati
 no/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/palatino/uplr
 i8a.pfb>
-Output written on Introduction_to_TouchDesigner.pdf (91 pages, 3923753 bytes).
+Output written on Introduction_to_TouchDesigner.pdf (97 pages, 4031051 bytes).
 PDF statistics:
- 1255 PDF objects out of 1440 (max. 8388607)
- 1092 compressed objects within 11 object streams
- 449 named destinations out of 1000 (max. 500000)
- 52014 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 1300 PDF objects out of 1440 (max. 8388607)
+ 1118 compressed objects within 12 object streams
+ 456 named destinations out of 1000 (max. 500000)
+ 52052 words of extra memory for PDF output out of 61914 (max. 10000000)
 
