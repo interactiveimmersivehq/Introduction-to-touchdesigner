@@ -130,7 +130,7 @@ Small Python scripts can be created and edited inside of TouchDesigner, but as s
 There are a number of helpful features gained by editing scripts in an external text editor. Without creating an extensive list, some reasons include:
 
 \begin{enumerate}
-\item Line numbering
+\item Line numbering 
 \item Colour coded syntax
 \item Find \& Replace functionality
 \item Auto-completion
@@ -138,22 +138,17 @@ There are a number of helpful features gained by editing scripts in an external 
 
 These features add up to a far richer, and more efficient experience when working extensively with Python inside of TouchDesigner.  
 
-To setup an external editor, a new Windows Environment Variable will need to be made. It is best to do a Google search on how to set Environment Variables in ones current operating system. For Windows 7 and Windows 8 systems, the steps are as follows:
+To setup an external editor the steps are as follows:
 
 \begin{enumerate}
-\item Right click on 'Computer' in Windows Explorer
-\item Click 'Properties'
-\item Click 'Advanced system settings'
-\item Click 'Environment Variables...'
-\item From here, either add a new User or System variable by clicking 'New...'
-\item Assign 'TOUCH\_EDITOR' as the 'Variable name'
-\item Assign the path to the external editor's executable (.exe) as the 'Variable value'
-\item Hit 'OK' until there are no more dialogues
+\item Open the 'Preferences' dialog found in the 'Edit' menu
+\item Go to the 'DATs' preferences
+\item Click the file browser icon for the 'Text Editor' setting
+\item Assign the the external editor's executable (.exe) by selecting it and clicking 'Open'.  This is usually located in the 'Program Files' folder
+\item Click 'Accept' on the Preferences dialog
 \end{enumerate}
 
-TouchDesigner checks the system for specific 'Environment Variables' on startup. The 'TOUCH\_EDITOR' variable will allow DATs to be edited by the chosen external editor. The variable's value should be the path to the executable (.exe) file of the chosen editor.
- 
-Once the setup is complete, right click on a DAT and click the 'Edit Contents' option, and the DAT will be opened in the program who's path is in the 'Variable value' section of the new 'Environment Variable'. 
+Once the setup is complete, right click on a DAT and click the 'Edit Contents' option. The DAT will be opened in the program which is specified by this preference.  A separate 'Table Editor' preference is available to set the external editor used for DATs that are tables.
 
 Two well-respected editors that are use frequently in the TouchDesigner community, and are cross-platform, are linked below: 
 
