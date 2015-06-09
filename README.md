@@ -20,6 +20,7 @@ Greg Hermanovic, Founder, Derivative
 
 <h4>
 Foreword by Author
+</h4>
 
 The purpose of this book is two-fold:
 
@@ -71,6 +72,7 @@ Setting up your build environment
 
 <h4>
 Mac
+</h4>
 
 To compile the book on Mac OS X, it is recommended that you install MacTex from this link: https://tug.org/mactex/
 
@@ -79,6 +81,7 @@ MacTex will come packaged with a LaTex editor that can be used to compile the bo
 
 <h4>
 Windows
+</h4>
 
 To compile the book on Windows, it is recommended that you install TeX Live from this link: http://www.tug.org/texlive/acquire-netinstall.html
 
