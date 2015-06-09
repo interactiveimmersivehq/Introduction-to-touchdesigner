@@ -3,6 +3,7 @@ Introduction To Touchdesigner 088
 
 <h4>
 Foreword
+</h4>
 
 Between the artist and the tool are countless techniques and bits of know-how that contribute to the artist becoming more fluid and well-equipped for the challenges of production.
  
