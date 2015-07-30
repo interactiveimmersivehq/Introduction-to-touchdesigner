@@ -27,15 +27,15 @@ Components, interestingly, have the same data signal flow as Operators, flowing 
 
 \section{Creating Operators}
 \begin{fullwidth}
-The OP Create dialog can be reached in a multitude of ways. Each has a correct time and place of usage. When creating Operators from scratch the two easiest methods are to hit 'Tab' on the keyboard, or to double click on the Network background.
+The OP Create Dialog can be reached in a multitude of ways. Each has a correct time and place of usage. When creating Operators from scratch the two easiest methods are to hit 'Tab' on the keyboard, or to double click on the Network background.
 
 When working with existing chains of Operators, there are two easy ways to add Operators. The first is to right click on either the input or output of an Operator. This will add the chosen Operator, pre-wired, directly before the input or after the output. This is especially useful as it inserts the Operator seamlessly into a pre-existing chain.
 
 For example, there is a Constant TOP wired to a Null TOP, and a Transform TOP needs to be added between the two. Right clicking either the output of the Constant TOP, or the input of the Null TOP, and selecting Transform TOP, would create a Transform TOP, that would be pre-wired in-between the Constant TOP and Null TOP.
 
-Similar results can be achieved by right clicking on the wire itself and clicking on 'Insert Operator'. This would similarly create and pre-wire the chosen Operator between the two existing Operators.
+The second way to add an Operator to an existing chain is to middle click on the output of an Operator.  The difference is that right clicking integrates the newly created Operator into the current Operator chain, whereas middle clicking creates a new branch in parallel to the chain of Operators.
 
-The third way to add an Operator to an existing chain is to right click on a wire itself, and click  'Add Operator'. The difference between 'Insert Operator' and 'Add Operator'  is that inserting an Operator integrates it into the current Operator chain, whereas adding an Operator creates the Operator and wires it in parallel to the wire that is right clicked on. 
+Similar results can be achieved by right clicking on the wire itself and clicking on 'Insert Operator' or 'Add Operator'.  'Insert Operator' acts like right clicking an Operator's output and integrates it into the current Operator chain, whereas 'Add Operator' acts like middle clicking and creates a new branch in parallel to the chain.
 
 In the diagram below, there is an example with a Constant TOP and a Null TOP. In the next diagram, the wire connecting them was right clicked and a Transform TOP was created using 'Insert Operator'. In the proceeding diagram, the wire connecting the Operators was right clicked and a Transform TOP was created using 'Add Operator'. Notice how it is pre-wired in parallel to the first Transform TOP.
 
@@ -83,13 +83,13 @@ After closing the OP Create Dialog, all the required Operators will be wired and
 \begin{fullwidth}
 The mouse plays a vital role in TouchDesigner programming, and a high-quality mouse is highly recommended. The mouse is used to move around the Network and work with Operators. 
 
-Left click on an Operator to select it. Left click and drag that Operator to move it around the Network. To navigate around the Network, left click and drag the Network background. Right click on an Operator to reveal a menu with options that will be introduced slowly. To select and work with more than one Operator, right click and drag the selection box around the desired Operators. Middle click on an Operator to get more info about it. There is a UI button that displays the same Operator info window, which is useful when using a mouse that doesn't have a middle click button.
+To navigate around the Network, left click and drag the Network background. Left click on an Operator to select it. Left click and drag that Operator to move it around the Network. Right click on an Operator to reveal a menu with options that will be introduced slowly. To select and work with more than one Operator, right click and drag the selection box around the desired Operators. Middle click on an Operator to get more info about it. There is a UI button that displays the same Operator info window, which is useful when using a mouse that doesn't have a middle click button.
 
 \begin{center}
 \includegraphics{./img/1.3/navigation-1.png}
 \end{center}
 
-Click on the 'i' to get more detailed information about the selected operator.
+Left-click on the 'i' to get more detailed information about the selected operator.
 
 There are several key commands used to navigate TouchDesigner projects. Two of these key commands are 'u' and 'i'. Press 'u' will move up one Network, and out of the current component. To go inside of a Network or component (like a Container COMP or Base COMP), select the component and hit 'i'.
 
