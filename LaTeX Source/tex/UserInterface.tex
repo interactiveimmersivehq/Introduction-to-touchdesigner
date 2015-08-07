@@ -11,7 +11,7 @@ The 'Parameter Window' is where all an Operator's parameters can be accessed.
 
 There are two ways to access the 'Parameter Window'. The first is using the 'P' key. This will open a docked 'Parameter Window' in the top-right hand corner of the pane. This docked 'Parameter Window' will display the parameters of whatever Operator is selected.
 
-The second way to access the 'Parameter Window' is by right clicking on an Operator and selecting 'Parameters...'. This will open up a floating 'Parameter Window' with the selected Operator's parameters. This method differs from the first in that the parameters will not change if another Operator is selected. This is useful for being able to manage the parameters of multiple Operators simultaneously.
+The second way to access the 'Parameter Window' is by right clicking on an Operator and selecting 'Parameters...'. This will open up a floating 'Parameter Window' for the Operator. This method differs from the first in that the parameters will not change if another Operator is selected. This is useful for being able to manage the parameters of multiple Operators simultaneously.
 
 Every Operator has a different set of parameters, but all 'Parameter Windows' have the same set of options. Below is a diagram highlighting the options:
 
@@ -78,7 +78,7 @@ To change the parameter's mode to Export mode, a CHOP channel needs to be dragge
 \includegraphics[width=12cm]{./img/2.2/parameters-4.PNG}
 \end{center}
 
-The third element of the expanded parameter is the value field. The value field displays a different piece of information depending on the parameter mode. In Constant mode, the value field displays the current value, and can be edited by clicking and typing in the field. In Expression mode, the value field displays the script of Python or tscript that is being evaluated. The expression can be edited by clicking and typing in the value field. In Export mode, the value field displays two pieces of information separated by a colon. The text before the colon displays the name of the CHOP that is exporting to this parameter. The text after the colon is the name of the channel being exported from the CHOP. Because these values are being imposed by another Operator, the value field cannot be edited while the parameter is in Export mode.
+The third element of the expanded parameter is the value field. The value field displays a different piece of information depending on the parameter mode. In Constant mode, the value field displays the current value, and can be edited by clicking and typing in the field. In Expression mode, the value field displays the script of Python or tscript that is being evaluated. The expression can be edited by clicking and typing in the value field. In Export mode, the value field displays two pieces of information separated by a colon. The text before the colon displays the path of the CHOP that is exporting to this parameter. The text after the colon is the name of the channel being exported from the CHOP. Because these values are being imposed by another Operator, the value field cannot be edited while the parameter is in Export mode.
 
 \end{fullwidth}
 %------------------------------------------------
@@ -98,7 +98,7 @@ The transport bar functions similarly to the transport bars of many other applic
 \item Play timeline in reverse
 \item Play timeline forward
 \item Step one frame backward
-\item Step one frame foward
+\item Step one frame forward
 \item Setting 'Range Limit' to 'Loop' will continuously loop the timeline
 \item Setting 'Range Limit' to 'Once' will play through the timeline and hold the last frame
 \end{enumerate}
