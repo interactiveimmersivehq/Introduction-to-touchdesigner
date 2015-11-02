@@ -42,18 +42,18 @@ The first is that it can be used similarly to the IDLE shell that comes with Pyt
 print(2+2+2+2)
 \end{lstlisting}
 
-Running this in Python would print the result of the equation, which is 8. After hitting 'Enter' in the Textport, the result of the equation is displayed. This is because the Textport works as a Python interpreter. Type Python code into the Textport, it will be processed, and the results will be returned. 
+Running this in Python would print the result of the equation, which is 8. After hitting 'Enter' in the Textport, the result of the equation is displayed. This is because the Textport works as a Python interpreter. Type Python code into the Textport, it will be processed, and the results will be returned.
 
-It can similarly do the same for tscript, the scripting language that was used in TouchDesigner 077. Notice that when the Textport is opened, the first thing printed is: 
+It can similarly do the same for tscript, the scripting language that was used in TouchDesigner 077. Notice that when the Textport is opened, the first thing printed is:
 
 \begin{lstlisting}
-python >> 
+python >>
 \end{lstlisting}
 
 This is because in TouchDesigner 088, the Textport interpreter is set to interpret Python by default. To work with tscript in the Textport, the mode of the Textport needs to be changed from Python to tscript. This is done by clicking on the Python logo in the top left corner of the Textport. Once clicked, it will change to the letter 'T' and the next line of the Textport will be:
 
 \begin{lstlisting}
-tscript -> 
+tscript ->
 \end{lstlisting}
 
 This means the Textport is now in tscript mode. To confirm this, type the following tscript code into the Textport:
@@ -158,13 +158,13 @@ Namespaces are one honking great idea -- let's do more of those!
 
 This poem is the motto for many Python developers. Many of its lines try to convey Python's ideals and common developer sense.
 
-Think about the line: 
+Think about the line:
 
 \begin{lstlisting}
 'Explicit is better than implicit'
 \end{lstlisting}
 
-This can be applied to something that is often done in a hurry: naming. There are many different areas in Python and TouchDesigner where objects reference each other by name. A developer ends up naming variables, functions, Operators, Networks, and more. Without carefully naming Operators, it would be impossible to know each Operator's function. Similarly, without care in naming variables, as demonstrated earlier in the chapter, reading scripts can become quite a tedious task. There are two conventions that are regularly used when naming Operators and variables in TouchDesigner. 
+This can be applied to something that is often done in a hurry: naming. There are many different areas in Python and TouchDesigner where objects reference each other by name. A developer ends up naming variables, functions, Operators, Networks, and more. Without carefully naming Operators, it would be impossible to know each Operator's function. Similarly, without care in naming variables, as demonstrated earlier in the chapter, reading scripts can become quite a tedious task. There are two conventions that are regularly used when naming Operators and variables in TouchDesigner.
 
 The first involves using underscores in the place of real-world spaces. Here are some examples:
 
@@ -237,7 +237,7 @@ e = 'pressed'
 op('lines').par.text = d + e + c
 \end{lstlisting}
 
-Without taking the time to create meaningful variable and Operator names, the above script is still much easier to read through. Even out of context, the function of the script is apparent. 
+Without taking the time to create meaningful variable and Operator names, the above script is still much easier to read through. Even out of context, the function of the script is apparent.
 
 This kind of simple addition can make collaborating with other developers much easier and more enjoyable.
 
@@ -250,7 +250,7 @@ This kind of simple addition can make collaborating with other developers much e
 
 \begin{fullwidth}
 
-The more complicated projects become, scripts will slowly become longer and longer. At a certain point, it will take more time to search through code, than it will take to actually change and add to it. Because of this, it is important to compartmentalize all of a projects scripts. 
+The more complicated projects become, scripts will slowly become longer and longer. At a certain point, it will take more time to search through code, than it will take to actually change and add to it. Because of this, it is important to compartmentalize all of a projects scripts.
 
 This means a few different things, and incorporates a few different techniques, but it yields quite a number of benefits. All of these benefits will directly improve one's workflow, but more importantly, they will take a lot of the pain out of collaborative settings. Some of the benefits include:
 
@@ -273,13 +273,33 @@ Open example 'Scripting\_2.toe'. This example takes the code from the previous e
 op('preload').run()
 \end{lstlisting}
 
-It would be easy to quickly edit a single value, as actions and parameters are much easier to track down now. Passing this component to a colleague would be no trouble at all, as they could quickly see what each script does at first glance. If someone needed a script to start to preload of a set of Movie In TOPs, it could be quickly taken from this project. 
+It would be easy to quickly edit a single value, as actions and parameters are much easier to track down now. Passing this component to a colleague would be no trouble at all, as they could quickly see what each script does at first glance. If someone needed a script to start to preload of a set of Movie In TOPs, it could be quickly taken from this project.
 
 This compartmentalized workflow helps cut hard to manage scripts, some more than 500 lines in length, into smaller scripts that are easy to sort through quickly and share. In the case of the above example, there is third way to handle working with these multiple Operators.
 
 Open example 'Scripting\_3.toe'. This example takes advantage of Python functions. A Python function is a small cluster of code that can be called to perform as series of action. Inside of the Text DAT named 'actions', a function has been defined that contains the set of actions that need to be performed on each Movie In TOP. From the Text DAT named 'set\_movie\_tops', instead of retyping the same set of actions over and over, the new function is called by passing it the name of each Movie In TOP.
 
 Although the series of actions have been slightly arbitrary, the idea is simple: compartmentalize Python scripts for ease of maintenance, easier co-operative workflows, re-usability, and ease of management.
+
+\end{fullwidth}
+
+%------------------------------------------------
+
+\section{External Modules}
+
+\begin{fullwidth}
+
+One of the underused benefits of Python integration in TouchDesginer is the ability to import third-party Python libraries and use them natively. This includes the ability to use libraries such as the popular Requests or Beautiful Soup libraries. Importing a library is a simple process.
+
+\begin{enumerate}
+\item Install a 64-bit build of Python. At the time of writing, 3.5 is the latest.
+\item Use 'pip' to install your desired packages
+\item Open TouchDesigner and go to the 'Edit' menu, and then click on 'Preferences'
+\item Find the setting under 'General' called 'Python 64-bit Module Path' and add the path to your 64-bit Python 'site-packages' folder. This folder can be found in your Python installing folder, inside of the 'Lib' folder
+\item Inside of TouchDesigner, create a Text DAT, and test the package by using standard 'import' command
+\end{enumerate}
+
+It is a good idea to confirm that 'pip' installed the package for the correct version of Python. A common issue users face is that 'pip' is called for a different version of Python than is desired.
 
 \end{fullwidth}
 
