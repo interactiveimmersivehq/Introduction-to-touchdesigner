@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 NOV 2015 17:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 NOV 2015 15:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1123,12 +1123,7 @@ Chapter 7.
 [47
 
 
-]
-Overfull \hbox (0.11183pt too wide) in paragraph at lines 33--34
-\T1/pplj/m/n/10 (+17) opening and closing of the window. The next is a button that dynamically checks how many monitors are 
- []
-
-) (./tex/MATs.tex [48]
+]) (./tex/MATs.tex [48]
 Chapter 8.
 
 Overfull \hbox (0.19177pt too wide) in paragraph at lines 38--39
@@ -1614,7 +1609,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  40i,13n,72p,1125b,1817s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Introduction_to_TouchDesigner.pdf (97 pages, 4032016 bytes).
+Output written on Introduction_to_TouchDesigner.pdf (97 pages, 4032021 bytes).
 PDF statistics:
  1308 PDF objects out of 1440 (max. 8388607)
  1126 compressed objects within 12 object streams
