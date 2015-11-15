@@ -75,6 +75,7 @@
 \contentsline {section}{\numberline {12.5}Shaders in 2D}{91}{section.12.5}
 \contentsline {section}{\numberline {12.6}GPU Particle Systems}{94}{section.12.6}
 \contentsline {subsection}{\numberline {12.6.1}Introduction}{94}{subsection.12.6.1}
+\contentsline {subsection}{\numberline {12.6.2}Moving Particles with Textures}{94}{subsection.12.6.2}
 \contentsline {section}{\numberline {12.7}What Next?}{95}{section.12.7}
 \contentsline {chapter}{\numberline {13}Projects}{97}{chapter.13}
 \contentsline {chapter}{\numberline {14}Credits}{99}{chapter.14}

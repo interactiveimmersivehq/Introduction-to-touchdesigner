@@ -440,6 +440,25 @@ To achieve the goal of creating a fully-functioning GPU particle system, we will
 
 \end{fullwidth}
 
+\subsection{Moving Particles with Textures}
+\begin{fullwidth}
+Before getting started, this is an outline of the steps to this section:
+\begin{enumerate}
+\item Create a set of points that will be your initial positions
+\item Add a point index to each point
+\item Use a Noise TOP to create 1000 RGBA channels to use as point positions
+\item Create a GLSL TOP to scale the values of the Noise TOP (will be built upon later after we remove the noise)
+\item Create a basic render setup
+\item Create a GLSL Mat that will hold all of the shader code for the particles
+\item Create a basic pixel shader to shade all pixels white
+\item Create a vertex shader with uniform inputs and correct outputs
+\item Get the pointIndex, point position texture, and then the points per instance
+\item Sample the Noise TOP texture and create UV co-ordinates
+\item Move the incoming points from using all the above steps
+\end{enumerate}
+\end{fullwidth}
+
+
 %\begin{lstlisting}
 %fragColor = in1 + in2;
 %\end{lstlisting}
