@@ -1,17 +1,17 @@
 \cleardoublepage
 \chapter{GLSL}
 \label{ch:12}
- 
+
 %------------------------------------------------
 
 \section{Introduction}
 
 \begin{fullwidth}
-GLSL, or OpenGL Shading Language, is an incredible tool to have in one's back pocket. With a little bit of code, one can program directly on the GPU. 
+GLSL, or OpenGL Shading Language, is an incredible tool to have in one's back pocket. With a little bit of code, one can program directly on the GPU.
 
-Many avoid learning GLSL because they believe that it is only useful for working with large textures (4K and beyond), complex 2D generative visual scenes, or creating and manipulating 3D geometry, but it can be used in so many facets of day to day programming. Whether that be optimizing and creating incredibly effecient compositing workflows for standard HD content, or creating simple generative backgrounds for interactive experiences. 
+Many avoid learning GLSL because they believe that it is only useful for working with large textures (4K and beyond), complex 2D generative visual scenes, or creating and manipulating 3D geometry, but it can be used in so many facets of day to day programming. Whether that be optimizing and creating incredibly effecient compositing workflows for standard HD content, or creating simple generative backgrounds for interactive experiences.
 
-The goal of this chapter is to introduce the reader to some basic GLSL workflows and techniques, with the assumption that the reader has no previous GLSL experience. 
+The goal of this chapter is to introduce the reader to some basic GLSL workflows and techniques, with the assumption that the reader has no previous GLSL experience.
 
 \end{fullwidth}
 
@@ -22,7 +22,7 @@ The goal of this chapter is to introduce the reader to some basic GLSL workflows
 \begin{fullwidth}
 The two main types of shaders that can be programmed in TouchDesigner are the Vertex shader and the Pixel (or Fragment) shader. In a standard rendering pipeline, they are processed in that order, as can be seen in the diagram below:
 
-\begin{center} 
+\begin{center}
 \includegraphics{./img/12.2/pipeline.png}
 \end{center}
 
@@ -30,14 +30,14 @@ There is also a geometry shader that can be applied between the Vertex and Pixel
 
 In the above pipeline, the application passes the vertex and primitive data to the GPU. This includes information such as vertex position, texture coordinate, color, normal, etc. This information can be programatically processed and worked with by using a Vertex shader.
 
-When the Vertex shader has finished processing the vertex and primitive data, the geometry is rasterized. During this process, the geometry goes through various stages such as clipping, culling, transformations to window space, etc. These stages prepare fragments that will be processed by the Pixel shader. 
+When the Vertex shader has finished processing the vertex and primitive data, the geometry is rasterized. During this process, the geometry goes through various stages such as clipping, culling, transformations to window space, etc. These stages prepare fragments that will be processed by the Pixel shader.
 
 The Pixel shader takes these fragments, processes them, and outputs the color and depth data for each pixel.
 
 For a more in-depth look at the render pipeline, there is a more thorough explanation on the OpenGL website:
 
 \url{http://www.opengl.org/wiki/Rendering_Pipeline_Overview}
- 
+
 \end{fullwidth}
 
 %------------------------------------------------
@@ -45,11 +45,11 @@ For a more in-depth look at the render pipeline, there is a more thorough explan
 \section{Debugging}
 
 \begin{fullwidth}
-Before getting too deep into the world of GLSL, it is important to know how to debug compiling issues. There are two signs that denote a compiling error. 
+Before getting too deep into the world of GLSL, it is important to know how to debug compiling issues. There are two signs that denote a compiling error.
 
 The first is a blue and red checker pattern. When working with the GLSL MAT, this check pattern will be on the geometry itself. When using GLSL with TOPs, this checker pattern will fill up the Operator's viewer and be output from the TOP.
 
-The second sign of a compile error is a yellow triangle warning flag on the Operator. Upon clicking and holding the left mouse button on the flag, the error will read: 
+The second sign of a compile error is a yellow triangle warning flag on the Operator. Upon clicking and holding the left mouse button on the flag, the error will read:
 
 \begin{lstlisting}
 Warning: The GLSL Shader has compile error
@@ -62,9 +62,9 @@ Pixel Shader Compile Results:
 0(3) : error C0000: syntax error, unexpected '=', expecting '::' at token '='
 \end{lstlisting}
 
-To quickly break this down, the first thing is the line number. In this case, '0(3)' means the compiler is encountering errors at line 3. In many situations, this may mean that the actual mistake happens a line or two earlier, but the compiler doesn't halt until the next line when things stop making sense for it. 
+To quickly break this down, the first thing is the line number. In this case, '0(3)' means the compiler is encountering errors at line 3. In many situations, this may mean that the actual mistake happens a line or two earlier, but the compiler doesn't halt until the next line when things stop making sense for it.
 
-The next section highlights that this is a syntax error, and then there is more information about the error. 
+The next section highlights that this is a syntax error, and then there is more information about the error.
 
 For beginners, the majority of these errors will be because of forgotten semi-colons at the end of lines, or errors trying to cast one data type into another incompatible data type.
 
@@ -76,9 +76,9 @@ For beginners, the majority of these errors will be because of forgotten semi-co
 \section{Shaders in 3D}
 
 \begin{fullwidth}
-Let's start by looking at a few very simple 3D scenes that utilize Vertex and Pixel shaders. 
+Let's start by looking at a few very simple 3D scenes that utilize Vertex and Pixel shaders.
 
-Open example 'Basic\_3D.toe'. 
+Open example 'Basic\_3D.toe'.
 
 This is a simple render setup where the vertex shader does nothing but pass the vertices to the pixel shader, which then colors everything white. Let's take a more in-depth at each shader, starting with the Vertex shader:
 
@@ -90,15 +90,15 @@ void main(){
 
 Since this is written for someone with no GLSL experience, a few notes about basic C syntax and rules that need to be followed, since GLSL is very similar to C.
 
-The first thing is that semi-colons need to be added at the end of working lines of code. 
+The first thing is that semi-colons need to be added at the end of working lines of code.
 
-The second thing is that most of the working code will be inside of the main() loop. For beginners, the only things outside of the main loops will be the delcaring of variables such as input and output streams and attributes. 
+The second thing is that most of the working code will be inside of the main() loop. For beginners, the only things outside of the main loops will be the delcaring of variables such as input and output streams and attributes.
 
 When starting an empty shader, it's good practice to start by entering the main() loop as follows:
 
 \begin{lstlisting}
 void main(){
-	
+
 }
 \end{lstlisting}
 
@@ -108,11 +108,11 @@ In this vertex shader, there is only have one line of code:
 gl_Position = TDWorldToProj(TDDeform(P));
 \end{lstlisting}
 
-Let's break this down from right to left, as there is a lot going on here. 
+Let's break this down from right to left, as there is a lot going on here.
 
 'P' in this instance is the vertex position. In TouchDesigner, there are a few attributes that are declared by default. For instance, 'P' is the vertex position, 'N' is the normal, 'Cd' is the color, and 'uv' is the texture coordinate layers (it is an array that is accessed by index, i.e. uv[0], uv[1], etc). These values can be accessed as easily as we've accesed 'P'.
 
-In the line of code, 'P' is input into a function named 'TDDeform()'. This function takes the vertex position from object space and returns the position in world space. 
+In the line of code, 'P' is input into a function named 'TDDeform()'. This function takes the vertex position from object space and returns the position in world space.
 
 Think of object space as if each object in the 3D world had it's own co-ordinate system and 0,0,0 point. After processing these vertices, they have to be transformed and integrated into world space. World space is, as the name implies, the full world. The world, in this case, is the common coordinate system, with one 0,0,0 point, where all objects will exist together.
 
@@ -122,7 +122,7 @@ These values are then assigned to the variable 'gl\_Position', which is a built-
 
 As shown in the rendering pipeline diagram, these transformed vertices are processed and passed to the Pixel shader, where they will be assigned color values.
 
-In this example, the Pixel shader sets the color output of all the fragments to white. The code is below: 
+In this example, the Pixel shader sets the color output of all the fragments to white. The code is below:
 
 \begin{lstlisting}
 out vec4 fragColor;
@@ -131,7 +131,7 @@ void main(){
 }
 \end{lstlisting}
 
-Similar to the Vertex shader, all of the code except for the output declaration are inside of the main() loop, and there are semi-colons at the end of lines of code. 
+Similar to the Vertex shader, all of the code except for the output declaration are inside of the main() loop, and there are semi-colons at the end of lines of code.
 
 Starting from the top, there is this line of code:
 
@@ -147,13 +147,13 @@ The line of code inside of the main() loop is as follows:
 fragColor = vec4(1,1,1,1);
 \end{lstlisting}
 
-As 'fragColor' has already been declared as the output, this line writes the pixel values directly to the output. The section 'vec4(1,1,1,1)' creates a 4-component vector with the values 1,1,1,1, and then assigns it to 'fragColor'. 'vec4' has to precede the list of values because 'fragColor' has already been declared as a vec4, so to assign a value to it, that value needs to be a 'vec4'. 
+As 'fragColor' has already been declared as the output, this line writes the pixel values directly to the output. The section 'vec4(1,1,1,1)' creates a 4-component vector with the values 1,1,1,1, and then assigns it to 'fragColor'. 'vec4' has to precede the list of values because 'fragColor' has already been declared as a vec4, so to assign a value to it, that value needs to be a 'vec4'.
 
-Because the 4 components of the output correspond to RGBA channels, (1,1,1,1) would set all of the channels to 1, effectively setting the output to white for every pixel. 
+Because the 4 components of the output correspond to RGBA channels, (1,1,1,1) would set all of the channels to 1, effectively setting the output to white for every pixel.
 
 Now with a basic understand of working with shaders in a 3D scene, let's add a few levels of complexity. For starters, let's resize the box. This is as simple as multiplying each of the vertex positions, or 'P', by a value.
 
-Open example 'Basic\_3D\_scaled.toe'. 
+Open example 'Basic\_3D\_scaled.toe'.
 
 Only a few lines of the vertex shader are changed:
 
@@ -166,7 +166,7 @@ void main(){
 }
 \end{lstlisting}
 
-The first this that is added is a declaration for a variable that is going to be used, named 'scaledP'. This is going to be a 3-component vector because we'll be working with the vertex position, 'P', which is also a 3-component vector. 
+The first this that is added is a declaration for a variable that is going to be used, named 'scaledP'. This is going to be a 3-component vector because we'll be working with the vertex position, 'P', which is also a 3-component vector.
 
 Once the variable is defined, it can be used throughout the code. The next line that is added is:
 
@@ -174,7 +174,7 @@ Once the variable is defined, it can be used throughout the code. The next line 
 scaledP = P * 0.5;
 \end{lstlisting}
 
-This line takes the vertex position, multiplies all the values by 0.5, effectively making the box half the size. Similarly, a value of 2 would make the box be double it's original size. 
+This line takes the vertex position, multiplies all the values by 0.5, effectively making the box half the size. Similarly, a value of 2 would make the box be double it's original size.
 
 This new value, 'scaledP', then replaces 'P' below:
 
@@ -182,7 +182,7 @@ This new value, 'scaledP', then replaces 'P' below:
 gl_Position = TDWorldToProj(TDDeform(scaledP));
 \end{lstlisting}
 
-Similarly, to transform the box instead of scaling it, values need to be added or subtracted to the various axis. 
+Similarly, to transform the box instead of scaling it, values need to be added or subtracted to the various axis.
 
 Open example 'Basic\_3D\_transform.toe'.
 
@@ -197,17 +197,17 @@ void main(){
 }
 \end{lstlisting}
 
-This is very similar to the above example. It starts off by declaring a 3-component vector named 'transformedP'. In the first line of the main() loop, instead of multiplying the vertex positions by 0.5, the new 3-component vector is being added to them. 
+This is very similar to the above example. It starts off by declaring a 3-component vector named 'transformedP'. In the first line of the main() loop, instead of multiplying the vertex positions by 0.5, the new 3-component vector is being added to them.
 
 The reason to use a 'vec3' in this example is that if 0.5 was simply added to 'P', it would add 0.5 to the x-axis, 0.5 to the y-axis, and 0.5 to the z-axis. Creating a 'vec3' for these values allows control over each specific axis. In this example, adding 'vec3(1,0,0)' will only add 1 to the x-axis, leaving the y-axis and z-axis untouched. In practice, this moves the box 1 unit to the camera's right.
 
-We could just as easily change from addition to subtraction to move the box in the other direction. 
+We could just as easily change from addition to subtraction to move the box in the other direction.
 
 Now, let's reference an LFO CHOP from the vertex shader to animate the movement.
 
 Open example 'Basic\_3D\_LFO.toe'.
 
-For this to be achieved, an LFO CHOP was created. The value of it's channel was then exported to the GLSL MAT's parameter 'value0x' in the 'Vectors 1' tab of the Parameter window. Then the Uniform was given a name, in this case 'lfoCHOP'. This means the value can now be accesed from within the vertex and pixel shaders. 
+For this to be achieved, an LFO CHOP was created. The value of it's channel was then exported to the GLSL MAT's parameter 'value0x' in the 'Vectors 1' tab of the Parameter window. Then the Uniform was given a name, in this case 'lfoCHOP'. This means the value can now be accesed from within the vertex and pixel shaders.
 
 The code in the vertex shader has been changed as follows:
 
@@ -231,7 +231,7 @@ The only other change is that where previously 1 was being added to the x-axis o
 transformedP = P + vec3(lfoCHOP,0,0);
 \end{lstlisting}
 
-With those small changes, a CHOP is controlling the x-axis position of the shader. Pixel shaders function in much of the same way as Vertex shaders. Let's assign the LFO CHOP in the previous example to control the red channel of the output color. 
+With those small changes, a CHOP is controlling the x-axis position of the shader. Pixel shaders function in much of the same way as Vertex shaders. Let's assign the LFO CHOP in the previous example to control the red channel of the output color.
 
 Open example 'Basic\_3D\_red.toe'.
 
@@ -248,7 +248,7 @@ void main(){
 }
 \end{lstlisting}
 
-Similarly to the x-axis transform example, the only steps needed were to declare the incoming uniform, and then to assign it to a parameter, in this case the first component of the vector. To take this another step furtuer, let's sample a Ramp TOP as the texture, instead of just outputting a single color. 
+Similarly to the x-axis transform example, the only steps needed were to declare the incoming uniform, and then to assign it to a parameter, in this case the first component of the vector. To take this another step furtuer, let's sample a Ramp TOP as the texture, instead of just outputting a single color.
 
 Open example 'Basic\_3D\_texture.toe'.
 
@@ -287,9 +287,9 @@ There is one more additional line:
 texCoord0.st = uv[0].st;
 \end{lstlisting}
 
-This line takes 'texCoord0' that was declared earlier, and assigns it the built-in TouchDesigner variable 'uv', which as mentioned earlier is declared by default and contains the UV texture co-ordinates (similar to 'P' for vertex position). 
+This line takes 'texCoord0' that was declared earlier, and assigns it the built-in TouchDesigner variable 'uv', which as mentioned earlier is declared by default and contains the UV texture co-ordinates (similar to 'P' for vertex position).
 
-The '.st' here is assigning the two values contained in the 2-component vector 'uv' to the 2 components of 'texCoord0'. As mentioned earlier, where '.xyzw' are used for vertex positions, '.stpq' are often used for texture co-ordinates. These are mostly just for convention so that the same letters (such as XYZW and RGBA) don't mean multiple different things. You may also see '.uv' used instead of '.st', depending on the software package. 
+The '.st' here is assigning the two values contained in the 2-component vector 'uv' to the 2 components of 'texCoord0'. As mentioned earlier, where '.xyzw' are used for vertex positions, '.stpq' are often used for texture co-ordinates. These are mostly just for convention so that the same letters (such as XYZW and RGBA) don't mean multiple different things. You may also see '.uv' used instead of '.st', depending on the software package.
 
 With these two extra lines of code, the Box SOP is now being textured by the Ramp TOP.
 
@@ -329,7 +329,7 @@ vec4 in2 = texture(sTD2DInputs[1], vUV.st);
 
 To get access to a TOP input, a 4-component variable must be declared for the RGBA channels. The texture() function is used to sample a texture. It takes two arguments, the first is the texture that it is going to sample, which in these cases are TOP inputs. The second argument is the texture co-ordinate to sample.
 
-In this case, since TOP inputs are being sampled, the built-in sampler array named 'sTD2DInputs' is used. This array is accessed by index. In this case, there are two TOP inputs, so 'sTD2DInputs[0]' is used to access the first input, and 'sTD2DInputs[1]' is used to access the second. 
+In this case, since TOP inputs are being sampled, the built-in sampler array named 'sTD2DInputs' is used. This array is accessed by index. In this case, there are two TOP inputs, so 'sTD2DInputs[0]' is used to access the first input, and 'sTD2DInputs[1]' is used to access the second.
 
 To access the proper texture co-ordinate, 'vUV.st' is used. 'vUV' is a built-in variable that contains the texture co-ordinates of the pixel. As mentioned, '.st' is used to access the first two components of the vector.
 
@@ -347,11 +347,11 @@ This example expands on the previous example by adding together more sources. Th
 
 In the shader of this example, each input takes the next index of 'sTD2DInputs' and assigns it to another 'vec4', after which they are all added together.
 
-Again, this might be useful, but a Composite TOP can add multiple inputs s well, so let's take it one step further. 
+Again, this might be useful, but a Composite TOP can add multiple inputs s well, so let's take it one step further.
 
 Open example 'Basic\_2D\_composite.toe'.
 
-This example takes the previous example a step further. With all the inputs defined, instead of just adding all the inputs together, the GLSL code does a mix of addition, subtraction, and multiplication. Remembering the order of operations when working like this is key! 
+This example takes the previous example a step further. With all the inputs defined, instead of just adding all the inputs together, the GLSL code does a mix of addition, subtraction, and multiplication. Remembering the order of operations when working like this is key!
 
 This is incredibly useful when working with a large number of textures, even if just 1920x1080, because doing a similar process with TOPs would take multiple Composite TOPs, or a number of Multiply, Add, and Subtract TOPs. Being able to manipulate all these textures, even in such simple methods, all at once can save quite a bit of GPU memory.
 
@@ -377,9 +377,9 @@ void main(){
 
 In the above example, three of the textures are being transformed. The first is being scaled up by a factor of two. To do this, 'vUV.st' is multiplied by 0.5. This may seem backwards, but remember that 'vUV' is the texture co-ordinates, so when both x-axis and y-axis co-ordinates are moved to the right, the image moves to the left. Imagine having a finger pointing into the center of a piece of paper. If the finger position is moved to the right, the image will be more to the left of the finger than before. This is an overtly simple example, but should help get the idea across.
 
-The third input, 'in3', has been translated on both x-axis and y-axis by subtracting 0.5 from the x-axis, and 0.25 from the y-axis. 
+The third input, 'in3', has been translated on both x-axis and y-axis by subtracting 0.5 from the x-axis, and 0.25 from the y-axis.
 
-The final input, 'in5', has been translated on the x-axis by adding 0.5 to the x-axis. 
+The final input, 'in5', has been translated on the x-axis by adding 0.5 to the x-axis.
 
 Both of these two tranformations also follow the same thought process mentioned for the first transformation. For example, when adding 0.5 to the x-axis texture co-ordinates, they are being added to the texture co-ordinates and not the position of the image. Thus when the texture co-ordinates move 0.5 on the x-axis, the image appears to move to the left.
 
@@ -422,9 +422,37 @@ The number in the square brackets refers to the buffer being written to. In the 
 
 %------------------------------------------------
 
+%------------------------------------------------
+
+\section{GPU Particle Systems}
+
+\subsection{Introduction}
+\begin{fullwidth}
+This tutorial will be focused on creating a GPU based particle system using TouchDesigner and GLSL shaders. This has many benefits compared to using the built-in Particle SOP, because all the computations inside of GLSL shader are performed on the GPU. GLSL shaders allow for the creation of particles systems with extremely large particle counts (in the multi-millions and more), with customized behaviour, that still compute quickly.
+
+The process to achieve a particle system in GLSL can be slightly confusing at first, compared to just creating a Particle SOP, but once you understand the basic principles behind the workflow, you will have infinite freedom to experiment.
+
+One concept to understand is that the GLSL material shader we'll be using cannot create new points out of thin air, so you have to feed it a set a starting points that correspond to the maximum number of particles in your system. The amount of points feeding in determine the number of times our material shader will compute and the shader code we write will be applied to every single particle individually.
+
+A second important concept to remember is that similar to any other type of shader, your code has no reference to anything other than the current point it is processing. The shader will not have a reference of the previous or next frame, and wont have any reference to any points that have been computed on that same frame. All the shader code will need to be standalone and any referential data will need to be fed to the shader as either a texture or value uniform. A uniform is a parameter or value that you will pass to your shader code. This is important because the particles in a particle systems need to know their previous position at last compute, so that they can then re-apply their code to compute their new position on the next frame. In other OpenGL applications, you'd create multiple texture buffers that you would ping-pong between reading and writing. In TouchDesigner, this be solved by using a simple feedback loop.
+
+To achieve the goal of creating a fully-functioning GPU particle system, we will break the particle system into a number of incremental projects.
+
+\end{fullwidth}
+
+%\begin{lstlisting}
+%fragColor = in1 + in2;
+%\end{lstlisting}
+
+%Open example 'Basic\_2D\_buffers.toe'.
+
+
+
+
+%------------------------------------------------
 \section{What Next?}
 \begin{fullwidth}
-This chapter should have helped unravel a bit of the introductory mysteries of GLSL without getting unnecessarily technical. 
+This chapter should have helped unravel a bit of the introductory mysteries of GLSL without getting unnecessarily technical.
 
 If you'd like to continue learning GLSL to experiment with more complex 3D scenes and material shaders, or with more complex 2D compositing tools and generative textures, below are some resources:
 
