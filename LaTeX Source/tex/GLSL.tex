@@ -456,18 +456,179 @@ Before getting started, this is an outline of the steps to this section:
 \item Sample the Noise TOP texture and create UV co-ordinates
 \item Move the incoming points from using all the above steps
 \end{enumerate}
+
+The first thing we need to do is create a set of points that will be used by the GLSL MAT as the particles. As mentioned earlier, a GLSL MAT cannot create particles on its own. It is simply a bit of code that gets applied onto every point that is given to it. For the particle system this means that we need a piece of geometry with 1000 points to have a particle system with 1000 points. Similarly if we wanted a particle system with 1,000,000 points, we would need a piece of geometry with 1,000,000 points. To start simply, we're going to generate 1000 points at the origin 0,0,0.
+
+You can follow along with the explanation below by opening example '01\_Moving\_particles\_with\_textures.toe'.
+
+Start by creating an 'Add SOP' and clicking the first checkbox in the parameter window to enable 'Point 0'. The default values of 'Point 0' will work for this example. This creates our first point. Connect the output of the 'Add SOP' to the first input of a 'Copy SOP'. The 'Copy SOP' is used to copy the first point created by the 'Add SOP', giving us more points for our particle system. Do this by changing the 'Number of Copies' parameter of the 'Copy SOP' to 1000. Now we have 1000 points to create a 1000 point particle system.
+
+Connect the ouput of the 'Copy SOP' to the first input of another 'Add SOP'. This 'Add SOP' will be used to close the points and create a polygon. This is to create a polygon from our 1000 points that can be converted into particles before entering the shader. To do this, in the new 'Add SOP' (which should be named 'add2' if you're using the default operator names) go to the 'Polygons' tab in the parameter window, and add an asterix ('*') to the first parameter named 'Polygon'. Now we'll convert this 1000 point poygon into particles. Do this by connecting the output of the second 'Add SOP' ('add2') to a 'Convert SOP'. In the new 'Convert SOP', change the parameter named 'Convert To' to have the value of 'Particles' and change the parameter named 'Particle Type' to 'Render as Point Sprites'. Creating point sprites allows us to use a single line of shader code to increase the particle size later.
+
+The final step before creating out material is to create an additional custom attribute using the point indices. To do this, connect the output of the 'Convert SOP' to a 'Point SOP'. Set the first 'Custom Attrib' name to 'pointIndex'. Select 'float' as the data type from the dropdown to the right of the name field. Expand the 'Value' field, and in the first parameter field named 'custom1val1', enter the Python script:
+
+\begin{lstlisting}
+me.inputPoint.index
+\end{lstlisting}
+
+What this does is create a custom attribute on each point that we can use in the GLSL code. In this case, we've taken the point index of each point, and assigned it to a float value named 'pointIndex'. Now we've finished the first two steps, and we have 1000 particles that we will feed into the GLSL MAT. This should look like this (Note: You will not see anything in your SOP viewers at this stage unless you activate different display options to make points visible!):
+
+\begin{center}
+\includegraphics{./img/12.6.2/step1_2.png}
+\end{center}
+
+The next thing we're going to do is create some noise that we will use as our point positions. The first thing to do is create a 'Noise TOP'. In the 'Common' parameters, change the resolution to 1000 pixels by 1 pixels and the 'Pixel Format' to '32-bit float (RGBA)'. This gives us one pixel of noise for every particle we have (1000 pixels of noise for 1000 particles). Changing the 'Pixel Format' to '32-bit float (RGBA)' means that every pixel will have 32-bits per color channel, meaning a lot more precise data can be held in each color channel. The next step is to set the 'Monochrome' parameter to 'off'. This returns a different noise value for each of the color channels, which will be translated into different noise values for our X,Y,Z positions of the particles. You can then choose to animate the noise however you like for the example, but the easiest is the add the following code to the 'Translate' parameter's 'tx' value:
+
+\begin{lstlisting}
+absTime.frame/100
+\end{lstlisting}
+
+This will transform the noise along the X axis, which will create a ribbon-effect on the initial particle system. Next we're going to create a 'GLSL TOP' that will allow us to have more fine tuned control over the current noise values in each color channel. We'll be able to scale those values, and then in further sections, expand on the same shader to add more functionality. Connect the output of the 'Noise TOP' to the first input of a 'GLSL TOP'. The 'GLSL TOP' is created by default with a 'Text DAT' docked to it, with a default shader that outputs the color white. Edit the 'Text DAT', erase the existing code, add the code below, and then save it:
+
+\begin{lstlisting}
+out vec4 fragColor;
+
+void main()
+{
+// sample the input
+vec4 inPosition = texture(sTD2DInputs[0], vUV.st);
+
+// scale each color channel (the XYZ of the vector) separately
+vec4 outPosition = vec4(inPosition.x * 5.0 - 2.5, inPosition.y * 5.0 - 2.5, inPosition.z * -5.0 - 20.0, 1.0);
+
+// output the new position
+fragColor = outPosition;
+}
+\end{lstlisting}
+
+We'll quickly review the code above, but please refer to previous sections in this chapter. We first setup the main output 'fragColor'. We then sample the texture at the current UV. Because we setup the 'Noise TOP' to have the sample number of pixels as there are particles, then we can sample the pixels on a one to one basis for each particle. After we sample the current pixel, we scale the R and G channels (the X and Y of the vec4) by 5.0 and then translate them 2.5 units to the left and down of the camera. We then we scale the B channel (the Z of the vec4) by -5.0, and then translate it 20 units away from the camera to fit the whole particle system in the scene. We can leave the alpha channel at 1.0 as we currently wont be using it.
+
+After the scaling and translating, the 'outPosition' is assigned to the 'fragColor' output. If you'd like to see the positions that the particles will be receiving, you can connect the 'GLSL TOP' to a 'TOP to CHOP' operator and view each color channels values. This finishes step 3 and 4 of the item list.
+
+\begin{center}
+\includegraphics{./img/12.6.2/step3_4.png}
+\end{center}
+
+Now create a basic render setup by adding a 'Camera COMP', a 'Light COMP', a 'Geometry COMP', and a 'Render TOP'. They can all be set to their default values for this exercise. Make sure to add an 'In SOP' to the 'Geometry COMP' so that you can input your set of points and turn on the render and display flags on the 'In SOP' inside of the 'Geometry COMP'. That will complete step 5.
+
+\begin{center}
+\includegraphics{./img/12.6.2/step5.png}
+\end{center}
+
+Next, create a 'GLSL MAT' operator, an 'Info DAT', and two 'Text DAT''s. Reference the 'GLSL MAT' in the 'Info DAT''s 'Operator' parameter to help debug any errors. Name one of the 'Text DAT''s 'vertex' and the other 'pixel'. These will be the GLSL vertex and pixel shaders. Reference 'vertex' in the 'GLSL MAT''s 'Vertex Shader' parameter, and reference 'pixel' in the 'GLSL MAT''s 'Pixel Shader' parameter. Then we need to reference the 'GLSL TOP' we created. To do so, on the 'Samplers 1' parameter page of the 'GLSL MAT', add 'sPointPosition' to the first 'Sampler Name' parameter, and add the name of the noise texture to the first 'TOP' parameter. In the example file, a 'Null TOP' named 'null1' was added after the 'GLSL TOP', and that is the operator name that is referenced in the 'TOP' parameter. Be very careful with the 'Sampler Name' parameter, as this will the name used in the code and if it is different than the code, you won't see any outputs as you won't be able to reference the particle position. Finally, on the 'Vectors 1' page of the 'GLSL MAT', add 'uPointsPerInstance' to the first 'Uniform Name', and enter '1.0 / 1000' as the first value of the parameter 'value0x'. This last vector will be used in the shader to scale the point index from 0-1000 to the normalized 0.0 to 1.0 UV co-ordinate when sampling the point position noise texture. With that setup complete, we can move from step 6 to step 7.
+
+\begin{center}
+\includegraphics{./img/12.6.2/step6.png}
+\end{center}
+
+From here, we will finish all the remaining steps in the GLSL shaders. First, edit 'pixel', the 'Text DAT' we will use to hold the pixel shader, and enter the follow:
+
+\begin{lstlisting}
+layout(location = 0) out vec4 fragColor;
+
+void main()
+{
+// shade pixel white
+fragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+\end{lstlisting}
+
+This is a very basic pixel shader as we've seen earlier in the chapter, and all it does is shade any incoming pixels white. This completes step 7.
+
+Edit 'vertex', the 'Text DAT' we will use to hold the vertex shader and enter the following:
+
+\begin{lstlisting}
+// setup inputs
+uniform sampler2D sPointPosition;
+uniform float uPointsPerInstance;
+in float pointIndex;
+
+void main()
+{
+    // create the uv from point index
+    vec2 uv;
+    uv.x = (pointIndex * uPointsPerInstance) + (uPointsPerInstance * 0.5);
+    uv.y = 0.5;
+
+    // sample the noise texture using the uv
+    vec4 newPosition = texture(sPointPosition, uv);
+
+    // set point size to your liking
+    gl_PointSize = 1.0;
+
+    // move point from object space to screen space and output to gl_Position
+    vec4 worldSpaceVert = TDDeform(newPosition);
+    vec4 camSpaceVert = uTDMat.cam * worldSpaceVert;
+    gl_Position = TDCamToProj(camSpaceVert);
+}
+\end{lstlisting}
+
+Once you enter and save that code, you will see the particle system creating a ribbon-effect using the generated noise. Let's go through this vertex shader.
+
+The first 4 lines setup the noise texture as a 'uniform sampler2D', the 'uPointsPerInstance' value as a 'uniform float', and the incoming point index attribute as an incoming float:
+
+\begin{lstlisting}
+// setup inputs
+uniform sampler2D sPointPosition;
+uniform float uPointsPerInstance;
+in float pointIndex;
+\end{lstlisting}
+
+The next few lines in the code create the UV to use when sampling the noise texture. To create the X location of the UV, we first take the incoming point index and multiply it by 'uPointsPerInstance', which is 1 / 1000. This gives us the location to sample from the 0.0 to 1.0 range. A key thing to remember when creating UV's manually is that the UV co-ordinates have infinite precision, so a UV of 0 along the X axis isn't the first pixel, it is the left edge of the first pixel, which will cause visual errors as the shader will then interpolate 50\% of the first pixel and 50\% of whatever is to the left of the first pixel (depending on the repeat parameters set). Because of this, we need to offset our sample by half of the sample step 'uPointsPerInstance', which is why we add the result of 'uPointsPerInstance' multiplied by 0.5 to the location we calculated by multiplying 'pointIndex' and 'uPointsPerInstance'.
+
+To recap that:
+\begin{enumerate}
+\item We need to convert the point index from 0 - 1000 to the UV co-ordinates 0.0 to 1.0
+\item Do that by multiplying the point index by the result of 1 / 1000, which gives us our sample step along the 0.0 to 1.0 range
+\item Then add half of 'uPointsPerInstance' value (which is half of a single sample step) to offset our sampling so that we are samlping the middle of each pixel and not the left most edge
+\end{enumerate}
+
+Finally, because we know the texture is only 1 pixel tall, we can set 'uv.y' to 0.5 (again, because we don't want to sample the edge of the pixel, we want to sample the midle of it).
+
+\begin{lstlisting}
+// create the uv from point index
+vec2 uv;
+uv.x = (pointIndex * uPointsPerInstance) + (uPointsPerInstance * 0.5);
+uv.y = 0.5;
+\end{lstlisting}
+
+The next thing to do is use the UV co-ordinates to sample the noise texture:
+
+\begin{lstlisting}
+// sample the noise texture using the uv
+vec4 newPosition = texture(sPointPosition, uv);
+\end{lstlisting}
+
+Before we finish assigning the new point position, we use this handy piece of GLSL code to quickly adjust the size of the particles. We're able to do this because earlier, we used the 'Convert SOP' to set the particle types to sprites (as this code only works with sprites).
+
+\begin{lstlisting}
+// set point size to your liking
+gl_PointSize = 1.0;
+\end{lstlisting}
+
+Finally, the code below takes our 'newPosition' values from object space, uses 'TDDeform()' to move them to world space. It then multiplies the position by 'uTDMat.cam' to move the point into camera space. And finally, 'TDCamToProj()' is used to convert the camera space point to screen space points, which are assigned to 'gl\_Position', which is the built-in output for each points position.
+
+\begin{lstlisting}
+// move point from object space to screen space and output to gl_Position
+vec4 worldSpaceVert = TDDeform(newPosition);
+vec4 camSpaceVert = uTDMat.cam * worldSpaceVert;
+gl_Position = TDCamToProj(camSpaceVert);
+\end{lstlisting}
+
+With that, we've finished the first goal, which was to move particles with textures. Although this may not seem like a traditional particle system, these steps lay the foundation for the next implementations.
+
+\begin{center}
+\includegraphics{./img/12.6.2/final_step.png}
+\end{center}
+
+
 \end{fullwidth}
 
 
-%\begin{lstlisting}
-%fragColor = in1 + in2;
-%\end{lstlisting}
+%\subsection{Adding Velocity to Particles}
+%\begin{fullwidth}
 
-%Open example 'Basic\_2D\_buffers.toe'.
-
-
-
-
+%\end{fullwidth}
 %------------------------------------------------
 \section{What Next?}
 \begin{fullwidth}
