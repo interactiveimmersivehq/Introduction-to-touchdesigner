@@ -111,7 +111,7 @@ The most used functions of the timeline are 'Play' and 'Pause', which can be acc
 
 \begin{fullwidth}
 
-Unless media or animations is locked to the timeline, the 'Timeline settings' won't need to be regularly accessed. The 'Timeline settings' can be found in the bottom left of the window. The key things to know about this area are that the project's 'FPS' and 'Tempo' can be changed here. The project's 'FPS' determines the rate at which the project will render frames. By default it is set to 60 FPS, meaning that it TouchDesigner will try to render 60 frames every second. The 'Tempo' will set the BPM (beats per minute) of the project, for use by the Beat CHOP. 
+Unless media or animations is locked to the timeline, the 'Timeline settings' won't need to be regularly accessed. The 'Timeline settings' can be found in the bottom left of the window. The key things to know about this area are that the project's 'FPS' and 'Tempo' can be changed here. The project's 'FPS' determines the rate at which the project will render frames. By default it is set to 60 FPS, meaning that TouchDesigner will try to render 60 frames every second. The 'Tempo' will set the BPM (beats per minute) of the project, for use by the Beat CHOP. 
 
 The 'Timeline settings' are use more in situations where animations and media need to be locked to a consistent timeline. The frame controls include 'Start' and 'End', which control the start frame and end frame of the timeline, as well as 'RStart' and 'REnd', which control the loop start and loop end of the timeline. With these settings, it is possible to create an animation that spans the entire timeline, which could be 4000 frames, while still leaving the option to loop a small section of the timeline to work within. 
 
@@ -125,19 +125,19 @@ The 'Timeline settings' are use more in situations where animations and media ne
 
 \begin{fullwidth}
 
-Using panes regularly can save a ton of time when moving back and forth between Networks. Having to travel through 3 Networks to change a parameter, only to have to travel back to see then changes is a waste of time. Panes take the current window, split it horizontally or vertically as many times as desired. Each pane layout can be saved for later use. 
+Using panes regularly can save a ton of time when moving back and forth between Networks. Having to travel through 3 Networks to change a parameter, only to have to travel back to see the changes is a waste of time. Panes take the current window, split it horizontally or vertically as many times as desired. Each pane layout can be saved for later use. 
 
 \begin{center}
 \includegraphics{./img/2.5/panes-1.png}
 \end{center}
 
-The diagram above highlights the pane presets that are available by default. The presets provide quick access to a few standard configurations of panes including split left and right, split top and bottom, a 3 pane setup, and a 4 pane setup. Saving pane presets is as easy as clicking the 'Add New Layout +' button, entering a name, and clicking 'Ok'. Saving a layout not only saves the size and position of the panes, but also saves each pane's type. See the diagram below highlights interesting pane layouts that are possible.
+The diagram above highlights the pane presets that are available by default. The presets provide quick access to a few standard configurations of panes including split left and right, split top and bottom, a 3 pane setup, and a 4 pane setup. Saving pane presets is as easy as clicking the 'Add New Layout +' button, entering a name, and clicking 'Ok'. Saving a layout not only saves the size and position of the panes, but also saves each pane's type. 
+
+Panes are able to display unique types of content, whether they are other dialogs, Networks, or viewers. Being able to mix and match combinations of viewers and Network editors allows for a lot of flexibility. In the diagram below, the top left pane is a Network editor. On the right-hand side, is a Textport, and on the bottom-left, there is a Geometry Viewer. Again, saving this layout would not only save the pane arrangement, but also the pane types. This is useful when working on a project with a lot of different elements, where jumping between something like the setup above, and a simple Network editor, can save quite a bit of time in the long run.
 
 \begin{center}
 \includegraphics{./img/2.5/panes-2.png}
 \end{center}
-
-Panes are be able to display unique types of content, whether they are other dialogues, Networks, or viewers. Being able to mix and match combinations of viewers and Network editors allows for a lot of flexibility. In the diagram above, the top left pane is a Network editor. On the right-hand side, is a Textport, and on the bottom-left, there is a Geometry Viewer. Again, saving this layout would not only save the pane arrangement, but also the pane types. This is useful when working on a project with a lot of different elements, where jumping between something like the setup above, and a simple Network editor, can save quite a bit of time in the long run.
 
 The keyboard shortcuts for working with panes are as follows:
 
@@ -155,11 +155,11 @@ The keyboard shortcuts for working with panes are as follows:
 
 The Palette Browser can be thought of as a component library. The Palette Browser holds '.tox' files (or TouchDesigner Component files). These files contain a single Component Operator, that can hold a Network of other Operators. This means that a series of frequently used Operators, UI components, Python scripts, and more, can be created inside of a single Component Operator, saved as a '.tox' file, and quickly accessed at any time in the future.
 
-Open the Palette Browser, and look through the large number of pre-existing '.tox' files that are available. To open the Palette Browser, use the keyboard command 'Alt + L'. Blank projects start with the Palette Browser open by default, and docked to the left side of the window. Let's try one of the pre-built components. 
+Open the Palette Browser, and look through the large number of pre-existing '.tox' files that are available. Blank projects start with the Palette Browser open by default, and docked to the left side of the window. To open the Palette Browser as a floating window, use the keyboard command 'Alt + L'. Let's try one of the pre-built components. 
 
 Under the 'Derivative' section, navigate to 'Tools', and then finally drag and drop the 'Blend' component into a new project. Looking at the 'Blend' component's UI, it is clear that there is quite a bit going on inside. Before diving deeper, take a moment to connect two inputs and try the 'Blend' component. Activate the viewer, click on the button underneath the image to select a blend mode, and then drag the semi-transparent handle across the image to blend between the inputs. This is a useful tool, and all it took was a simple drag and drop from the Palette Browser!
 
-One of the goals of this book is to create some tools that can be added to the Palette Browser, so that they may be used regularly. There are two ways to add a component to the Palette Browser. The first is a drag and drop method. To do so, select 'My Components' from the top portion of the browser. Then drag any component from the Network and drop it into the lower portion of the Palette Browser. It will then be added to 'My Components' repository. The second method of adding a component is to drag s saved '.tox' file from Windows Explorer, and drop it in the same region mentioned above. The diagram below illustrates exactly where components should be dropped.  
+One of the goals of this book is to create some tools that can be added to the Palette Browser, so that they may be used regularly. There are two ways to add a component to the Palette Browser. The first is a drag and drop method. To do so, select 'My Components' from the top portion of the browser. Then drag any component from the Network and drop it into the lower portion of the Palette Browser. It will then be added to 'My Components' repository. The second method of adding a component is to drag a saved '.tox' file from Windows Explorer, and drop it in the same region mentioned above. The diagram below illustrates exactly where components should be dropped.  
 
 \begin{center}
 \includegraphics[width=6cm]{./img/2.6/palette-1.png}
@@ -173,7 +173,7 @@ One of the goals of this book is to create some tools that can be added to the P
 
 The 'Search Dialog' is incredibly helpful as projects become more complicated, and riddled with Python scripts and nested Networks. The 'Search Dialog' can find a multitude of things in a multitude of places, and searches can be as broad, or specific, as needed. It is accessible in the 'Edit' menu at the top of  the screen, or by pressing 'F3' on the keyboard.
 
-The 'Basic' search can not only find Operators, but can search through Python code. Frequently, Python is used to change Operator parameters based on input sources. Sometimes, in the thick of Python scripts, it is easy to lose track of specific lines of code. A quick search for the code below will return a list of every single line of code that involves changing parameters of the Operators with 'transform' in their name:
+The 'Basic' search can not only find Operators, but can search through Python code. Frequently, Python is used to change Operator parameter values. Sometimes, in the thick of Python scripts, it is easy to lose track of specific lines of code. A quick search for the code below will return a list of every single line of code that involves changing parameters of the Operators with 'transform' in their name:
 
 \begin{lstlisting}
 op('transform').par
@@ -181,10 +181,9 @@ op('transform').par
 
 Sifting through the results is much easier than manually looking through Networks full of code. 
 
+The 'Advanced' search can search by any combination of name, Operator type, comments, flags, and more. When returning to past projects, often it takes some time to relocate and reacclimatize to the inner workings of complex logic systems. This is when searching for operators by vague name and type can save a ton of time. For example, in an extremely nested system, somewhere in the depths of it might be a Movie In TOP that has the word 'movie' in its name. These little pieces of information about the Operator type, and partial name, can be used to create a fairly precise search. 
 
-The 'Advanced' search can search by any combination of name, Operator type, comments, flags, and more. When returning to past projects, sometimes it takes some time to relocate and reacclimatize to the inner workings of complex logic systems. In this stretch of time, searching for operators by vague name and type can save a ton of time. For example, in an extremely nested system, somewhere in the depths of it might be a Movie In TOP that has the word 'movie' in its name. These little pieces of information about the Operator type, and partial name, can be used to create a fairly precise search. 
-
-When a search has yielded results, each result can be double clicked on to open the Network in a new floating pane. Here, the results can be can quickly previewed, and simple changes can be made within this pane, without affecting the current work area.
+When a search has yielded results, each result can be clicked on to open the Network in a new floating pane. Here, the results can be can quickly previewed, and simple changes can be made within this pane, without affecting the current work area.
 
 \end{fullwidth}
 %------------------------------------------------
@@ -198,8 +197,7 @@ When a search has yielded results, each result can be double clicked on to open 
 
 The Realtime flag changes TouchDesigner's behaviour significantly. When it is active (it is active by default), TouchDesigner will always prioritize real-world time. In a simple example, if a movie file is 30 seconds long, no matter what happens, TouchDesigner will try to play it over the course of 30 seconds. If this means that frames need to be dropped, TouchDesigner will try to honour time. This is the mode used for most real-time installation and performance work. 
 
-When the Realtime flag is off, TouchDesigner will prioritize frame rendering over real-world time. In the example mentioned above, if Realtime is off, TouchDesigner would take as long as it needed to process and render each frame, falling out of real-world time to display every frame. This mode is useful when exporting complex animations or 3D renderings. Imagine this mode to be a close to real-time version of rendering out of Adobe After Effects. 
-
+When the Realtime flag is off, TouchDesigner will prioritize frame rendering over real-world time. In the example mentioned above, if Realtime is off, TouchDesigner would take as long as it needed to process and render each frame, falling out of real-world time to display every frame. This mode is useful when exporting complex animations or 3D renderings. Imagine this mode to be similar to a real-time version of rendering out of Adobe After Effects. 
 
 \end{fullwidth}
 %------------------------------------------------
@@ -220,23 +218,21 @@ Below is a bullet point list of some useful shortcuts:
 
 \vspace{3mm}
 
-\noindent With an Operator selected:
+\noindent With an Operator(s) selected:
 \begin{itemize}
 \item 'A' - Allows interaction with the Operator's viewer
 \item 'B' - Bypass and un-bypass the selected Operator
 \item 'H' - Performs the 'Home All' action on the Network, which is the equivalent to fitting all Operators of a Network onto the screen 
+\item 'Shift + H' - Performs the 'Home Selected' action which fits all the selected Operators onto the screen 
 \item 'R' - Toggles the Operator's Render Flag (if it has one)
 \item 'D' - Toggles the Operator's Display Flag (if it has one)
-\end{itemize}
-
-\vspace{3mm}
-
-\noindent After selecting one or more Operators:
-\begin{itemize}
 \item 'Control + C' - Copy selected Operators
 \item 'Control + V' - Paste copied Operators
 \item 'Control + Shift + V' - Paste copied Operators at the mouse
 \end{itemize}
+
+\vspace{3mm}
+
 
 \end{fullwidth}
 %------------------------------------------------
