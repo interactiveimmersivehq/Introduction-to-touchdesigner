@@ -1,7 +1,0 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces This is a margin figure. The helix is defined by $x = \mathop {\mathgroup \symoperators cos}\nolimits (2\pi z)$, $y = \mathop {\mathgroup \symoperators sin}\nolimits (2\pi z)$, and $z = [0, 2.7]$. The figure was drawn using Asymptote (\url {http://asymptote.sf.net/}).}}{11}{section*.5}
-\contentsline {figure}{\numberline {2}{\ignorespaces This graph shows $y = \mathop {\mathgroup \symoperators sin}\nolimits x$ from about $x = [-10, 10]$. \emph {Notice that this figure takes up the full page width.}}}{12}{section*.5}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsfinish 
