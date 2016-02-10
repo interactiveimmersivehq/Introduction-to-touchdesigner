@@ -1,0 +1,10 @@
+{
+    "title": "Introduction to TouchDesigner",
+    "plugins": ["youtube"],
+    "styles": {
+        "ebook": "styles/style.css",
+        "pdf": "styles/style.css",
+        "mobi": "styles/style.css",
+        "epub": "styles/style.css"
+    }
+}
