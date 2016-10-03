@@ -44,7 +44,7 @@
    * [Introduction](MATs/8-1-Introduction.md)
    * [Phong, GLSL, and Point Sprite Materials](MATs/8-2-Phong-GLSL-and-Point-Sprite-Materials.md)
    * [UV Maps](MATs/8-3-UV-Maps.md)
-* Python
+* [Python](Python)
    * [Introduction](Python/9-1-Introduction.md)
    * [Textport](Python/9-2-Textport.md)
    * [Common Practices](Python/9-3-Common-Practices.md)
