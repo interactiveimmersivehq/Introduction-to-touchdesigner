@@ -18,7 +18,7 @@
    * [Search Dialog](User_Interface/2-7-Search-Dialog.md)
    * [Realtime Flag](User_Interface/2-8-Realtime-Flag.md)
    * [Useful Shortcuts](User_Interface/2-9-Useful-Shortcuts.md)
-* TOPs
+* [TOPs](TOPs)
    * [Introduction](TOPs/3-1-Introduction.md)
    * [Movie In TOP](TOPs/3-2-Movie-In-TOP.md)
    * [Preloading Movies](TOPs/3-3-Preloading-Movies.md)
