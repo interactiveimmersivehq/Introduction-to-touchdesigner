@@ -24,7 +24,7 @@
    * [Preloading Movies](TOPs/3-3-Preloading-Movies.md)
    * [Null TOPs and Select TOPs](TOPs/3-4-Null-TOPs-and-Select-TOPs.md)
    * [Codecs](TOPs/3-5-Codecs.md)
-* CHOPs
+* [CHOPs](CHOPs)
    * [Introduction](CHOPs/4-1-Introduction.md)
    * [Communication Methods](CHOPs/4-2-Communication-Methods.md)
    * [Audio Inputs and Outputs](CHOPs/4-3-Audio-Inputs-and-Outputs.md)
