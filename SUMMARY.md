@@ -36,7 +36,7 @@
 * [SOPs](SOPs)
    * [Introduction](SOPs/6-1-Introduction.md)
    * [Rendering](SOPs/6-2-Rendering.md)
-* COMPs
+* [COMPs](COMPs)
    * [Introduction](COMPs/7-1-Introduction.md)
    * [Window COMP](COMPs/7-2-Window-COMP.md)
    * [User Interface Components](COMPs/7-3-User-Interface-Components.md)
