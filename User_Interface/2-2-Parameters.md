@@ -22,7 +22,7 @@ Once hovering over the parameter's name, click it and it will expand, displaying
 
 There are three main elements that are available once a parameter is expanded. The first on the left, is the parameter's scripting name. This scripting name is needed whenever that parameter is referenced in any of TouchDesigner's scripting languages. In the above diagram, the scripting name for the Noise CHOP's Roughness is 'rough'. Continuing the above example, the Python script to set the Roughness of the above Noise CHOP to '1' would be:
 
-```op('noise').par.rough = 1```
+```op('noise1').par.rough = 1```
 
 The second element is the three coloured squares. These squares represent the different modes for the parameter, as discussed above. Operator parameters set to Constant mode are represented by a filled grey square. This parameter can be changed to Expression mode by clicking on the outline of the light blue square. Once clicked, the light blue square will be filled, and the value field to the right will also be coloured to reflect the parameter's mode.
 
