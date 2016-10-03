@@ -33,7 +33,7 @@
 * DATs
    * [Introduction](DATs/5-1-Introduction.md)
    * [Communication Methods](DATs/5-2-Communication-Methods.md)
-* SOPs
+* [SOPs](SOPs)
    * [Introduction](SOPs/6-1-Introduction.md)
    * [Rendering](SOPs/6-2-Rendering.md)
 * [COMPs](COMPs)
