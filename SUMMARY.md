@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [Basics](Basics)
+* Basics
    * [Signal Flow and Wiring](Basics/1-1-Signal-Flow-and-Wiring.md)
    * [Creating Operators](Basics/1-2-Creating-Operators.md)
    * [Mouse and Keyboard Navigation](Basics/1-3-Mouse-and-Keyboard-Navigation.md)
@@ -18,25 +18,25 @@
    * [Search Dialog](User_Interface/2-7-Search-Dialog.md)
    * [Realtime Flag](User_Interface/2-8-Realtime-Flag.md)
    * [Useful Shortcuts](User_Interface/2-9-Useful-Shortcuts.md)
-* [TOPs](TOPs)
+* TOPs
    * [Introduction](TOPs/3-1-Introduction.md)
    * [Movie In TOP](TOPs/3-2-Movie-In-TOP.md)
    * [Preloading Movies](TOPs/3-3-Preloading-Movies.md)
    * [Null TOPs and Select TOPs](TOPs/3-4-Null-TOPs-and-Select-TOPs.md)
    * [Codecs](TOPs/3-5-Codecs.md)
-* [CHOPs](CHOPs)
+* CHOPs
    * [Introduction](CHOPs/4-1-Introduction.md)
    * [Communication Methods](CHOPs/4-2-Communication-Methods.md)
    * [Audio Inputs and Outputs](CHOPs/4-3-Audio-Inputs-and-Outputs.md)
    * [Sample Rates](CHOPs/4-4-Sample-Rates.md)
    * [Time Slicing](CHOPs/4-5-Time-Slicing.md)
-* [DATs](DATs)
+* DATs
    * [Introduction](DATs/5-1-Introduction.md)
    * [Communication Methods](DATs/5-2-Communication-Methods.md)
-* [SOPs](SOPs)
+* SOPs
    * [Introduction](SOPs/6-1-Introduction.md)
    * [Rendering](SOPs/6-2-Rendering.md)
-* [COMPs](COMPs)
+* COMPs
    * [Introduction](COMPs/7-1-Introduction.md)
    * [Window COMP](COMPs/7-2-Window-COMP.md)
    * [User Interface Components](COMPs/7-3-User-Interface-Components.md)
@@ -44,7 +44,7 @@
    * [Introduction](MATs/8-1-Introduction.md)
    * [Phong, GLSL, and Point Sprite Materials](MATs/8-2-Phong-GLSL-and-Point-Sprite-Materials.md)
    * [UV Maps](MATs/8-3-UV-Maps.md)
-* [Python](Python)
+* Python
    * [Introduction](Python/9-1-Introduction.md)
    * [Textport](Python/9-2-Textport.md)
    * [Common Practices](Python/9-3-Common-Practices.md)
@@ -66,7 +66,7 @@
    * [Resolution](Optimization/11-5-Resolution.md)
    * [GPU Memory Fragmentation](Optimization/11-6-GPU-Memory-Fragmentation.md)
    * [Windows System Processes](Optimization/11-7-Windows-System-Processes.md)
-* [GLSL](GLSL)
+* GLSL
    * [Introduction](GLSL/12-1-Introduction.md)
    * [Types of Shaders and Rendering Pipeline](GLSL/12-2-Types-of-Shaders-and-Rendering-Pipeline.md)
    * [Debugging](GLSL/12-3-Debugging.md)
