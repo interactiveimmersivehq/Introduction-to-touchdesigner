@@ -17,11 +17,11 @@ https://www.shadertoy.com/view/MdlGDM <br>
 
 ##### Setup
 
-Start by creating a GLSL TOP and an Info DAT. Put the GLSL TOP's name in the Info Dat's `Operator field`.<br>
-On the the GLSL TOP's `Common` page, change the `Output Resolution` to `Custom` and then enter `1280` and `720` in the `Resolution` fields.<br> 
-Copy the code from Shadertoy and paste it into the 'glsl1_pixel' DAT, replacing the code that was there by default.<br>
+Start by creating a `GLSL` TOP and an `Info` DAT. Put the `GLSL` TOP's name in the `Info` DAT's `Operator field`.<br>
+On the the `GLSL TOP`s `Common` page, change the `Output Resolution` to `Custom` and then enter `1280` and `720` in the `Resolution` fields.<br> 
+Copy the code from Shadertoy and paste it into the `glsl1_pixel` DAT, replacing the code that was there by default.<br>
 <br>
-Now we need to set up the sources. For this example, we're just going to create two 'Movie File In' TOPs and select two pictures that are the same resolution as the 'GLSL' TOP (1280 x 720), ‘Mettler.3.jpg’ and 'Trillium.jpg'.<br>
+Now we need to set up the sources. For this example, we're just going to create two `Movie File In` TOPs and select two pictures that are the same resolution as the 'GLSL' TOP (1280 x 720), ‘Mettler.3.jpg’ and 'Trillium.jpg'.<br>
 
 ##### Main Function and its Parameters
 
