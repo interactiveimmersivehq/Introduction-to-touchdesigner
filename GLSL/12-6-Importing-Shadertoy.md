@@ -140,6 +140,10 @@ It should look like this:<br>
 
 ![Ex2: GL enable](../img/12.6_shade/ex2_7.JPG)
 
+######iChannel2
+iChannel2 is the audio. We converted the audio information into a 2D texture with the `CHOP To` TOP. The `CHOP To` TOP is the 3rd input, but it is the 2nd 2D input, so we'll replace all `iChannel2` references with `sTD2DInputs[1]`, and change the `texture2D` to `texture`. There should only be 1 line to convert.<br>
+
+If you save the shader and look at the `Info` DAT, you should have fixed all of the errors except for 'iMouse'.
 
 
 
