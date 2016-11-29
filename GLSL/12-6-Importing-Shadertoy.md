@@ -285,8 +285,8 @@ Next, we can copy and paste the same network we created for iMouse in the previo
 ##### iChannels
 The only thing left to convert, is changing any references of `iChannel0` to `sTD2DInputs[0]` and `iChannel1` to `sTD2DInputs[1]. You can do this for both pixel shaders.
 
-Both of your GLSL TOPs should be working now, and your network might look something like this:
-![Ex2: Example 3: Final Network](../img/12.6_shade/ex3_4.JPG)
+Both of your `GLSL` TOPs should be working now, and your network might look something like this:
+![Ex2: Example 3: Noise and Feedback](../img/12.6_shade/ex3_4.JPG)
 
 
 
