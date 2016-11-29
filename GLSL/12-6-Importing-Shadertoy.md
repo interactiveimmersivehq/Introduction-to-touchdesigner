@@ -42,13 +42,13 @@ uniform float iGlobalTime
 Shadertoy contains a list of built-in uniform variables. You can view them on the Shadertoy website at the top of the code window by clicking an arrow labled 'Shader Inputs', or you can click the '?' at the bottom right of the same code window to create a pop up window that contains 'Shadertoy Inputs' as well as other information. We will go through the main samplers and uniforms associated with Shadertoy shaders.
 
 ###### *Samplers*
-Shadertoy has named their sampler inputs `iChannels`.These samplers can be images, videos, noise patterns, cube mabs, etc. The 'GLSL' TOP has a similar variable called `sTD2DInputs`. The Shadertoy samplers are individual numbered samplers, such as `iChannel0` and `iChannel1`. In TouchDesigner, `sTD2DInputs` is an array, so you can access an elements with a numeric index.<br> 
+Shadertoy has named their sampler inputs `iChannels`.These samplers can be images, videos, noise patterns, cube mabs, etc. The `GLSL` TOP has a similar variable called `sTD2DInputs`. The Shadertoy samplers are individual numbered samplers, such as `iChannel0` and `iChannel1`. In TouchDesigner, `sTD2DInputs` is an array, so you can access an elements with a numeric index.<br> 
 Now, search through the code and wherever there is the a reference to `iChannel0`, replace that with `sTD2DInputs[0]`. Where there is a reference to `iChannel1`, replace that with `sTD2DInputs[1]`.
 
 ###### *iGlobalTime*
 To find out what type of uniform this needs to be, look at the list of 'Shader Inputs' on Shadertoy mentioned previously. In the list, `iGlobalTime` is a float, so near the top of our code, below the `fragColor` declaration, we'll write: <br>
 `uniform float iGlobalTime;` <br>
-Next, we click on the 'GLSL' TOP in TouchDesigner, and go to the `Vectors 1` page in the parameter window. <br>
+Next, we click on the `GLSL` TOP in TouchDesigner, and go to the `Vectors 1` page in the parameter window. <br>
 As the first `Uniform Name` we'll write `iGlobalTime` and for the value we will reference TouchDesigner's 'seconds' member of the `absTime` class by entering: <br>
 `absTime.seconds`<br>
 It should look like this: <br>
@@ -59,7 +59,7 @@ iResolution is the resolution of the Shader on Shadertoy. If our resolution depe
 `uTD2DInfos[i].res`
 TouchDesigner only gives us with this information if we aren't providing our own vertex shader, so for consistency, we will manually declare iResolution as a uniform. If we look at Shadertoy's input list, we see that iResolution is a vec3. Similar to iGlobalTime, we'll first declare it in the code by going near the top of our code and writing the line: 
 `uniform vec3 iResolution;` 
-Next, go to the `Vectors 1` page of the GLSL TOP’s parameters, and next to the second `Uniform Name`, enter `iResolution`. For its values, enter `1270` and `720`. We won't need the 3rd value of the vec3 for this, so we'll just leave the other 2 values as `0`
+Next, go to the `Vectors 1` page of the `GLSL` TOP’s parameters, and next to the second `Uniform Name`, enter `iResolution`. For its values, enter `1270` and `720`. We won't need the 3rd value of the vec3 for this, so we'll just leave the other 2 values as `0`
 
 Your GLSL TOP should now compile successfully and look something like this :<br>
 ![Example 1 compiled](../img/12.6_shade/ex1_3.JPG)
@@ -76,14 +76,14 @@ This example will take you a bit further, using cubemaps, creating a noise sampl
 
 ##### Setup
 We will start off with a new TouchDesigner project and begin the same way we did for the last example.<br>
-Create a GLSL TOP and set its `Output Resolution` to `1280` and `720`.<br>
-Create an Info DAT and add a reference to the GLSL TOP to it’s `Operator` parameter.<br>
+Create a `GLSL` TOP and set its `Output Resolution` to `1280` and `720`.<br>
+Create an `Info` DAT and add a reference to the `GLSL` TOP to it’s `Operator` parameter.<br>
 Copy the code from Shadertoy into `glsl1_pixel`.<br>
 If we look at the shader on the Shadertoy website, at the bottom we can see that we require 3 inputs: a noise texture, a background image, and some sound/audio.
 
 ###### Noise Texture
 In Shadertoy there are 4 noise textures: a monochrome and color noise at a resolution of 64 x 64, and a monochrome and color noise with a resolution of 256 x 256. <br>
-For this example, create a Noise TOP and set the resolution to 64 x 64 in the `Common` settings. We can look at the noise texture on Shadertoy and estimate the settings. These are the settings you can use for now:<br>
+For this example, create a `Noise` TOP and set the resolution to 64 x 64 in the `Common` settings. We can look at the noise texture on Shadertoy and estimate the settings. These are the settings you can use for now:<br>
 ![Ex2: Noise](../img/12.6_shade/ex2_2.JPG)
 <br>
 <br>
@@ -91,10 +91,10 @@ For this example, create a Noise TOP and set the resolution to 64 x 64 in the `C
 If you click on 'iChannel1' in Shadertoy, you'll see it is a texture from the 'Cubemaps' section. There is a link to the source:<br> 
 http://www.pauldebevec.com/Probes <br>
 
-Near the bottom of that page, are cube-format images that we can download. The LDR .tif image that matches the one used in the Shadertoy shader is at the bottom right, called `Uffizi.tif`.<br>
+Near the bottom of that page, are cube-format images that we can download. The LDR .tif image that matches the one used in the Shadertoy shader is at the bottom right, called `Uffizi.tif`.
 Download that image. <br>
 Create a `Movie File In` TOP in TouchDesigner and reference the downloaded file.<br>
-Connect the new `Movie File In` TOP to a `Cube Map TOP`. <br>
+Connect the new `Movie File In` TOP to a `Cube Map` TOP. <br>
 Set the `Input Layout` to `Vertical Cross` and connect the 'Cube Map' TOP to the second input of 'glsl1'.
 
 ![Ex2: Cube Map](../img/12.6_shade/ex2_3.JPG)
@@ -102,10 +102,13 @@ Set the `Input Layout` to `Vertical Cross` and connect the 'Cube Map' TOP to the
 
 ###### Audio
 'iChannel2' in Shadertoy is set to a Soundcloud input, but we can use any audio that we'd like, inside of TouchDesigner. For now, we'll just stick with the default audio track in the `Audio File In` CHOP.<br>
-We need to prepare the audio for the 'GLSL' TOP, since we can't directly connect an audio CHOP to a 'GLSL' TOP. Line 35 of the GLSL code is commented out, stating that you can use this line of code if you don't have audio, but we won't do that. In the next line, the variable `d` is looking for a `texture` with the comment `move planes with music`. The easiest way to achieve a simple version of this it to convert the audio CHOP into a texture. <br>
-We only want one sample for this example, so put an `Analyze CHOP` after the `Audio File In` CHOP and set the 'Function' to 'Maximum'. We may want to adjust this later value, so put a `Null` CHOP after that. Now create a 'CHOP To' TOP that references the `Null` CHOP. Set the 'Data Format' to 'R'. Connect the 'CHOP To' TOP to the third input of the 'GLSL' TOP.
+We need to prepare the audio for the `GLSL` TOP, since we can't directly connect an `Audio` CHOP to a `GLSL` TOP. Line 35 of the GLSL code is commented out, stating that you can use this line of code if you don't have audio, but we won't do that. In the next line, the variable `d` is looking for a `texture` with the comment `move planes with music`. The easiest way to achieve a simple version of this it to convert the audio CHOP into a texture. <br>
+We only want one sample for this example, so put an `Analyze CHOP` after the `Audio File In` CHOP and set the `Function` to `Maximum`. <br>
+We may want to adjust this value later, so put a `Null` CHOP after that. <br>
+Now create a `CHOP To` TOP that references the `Null` CHOP. Set the `Data Format` to `R`.<br>
+Connect the 'CHOP To' TOP to the third input of the 'GLSL' TOP.<br>
 The network should look like this:
-<p5.jpeg>
+![Ex2: Audio](../img/12.6_shade/ex2_4.JPG)
 
 
 
