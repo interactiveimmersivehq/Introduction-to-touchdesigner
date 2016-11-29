@@ -107,10 +107,11 @@ We only want one sample for this example, so put an `Analyze CHOP` after the `Au
 We may want to adjust this value later, so put a `Null` CHOP after that. <br>
 Now create a `CHOP To` TOP that references the `Null` CHOP. Set the `Data Format` to `R`.<br>
 Connect the 'CHOP To' TOP to the third input of the 'GLSL' TOP.<br>
-The network should look like this:
+The network should look like this:<br>
+
 ![Ex2: Audio](../img/12.6_shade/ex2_4.JPG)
 
-
+Now that the inputs are set up, we can take a look at the 'Info' DAT and see what we'll need to change in the code.
 
 
 
