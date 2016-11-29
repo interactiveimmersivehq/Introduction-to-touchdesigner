@@ -74,7 +74,7 @@
    * [Shaders in 2D](GLSL/12-5-Shaders-in-2D.md)
    * [GPU Particle Systems](GLSL/12-7-GPU-Particle-Systems.md)
    * [What Next?](GLSL/12-7-What-Next.md)
-   * Importing Shadertoy
+   * [Importing Shadertoy](GLSL/12-6-Importing-Shadertoy.md)
 * [Projects](Projects/13-Projects.md)
 * [Credits](Credits/14-Credits.md)
 
