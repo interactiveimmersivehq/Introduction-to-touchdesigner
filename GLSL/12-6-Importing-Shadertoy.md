@@ -183,6 +183,32 @@ Now, create a `Merge` CHOP and connect `math1` and `math2` to it. As always, add
 ![Ex2: iMouse Network](../img/12.6_shade/ex2_10.JPG)
 <br>
 
+Now we have our '.xy' values, so now we need to set up the '.zw' values. We need to read the position of the mouse when the LMB is first clicked, and hold that value until LMB is released. <br>
+To do this, create a `Chop Execute` DAT and set the `CHOP` field to `select3`. Turn the `Off to On` and `On to Off` toggles `on`, and set the `Value Change` toggle to `off`. Add a `Constant` CHOP to the network and in the first two `Name` fields, create the channels `z` and `w`. This should look like this:<br>
+![Ex2: iMouse Constant CHOP](../img/12.6_shade/ex2_11.JPG)<br>
+
+When the LMB is clicked, we want to write the values of `null2` to the`z` and `w` channels of `constant1`, and when it's released, we want to set them back to `0`.
+
+Add the following code snippet to the 'offToOn' function:
+```
+z = op('null2')['x']
+w = op('null2')['y']
+op('constant1').par.value0 = z
+op('constant1').par.value1 = w
+```
+
+And add the following code to the 'onToOff' function:
+```
+op('constant1').par.value0 = 0
+op('constant1').par.value1 = 0
+```
+
+You can use another `Merge` CHOP to merge `constant1` with `null2` and add another `Null` CHOP after it. Go back to the 'GLSL' TOP and in the four 'Value' fields of the 'iMouse' uniform, you can reference the 'x', 'y', 'z', and 'w' channels of 'null3'. You can do this with Python references or exports.
+
+The 'Vectors 1' page should now look like this:
+<p17.jpeg>
+
+If you view the container, you should now be able to click and drag to rotate around the Shard.
 
 
 
