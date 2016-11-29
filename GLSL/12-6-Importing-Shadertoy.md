@@ -111,8 +111,19 @@ The network should look like this:<br>
 
 ![Ex2: Audio](../img/12.6_shade/ex2_4.JPG)
 
-Now that the inputs are set up, we can take a look at the 'Info' DAT and see what we'll need to change in the code.
+Now that the inputs are set up, we can take a look at the `Info` DAT and see what we'll need to change in the code.
 
+##### Main Function and fragColor
+First we'll change the name of the main function from `mainImage` to `main` and remove the parameters, so instead of: <br>
+`void mainImage( out vec4 fragColor, in vec2 fragCoord )` <br>
+we should just have: <br>
+`void main()`<br>
+Now, we have to replace the 2 parameters we removed from the main function: fragColor, and fragCoord. Go to the very top of the code and insert:<br>
+`layout(location = 0) out vec4 fragColor;` <br>
+
+![Ex2: Main Function](../img/12.6_shade/ex2_5.JPG)
+
+Now you can search for all references to 'fragCoord' (there should only be one which is in the first line of the main function) and replace it with the built in variable `gl_FragCoord`.
 
 
 
