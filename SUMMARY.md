@@ -72,6 +72,7 @@
    * [Debugging](GLSL/12-3-Debugging.md)
    * [Shaders in 3D](GLSL/12-4-Shaders-in-3D.md)
    * [Shaders in 2D](GLSL/12-5-Shaders-in-2D.md)
+       * Importing Shadertoy
    * [GPU Particle Systems](GLSL/12-7-GPU-Particle-Systems.md)
    * [What Next?](GLSL/12-7-What-Next.md)
 * [Projects](Projects/13-Projects.md)
