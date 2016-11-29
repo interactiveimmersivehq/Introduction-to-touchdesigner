@@ -50,6 +50,17 @@ As the first `Uniform Name` we'll write `iGlobalTime` and for the value we will 
 `absTime.seconds`<br>
 It should look like this: <br>
 ![iGlobalTime : absTime.seconds](../img/12.6_shade/ex1_2.JPG)
+<br>
+###### *iResolution*
+iResolution is the resolution of the Shader on Shadertoy. If our resolution depended on one of our inputs, we could use TouchDesigner's built-in array: 
+`uTD2DInfos[i].res`
+TouchDesigner only gives us with this information if we aren't providing our own vertex shader, so for consistency, we will manually declare iResolution as a uniform. If we look at Shadertoy's input list, we see that iResolution is a vec3. Similar to iGlobalTime, we'll first declare it in the code by going near the top of our code and writing the line: 
+`uniform vec3 iResolution;` 
+Next, go to the `Vectors 1` page of the GLSL TOP’s parameters, and next to the second `Uniform Name`, enter `iResolution`. For its values, enter `1270` and `720`. We won't need the 3rd value of the vec3 for this, so we'll just leave the other 2 values as `0`
+
+Your GLSL TOP should now compile successfully and look something like this :<br>
+![iGlobalTime : absTime.seconds](../img/12.6_shade/ex1_2.JPG)
+<br>
 
 
 
