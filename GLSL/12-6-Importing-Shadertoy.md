@@ -270,23 +270,24 @@ void main()
 }
 ```
 
-Now we can go back up to the 'Info' DAT and see what else needs to be changed.
+Now we can go back up to the `Info` DAT and see what else needs to be changed.
 
 ##### iResolution, iGlobalTime, iMouse, and iFrame
-Both 'Buf_A' and 'Image` require the declaration of iResolution and iGlobalTime, which we've done before, so we'll go ahead and add these to both. We need 
+Both `Buf_A` and `Image` require the declaration of `iResolution` and `iGlobalTime`, which we've done before, so we'll go ahead and add these to both. We need
 ```
 uniform vec3 Resolution;
 uniform float iGlobalTime
 ``` 
-at the top of both pixel shaders, and we'll need to add both uniforms to the 'Vectors 1' page of the 'GLSL' TOP’s parameters. 
-If we look at the 'Info' DAT for 'Buf_A', we see a new undefined variable: 'iFrame'.  This uniform is a frame counter and we can either reference `absTime.frame` or `me.time.frame`, depending on whether want the frame counter to loop with the timeline or not. For this example, we use `absTime.frame` as the expression for the first value of the uniform, because we don’t want the timeline looping to effect the shader.
+at the top of both pixel shaders, and we'll need to add both uniforms to the 'Vectors 1' page of the 'GLSL' TOP’s parameters. <br>
+If we look at the `Info` DAT for `Buf_A`, we see a new undefined variable: 'iFrame'.  This uniform is a frame counter and we can either reference `absTime.frame` or `me.time.frame`, depending on whether want the frame counter to loop with the timeline or not. For this example, we use `absTime.frame` as the expression for the first value of the uniform, because we don’t want the looping of timeline to effect the shader.
 Next, we can copy and paste the same network we created for iMouse in the previous example, and declare the uniform in the exact same way. 
 
 ##### iChannels
 The only thing left to convert, is changing any references of `iChannel0` to `sTD2DInputs[0]` and `iChannel1` to `sTD2DInputs[1]. You can do this for both pixel shaders.
 
 Both of your GLSL TOPs should be working now, and your network might look something like this:
-<p22.jpeg>
+![Ex2: Example 3: Final Network](../img/12.6_shade/ex3_4.JPG)
+
 
 
 
