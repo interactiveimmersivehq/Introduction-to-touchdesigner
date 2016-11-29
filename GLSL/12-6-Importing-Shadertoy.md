@@ -177,9 +177,12 @@ In `select2`, select the `v` channel, and just like before, rename from `v` to `
 For `select3`, we don't need to rename anything, so just enter `lselect` in the `Channel Names` field.<br>
 We'll need to convert these values from 0 - 1 values to the full resolution.<br>
 Add a `Math` CHOP after `select1` and set the `Multiply` parameter to `1280`. <br>
-Add a `Math` CHOP after `select2` and set the `Multiply` parameter to `720`. 
-Now, create a `Merge` CHOP and connect `math1` and `math2` to it. As always, add a `Null` CHOP after that. So far, it should look like this:
-<p15.jpeg>
+Add a `Math` CHOP after `select2` and set the `Multiply` parameter to `720`. <br>
+Now, create a `Merge` CHOP and connect `math1` and `math2` to it. As always, add a `Null` CHOP after that. So far, it should look like this:<br>
+
+![Ex2: iMouse Network](../img/12.6_shade/ex2_10.JPG)
+<br>
+
 
 
 
