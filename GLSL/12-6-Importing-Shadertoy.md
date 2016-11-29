@@ -10,4 +10,4 @@ You'll see the ‘App Key’ in the 'Manage Your Apps' section. Now, copy this U
 Shader written by: [FabriceNeyret2](https://www.shadertoy.com/user/FabriceNeyret2)
 https://www.shadertoy.com/view/MdlGDM
 
-[![alt text](D:/test.jpg)]
+[![alt text](../img/12.6_shade/test.jpg)]
