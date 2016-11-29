@@ -157,9 +157,9 @@ Now add: <br>
 ```uniform vec4 iMouse;```<br>
 after the other uniform declarations near the top of the code. 
 
-The GLSL TOP should now be free of errors, and should look something like this :
-<p13.jpeg>
+The GLSL TOP should now be free of errors, and should look something like this :<br>
 
+![Ex2: iMouse success](../img/12.6_shade/ex2_9.JPG)<br>
 
 
 
