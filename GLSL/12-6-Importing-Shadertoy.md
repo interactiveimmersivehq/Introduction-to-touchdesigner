@@ -59,13 +59,13 @@ TouchDesigner only gives us with this information if we aren't providing our own
 Next, go to the `Vectors 1` page of the GLSL TOP’s parameters, and next to the second `Uniform Name`, enter `iResolution`. For its values, enter `1270` and `720`. We won't need the 3rd value of the vec3 for this, so we'll just leave the other 2 values as `0`
 
 Your GLSL TOP should now compile successfully and look something like this :<br>
-![iGlobalTime : absTime.seconds](../img/12.6_shade/ex1_3.JPG)
+![Example 1 compiled](../img/12.6_shade/ex1_3.JPG)
 <br>
 <br>
 <br>
 
 #### Example 2: Shard
-![iGlobalTime : absTime.seconds](../img/12.6_shade/ex2_1.jpg)
+![Example 2: Shard](../img/12.6_shade/ex2_1.jpg)
 Shader written by: [simesgreen ](https://www.shadertoy.com/user/simesgreen)<br>
 https://www.shadertoy.com/view/Xdf3zM <br>
 
@@ -81,6 +81,20 @@ If we look at the shader on the Shadertoy website, at the bottom we can see that
 ###### Noise Texture
 In Shadertoy there are 4 noise textures: a monochrome and color noise at a resolution of 64 x 64, and a monochrome and color noise with a resolution of 256 x 256. <br>
 For this example, create a Noise TOP and set the resolution to 64 x 64 in the `Common` settings. We can look at the noise texture on Shadertoy and estimate the settings. These are the settings you can use for now:<br>
+![Ex2: Noise](../img/12.6_shade/ex2_2.JPG)
+<br>
+<br>
+###### Background Image
+If you click on 'iChannel1' in Shadertoy, you'll see it is a texture from the 'Cubemaps' section. There is a link to the source:<br> 
+http://www.pauldebevec.com/Probes <br>
+
+Near the bottom of that page, are cube-format images that we can download. The LDR .tif image that matches the one used in the Shadertoy shader is at the bottom right, called `Uffizi.tif`.<br>
+Download that image. <br>
+Create a `Movie File In` TOP in TouchDesigner and reference the downloaded file.<br>
+Connect the new `Movie File In` TOP to a `Cube Map TOP`. <br>
+Set the `Input Layout` to `Vertical Cross` and connect the 'Cube Map' TOP to the second input of 'glsl1'.
+
+![Ex2: Cube Map](../img/12.6_shade/ex2_3.JPG)
 
 
 
