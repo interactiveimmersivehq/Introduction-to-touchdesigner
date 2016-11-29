@@ -121,10 +121,29 @@ we should just have: <br>
 Now, we have to replace the 2 parameters we removed from the main function: fragColor, and fragCoord. Go to the very top of the code and insert:<br>
 `layout(location = 0) out vec4 fragColor;` <br>
 
-
-
-
 Now you can search for all references to `fragCoord` (there should only be one, which is in the first line of the main function) and replace it with the built in variable `gl_FragCoord`.
+
+##### Samplers
+######iChannel0
+Similar to the last example, iChannel0 is a 2D input, so we'll find all `iChannel0` references and replace them with `sTD2DInputs[0]`. In current versions of GLSL, we don’t need to use a different `texture()` function for different texture types, so use Find-and-Replace to replace all `texture2D` functions to `texture`. `texture2D` will still work, but this is good practice. 
+
+![Ex2: texture](../img/12.6_shade/ex2_5.JPG)
+<br>
+######iChannel1
+Changing the code for iChannel1 is similar to the edits for iChannel0, but the input is a cube map. TouchDesigner sorts the types of inputs for us: 2D, 3D, Cube, etc, into separate arrays. If this was another 2D inputs we would use sTD2DInputs[1], but since it’s a cube map (the first and only in our inputs) we use `sTDCubeInputs[0]`. <br>
+As mentioned for `iChannel0`, we don’t need to use separate texture functions, so change all `textureCube` to `texture`. There should be 5 lines of code to change.<br>
+If you look at the 'Info' DAT, you'll notice a new error has appeared:<br>
+![Ex2: textureCube Error](../img/12.6_shade/ex2_6.JPG)
+We can follow its advice, and at the very beginning of our code add 
+`#extension GL_NV_shadow_samplers_cube : enable`
+It should look like this:<br>
+
+![Ex2: GL enable](../img/12.6_shade/ex2_7.JPG)
+
+
+
+
+
 
 
 
