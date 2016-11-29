@@ -11,3 +11,16 @@ Shader written by: [FabriceNeyret2](https://www.shadertoy.com/user/FabriceNeyret
 https://www.shadertoy.com/view/MdlGDM
 
 [![alt text](../img/12.6_shade/test.jpg)]
+
+##### Setup
+Start by creating a GLSL TOP and an Info DAT. Put the GLSL TOP's name in the Info Dat's ‘Operator field’. Set the GLSL TOP's resolution to 'Custom' and then enter 1280 x 720. Copy the code from Shadertoy and paste it into the 'glsl1_pixel' DAT, replacing the code that was there by default.
+Now we need to set up the sources. For this example, we're just going to create two ‘Movie File In’ TOPs and select 2 pictures that are the same resolution as the GLSL TOP (1280 x 720), such as one of Peter Mettlers images or 'Trillium'.
+
+##### Main Function and its Parameters
+In Shadertoy, the main function and paramters are:
+`mainImage( out vec4 fragColor, in vec2 fragCoord )` 
+but we'll change that to:
+`main()`
+withouth the parameters. To replace the fragColor argument that we removed, we'll go up to the top of the code and insert: 
+`layout(location = 0) out vec4 fragColor;` 
+Next, we'll search for all references to `fragCoord` and replace them with `gl_FragCoord`.
