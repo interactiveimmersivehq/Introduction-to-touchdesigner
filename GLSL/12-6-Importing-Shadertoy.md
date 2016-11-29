@@ -208,7 +208,7 @@ You can use another `Merge` CHOP to merge `constant1` with `null2` and add anoth
 The 'Vectors 1' page should now look like this:
 ![Ex2: Final iMouse Network](../img/12.6_shade/ex2_12.JPG)<br>
 
-If you view the container, you should now be able to click and drag to rotate around the Shard.
+If you view the container, you should now be able to click and drag to rotate around the Shard!
 
 
 
