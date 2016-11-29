@@ -80,7 +80,8 @@ If we look at the shader on the Shadertoy website, at the bottom we can see that
 
 ###### Noise Texture
 In Shadertoy there are 4 noise textures: a monochrome and color noise at a resolution of 64 x 64, and a monochrome and color noise with a resolution of 256 x 256. <br>
-For this example, create a Noise TOP and set the resolution to 64 x 64 in the `Common` settings. We can look at the noise texture on Shadertoy and estimate the settings. These are the settings we used: 
+For this example, create a Noise TOP and set the resolution to 64 x 64 in the `Common` settings. We can look at the noise texture on Shadertoy and estimate the settings. These are the settings you can use for now:<br>
+
 
 
 
