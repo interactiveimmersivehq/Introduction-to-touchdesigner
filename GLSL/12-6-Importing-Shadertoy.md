@@ -2,9 +2,12 @@
 
 This section will demonstrate the basics of porting a shader from Shadertoy.com to TouchDesigner. We recommend using a feature-rich code editor, such as Sublime Text, Atom, or Notepad++, as there a strong Find-and-Replace function is essential.
 ###### Shadertoy API
-When porting a shader from Shadertoy to TouchDesigner, you can either use your judgement and find/make sources that work similary to the built-in inputs in Shadertoy, or you can download the sources that were used on Shadertoy using their API. To download the shader's input sources, you have to set up a Shadertoy account and create an 'App Key'. 
-To create an ‘App Key’, once you’re logged into Shadertoy, click on `PROFILE` at the top right, then click on 'your Apps' in the 'Config' section. Choose a name and description, and click the 'Create' button. 
-You'll see the `App Key` in the `Manage Your Apps` section. Now, copy this URL `https://www.shadertoy.com/api/v1/shaders/MdlGDM?key=` into your browser, and enter your App Key at the end. After you press enter, the response will be a JSON object with a key called 'inputs'.  In this example, the URL above requires the file called 'tex09.jpg’.If you enter `https://www.shadertoy.com/presets/tex09.jpg` as the URL in your browser, you will see and be able to download the required texture.
+When porting a shader from Shadertoy to TouchDesigner, you can either use your judgement and find/make sources that work similary to the built-in inputs in Shadertoy, or you can download the sources that were used on Shadertoy using their API. To download the shader's input sources, you have to set up a Shadertoy account and create an 'App Key'. <br>
+To create an ‘App Key’, once you’re logged into Shadertoy, click on `PROFILE` at the top right, then click on 'your Apps' in the 'Config' section. Choose a name and description, and click the 'Create' button. <br>
+You'll see the `App Key` in the `Manage Your Apps` section. Now, copy this URL `https://www.shadertoy.com/api/v1/shaders/MdlGDM?key=` into your browser, and enter your App Key at the end. <br>
+After you press enter, the response will be a JSON object with a key called `inputs`.  In this example, the URL above requires the file called `tex09.jpg`. 
+If you enter `https://www.shadertoy.com/presets/tex09.jpg`,
+as the URL in your browser, you will see and be able to download the required texture.
 
 #### Example 1: Waterly Video - Test
 ![Example 1: Waterly Video - Test](../img/12.6_shade/ex1_1.jpeg)
@@ -97,6 +100,12 @@ Set the `Input Layout` to `Vertical Cross` and connect the 'Cube Map' TOP to the
 ![Ex2: Cube Map](../img/12.6_shade/ex2_3.JPG)
 
 
+###### Audio
+'iChannel2' in Shadertoy is set to a Soundcloud input, but we can use any audio that we'd like, inside of TouchDesigner. For now, we'll just stick with the default audio track in the `Audio File In` CHOP.<br>
+We need to prepare the audio for the 'GLSL' TOP, since we can't directly connect an audio CHOP to a 'GLSL' TOP. Line 35 of the GLSL code is commented out, stating that you can use this line of code if you don't have audio, but we won't do that. In the next line, the variable `d` is looking for a `texture` with the comment `move planes with music`. The easiest way to achieve a simple version of this it to convert the audio CHOP into a texture. <br>
+We only want one sample for this example, so put an `Analyze CHOP` after the `Audio File In` CHOP and set the 'Function' to 'Maximum'. We may want to adjust this later value, so put a `Null` CHOP after that. Now create a 'CHOP To' TOP that references the `Null` CHOP. Set the 'Data Format' to 'R'. Connect the 'CHOP To' TOP to the third input of the 'GLSL' TOP.
+The network should look like this:
+<p5.jpeg>
 
 
 
