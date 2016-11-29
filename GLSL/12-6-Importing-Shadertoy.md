@@ -69,6 +69,10 @@ Your GLSL TOP should now compile successfully and look something like this :<br>
 Shader written by: [simesgreen ](https://www.shadertoy.com/user/simesgreen)<br>
 https://www.shadertoy.com/view/Xdf3zM <br>
 
+This example will take you a bit further, using cubemaps, creating a noise sampler, using sound, and adding mouse interaction.
+
+##### Setup
+We will start off with a new TouchDesigner project and begin the same way we did for the last example. Create a GLSL TOP and set its resolution to 1280 x 720. Create an Info DAT and add a reference to the GLSL TOP to it’s `Operator` parameter. Copy the code from Shadertoy into `glsl1_pixel`. If we look at the shader on the Shadertoy website, at the bottom we can see that we require 3 inputs: a noise texture, a background image, and some sound/audio.
 
 
 
