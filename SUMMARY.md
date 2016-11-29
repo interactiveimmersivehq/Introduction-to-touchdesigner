@@ -66,7 +66,7 @@
    * [Resolution](Optimization/11-5-Resolution.md)
    * [GPU Memory Fragmentation](Optimization/11-6-GPU-Memory-Fragmentation.md)
    * [Windows System Processes](Optimization/11-7-Windows-System-Processes.md)
-* GLSL
+* [GLSL](GLSL)
    * [Introduction](GLSL/12-1-Introduction.md)
    * [Types of Shaders and Rendering Pipeline](GLSL/12-2-Types-of-Shaders-and-Rendering-Pipeline.md)
    * [Debugging](GLSL/12-3-Debugging.md)
