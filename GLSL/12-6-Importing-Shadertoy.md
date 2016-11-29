@@ -72,7 +72,17 @@ https://www.shadertoy.com/view/Xdf3zM <br>
 This example will take you a bit further, using cubemaps, creating a noise sampler, using sound, and adding mouse interaction.
 
 ##### Setup
-We will start off with a new TouchDesigner project and begin the same way we did for the last example. Create a GLSL TOP and set its resolution to 1280 x 720. Create an Info DAT and add a reference to the GLSL TOP to it’s `Operator` parameter. Copy the code from Shadertoy into `glsl1_pixel`. If we look at the shader on the Shadertoy website, at the bottom we can see that we require 3 inputs: a noise texture, a background image, and some sound/audio.
+We will start off with a new TouchDesigner project and begin the same way we did for the last example.<br>
+Create a GLSL TOP and set its `Output Resolution` to `1280` and `720`.<br>
+Create an Info DAT and add a reference to the GLSL TOP to it’s `Operator` parameter.<br>
+Copy the code from Shadertoy into `glsl1_pixel`.<br>
+If we look at the shader on the Shadertoy website, at the bottom we can see that we require 3 inputs: a noise texture, a background image, and some sound/audio.
+
+###### Noise Texture
+In Shadertoy there are 4 noise textures: a monochrome and color noise at a resolution of 64 x 64, and a monochrome and color noise with a resolution of 256 x 256. <br>
+For this example, create a Noise TOP and set the resolution to 64 x 64 in the `Common` settings. We can look at the noise texture on Shadertoy and estimate the settings. These are the settings we used: 
+
+
 
 
 
