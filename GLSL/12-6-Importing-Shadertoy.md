@@ -9,14 +9,19 @@ You'll see the `App Key` in the `Manage Your Apps` section. Now, copy this URL `
 #### Example 1: Waterly Video - Test
 ![alt text](../img/12.6_shade/ex1_1.jpeg)
 Shader written by: [FabriceNeyret2](https://www.shadertoy.com/user/FabriceNeyret2) <br>
-https://www.shadertoy.com/view/MdlGDM
+https://www.shadertoy.com/view/MdlGDM <br>
+<br>
 
 ##### Setup
-Start by creating a GLSL TOP and an Info DAT. Put the GLSL TOP's name in the Info Dat's ‘Operator field’. Set the GLSL TOP's resolution to 'Custom' and then enter 1280 x 720. Copy the code from Shadertoy and paste it into the 'glsl1_pixel' DAT, replacing the code that was there by default.
-Now we need to set up the sources. For this example, we're just going to create two ‘Movie File In’ TOPs and select 2 pictures that are the same resolution as the GLSL TOP (1280 x 720), ‘Mettler.3.jpg’ and 'Trillium.jpg'.
 
+Start by creating a GLSL TOP and an Info DAT. Put the GLSL TOP's name in the Info Dat's `Operator field`.<br>
+On the the GLSL TOP's `Common` page, change the `Output Resolution` to `Custom` and then enter `1280` and `720` in the `Resolution` fields.<br> 
+Copy the code from Shadertoy and paste it into the 'glsl1_pixel' DAT, replacing the code that was there by default.<br>
+<br>
+Now we need to set up the sources. For this example, we're just going to create two 'Movie File In' TOPs and select two pictures that are the same resolution as the 'GLSL' TOP (1280 x 720), ‘Mettler.3.jpg’ and 'Trillium.jpg'.<br>
 
 ##### Main Function and its Parameters
+
 In Shadertoy, the main function and paramters are:<br>
 `mainImage( out vec4 fragColor, in vec2 fragCoord )`<br>
 but we'll change that to:<br>
@@ -29,4 +34,15 @@ Next, we'll search for all references to `fragCoord` and replace them with `gl_F
 uniform vec3 Resolution;
 uniform float iGlobalTime
 ``` 
+
+###### Uniform Inputs
+Shadertoy contains a list of built-in uniform variables. You can view them on the Shadertoy website at the top of the code window by clicking an arrow labled 'Shader Inputs', or you can click the '?' at the bottom right of the same code window to create a pop up window that contains 'Shadertoy Inputs' as well as other information. We will go through the main samplers and uniforms associated with Shadertoy shaders.
+
+###### *Samplers*
+Shadertoy has named their sampler inputs `iChannels`.These samplers can be images, videos, noise patterns, cube mabs, etc. The 'GLSL' TOP has a similar variable called `sTD2DInputs`. The Shadertoy samplers are individual numbered samplers, such as `iChannel0` and `iChannel1`. In TouchDesigner, `sTD2DInputs` is an array, so you can access an elements with a numeric index.<br> 
+Now, search through the code and wherever there is the a reference to `iChannel0`, replace that with `sTD2DInputs[0]`. Where there is a reference to `iChannel1`, replace that with `sTD2DInputs[1]`.
+
+
+
+
 
