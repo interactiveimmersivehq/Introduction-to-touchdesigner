@@ -145,6 +145,22 @@ iChannel2 is the audio. We converted the audio information into a 2D texture wit
 
 If you save the shader and look at the `Info` DAT, you should have fixed all of the errors except for 'iMouse'.
 
+######iMouse
+To find out what we need in order to mimic Shadertoy's iMouse uniform, we need to go back to the Shader Input list. Click the question mark at the bottom right of the window, and if you scroll down, you'll find iMouse :<br>
+
+![Ex2: iMouse Definition](../img/12.6_shade/ex2_8.JPG)
+
+`iMouse` is a `vec4` with the 4 values defined as
+'xy = current pixel coords (if LMB is down). zw = click pixel'<br>
+For now, we'll just set up the uniform with the basics so that the shader renders without errors. Add `iMouse` as a `Uniform Name` to the `Vectors 1` page of the `GLSL` TOP parameters, and set all the values to `0`. <br>
+Now add: <br>
+```uniform vec4 iMouse;```<br>
+after the other uniform declarations near the top of the code. 
+
+The GLSL TOP should now be free of errors, and should look something like this :
+<p13.jpeg>
+
+
 
 
 
