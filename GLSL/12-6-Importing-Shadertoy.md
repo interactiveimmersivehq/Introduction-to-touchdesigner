@@ -203,7 +203,7 @@ op('constant1').par.value0 = 0
 op('constant1').par.value1 = 0
 ```
 
-You can use another `Merge` CHOP to merge `constant1` with `null2` and add another `Null` CHOP after it. Go back to the 'GLSL' TOP and in the four 'Value' fields of the 'iMouse' uniform, you can reference the 'x', 'y', 'z', and 'w' channels of 'null3'. You can do this with Python references or exports.
+You can use another `Merge` CHOP to merge `constant1` with `null2` and add another `Null` CHOP after it. Go back to the `GLSL` TOP and in the four `Value` fields of the `iMouse` uniform, you can reference the `x`, `y`, `z`, and `w` channels of `null3`. You can do this with Python references or exports.
 
 The 'Vectors 1' page should now look like this:
 <p17.jpeg>
