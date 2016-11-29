@@ -205,10 +205,21 @@ op('constant1').par.value1 = 0
 
 You can use another `Merge` CHOP to merge `constant1` with `null2` and add another `Null` CHOP after it. Go back to the `GLSL` TOP and in the four `Value` fields of the `iMouse` uniform, you can reference the `x`, `y`, `z`, and `w` channels of `null3`. You can do this with Python references or exports.
 
-The 'Vectors 1' page should now look like this:
+The 'Vectors 1' page should now look like this:<br>
 ![Ex2: Final iMouse Network](../img/12.6_shade/ex2_12.JPG)<br>
 
-If you view the container, you should now be able to click and drag to rotate around the Shard!
+If you view the container, you should now be able to click and drag to rotate around the Shard!<br>
+<br>
+
+
+#### Example 3: Cyclic Cellular Automaton
+![Ex2: Example 3: Cyclic Cellular Automaton](../img/12.6_shade/ex3_1.jpg)<br>
+shader written by: [zolozulman](https://www.shadertoy.com/user/zolozulman)
+https://www.shadertoy.com/view/4tV3Wd
+
+Shadertoy has implemented the use of multiple buffers, separating functions into separate processes. This example demonstrates one way of importing these multi-pass shaders.
+
+
 
 
 
