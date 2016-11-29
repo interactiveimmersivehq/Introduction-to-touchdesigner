@@ -121,9 +121,12 @@ we should just have: <br>
 Now, we have to replace the 2 parameters we removed from the main function: fragColor, and fragCoord. Go to the very top of the code and insert:<br>
 `layout(location = 0) out vec4 fragColor;` <br>
 
-![Ex2: Main Function](../img/12.6_shade/ex2_5.JPG)
 
-Now you can search for all references to 'fragCoord' (there should only be one which is in the first line of the main function) and replace it with the built in variable `gl_FragCoord`.
+
+
+Now you can search for all references to `fragCoord` (there should only be one, which is in the first line of the main function) and replace it with the built in variable `gl_FragCoord`.
+
+
 
 
 
