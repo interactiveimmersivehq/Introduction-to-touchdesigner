@@ -161,6 +161,23 @@ The GLSL TOP should now be free of errors, and should look something like this :
 
 ![Ex2: iMouse success](../img/12.6_shade/ex2_9.JPG)<br>
 
+######iMouse Functionality
+Let's go back to the description of what iMouse does: <br>
+`xy = current pixel coords (if LMB is down). zw = click pixel`<br>
+We can also see an example of iMouse in action in this shader: <br>
+https://www.shadertoy.com/view/Mss3zH.<br>
+So `.xy` are the coordinates of the mouse while the LMB is clicked. `.zw` are the coordinates of where the mouse was when it was first clicked. We'll have to set up a little CHOP network to re-create this data.<br>
+We could use the `Mouse In` CHOP, but I'd like to only have the mouse only interact with the shader when it's deliberate. <br>
+Create a 'Container' COMP, set the `Width` and `Height` to the same dimensions as the `GLSL` TOP, which in this case are `1280` and `720`. <br>
+Set the `GLSL` TOP as the `Background` of the container in the panel settings. <br>
+Now make a `Panel` CHOP and set a reference to your container as the `Component` parameter. <br>
+We'll want to select 3 values from the `Panel` CHOP: `u`, `v`, and `lselect`. To do this, add 3 `Select` CHOPs and connect `panel1` to each one of them in parallel. <.br>
+In 'select1', under `Channel Names`, enter `u`. We'll rename right away, so in the `Rename From` field enter `u` and in the `Rename To` field enter `x`. 
+In 'select2', select the 'v' channel, and just like before, rename from 'v' to 'y'. 
+For 'select3', we don't need to rename anything, so just enter 'lselect' in the 'Channel Names' field.
+We'll need to convert these values from 0 - 1 values to the full resolution. Add a `Math` CHOP after 'select1' and set the `Multiply` parameter to 1280. Add a `Math` CHOP after 'select2' and set the `Multiply` parameter to 720. 
+Now, create a `Merge` CHOP and connect 'math1' and 'math2' to it. As always, add a 'Null' CHOP after that. So far, it should look like this:
+<p15.jpeg>
 
 
 
