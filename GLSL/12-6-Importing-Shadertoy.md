@@ -7,10 +7,9 @@ To create an ‘App Key’, once you’re logged into Shadertoy, click on `PROFI
 You'll see the `App Key` in the `Manage Your Apps` section. Now, copy this URL `https://www.shadertoy.com/api/v1/shaders/MdlGDM?key=` into your browser, and enter your App Key at the end. After you press enter, the response will be a JSON object with a key called 'inputs'.  In this example, the URL above requires the file called 'tex09.jpg’.If you enter `https://www.shadertoy.com/presets/tex09.jpg` as the URL in your browser, you will see and be able to download the required texture.
 
 #### Example 1: Waterly Video - Test
-Shader written by: [FabriceNeyret2](https://www.shadertoy.com/user/FabriceNeyret2)
-https://www.shadertoy.com/view/MdlGDM
-
 ![alt text](../img/12.6_shade/ex1_1.jpeg)
+Shader written by: [FabriceNeyret2](https://www.shadertoy.com/user/FabriceNeyret2) <br>
+https://www.shadertoy.com/view/MdlGDM
 
 ##### Setup
 Start by creating a GLSL TOP and an Info DAT. Put the GLSL TOP's name in the Info Dat's ‘Operator field’. Set the GLSL TOP's resolution to `Custom` in 'Common' parameter and enter and then enter 1280 and 720. Copy the code from Shadertoy and paste it into the 'glsl1_pixel' DAT, replacing the code that was there by default.
