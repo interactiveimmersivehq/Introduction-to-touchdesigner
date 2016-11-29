@@ -214,10 +214,75 @@ If you view the container, you should now be able to click and drag to rotate ar
 
 #### Example 3: Cyclic Cellular Automaton
 ![Ex2: Example 3: Cyclic Cellular Automaton](../img/12.6_shade/ex3_1.jpg)<br>
-shader written by: [zolozulman](https://www.shadertoy.com/user/zolozulman)
-https://www.shadertoy.com/view/4tV3Wd
+shader written by: [zolozulman](https://www.shadertoy.com/user/zolozulman)<br>
+https://www.shadertoy.com/view/4tV3Wd<br>
 
-Shadertoy has implemented the use of multiple buffers, separating functions into separate processes. This example demonstrates one way of importing these multi-pass shaders.
+Shadertoy has implemented the use of multiple buffers, separating functions into separate processes. This example demonstrates one way of importing these multi-pass shaders.<br>
+
+##### Setup
+###### Connect the Buffers
+On the Shadertoy website, the previous examples only had one tab that contained code called 'Image'. This example has an 'Image' tab as well as a 'Buf A' tab. This means we'll have to use 2 different `GLSL` TOPs to represent each of the shader functions or `buffers`. 
+Start be creating those and setting both to the resolution 1280 x 720, and setting up an 'Info' DAT for each. Rename the GLSL TOPs to match each buffer so we can keep track of which one is which. Now we can copy the code from each of the buffers and paste it into the corresponding 'GLSL' pixel shader.
+It should look like this:
+<p19.jpeg>
+
+###### Noise and Feedback TOP
+'iChannel0' for 'Image' is 'Buf A'. This means we can connect the output of our 'Buf_A' GLSL TOP, to the first input of our 'Image' GLSL TOP. If we click on the Shadertoy tab for 'Buf A' we can see that `iChannel0` is a feedback of itself, `Buffer A`. Before we create that feedback loop, let’s work with `iChannel1`. 'iChannel1' is a noise texture, so we can create a 'Noise' TOP with the same settings as the previous example and connect it to second input of the 'Buf_A' GLSL TOP.
+   For the feedback loop, we can't connect the output of a top to the input of itself without creating a cook dependancy loop. Add a 'Feedback' TOP in the network. The `Feedback` TOP needs an input so we can connect the 'Noise' TOP to the input, set the 'Target TOP' parameter to 'Buf_A', then connect the output to the first input of the 'Buf_A' GLSL TOP.
+Our network should look like this:
+<p20.jpeg>
+
+##### Main Function and fragColor
+We'll go through the same process as the previous examples: changing 'mainImage' to 'main', removing the parameters inside the `()`, and declaring at the beginning: 
+`layout(location = 0) out vec4 fragColor;` 
+Next,go through both shaders and change all 'fragCoord' references to 'gl_FragCoord'. If we look at the 'Info' DATs, we can see an error about data types. That's because the main function call asked for 'vec2 fragCoord' but the built in 'gl_FragCoord' is a vec4. We'll need to go through the main function, and wherever we find 'gl_FragCoord' variable without the `.x` or `.y` after it, we have to add '.xy'. (If you change it in the main function, it will be vec2's that are passed to the other functions, which is what we want). Remember, if the code is referencing 'gl_FragCoord.x' or 'gl_FragCoord.y' then we don't need to change it, since the `.x` and `.y` are selecting the float value from inside the vector already. 
+This example only has 1 instance in each main function that needs to be changed.
+The main function for 'Buf_A' should look like this :
+```
+void main()
+{
+    float r = pow(iMouse.x-gl_FragCoord.x,2.0) + pow(iMouse.y-gl_FragCoord.y,2.0);
+    float max_r = pow(25.0,2.0);
+    vec4 c = vec4(0,0,0,1);
+    if(r <= max_r){
+        c = vec4(1,0,0,1);
+    }
+    vec2 uv = gl_FragCoord.xy / iResolution.xy;    
+    if(iFrame < 5){
+        fragColor = texture2D( iChannel1, uv);
+    }else{
+        fragColor = c+rule(gl_FragCoord.xy);
+    }
+}
+```
+
+and the main function for 'Image' should look like this:
+```
+void main()
+{
+    vec2 uv = gl_FragCoord.xy / iResolution.xy;
+    fragColor = neiborhood(gl_FragCoord.xy)*vec4(uv,0.5+0.5*sin(iGlobalTime),1.0)*4.;//texture2D( iChannel0, uv );
+}
+```
+
+Now we can go back up to the 'Info' DAT and see what else needs to be changed.
+
+##### iResolution, iGlobalTime, iMouse, and iFrame
+Both 'Buf_A' and 'Image` require the declaration of iResolution and iGlobalTime, which we've done before, so we'll go ahead and add these to both. We need 
+```
+uniform vec3 Resolution;
+uniform float iGlobalTime
+``` 
+at the top of both pixel shaders, and we'll need to add both uniforms to the 'Vectors 1' page of the 'GLSL' TOP’s parameters. 
+If we look at the 'Info' DAT for 'Buf_A', we see a new undefined variable: 'iFrame'.  This uniform is a frame counter and we can either reference `absTime.frame` or `me.time.frame`, depending on whether want the frame counter to loop with the timeline or not. For this example, we use `absTime.frame` as the expression for the first value of the uniform, because we don’t want the timeline looping to effect the shader.
+Next, we can copy and paste the same network we created for iMouse in the previous example, and declare the uniform in the exact same way. 
+
+##### iChannels
+The only thing left to convert, is changing any references of `iChannel0` to `sTD2DInputs[0]` and `iChannel1` to `sTD2DInputs[1]. You can do this for both pixel shaders.
+
+Both of your GLSL TOPs should be working now, and your network might look something like this:
+<p22.jpeg>
+
 
 
 
