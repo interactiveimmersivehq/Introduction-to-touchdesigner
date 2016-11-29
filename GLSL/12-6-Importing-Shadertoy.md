@@ -221,10 +221,14 @@ Shadertoy has implemented the use of multiple buffers, separating functions into
 
 ##### Setup
 ###### Connect the Buffers
-On the Shadertoy website, the previous examples only had one tab that contained code called 'Image'. This example has an 'Image' tab as well as a 'Buf A' tab. This means we'll have to use 2 different `GLSL` TOPs to represent each of the shader functions or `buffers`. 
-Start be creating those and setting both to the resolution 1280 x 720, and setting up an 'Info' DAT for each. Rename the GLSL TOPs to match each buffer so we can keep track of which one is which. Now we can copy the code from each of the buffers and paste it into the corresponding 'GLSL' pixel shader.
-It should look like this:
-<p19.jpeg>
+On the Shadertoy website, the previous examples only had one tab that contained code called 'Image'. This example has an 'Image' tab as well as a 'Buf A' tab. This means we'll have to use 2 different `GLSL` TOPs to represent each of the shader functions or `buffers`.<br>
+
+Start by creating those, and setting both TOPs to have the resolution 1280 x 720.<br>
+Set up an `Info` DAT for each.<br>
+Rename the `GLSL` TOPs to match each buffer so we can keep track of which one is which.<br>
+Now we can copy the code from each of the buffers and paste it into the corresponding `GLSL` pixel shaders.<br>
+It should look like this:<br>
+![Ex2: Example 3: GLSL TOP per buffer](../img/12.6_shade/ex3_2.JPG)<br>
 
 ###### Noise and Feedback TOP
 'iChannel0' for 'Image' is 'Buf A'. This means we can connect the output of our 'Buf_A' GLSL TOP, to the first input of our 'Image' GLSL TOP. If we click on the Shadertoy tab for 'Buf A' we can see that `iChannel0` is a feedback of itself, `Buffer A`. Before we create that feedback loop, let’s work with `iChannel1`. 'iChannel1' is a noise texture, so we can create a 'Noise' TOP with the same settings as the previous example and connect it to second input of the 'Buf_A' GLSL TOP.
