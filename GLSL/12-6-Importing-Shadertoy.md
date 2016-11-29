@@ -132,7 +132,7 @@ Similar to the last example, iChannel0 is a 2D input, so we'll find all `iChanne
 ######iChannel1
 Changing the code for iChannel1 is similar to the edits for iChannel0, but the input is a cube map. TouchDesigner sorts the types of inputs for us: 2D, 3D, Cube, etc, into separate arrays. If this was another 2D inputs we would use sTD2DInputs[1], but since it’s a cube map (the first and only in our inputs) we use `sTDCubeInputs[0]`. <br>
 As mentioned for `iChannel0`, we don’t need to use separate texture functions, so change all `textureCube` to `texture`. There should be 5 lines of code to change.<br>
-If you look at the 'Info' DAT, you'll notice a new error has appeared:<br>
+If you look at the 'Info' DAT, you'll notice an error has appeared, requiring us to `enable` `#extension GL_NV_shadow_samplers_cube` :<br>
 ![Ex2: textureCube Error](../img/12.6_shade/ex2_6.JPG)
 We can follow its advice, and at the very beginning of our code add 
 `#extension GL_NV_shadow_samplers_cube : enable`
