@@ -7,7 +7,7 @@ To create an ‘App Key’, once you’re logged into Shadertoy, click on `PROFI
 You'll see the `App Key` in the `Manage Your Apps` section. Now, copy this URL `https://www.shadertoy.com/api/v1/shaders/MdlGDM?key=` into your browser, and enter your App Key at the end. After you press enter, the response will be a JSON object with a key called 'inputs'.  In this example, the URL above requires the file called 'tex09.jpg’.If you enter `https://www.shadertoy.com/presets/tex09.jpg` as the URL in your browser, you will see and be able to download the required texture.
 
 #### Example 1: Waterly Video - Test
-![alt text](../img/12.6_shade/ex1_1.jpeg)
+![Example 1: Waterly Video - Test](../img/12.6_shade/ex1_1.jpeg)
 Shader written by: [FabriceNeyret2](https://www.shadertoy.com/user/FabriceNeyret2) <br>
 https://www.shadertoy.com/view/MdlGDM <br>
 <br>
@@ -42,7 +42,14 @@ Shadertoy contains a list of built-in uniform variables. You can view them on th
 Shadertoy has named their sampler inputs `iChannels`.These samplers can be images, videos, noise patterns, cube mabs, etc. The 'GLSL' TOP has a similar variable called `sTD2DInputs`. The Shadertoy samplers are individual numbered samplers, such as `iChannel0` and `iChannel1`. In TouchDesigner, `sTD2DInputs` is an array, so you can access an elements with a numeric index.<br> 
 Now, search through the code and wherever there is the a reference to `iChannel0`, replace that with `sTD2DInputs[0]`. Where there is a reference to `iChannel1`, replace that with `sTD2DInputs[1]`.
 
-
+###### *iGlobalTime*
+To find out what type of uniform this needs to be, look at the list of 'Shader Inputs' on Shadertoy mentioned previously. In the list, `iGlobalTime` is a float, so near the top of our code, below the `fragColor` declaration, we'll write: <br>
+`uniform float iGlobalTime;` <br>
+Next, we click on the 'GLSL' TOP in TouchDesigner, and go to the `Vectors 1` page in the parameter window. <br>
+As the first `Uniform Name` we'll write `iGlobalTime` and for the value we will reference TouchDesigner's 'seconds' member of the `absTime` class by entering: <br>
+`absTime.seconds`<br>
+It should look like this: <br>
+![iGlobalTime : absTime.seconds](../img/12.6_shade/ex1_2.JPG)
 
 
 
