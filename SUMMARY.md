@@ -71,10 +71,10 @@
    * [Types of Shaders and Rendering Pipeline](GLSL/12-2-Types-of-Shaders-and-Rendering-Pipeline.md)
    * [Debugging](GLSL/12-3-Debugging.md)
    * [Shaders in 3D](GLSL/12-4-Shaders-in-3D.md)
+   * [Importing Shadertoy](GLSL/12-6-Importing-Shadertoy.md)
    * [Shaders in 2D](GLSL/12-5-Shaders-in-2D.md)
    * [GPU Particle Systems](GLSL/12-7-GPU-Particle-Systems.md)
    * [What Next?](GLSL/12-7-What-Next.md)
-   * [Importing Shadertoy](GLSL/12-6-Importing-Shadertoy.md)
 * [Projects](Projects/13-Projects.md)
 * [Credits](Credits/14-Credits.md)
 
