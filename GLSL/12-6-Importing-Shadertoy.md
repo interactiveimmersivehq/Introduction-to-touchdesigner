@@ -59,8 +59,17 @@ TouchDesigner only gives us with this information if we aren't providing our own
 Next, go to the `Vectors 1` page of the GLSL TOP’s parameters, and next to the second `Uniform Name`, enter `iResolution`. For its values, enter `1270` and `720`. We won't need the 3rd value of the vec3 for this, so we'll just leave the other 2 values as `0`
 
 Your GLSL TOP should now compile successfully and look something like this :<br>
-![iGlobalTime : absTime.seconds](../img/12.6_shade/ex1_2.JPG)
+![iGlobalTime : absTime.seconds](../img/12.6_shade/ex1_3.JPG)
 <br>
+<br>
+<br>
+
+#### Example 2: Shard
+![iGlobalTime : absTime.seconds](../img/12.6_shade/ex2_1.jpg)
+Shader written by: [simesgreen ](https://www.shadertoy.com/user/simesgreen)<br>
+https://www.shadertoy.com/view/Xdf3zM <br>
+
+
 
 
 
