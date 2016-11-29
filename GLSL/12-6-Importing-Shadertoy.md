@@ -10,7 +10,7 @@ You'll see the `App Key` in the `Manage Your Apps` section. Now, copy this URL `
 Shader written by: [FabriceNeyret2](https://www.shadertoy.com/user/FabriceNeyret2)
 https://www.shadertoy.com/view/MdlGDM
 
-[![alt text](../img/12.6_shade/test.jpg)]
+![alt text](../img/12.6_shade/ex1_1.jpeg)
 
 ##### Setup
 Start by creating a GLSL TOP and an Info DAT. Put the GLSL TOP's name in the Info Dat's ‘Operator field’. Set the GLSL TOP's resolution to `Custom` in 'Common' parameter and enter and then enter 1280 and 720. Copy the code from Shadertoy and paste it into the 'glsl1_pixel' DAT, replacing the code that was there by default.
