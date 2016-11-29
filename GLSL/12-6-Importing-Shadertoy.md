@@ -231,14 +231,14 @@ It should look like this:<br>
 ![Ex2: Example 3: GLSL TOP per buffer](../img/12.6_shade/ex3_2.JPG)<br>
 
 ###### Noise and Feedback TOP
-'iChannel0' for 'Image' is 'Buf A'. This means we can connect the output of our `Buf_A` `GLSL` TOP, to the first input of our `Image` GLSL TOP. If we click on the Shadertoy tab for 'Buf A' we can see that `iChannel0` is a feedback of itself, `Buffer A`. Before we create that feedback loop, let’s work with `iChannel1`. 'iChannel1' is a noise texture, so we can create a `Noise` TOP with the same settings as the previous example and connect it to second input of the `Buf_A` `GLSL` TOP.
-   For the feedback loop, we can't connect the output of a top to the input of itself without creating a cook dependancy loop. Add a 'Feedback' TOP in the network. The `Feedback` TOP needs an input so we can connect the 'Noise' TOP to the input, set the 'Target TOP' parameter to 'Buf_A', then connect the output to the first input of the 'Buf_A' GLSL TOP.
-Our network should look like this:
-<p20.jpeg>
+'iChannel0' for 'Image' is 'Buf A'. This means we can connect the output of our `Buf_A` `GLSL` TOP, to the first input of our `Image` GLSL TOP. If we click on the Shadertoy tab for 'Buf A' we can see that `iChannel0` is a feedback of itself, `Buffer A`. Before we create that feedback loop, let’s work with `iChannel1`. 'iChannel1' is a noise texture, so we can create a `Noise` TOP with the same settings as the previous example and connect it to second input of the `Buf_A` `GLSL` TOP.<br>
+   For the feedback loop, we can't connect the output of a top to the input of itself without creating a cook dependancy loop. Add a 'Feedback' TOP in the network. The `Feedback` TOP needs an input so we can connect the `Noise` TOP to the input, set the 'Target TOP' parameter to `Buf_A`, then connect the output to the first input of the `Buf_A` GLSL TOP.<br>
+Our network should look like this:<br>
+![Ex2: Example 3: Noise and Feedback](../img/12.6_shade/ex3_3.JPG)<br>
 
 ##### Main Function and fragColor
-We'll go through the same process as the previous examples: changing 'mainImage' to 'main', removing the parameters inside the `()`, and declaring at the beginning: 
-`layout(location = 0) out vec4 fragColor;` 
+We'll go through the same process as the previous examples: changing `mainImage` to `main`, removing the parameters inside the `()`, and declaring at the beginning: <br>
+`layout(location = 0) out vec4 fragColor;` <br>
 Next,go through both shaders and change all 'fragCoord' references to 'gl_FragCoord'. If we look at the 'Info' DATs, we can see an error about data types. That's because the main function call asked for 'vec2 fragCoord' but the built in 'gl_FragCoord' is a vec4. We'll need to go through the main function, and wherever we find 'gl_FragCoord' variable without the `.x` or `.y` after it, we have to add '.xy'. (If you change it in the main function, it will be vec2's that are passed to the other functions, which is what we want). Remember, if the code is referencing 'gl_FragCoord.x' or 'gl_FragCoord.y' then we don't need to change it, since the `.x` and `.y` are selecting the float value from inside the vector already. 
 This example only has 1 instance in each main function that needs to be changed.
 The main function for 'Buf_A' should look like this :
