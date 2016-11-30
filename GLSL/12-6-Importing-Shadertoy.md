@@ -24,6 +24,7 @@ https://www.shadertoy.com/view/MdlGDM
 ##### Setup
 
 Start by creating a `GLSL` TOP and an `Info` DAT. Put the `GLSL` TOP's name in the `Info` DAT's `Operator field`.<br>
+
 On the the `GLSL TOP`s `Common` page, change the `Output Resolution` to `Custom` and then enter `1280` and `720` in the `Resolution` fields.
 
 Copy the code from Shadertoy and paste it into the `glsl1_pixel` DAT, replacing the code that was there by default.
@@ -46,31 +47,39 @@ To replace the fragColor argument that we removed, we'll go up to the top of the
 
 Next, we'll search for all references to `fragCoord` and replace them with `gl_FragCoord`.
 
-```
+`
 uniform vec3 Resolution;
 uniform float iGlobalTime
-``` 
+`
 
 ##### Uniform Inputs
+
 Shadertoy contains a list of built-in uniform variables. You can view them on the Shadertoy website at the top of the code window by clicking an arrow labled 'Shader Inputs', or you can click the '?' at the bottom right of the same code window to create a pop up window that contains 'Shadertoy Inputs' as well as other information. We will go through the main samplers and uniforms associated with Shadertoy shaders.
 
 ##### Samplers
 Shadertoy has named their sampler inputs `iChannels`.These samplers can be images, videos, noise patterns, cube mabs, etc. The `GLSL` TOP has a similar variable called `sTD2DInputs`. The Shadertoy samplers are individual numbered samplers, such as `iChannel0` and `iChannel1`. In TouchDesigner, `sTD2DInputs` is an array, so you can access an elements with a numeric index.
+
 
 Now, search through the code and wherever there is the a reference to `iChannel0`, replace that with `sTD2DInputs[0]`. Where there is a reference to `iChannel1`, replace that with `sTD2DInputs[1]`.
 
 ##### iGlobalTime
 To find out what type of uniform this needs to be, look at the list of 'Shader Inputs' on Shadertoy mentioned previously. In the list, `iGlobalTime` is a float, so near the top of our code, below the `fragColor` declaration, we'll write:
 
+
 `uniform float iGlobalTime;` 
+
 
 Next, we click on the `GLSL` TOP in TouchDesigner, and go to the `Vectors 1` page in the parameter window. 
 
+
 As the first `Uniform Name` we'll write `iGlobalTime` and for the value we will reference TouchDesigner's 'seconds' member of the `absTime` class by entering: 
+
 
 `absTime.seconds`
 
+
 It should look like this: 
+
 
 ![iGlobalTime : absTime.seconds](../img/12.6_shade/ex1_2.JPG)
 
@@ -78,7 +87,9 @@ It should look like this:
 ##### iResolution
 iResolution is the resolution of the Shader on Shadertoy. If our resolution depended on one of our inputs, we could use TouchDesigner's built-in array: 
 
+
 `uTD2DInfos[i].res`
+
 
 TouchDesigner only gives us with this information if we aren't providing our own vertex shader, so for consistency, we will manually declare iResolution as a uniform. If we look at Shadertoy's input list, we see that iResolution is a vec3. Similar to iGlobalTime, we'll first declare it in the code by going near the top of our code and writing the line: 
 
