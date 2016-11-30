@@ -87,7 +87,7 @@ iResolution is the resolution of the Shader on Shadertoy. If our resolution depe
 
 `uTD2DInfos[i].res`
 
-In this case you could as `.zw` on the end to retrieve the width and height in pixels, or you can add `.xy` to receive the result of 1.0 divided by the width and 1.0 divded by the height.
+In this case you could add `.zw` on the end to retrieve the width and height in pixels, or you can add `.xy` to receive the result of 1.0 divided by the width and 1.0 divded by the height.
 
 TouchDesigner only gives us with this information if we aren't providing our own vertex shader, so for consistency, we will manually declare iResolution as a uniform. If we look at Shadertoy's input list, we see that iResolution is a vec3. Similar to iGlobalTime, we'll first declare it in the code by going near the top of our code and writing the line: 
 
