@@ -16,26 +16,34 @@ If you enter `https://www.shadertoy.com/presets/tex09.jpg`, as the URL in your b
 
 #### Example 1: Waterly Video - Test
 ![Example 1: Waterly Video - Test](../img/12.6_shade/ex1_1.jpeg)
-Shader written by: [FabriceNeyret2](https://www.shadertoy.com/user/FabriceNeyret2) <br>
-https://www.shadertoy.com/view/MdlGDM <br>
-<br>
+
+Shader written by: [FabriceNeyret2](https://www.shadertoy.com/user/FabriceNeyret2)
+
+https://www.shadertoy.com/view/MdlGDM 
 
 ##### Setup
 
 Start by creating a `GLSL` TOP and an `Info` DAT. Put the `GLSL` TOP's name in the `Info` DAT's `Operator field`.<br>
-On the the `GLSL TOP`s `Common` page, change the `Output Resolution` to `Custom` and then enter `1280` and `720` in the `Resolution` fields.<br> 
-Copy the code from Shadertoy and paste it into the `glsl1_pixel` DAT, replacing the code that was there by default.<br>
-<br>
-Now we need to set up the sources. For this example, we're just going to create two `Movie File In` TOPs and select two pictures that are the same resolution as the 'GLSL' TOP (1280 x 720), ‘Mettler.3.jpg’ and 'Trillium.jpg'.<br>
+On the the `GLSL TOP`s `Common` page, change the `Output Resolution` to `Custom` and then enter `1280` and `720` in the `Resolution` fields.
+
+Copy the code from Shadertoy and paste it into the `glsl1_pixel` DAT, replacing the code that was there by default.
+
+Now we need to set up the sources. For this example, we're just going to create two `Movie File In` TOPs and select two pictures that are the same resolution as the 'GLSL' TOP (1280 x 720), ‘Mettler.3.jpg’ and 'Trillium.jpg'.
 
 ##### Main Function and its Parameters
 
-In Shadertoy, the main function and paramters are:<br>
-`mainImage( out vec4 fragColor, in vec2 fragCoord )`<br>
-but we'll change that to:<br>
-`main()`<br>
-To replace the fragColor argument that we removed, we'll go up to the top of the code and insert:<br> 
-`layout(location = 0) out vec4 fragColor;`<br> 
+In Shadertoy, the main function and paramters are:
+
+`mainImage( out vec4 fragColor, in vec2 fragCoord )`
+
+but we'll change that to:
+
+`main()`
+
+To replace the fragColor argument that we removed, we'll go up to the top of the code and insert:
+
+`layout(location = 0) out vec4 fragColor;`
+
 Next, we'll search for all references to `fragCoord` and replace them with `gl_FragCoord`.
 
 ```
