@@ -1,4 +1,5 @@
 ### *12.6 Importing Shaders from Shadertoy*
+##### Chapter by Matthew Hedlin
 
 This section will demonstrate the basics of porting a shader from Shadertoy.com to TouchDesigner. We recommend using a feature-rich code editor, such as Sublime Text, Atom, or Notepad++, as there a strong Find-and-Replace function is essential.
 
@@ -80,9 +81,7 @@ It should look like this:
 ##### iResolution
 iResolution is the resolution of the Shader on Shadertoy. If our resolution depended on one of our inputs, we could use TouchDesigner's built-in array: 
 
-
 `uTD2DInfos[i].res`
-
 
 TouchDesigner only gives us with this information if we aren't providing our own vertex shader, so for consistency, we will manually declare iResolution as a uniform. If we look at Shadertoy's input list, we see that iResolution is a vec3. Similar to iGlobalTime, we'll first declare it in the code by going near the top of our code and writing the line: 
 
