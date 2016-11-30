@@ -15,6 +15,9 @@ After you press enter, the response will be a JSON object with a key called `inp
 
 If you enter `https://www.shadertoy.com/presets/tex09.jpg`, as the URL in your browser, you will see and be able to download the required texture.
 
+#### Troubleshooting
+A common error encountered when converting Shadertoy shaders is related to the UV extend default. If you find the results of your shader don't match the results on the Shadertoy website, try setting the `Input Extend Mode UV` parameter of the GLSL TOP to `Repeat`.
+
 #### Example 1: Waterly Video - Test
 ![Example 1: Waterly Video - Test](../img/12.6_shade/ex1_1.jpeg)
 
@@ -50,7 +53,8 @@ Next, we'll search for all references to `fragCoord` and replace them with `gl_F
 
 `
 uniform vec3 Resolution;
-uniform float iGlobalTime
+
+uniform float iGlobalTime;
 `
 
 ##### Uniform Inputs
@@ -79,9 +83,11 @@ It should look like this:
 
 
 ##### iResolution
-iResolution is the resolution of the Shader on Shadertoy. If our resolution depended on one of our inputs, we could use TouchDesigner's built-in array: 
+iResolution is the resolution of the Shader on Shadertoy. If our resolution depended on one of our inputs, we could use TouchDesigner's built-in array of objects: 
 
 `uTD2DInfos[i].res`
+
+In this case you could as `.zw` on the end to retrieve the width and height in pixels, or you can add `.xy` to receive the result of 1.0 divided by the width and 1.0 divded by the height.
 
 TouchDesigner only gives us with this information if we aren't providing our own vertex shader, so for consistency, we will manually declare iResolution as a uniform. If we look at Shadertoy's input list, we see that iResolution is a vec3. Similar to iGlobalTime, we'll first declare it in the code by going near the top of our code and writing the line: 
 
@@ -183,7 +189,7 @@ Changing the code for iChannel1 is similar to the edits for iChannel0, but the i
 
 As mentioned for `iChannel0`, we don’t need to use separate texture functions, so change all `textureCube` to `texture`. There should be 5 lines of code to change.
 
-If you look at the 'Info' DAT, you'll notice an error has appeared, requiring us to `enable` `#extension GL_NV_shadow_samplers_cube` :
+If you look at the 'Info' DAT, you'll notice an error has appeared, requiring us to enable `#extension GL_NV_shadow_samplers_cube` :
 
 ![Ex2: textureCube Error](../img/12.6_shade/ex2_6.JPG)
 
@@ -341,7 +347,7 @@ and the main function for `Image` should look like this:
 void main()
 {
     vec2 uv = gl_FragCoord.xy / iResolution.xy;
-    fragColor = neiborhood(gl_FragCoord.xy)*vec4(uv,0.5+0.5*sin(iGlobalTime),1.0)*4.;//texture2D( iChannel0, uv );
+    fragColor = neiborhood(gl_FragCoord.xy)*vec4(uv,0.5+0.5*sin(iGlobalTime),1.0)*4.;
 }
 ```
 
@@ -349,10 +355,12 @@ Now we can go back up to the `Info` DAT and see what else needs to be changed.
 
 ##### iResolution, iGlobalTime, iMouse, and iFrame
 Both `Buf_A` and `Image` require the declaration of `iResolution` and `iGlobalTime`, which we've done before, so we'll go ahead and add these to both. We need
-```
+`
 uniform vec3 Resolution;
-uniform float iGlobalTime
-``` 
+
+uniform float iGlobalTime;
+`
+
 at the top of both pixel shaders, and we'll need to add both uniforms to the 'Vectors 1' page of the 'GLSL' TOP’s parameters. 
 
 If we look at the `Info` DAT for `Buf_A`, we see a new undefined variable: 'iFrame'.  This uniform is a frame counter and we can either reference `absTime.frame` or `me.time.frame`, depending on whether want the frame counter to loop with the timeline or not. For this example, we use `absTime.frame` as the expression for the first value of the uniform, because we don’t want the looping of timeline to effect the shader.
