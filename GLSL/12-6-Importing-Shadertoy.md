@@ -59,27 +59,20 @@ Shadertoy contains a list of built-in uniform variables. You can view them on th
 ##### Samplers
 Shadertoy has named their sampler inputs `iChannels`.These samplers can be images, videos, noise patterns, cube mabs, etc. The `GLSL` TOP has a similar variable called `sTD2DInputs`. The Shadertoy samplers are individual numbered samplers, such as `iChannel0` and `iChannel1`. In TouchDesigner, `sTD2DInputs` is an array, so you can access an elements with a numeric index.
 
-
 Now, search through the code and wherever there is the a reference to `iChannel0`, replace that with `sTD2DInputs[0]`. Where there is a reference to `iChannel1`, replace that with `sTD2DInputs[1]`.
 
 ##### iGlobalTime
 To find out what type of uniform this needs to be, look at the list of 'Shader Inputs' on Shadertoy mentioned previously. In the list, `iGlobalTime` is a float, so near the top of our code, below the `fragColor` declaration, we'll write:
 
-
 `uniform float iGlobalTime;` 
-
 
 Next, we click on the `GLSL` TOP in TouchDesigner, and go to the `Vectors 1` page in the parameter window. 
 
-
 As the first `Uniform Name` we'll write `iGlobalTime` and for the value we will reference TouchDesigner's 'seconds' member of the `absTime` class by entering: 
-
 
 `absTime.seconds`
 
-
 It should look like this: 
-
 
 ![iGlobalTime : absTime.seconds](../img/12.6_shade/ex1_2.JPG)
 
