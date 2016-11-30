@@ -9,7 +9,7 @@ Elburz Sorkhabi - original author & creator, editor
 Byron Wong - management & operations
 </p>
 <p style="margin-left: 30px">
-Matthew Hedlin - proof-reading & editing, conversion to GitBook format
+Matthew Hedlin - author chapter 12.6 - Importing Shadertoy, proof-reading & editing, conversion to GitBook format
 </p>
 <p style="margin-left: 30px">
 Greg Hermanovic - foreword
