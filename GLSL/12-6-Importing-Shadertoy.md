@@ -18,7 +18,7 @@ If you enter `https://www.shadertoy.com/presets/tex09.jpg`, as the URL in your b
 #### Swizzling
 Swizzling is the method of accessing the components of a vector. You'll come across this a few times in these examples. 
 
-If there is a variable `vec4 color`, the 4 values of `color` are represented as `color.rgba`. If you wanted to access just the first 2 values of the vector you would use `color.rg`. If you wanted to rearrange the values of the vector, you could write `color.bgar`
+If there is a variable `vec4 color`, the 4 values of `color` are represented as `color.rgba`. If you want to access just the first 2 values of the vector you could use `color.rg`. If you want to rearrange the values of the vector, you could write `color.bgar`
 
 There are equivalents to .rgba that do the exact same thing, but are generally used in different situations to provide clarity when reading the code. 
 
