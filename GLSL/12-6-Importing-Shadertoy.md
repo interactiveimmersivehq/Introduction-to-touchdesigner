@@ -29,6 +29,19 @@ While these conventions do the same thing, they can not be combined. To refer to
 #### Troubleshooting
 A common error encountered when converting Shadertoy shaders is related to the UV extend default. If you find the results of your shader don't match the results on the Shadertoy website, try setting the `Input Extend Mode UV` parameter of the 'GLSL' TOP to `Repeat`.
 
+#### Swizzling
+Swizzling is the method of accessing the components of a vector. You'll come across this a few times in these examples. 
+
+If there is a variable `vec4 color`, the 4 values of `color` are represented as `color.rgba`. If you wanted to access just the first 2 values of the vector you would use `color.rg`. If you wanted to rearrange the values of the vector, you could write `color.bgar`
+
+There are equivalents to .rgba that do the exact same thing, but are generally used in different situations to provide clarity when reading the code. 
+
+In general, when referring to texture coordinates, `.stpq` is used. When referring to 3D coordinates, `.xyzw` are used.
+
+While these conventions do the same thing, they can not be combined. To refer to the four values of `vec4 a` we could use `a.xyzw`, or `a.stpq`, but we could not use `a.stzw`. This will create an error.
+
+
+
 #### Example 1: Waterly Video - Test
 ![Example 1: Waterly Video - Test](../img/12.6_shade/ex1_1.jpeg)
 

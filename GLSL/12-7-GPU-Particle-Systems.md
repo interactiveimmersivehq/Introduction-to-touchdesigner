@@ -1,8 +1,8 @@
 
-### *12.6 GPU Particle Systems*
+### *12.7 GPU Particle Systems*
 
 
-#### *12.6.1 Introduction*
+#### *12.7.1 Introduction*
 
 This tutorial will be focused on creating a GPU based particle system using TouchDesigner and GLSL shaders. This has many benefits compared to using the built-in Particle SOP, because all the computations inside of GLSL shader are performed on the GPU. GLSL shaders allow for the creation of particles systems with extremely large particle counts (in the multi-millions and more), with customized behaviour, that still compute quickly.
 
@@ -15,7 +15,7 @@ A second important concept to remember is that similar to any other type of shad
 To achieve the goal of creating a fully-functioning GPU particle system, we will break the particle system into a number of incremental projects.
 
 
-#### *12.6.2 Moving Particles with Textures*
+#### *12.7.2 Moving Particles with Textures*
 
 Before getting started, this is an outline of the steps to this section:
 
@@ -198,7 +198,7 @@ With that, we've finished the first goal, which was to move particles with textu
 ![Particles final](../img/12.6.2/final_step.PNG)
 
 
-### 12.6.3 Using Source Geometry
+### 12.7.3 Using Source Geometry
 
 Now that we have a basic grasp on moving particles using textures, we can add in a piece of geometry and use its positions as starting positions for our particle system. In this exercise, we'll replace our 'Add SOP' with a 'Grid SOP' (with the same point count) and add some noise to each particle position. These are the steps we will follow:
 
