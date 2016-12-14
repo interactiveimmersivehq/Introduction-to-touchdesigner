@@ -30,7 +30,7 @@
     * [Audio Inputs and Outputs](CHOPs/4-3-Audio-Inputs-and-Outputs.md)
     * [Sample Rates](CHOPs/4-4-Sample-Rates.md)
     * [Time Slicing](CHOPs/4-5-Time-Slicing.md)
-    * [Common Beginner CHOPs](common-beginner-chops.md)
+    * [Common Beginner CHOPs](CHOPs/4-6-Common-CHOPs.md)
 * DATs
     * [Introduction](DATs/5-1-Introduction.md)
     * [Communication Methods](DATs/5-2-Communication-Methods.md)
