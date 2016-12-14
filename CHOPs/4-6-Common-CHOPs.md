@@ -9,7 +9,6 @@ When a Constant CHOP is created, only 1 channel is active. If a channel is not a
 To activate a channel just give it a name, and the number field will light up as well as show up in the operator viewer.
 To create multiple channels with the same value, you can name the channels using pattern matching.
 If you enter `chan[1-4]` in the name field, 4 channels will be created: `chan1`, `chan2`, `chan3`, and `chan4`. These channels will all have the same value.
-![Constant](../img/constant1a.jpg)
 
 ##### Noise
 This CHOP generates a set of pseudo-random points according to the settings in the operators Parameters. There are 6 different algorithms to choose from, each with different characteristics and may suit some situations better than the others.
