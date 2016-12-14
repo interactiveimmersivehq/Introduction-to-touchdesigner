@@ -16,7 +16,7 @@ To create multiple channels with the same value, you can name the channels using
 
 If you enter \`chan\[1-4\]\` in the name field, 4 channels will be created: \`chan1\`, \`chan2\`, \`chan3\`, and \`chan4\`. These channels will all have the same value.
 
-!\[Constant\]\(../img/constant1a.jpg\)
+!\[Constant\]\(../img/constant.jpg\)
 
 \#\#\#\#\# Noise
 
