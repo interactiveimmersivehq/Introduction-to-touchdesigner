@@ -1,6 +1,10 @@
-\#\#\# \*4.6 Common Beginner Operators\*
+\#\#\# \*4.x Common Beginner Operators\*
+
+
 
 This section is an introduction to some of the channel operators that are used in many situations. There is an example file that is included in the .zip folder.
+
+
 
 \#\#\#\# Generator CHOPs
 
@@ -16,7 +20,9 @@ To create multiple channels with the same value, you can name the channels using
 
 If you enter \`chan\[1-4\]\` in the name field, 4 channels will be created: \`chan1\`, \`chan2\`, \`chan3\`, and \`chan4\`. These channels will all have the same value.
 
-!\[Constant\]\(../img/constant.jpg\)
+!\[Constant\]\(../img/constant1a.jpg\)
+
+
 
 \#\#\#\#\# Noise
 
@@ -30,6 +36,8 @@ To create multiple channels of noise, go to the \`Channel\` page of the Paramete
 
 The number of samples you would like to generate is determined by the settings on the \`Channel\` page, with the \`Start\`, \`End\`, and \`Sample Rate\`. The amount of time multiplied by the sample rate. But if you only need 1 sample at a time, you can go to the \`Common\` page, and turn the \`Time Slice\` toggle to \`On\`. This creates 1 random value per channel for each frame, which requires less CPU usage.
 
+
+
 \#\#\#\#\# Pattern
 
 The Pattern CHOP generates a function that is a set amount, or array, of samples.
@@ -38,25 +46,33 @@ The size of the array is set by \`Length\` on the \`Pattern\` parameter page and
 
 \`Cycles\` is the amount of times the function loops within the amount of samples.
 
-There are settings to control your pattern, depending on what \`Type\` you have chosen.
 
-\`Taper\` has a beginning value and an end value, and taper, or expands, depending on which one is higher.
+
+There are settings to control your pattern, depending on what \`Type\` you have chosen. 
+
+\`Taper\` has a beginning value and an end value, and taper, or expands, depending on which one is higher. 
 
 \`From Range\` and \`To Range\` are very useful for something like a sine wave that creates a \`-1\` to \`1\` value, but you need a \`0\` to \`1\` value. \(There's more on this later, in the Math CHOP section\).
 
 \*\(See \*\*/pattern/example3\*\* in the example project file\)\*
 
+
+
 This is a great tool for creating lookup tables. \*\(See \*\*/pattern/example4\*\* in the example project file\)\*
+
+
 
 \#\#\#\#\# LFO
 
 The LFO CHOP generates an oscillating value according to the parameter settings. It goes back and forth between 2 values that are determined by \`Amplitude\` and \`Offset\`, over a given time, or \`Frequency\`.
 
-\`Frequency\` generally determines how many cycles per second, except when a value is connected to the first input for \`Octave Control\`. If the \`Octave Control\` value is set to \`1\`, the speed is doubled, and if the value is set to \`2\`, the speed is doubled 2 \(4x\), etc.
+\`Frequency\` generally determines how many cycles per second, except when a value is connected to the first input for \`Octave Control\`. If the \`Octave Control\` value is set to \`1\`, the speed is doubled, and if the value is set to \`2\`, the speed is doubled 2 \(4x\), etc. 
 
 The shape of the oscillation is controlled by \`Type\`.
 
 You can also oscillate using a different oscilation pattern by using the 3rd input.
+
+
 
 \#\#\#\#\# Timer
 
@@ -74,11 +90,15 @@ On the \`Outputs\` parameter page, you can select what information you would lik
 
     \* \`Done\` is a value of \`0\` while the timer is initialized or running, and turns to \`1\` when the timer has finished. It will turn back to \`0\` once the \`Init\` or \`Start\` button is triggered again.
 
+
+
 \#\#\#\# Filter CHOPs
 
 \#\#\#\#\# Math
 
 This is probably the most commonly used CHOP. It takes data from its inputs and manipulates it in different ways. Here are some of the useful options:
+
+
 
 \#\#\#\#\#\# Mult-Add
 
@@ -89,6 +109,8 @@ You can apply these operations to each of the input values. It functions as you 
 If there is an input value of \`-1.5\`, and Pre-Add value of \`1\`, Multiply value of \`2\`, and Post-Add of \`0\`, the result will be \`-1\`.
 
 With the same input value, but a Pre-Add value of \`0\`, Multiply value of \`2\`, and Post-Add of \`1\`, the result would be \`-2\`.
+
+
 
 \#\#\#\#\#\# Range
 
@@ -104,6 +126,8 @@ If you have an input value of \`-0.5\` the result will be \`2.5\`
 
 If you have an input value of \`1\` the result will be \`10\`
 
+
+
 \#\#\#\#\#\# OP
 
 The \`OP\` page offers a lot of different options.
@@ -114,13 +138,17 @@ The \`OP\` page offers a lot of different options.
 
 \* \`Integer\` provides options for rounding.
 
+
+
 \#\#\#\#\#\# Scope
 
 On the \`Common\` page there is a field called \`Scope\` which allows you to target certain channels while leaving the other channels untouched.
 
+
+
 \#\#\#\#\# Select
 
-This CHOP can be used to split up data that is contained in a single CHOP, or can be used to grab data from a remote section of a project. You can also rename channels that you are selecting at the same time.
+This CHOP can be used to split up data that is contained in a single CHOP, or can be used to grab data from a remote section of a project. You can also rename channels that you are selecting at the same time. 
 
 If you have a CHOP that contains several channels of information, and need to apply a process to 2 of the channels, but not all, a Select CHOP will allow you to name the channels that you want to focus on. Use the \`Channel Names\` field on the \`Select\` page of the parameters to list the channels you require, separated by a space.
 
@@ -130,9 +158,11 @@ This CHOP also allows you to point to other CHOPs from different areas of a proj
 
 As before, if there are several channels in the constant, and you only want to select 1, you can use the \`Channel Names\` field to select the one you need, and rename it as well.
 
+
+
 \#\#\#\#\# Merge
 
-The Merge CHOP is the opposite of the Select CHOP. It takes channels from multiple CHOPs and merges them into a single CHOP.
+The Merge CHOP is the opposite of the Select CHOP. It takes channels from multiple CHOPs and merges them into a single CHOP. 
 
 The important thing to keep in mind, when combining CHOP channels, is the length \(number of samples\) of each channel as well as when each channel starts and ends. If one of the channels is longer than the others, the shorter channels are extended according to certain parameters contained both in the Merge CHOP as well as the settings of the CHOPs connected to the inputs.
 
@@ -160,6 +190,8 @@ But the \`Merge\` parameter page of the Merge CHOP has settings that can overrid
 
 \* \`Stretch to Smalles Interval\` squeezes all of the channel lengths between the last start sample, and the first end sample. The start and end samples can be from different channels
 
+
+
 The dropdown menu \`Duplicate Names\` deals with names of channels that are the same.
 
 \* \`Make Unique\` will generate a new number for each channel that has the same name as a previous channel
@@ -168,15 +200,19 @@ The dropdown menu \`Duplicate Names\` deals with names of channels that are the 
 
 \* \`Keep Last\` will keep the last channel, and ignore any previous channels that have the same name
 
+ 
+
 \#\#\#\#\# Trail
 
 The Trail CHOP creates a visual display of how the value of it's inputs have changed over a given time. This can be very useful when you need to see subtle differences of a channels movement, or how a channel's value changes compared to another.
+
+
 
 \#\#\#\#\# Filter / Lag
 
 Filter and Lag CHOPs create a smooth transition between values over a given time. The 2 CHOPs have similar purposes, but different options.
 
-Filter CHOP applies a smoothing effect or time, and you can choose the shape of the smoothing, with different options for different shapes.
+Filter CHOP applies a smoothing effect or time, and you can choose the shape of the smoothing, with different options for different shapes. 
 
 \*\(see \*\*/filter\_lag/ example 1\*\* of the example project file\)\*
 
@@ -184,15 +220,27 @@ Lag CHOP, depending on the method of smoothing, allows you to set 2 seperate eff
 
 \*\(see \*\*/filter\_lag/ example 2\*\* of the example project file\)\*
 
+
+
+
+
 \#\#\#\#\# Trigger
 
 This CHOP takes an event, such as a pulse, and creates an ADSR envelope \(Attack, Decay, Sustain, and Release\) with some additional control.
 
 Here is a Trail CHOP that has recorded the shape of an envelope:
 
+
+
 The envelope can be triggered by the \`Trigger Pulse\` on the \`Trigger\` Parameter page, or by connecting a CHOP to its input, such as the Out of a Button.
 
 The different sections of the envelope can have easings as well.
 
 Here is an example of with the \`Attack Shape\` set to \`Ease out\`, \`Decay Shape\` set to \`Ease in Ease out\` and the \`Release Shape\` set to \`Ease in\`:
+
+
+
+
+
+
 
