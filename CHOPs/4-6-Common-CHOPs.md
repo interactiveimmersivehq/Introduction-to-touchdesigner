@@ -72,6 +72,7 @@ With the same input value, but a Pre-Add value of `0`, Multiply value of `2`, an
 
 ###### Range
 The `Range` page takes all of the input values and either squashes, or spreads the value range according to the settings.
+
 A situation that often occurs is, when you know the value of your input is somewhere between -1 and 1, but you need to scale it to an equivalent proportion from 0 to 100. To do this you would go to the `Range` page.
 After `From Range` you enter `-1` and `1`
 After `To Range` you enter `0` and `100`
@@ -143,5 +144,6 @@ Here is a Trail CHOP that has recorded the shape of an envelope:
 The envelope can be triggered by the `Trigger Pulse` on the `Trigger` Parameter page, or by connecting a CHOP to its input, such as the Out of a Button.
 The different sections of the envelope can have easings as well.
 Here is an example of with the `Attack Shape` set to `Ease out`, `Decay Shape` set to `Ease in Ease out` and the `Release Shape` set to `Ease in`:
+<image goes here>
 
 
