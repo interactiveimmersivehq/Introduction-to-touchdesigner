@@ -62,31 +62,22 @@ On the `Outputs` parameter page, you can select what information you would like 
 
 #### Filter CHOPs
 ##### Math
-This is probably the most commonly used CHOP. It takes data from its inputs and manipulates it in different ways. Here are some of the useful options:
+This is probably the most commonly used CHOP. It takes data from its inputs and manipulates it in different ways :
 
-###### Mult-Add
-*(see **example 1** in the math section of the example project file)*
-You can apply these operations to each of the input values. It functions as you might think it does: 'Pre-Add' happens before the 'Multiply', and 'Post-Add' happens after.
-If there is an input value of `-1.5`, and Pre-Add value of `1`, Multiply value of `2`, and Post-Add of `0`, the result will be `-1`.
-With the same input value, but a Pre-Add value of `0`, Multiply value of `2`, and Post-Add of `1`, the result would be `-2`.
+The most intuitive use would be to take a value and perform some simple math, like add 10, or multiply the given value by 10. This is done on the `Mult-Add` parameter page.
 
-###### Range
-The `Range` page takes all of the input values and either squashes, or spreads the value range according to the settings.
+*insert math1 jpg*
 
-A situation that often occurs is, when you know the value of your input is somewhere between -1 and 1, but you need to scale it to an equivalent proportion from 0 to 100. To do this you would go to the `Range` page.
-After `From Range` you enter `-1` and `1`
-After `To Range` you enter `0` and `100`
-If you have an input value of `-0.5` the result will be `2.5`
-If you have an input value of `1` the result will be `10`
+Commonly, we need to take a value, or set of values, and adjust them according to another value or set of values. For example, if our end desire is to have a value moving up and down over time, but we also want to add a random jitter, we could use a Pattern CHOP to create a SIN wave, a Noise CHOP to create a random set of numbers, and using the `OP` parameter page of a Math CHOP, we could set the `Combine CHOPs` drop-down menu to `Add`. The result could look something like this :
 
-###### OP
-The `OP` page offers a lot of different options.
-* `Combine Channels` performs the selected operation channel by channel, per operator. If the Math CHOP has more than one CHOP connected to its input, there will be a result for each CHOP. *(see **example 2** in the math section of the example project file)*
-* `Combine Chops` has a selection of the same operations, but applies them between CHOPs that are connected to the input. Using the `Match By` selection, it will match the channels and have a result for each channel that has a match. If `Match By` is set to `Channel Name` and there is a channel that doesn't match, it will be left out of the result.
-* `Integer` provides options for rounding.
+*insert math2 jpg*
 
-###### Scope
-On the `Common` page there is a field called `Scope` which allows you to target certain channels while leaving the other channels untouched.
+Another very useful function of the Math CHOP is the `Range` parameter page. This takes a range of values, and re-maps them to a new range. For example, if you have an LFO CHOP that ramps from 0 to 1, but you need that same movement to fit between the specific values of 7.9 and 51.4, it is much faster to use the `From Range` and `To Range` parameters than to adjust it using order of operations.
+
+ *insert math3 jpg* 
+
+
+
 
 ##### Select
 This CHOP can be used to split up data that is contained in a single CHOP, or can be used to grab data from a remote section of a project. You can also rename channels that you are selecting at the same time. 
@@ -102,27 +93,17 @@ As before, if there are several channels in the constant, and you only want to s
 ##### Merge
 The Merge CHOP is the opposite of the Select CHOP. It takes channels from multiple CHOPs and merges them into a single CHOP. 
 
-The important thing to keep in mind, when combining CHOP channels, is the length (number of samples) of each channel as well as when each channel starts and ends. If one of the channels is longer than the others, the shorter channels are extended according to certain parameters contained both in the Merge CHOP as well as the settings of the CHOPs connected to the inputs.
+This is a straightforward idea, but if the results are different than what you expected, you will need to middle-mouse-click on the input CHOPs to see if the `Start/End` samples match.
 
-If you have a generator such as a Pattern CHOP, the `Channel` parameter page includes `Extend Left` and `Extend Right` drop down menus. If, further down the operator chain, this channel gets merged with a longer channel, this is how the channel will be handled.
+*insert mmc1.jpg* *insert mmc2.jpg*
 
-But the `Merge` parameter page of the Merge CHOP has settings that can override the extend settings of the input CHOPs.
-* `Automatic` uses the input CHOPs settings to handle the extended samples, but if one of the input CHOPs is time-sliced, it will time-slice the rest of the channels that are being merged.
+In the CHOPs pictured above, both the Start samples and the End samples differ. This is dealt with by setting the Extend Conditions on the `Channel` parameter page of the Generator CHOPs that are being input, as well as the `Align` options on the `Merge` parameter page of the Merge CHOP.
 
-* `Extend to Min/Max` is similar to `Automatic`, but if one of the channels is time-sliced, it will extend that from the earliest sample to the last sample of all the channels being input.
-* `Stretch to Min/Max` stretches and interpolates the shorter channels to length of the earliest and last samples being input.
-* `Shift to Minimum` uses the default extend settings, and moves each channel to line up with the earliest sample of the input channels and extends the end according to the settings of each channel being input.
-* `Shift to Maximum` does the same thing, but aligns the last sample of each channel and extends the beginning.
-* `Shift to First` shifts each channel to begin at the same sample as the first channel, then trims it to the length of the first channel
-* `Trim to First` just crops all channels at the start and end samples of the first channel
-* `Stretch to First Interval` stretches or squeezes, and interpolates each channel to the start and end samples of the first channel.
-* `Trim to the Smallest Interval` find the channel with the smallest amount of samples, and crops the rest of the channels to it's first and last samples
-* `Stretch to Smalles Interval` squeezes all of the channel lengths between the last start sample, and the first end sample. The start and end samples can be from different channels
+There is an explanation of the different Extend methods located on Extend CHOP wiki page, located [here](http://www.derivative.ca/wiki088/index.php?title=Extend_CHOP "Extend CHOP wiki page")
 
-The dropdown menu `Duplicate Names` deals with names of channels that are the same.
-* `Make Unique` will generate a new number for each channel that has the same name as a previous channel
-* `Keep First` will ignore any channels that have the same name as a previous channel
-* `Keep Last` will keep the last channel, and ignore any previous channels that have the same name
+You can also open up the example project and experiment with the extend conitions and the different `Align` options.
+
+
  
 ##### Trail
 The Trail CHOP creates a visual display of how the value of it's inputs have changed over a given time. This can be very useful when you need to see subtle differences of a channels movement, or how a channel's value changes compared to another.
