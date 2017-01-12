@@ -30,8 +30,6 @@ The size of the array is set by `Length` on the `Pattern` parameter page and the
 
 There are settings to control your pattern, depending on what `Type` you have chosen. 
 
-`Taper` has a beginning value and an end value, and taper, or expands, depending on which one is higher. 
-
 `From Range` and `To Range` are very useful for something like a sine wave that creates a `-1` to `1` value, but you need a `0` to `1` value. (There's more on this later, in the Math CHOP section).
 *(See **/pattern/example3** in the example project file)*
 
@@ -66,15 +64,19 @@ This is probably the most commonly used CHOP. It takes data from its inputs and 
 
 The most intuitive use would be to take a value and perform some simple math, like add 10, or multiply the given value by 10. This is done on the `Mult-Add` parameter page.
 
-*insert math1 jpg*
+![Order of Operations](../img/4.x/math1.JPG "Order of Operations")
 
 Commonly, we need to take a value, or set of values, and adjust them according to another value or set of values. For example, if our end desire is to have a value moving up and down over time, but we also want to add a random jitter, we could use a Pattern CHOP to create a SIN wave, a Noise CHOP to create a random set of numbers, and using the `OP` parameter page of a Math CHOP, we could set the `Combine CHOPs` drop-down menu to `Add`. The result could look something like this :
 
-*insert math2 jpg*
+![Combine Chops](../img/4.x/math2.JPG "Combine Chops")
+
+
 
 Another very useful function of the Math CHOP is the `Range` parameter page. This takes a range of values, and re-maps them to a new range. For example, if you have an LFO CHOP that ramps from 0 to 1, but you need that same movement to fit between the specific values of 7.9 and 51.4, it is much faster to use the `From Range` and `To Range` parameters than to adjust it using order of operations.
 
- *insert math3 jpg* 
+![Range](../img/4.x/math3.JPG "Range")
+
+
 
 
 
