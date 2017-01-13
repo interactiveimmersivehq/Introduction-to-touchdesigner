@@ -97,7 +97,8 @@ The Merge CHOP is the opposite of the Select CHOP. It takes channels from multip
 
 This is a straightforward idea, but if the results are different than what you expected, you will need to middle-mouse-click on the input CHOPs to see if the `Start/End` samples match.
 
-*insert mmc1.jpg* *insert mmc2.jpg*
+![Range](../img/4.x/mmc1.JPG "Range")
+![Range](../img/4.x/mmc2.JPG "Range")
 
 In the CHOPs pictured above, both the Start samples and the End samples differ. This is dealt with by setting the Extend Conditions on the `Channel` parameter page of the Generator CHOPs that are being input, as well as the `Align` options on the `Merge` parameter page of the Merge CHOP.
 
