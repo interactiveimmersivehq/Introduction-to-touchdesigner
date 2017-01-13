@@ -64,17 +64,17 @@ This is probably the most commonly used CHOP. It takes data from its inputs and 
 
 The most intuitive use would be to take a value and perform some simple math, like add 10, or multiply the given value by 10. This is done on the `Mult-Add` parameter page.
 
-![Order of Operations](../img/4.x/math1.JPG "Order of Operations")
+![Order of Operations](../img/4.6/math1.JPG "Order of Operations")
 
 Commonly, we need to take a value, or set of values, and adjust them according to another value or set of values. For example, if our end desire is to have a value moving up and down over time, but we also want to add a random jitter, we could use a Pattern CHOP to create a SIN wave, a Noise CHOP to create a random set of numbers, and using the `OP` parameter page of a Math CHOP, we could set the `Combine CHOPs` drop-down menu to `Add`. The result could look something like this :
 
-![Combine Chops](../img/4.x/math2.JPG "Combine Chops")
+![Combine Chops](../img/4.6/math2.JPG "Combine Chops")
 
 
 
 Another very useful function of the Math CHOP is the `Range` parameter page. This takes a range of values, and re-maps them to a new range. For example, if you have an LFO CHOP that ramps from 0 to 1, but you need that same movement to fit between the specific values of 7.9 and 51.4, it is much faster to use the `From Range` and `To Range` parameters than to adjust it using order of operations.
 
-![Range](../img/4.x/math3.JPG "Range")
+![Range](../img/4.6/math3.JPG "Range")
 
 
 
@@ -97,22 +97,40 @@ The Merge CHOP is the opposite of the Select CHOP. It takes channels from multip
 
 This is a straightforward idea, but if the results are different than what you expected, you will need to middle-mouse-click on the input CHOPs to see if the `Start/End` samples match.
 
-![Range](../img/4.x/mmc1.JPG "Range")
-![Range](../img/4.x/mmc2.JPG "Range")
+![Range](../img/4.6/mmc1.JPG "Range")
+![Range](../img/4.6/mmc2.JPG "Range")
 
 In the CHOPs pictured above, both the Start samples and the End samples differ. This is dealt with by setting the Extend Conditions on the `Channel` parameter page of the Generator CHOPs that are being input, as well as the `Align` options on the `Merge` parameter page of the Merge CHOP.
 
 There is an explanation of the different Extend methods located on Extend CHOP wiki page, located [here](http://www.derivative.ca/wiki088/index.php?title=Extend_CHOP "Extend CHOP wiki page")
 
-You can also open up the example project and experiment with the extend conitions and the different `Align` options.
+You can also open up the example project and experiment with the extend conditions and the different `Align` options.
 
 
  
 ##### Trail
 The Trail CHOP creates a visual display of how the value of it's inputs have changed over a given time. This can be very useful when you need to see subtle differences of a channels movement, or how a channel's value changes compared to another.
 
+![Trail](../img/4.6/trail.JPG "Trail")
+
+
+
+
 ##### Filter / Lag
 Filter and Lag CHOPs create a smooth transition between values over a given time. The 2 CHOPs have similar purposes, but different options.
+
+![Filter Types](../img/4.6/Filter.JPG "Filter Types")
+
+
+
+
+
+
+
+
+
+
+
 
 Filter CHOP applies a smoothing effect or time, and you can choose the shape of the smoothing, with different options for different shapes. 
 *(see **/filter_lag/ example 1** of the example project file)*
