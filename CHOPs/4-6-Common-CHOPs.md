@@ -140,12 +140,18 @@ Lag CHOP, depending on the method of smoothing, allows you to set 2 seperate eff
 
 
 ##### Trigger
-This CHOP takes an event, such as a pulse, and creates an ADSR envelope (Attack, Decay, Sustain, and Release) with some additional control.
-Here is a Trail CHOP that has recorded the shape of an envelope:
+This CHOP takes an event and creates an ADSR envelope (Attack, Decay, Sustain, and Release) with some additional control.
 
 The envelope can be triggered by the `Trigger Pulse` on the `Trigger` Parameter page, or by connecting a CHOP to its input, such as the Out of a Button.
+These are the different parts of the envelope:
+
+![Filter Types](../img/4.6/Trigger_ADSR_an.jpg "Filter Types")
+
 The different sections of the envelope can have easings as well.
 Here is an example of with the `Attack Shape` set to `Ease out`, `Decay Shape` set to `Ease in Ease out` and the `Release Shape` set to `Ease in`:
-<image goes here>
+
+![Filter Types](../img/4.6/Trigger_ADSR_Ease.JPG "Filter Types")
+
+
 
 
