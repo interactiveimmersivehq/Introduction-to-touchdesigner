@@ -70,16 +70,9 @@ Commonly, we need to take a value, or set of values, and adjust them according t
 
 ![Combine Chops](../img/4.6/math2.JPG "Combine Chops")
 
-
-
 Another very useful function of the Math CHOP is the `Range` parameter page. This takes a range of values, and re-maps them to a new range. For example, if you have an LFO CHOP that ramps from 0 to 1, but you need that same movement to fit between the specific values of 7.9 and 51.4, it is much faster to use the `From Range` and `To Range` parameters than to adjust it using order of operations.
 
 ![Range](../img/4.6/math3.JPG "Range")
-
-
-
-
-
 
 ##### Select
 This CHOP can be used to split up data that is contained in a single CHOP, or can be used to grab data from a remote section of a project. You can also rename channels that you are selecting at the same time. 
@@ -119,20 +112,11 @@ The Trail CHOP creates a visual display of how the value of it's inputs have cha
 ##### Filter / Lag
 Filter and Lag CHOPs create a smooth transition between values over a given time. The 2 CHOPs have similar purposes, but different options.
 
-![Filter Types](../img/4.6/Filter.JPG "Filter Types")
-
-
-
-
-
-
-
-
-
-
-
 
 Filter CHOP applies a smoothing effect or time, and you can choose the shape of the smoothing, with different options for different shapes. 
+
+![Filter Types](../img/4.6/Filter.JPG "Filter Types")
+
 *(see **/filter_lag/ example 1** of the example project file)*
 
 Lag CHOP, depending on the method of smoothing, allows you to set 2 seperate effect-lengths for an increasing input value, and decreasing input value.
