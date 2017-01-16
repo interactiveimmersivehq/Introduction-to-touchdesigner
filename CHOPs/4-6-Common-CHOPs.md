@@ -40,11 +40,15 @@ This is a great tool for creating lookup tables. *(ex.4 in pattern.toe)*
 ##### LFO
 The LFO CHOP generates an oscillating value according to the parameter settings. It goes back and forth between 2 values that are determined by `Amplitude` and `Offset`, over a given time, or `Frequency`.
 
-`Frequency` generally determines how many cycles per second, except when a value is connected to the first input for `Octave Control`. If the `Octave Control` value is set to `1`, the speed is doubled, and if the value is set to `2`, the speed is doubled 2 (4x), etc. 
+`Frequency` generally determines how many cycles per second, except when a value is connected to the first input for `Octave Control`. If the `Octave Control` value is set to `1`, the speed is doubled, and if the value is set to `2`, the speed is doubled 2 (4x), etc. *(ex.2 of noise.toe)*
 
 The shape of the oscillation is controlled by `Type`.
 
-You can also oscillate using a different oscillation pattern by using the 3rd input.
+You can also oscillate using a different oscillation pattern by using the 3rd input. *(ex.3 of lfo.toe)*
+
+
+
+
 
 ##### Timer
 This CHOP is very useful for anything that involves fixed time periods. You can trigger the timer and recieve different types of data throughout its duration, as well as set it do act different ways when it ends.
