@@ -20,8 +20,6 @@ To create movement, you can change values on the `Transform` page. If you enter 
 
 To create multiple channels of noise, go to the `Channel` page of the Parameters, and in the `Channel Names` field, enter the names of the channels separated by a space. (ex. 3 of *noise.toe*)
 
-
-
 The number of samples you would like to generate is determined by the settings on the `Channel` page, with the `Start`, `End`, and `Sample Rate`. The amount of time multiplied by the sample rate. But if you only need 1 sample at a time, you can go to the `Common` page, and turn the `Time Slice` toggle to `On`. This creates 1 random value per channel for each frame, which requires less CPU usage. (ex. 4 of *noise.toe*)
 
 
