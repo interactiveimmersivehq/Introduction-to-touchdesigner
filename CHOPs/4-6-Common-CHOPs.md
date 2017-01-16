@@ -14,13 +14,17 @@ If you enter `chan[1-4]` in the name field, 4 channels will be created: `chan1`,
 
 ##### Noise
 This CHOP generates a set of pseudo-random points according to the settings in the operators Parameters. There are 6 different algorithms to choose from, each with different characteristics and may suit some situations better than the others.
-The basis for each algorithm is the `seed` value. You can have 2 Noise CHOPs with the same values, and the noise would look the same, but if you change the seed, it will generate a set of points based on the new seed number, creating a different result.
+The basis for each algorithm is the `seed` value. You can have 2 Noise CHOPs with the same values, and the noise would look the same, but if you change the seed, it will generate a set of points based on the new seed number, creating a different result. (ex. 1 of *noise.toe*)
 
-To create movement, you can change values on the `Transform` page. If you enter `absTime.frame` to the first `Translate` field, you can see that the noise begins to scroll along the x-axis.
+To create movement, you can change values on the `Transform` page. If you enter `absTime.frame` to the first `Translate` field, you can see that the noise begins to scroll along the x-axis. (ex. 2 of *noise.toe*)
 
-To create multiple channels of noise, go to the `Channel` page of the Parameters, and in the `Channel Names` field, enter the names of the channels separated by a space.
+To create multiple channels of noise, go to the `Channel` page of the Parameters, and in the `Channel Names` field, enter the names of the channels separated by a space. (ex. 3 of *noise.toe*)
 
-The number of samples you would like to generate is determined by the settings on the `Channel` page, with the `Start`, `End`, and `Sample Rate`. The amount of time multiplied by the sample rate. But if you only need 1 sample at a time, you can go to the `Common` page, and turn the `Time Slice` toggle to `On`. This creates 1 random value per channel for each frame, which requires less CPU usage.
+
+
+The number of samples you would like to generate is determined by the settings on the `Channel` page, with the `Start`, `End`, and `Sample Rate`. The amount of time multiplied by the sample rate. But if you only need 1 sample at a time, you can go to the `Common` page, and turn the `Time Slice` toggle to `On`. This creates 1 random value per channel for each frame, which requires less CPU usage. (ex. 4 of *noise.toe*)
+
+
 
 ##### Pattern
 The Pattern CHOP generates a function that is a set amount, or array, of samples.
