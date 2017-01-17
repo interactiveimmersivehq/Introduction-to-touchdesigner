@@ -47,9 +47,6 @@ The shape of the oscillation is controlled by `Type`.
 You can also oscillate using a different oscillation pattern by using the 3rd input. *(ex.3 of lfo.toe)*
 
 
-
-
-
 ##### Timer
 This CHOP is very useful for anything that involves fixed time periods. You can trigger the timer and recieve different types of data throughout its duration, as well as set it do act different ways when it ends.
 
