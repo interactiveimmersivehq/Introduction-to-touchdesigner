@@ -22,7 +22,7 @@ From left to right, the options are as follows:
 
 4. Comment: display and edit Operator comments
 
-5. Copied Parameters: displays parameters copied via the right click menu
+5. Copied Values: displays parameter values copied via the right click menu
 
 6. Language: choose whether the Operator will use Python or tscript as its scripting language
 
