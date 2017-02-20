@@ -1,7 +1,7 @@
 
 ### *10.5 Edge Blending*
 
-Video projectors are an incredibly flexible and are able to create infinitely large canvases. This is done by creating arrays of projectors with overlapping edges that are blended together to create a seamless canvas. This act of blending the overlapping sections is called 'Edge blending'.
+Video projectors are incredibly flexible and are able to create infinitely large canvases. This is done by creating arrays of projectors with overlapping edges that are blended together to create a seamless canvas. This act of blending the overlapping sections is called 'Edge blending'.
 
 The idea of edge blending might be new to those who generally work with monitors and screen arrays. A great example of the principles behind edge blending can be done relatively quickly. Set up 2 projectors and have one project the color blue and have the other project the color green. Separately, these projectors output their assigned colors, but if you aim the projectors so that the colors overlap, the areas where these two projectors overlap you will actually have a turquoise color. These principles of physics and additive color mixing are the basis for edge blending.
 
@@ -13,7 +13,7 @@ The best way to learn the basics of edge blending is through an example setup. I
 
 ![10.5.1](../img/10.5/blending_layout.png)
 
-The act of blending both of these projectors will require an overlapping section. The amount of overlap needed will vary based on many factors such as projector resolution and installation parameters. Starting with a blend zone that is a power of 2 close to 10\% of your single projector size can be a good place to start experimenting. For this example, 10\% of the length of a 1920 x 1080 screen is 192 pixels, and the nearest power of 2 is 256. 
+The act of blending both of these projectors will require an overlapping section. The amount of overlap needed will vary based on many factors such as projector resolution and installation parameters. Starting with a blend zone that is a power of 2 close to 10% of your single projector size can be a good place to start experimenting. For this example, 10% of the length of a 1920 x 1080 screen is 192 pixels, and the nearest power of 2 is 256. 
 
 This overlapping section can cause problems if all of its implications aren't considered. For the image to overlap, that means the both projectors must have the same content on their blending edges. In this example, that means that the right edge of Projector A and the left edge of Projector B must have the exact same content. Filling in some numbers, that means that the 256 pixels on the right edge of Projector A must be the same as the 256 pixels on the left edge of Projector B, as per the diagram below:
 
@@ -65,7 +65,7 @@ With these outputs prepared, it's a matter of sending the correct texture to the
 
 If the amount of pixels in the blend zone are already known, input them into the 'Region' parameter of the 'EdgeBlend' component. Then try turning off the 'Enable Blend' button to make sure your image is correctly overlapping. At this point, the overlapped images should match and be lined up. Always remember the main purpose of an edge blending tool is to remove the seams, not line up the content.
 
-If the amount of pixels in the blend zone aren't know, turn off the 'Enable Blend' button and enter a guess. Trying a lower value in the 'Region' parameter will offset each projector's texture towards the center, while a higher value will offset them towards the edges. Continue increasing or decreasing the 'Region' value until your the content in the overlap is the same. Then turn on the 'Enable Blend' button.
+If the amount of pixels in the blend zone aren't know, turn off the 'Enable Blend' button and enter a guess. Trying a lower value in the 'Region' parameter will offset each projector's texture towards the center, while a higher value will offset them towards the edges. Continue increasing or decreasing the 'Region' value until your content in the overlap is the same. Then turn on the 'Enable Blend' button.
 
 At this point, use the 'Blend' slider to adjust power of the blend. A higher value will make the ramp steeper, whereas a lower value will create a more gradual ramp.
 
