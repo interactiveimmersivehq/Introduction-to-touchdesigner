@@ -17,7 +17,7 @@ Since this is written for someone with no GLSL experience, a few notes about bas
 
 The first thing is that semi-colons need to be added at the end of working lines of code.
 
-The second thing is that most of the working code will be inside of the main() loop. For beginners, the only things outside of the main loops will be the delcaring of variables such as input and output streams and attributes.
+The second thing is that most of the working code will be inside of the main() loop. For beginners, the only things outside of the main loops will be the declaring of variables such as input and output streams and attributes.
 
 When starting an empty shader, it's good practice to start by entering the main() loop as follows:
 
@@ -27,7 +27,7 @@ void main(){
 }
 ```
 
-In this vertex shader, there is only have one line of code:
+In this vertex shader, there is only one line of code:
 
 ```
 gl_Position = TDWorldToProj(TDDeform(P));
@@ -141,7 +141,7 @@ vec3 transformedP;
 uniform float lfoCHOP;
 
 void main(){
-	transformedP = P + vec3(lfoCHOP,0,0);
+	transformedP = P - vec3(lfoCHOP,0,0);
 	gl_Position = TDWorldToProj(TDDeform(transformedP));
 }
 ```
@@ -153,7 +153,7 @@ In this example, the LFO CHOP channel is a float value, so then 'float' is added
 The only other change is that where previously 1 was being added to the x-axis of the vertex position, there is now the value of 'lfoCHOP'.
 
 ```
-transformedP = P + vec3(lfoCHOP,0,0);
+transformedP = P - vec3(lfoCHOP,0,0);
 ```
 
 With those small changes, a CHOP is controlling the x-axis position of the shader. Pixel shaders function in much of the same way as Vertex shaders. Let's assign the LFO CHOP in the previous example to control the red channel of the output color.
@@ -177,7 +177,7 @@ Similarly to the x-axis transform example, the only steps needed were to declare
 
 Open example 'Basic\_3D\_texture.toe'.
 
-The first thing that was done was create the Ramp TOP and assign it to the GLSL MAT. The TOP needs to be referenced in the 'Samplers 1' tab in the Paramter window. In the same way that the LFO CHOP needed a 'Uniform Name', the Ramp TOP needs a 'Sampler Name', which in this case is 'rampTOP'.
+The first thing that was done was create the Ramp TOP and assign it to the GLSL MAT. The TOP needs to be referenced in the 'Samplers 1' tab in the Parameter window. In the same way that the LFO CHOP needed a 'Uniform Name', the Ramp TOP needs a 'Sampler Name', which in this case is 'rampTOP'.
 
 Then a Texture SOP is added after the Box SOP to assign the texture co-ordinates.
 
@@ -190,7 +190,7 @@ uniform float lfoCHOP;
 out vec2 texCoord0;
 
 void main(){
-	transformedP = P + vec3(lfoCHOP,0,0);
+	transformedP = P - vec3(lfoCHOP,0,0);
 	gl_Position = TDWorldToProj(TDDeform(transformedP));
 
 	vec3 texCoord = TDInstanceTexCoord(uv[0]);
