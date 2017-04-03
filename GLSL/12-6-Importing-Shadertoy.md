@@ -204,29 +204,17 @@ Now you can search for all references to `fragCoord` (there should only be one, 
 ##### Samplers
 
 ###### iChannel0
-Similar to the last example, iChannel0 is a 2D input, so we'll find all `iChannel0` references and replace them with `sTD2DInputs[0]`. In current versions of GLSL, we don’t need to use a different `texture()` function for different texture types, so use Find-and-Replace to replace all `texture2D` functions to `texture`. `texture2D` will still work, but this is good practice. 
+Similar to the last example, iChannel0 is a 2D input, so we'll find all `iChannel0` references and replace them with `sTD2DInputs[0]`. In GLSL 3.30 and later, we don’t need to use a different `texture()` function for different texture types, so use Find-and-Replace to replace all `texture2D` functions to `texture`. `texture2D` may will still work on some drivers, but will not on many so to ensure your shader works on all GPUs and driver versions, you'll want to change these. As of the latest update to this article, the shader correctly has `texture()` calls instead of `texture2D()`, so no changes are needed.
 
 ![Ex2: texture](../img/12.6_shade/ex2_5.JPG)
 
 ###### iChannel1
 Changing the code for iChannel1 is similar to the edits for iChannel0, but the input is a cube map. TouchDesigner sorts the types of inputs for us: 2D, 3D, Cube, etc, into separate arrays. If this was another 2D inputs we would use sTD2DInputs[1], but since it’s a cube map (the first and only in our inputs) we use `sTDCubeInputs[0]`.
 
-As mentioned for `iChannel0`, we don’t need to use separate texture functions, so change all `textureCube` to `texture`. There should be 5 lines of code to change.
-
-If you look at the 'Info' DAT, you'll notice an error has appeared, requiring us to enable `#extension GL_NV_shadow_samplers_cube` :
-
-![Ex2: textureCube Error](../img/12.6_shade/ex2_6.JPG)
-
-We can follow its advice, and at the very beginning of our code add: 
-
-`#extension GL_NV_shadow_samplers_cube : enable`
-
-It should look like this:
-
-![Ex2: GL enable](../img/12.6_shade/ex2_7.JPG)
+Similarly as mentioned for `iChannel0`, if the shader had `textureCube` calls, they should be changed to `texture`. It doesn't have those calls anymore though, so no changes are needed.
 
 ###### iChannel2
-iChannel2 is the audio. We converted the audio information into a 2D texture with the 'CHOP To' TOP. The 'CHOP To' TOP is the 3rd input, but it is the 2nd 2D input, so we'll replace all `iChannel2` references with `sTD2DInputs[1]`, and change the `texture2D` to `texture`. There should only be 1 line to convert.
+iChannel2 is the audio. We converted the audio information into a 2D texture with the 'CHOP To' TOP. The 'CHOP To' TOP is the 3rd input, but it is the 2nd 2D input, so we'll replace all `iChannel2` references with `sTD2DInputs[1]`.
 
 If you save the shader and look at the 'Info' DAT, you should have fixed all of the errors except for 'iMouse'.
 
