@@ -1,3 +1,8 @@
+# Instructions
+
+非常高兴在中国我们拥有一群TD开发者，在陈若琨（Totti Chen）的带领下他们建立了TouchDesigner的华人社区（www.touchdesigner.co），并且把这本书翻译成了中文！很难想象这对于他们是多大的工作量，但是作为TD家族的一部分，他们将成果无私与大家分享，有需要的华人朋友请前往下载：http://www.touchdesigner.co/9
+
+
 ## Foreword
 
 Between the artist and the tool are countless techniques and bits of know-how that contribute to the artist becoming more fluid and well-equipped for the challenges of production. When I caught wind of Elburz’ TouchDesigner book project, I thought, yes I’d like to know what he knows! Elburz’ deep storage of TouchDesigner wisdom was absorbed from multiple sources - helping and conversing with a myriad of users on the forums, red-lining on-the-job on time-critical projects, working with Derivative using beta builds of TouchDesigner, and his purely exploratory endeavors mixed with his side-life as a hip-hop trombonist and VJ.
