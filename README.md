@@ -4,7 +4,7 @@
 
 ## Intoduction to Touchdesigner
 
-###第一章 (Chapter One)
+### 第一章 (Chapter One)
 
 本章将教授最基础的知识，对于刚刚起步并且有着无限好奇心的你，是一个很好的参考材
 
