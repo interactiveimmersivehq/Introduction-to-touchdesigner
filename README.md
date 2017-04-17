@@ -2,65 +2,65 @@
 
 非常高兴在中国我们拥有一群TD开发者，在陈若琨（Totti Chen）的带领下他们建立了TouchDesigner的华人社区（www.touchdesigner.co），并且把这本书翻译成了中文！很难想象这对于他们是多大的工作量，但是作为TD家族的一部分，他们将成果无私与大家分享，有需要的华人朋友请前往下载：http://www.touchdesigner.co/9
 
-Intoduction to Touchdesigner
+##Intoduction to Touchdesigner
 
-第一章 (Chapter One)
+###第一章 (Chapter One)
 
 本章将教授最基础的知识，对于刚刚起步并且有着无限好奇心的你，是一个很好的参考材
 
 料，让我们开始吧！
 
-第二章 (Chapter Two)
+###第二章 (Chapter Two)
 
 本章介绍了一些快捷键和基础界面菜单，请尝试跟随着说明去尝试那些功能，会让你有收
 
 获的。
 
-第三章 (Chapter Three)
+###第三章 (Chapter Three)
 
 本章介绍了TOP元件的一些知识，着重介绍了视频播放和编码器的选用，这对于大多数的
 
 视频控制播放作业将会很有帮助。
 
-第四章 (Chapter Four)
+###第四章 (Chapter Four)
 
 本章介绍了CHOP元件的一些知识，可能看起来有些晦涩难懂，但是如果你开始做大项目
 
 的话你会发现这些非常有用！
 
-第五章 (Chapter Five)
+###第五章 (Chapter Five)
 
 本章介绍了DAT元件的一些知识，可能比较偏向于工程方面，有编程基础的朋友可能更容
 
 易理解，但是不要紧，真是项目操作起来并不会那么复杂。
 
-第六章 (Chapter Six)
+###第六章 (Chapter Six)
 
 本章介绍了SOP元件的一些知识，这部分主要讲述如何渲染三维场景，参照案例学习会有
 
 不小的收获。
 
-第七章 (Chapter Seven)
+###第七章 (Chapter Seven)
 
 本章介绍了COMP元件的一些知识，这部分主要讲述一些比较综合性的元件，例如容器和
 
 UI的案例。
 
-第八章 (Chapter Eight)
+###第八章 (Chapter Eight)
 
 本章介绍了MAT元件的一些知识，这部分主要讲述了不同材质的作用和使用方法。
 
-第九章 (Chapter Nine)
+###第九章 (Chapter Nine)
 
 本章介绍了一些关于Python的基本知识，如果你了解它，将会让你的TD程序变得更为强
 
 大和灵活
 
-第十章 (Chapter Ten)
+###第十章 (Chapter Ten)
 
 本章介绍了输出模式，包括如何进行融合和一些常见的输出错误分析。
 
-第十一章 (Chapter Eleven)
+###第十一章 (Chapter Eleven)
 
 本章介绍了如何进行系统优化，对于制作大项目的成员来说这章将会让你醍醐灌顶！
 
