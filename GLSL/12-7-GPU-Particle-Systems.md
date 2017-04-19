@@ -307,6 +307,8 @@ We're going to make some simple UI controls that will allow us to add a constant
 
 The main element we're going to add in this example is a feedback loop so that we can continuously feed in the last frame's data, update it with new positions, then feed it back as the input. 
 
+You can follow along with example ```01_adding_velocity.toe``` in the folder ```TouchDesigner Example Files/12.7.4```.
+
 Start by deleting the 'Noise TOP' and unplugging the ```chopto1``` from the 'GLSL TOP'. Follow these steps:
 
 1. Create a 'Feedback TOP'
@@ -318,3 +320,60 @@ This should look like the image below:
 
 ![](../img/12.7.4/step1.PNG)
 
+Now let's create a new uniform on the 'Vectors 1' page of the 'GLSL TOP' parameters. Name it it ```uVel``` and leave the values at 0.
+
+You can see the final shader if you skip down a little bit, but here are the individual changes explained.
+
+Add a line to get our new uniform value at the start of the shader:
+
+```
+uniform vec3 uVel;
+
+```
+
+We're going to change the name of our vec4 output from ```fragColor``` to ```oPosition```, which is a short name for 'output position'.
+
+Then, instead of sampling noise positions and grid positions, we're going to sample the new input positions that are fed back to the shader from the 'Feedback TOP':
+
+```
+vec4 pos = texture(sTD2DInputs[0], vUV.st);
+```
+
+We will add our new velocity value to the previous point position:
+
+```
+pos.xyz += uVel.xyz;
+```
+
+And finally, output the new point position:
+
+```
+oPosition = pos;
+```
+
+The final shader for this example will look like this:
+
+```
+uniform vec3 uVel;
+
+out vec4 oPosition;
+
+void main()
+{
+	// get input positions
+	vec4 pos = texture(sTD2DInputs[0], vUV.st);
+
+	// add our single velocity values to every point position
+	pos.xyz += uVel.xyz;
+
+	// output the new point position
+	oPosition = pos;
+	
+}
+```
+
+The final element that we need are an interface to change the ```uVel``` uniform parameter, and then a button to reset the particles by resetting the feedback.
+
+In the example, we created a 2D slider for the XY velocity of the particles and a slider for the Z velocity. You can experiment with other kinds of sliders and buttons, as long as you reference the channel values in the first three values of the ```uVel``` uniform on the 'Vectors 1' page of the 'GLSL TOP' parameters.
+
+The reset button you will need to create will vary depending on the type of interface you create, but there will be one line that should always be at the end of it. This line will pulse the 'Reset' parameter of the 'Feedback TOP', which will then clear the feedback and pass through the original point positions of the grid again. In the example reset script, the UI elements are all reset to a 0 position, and then the 'Feedback TOP' is reset.
