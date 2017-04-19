@@ -296,3 +296,25 @@ Once you save, you should the columns of the grid being effected by the noise te
 Feel free to experiment by replacing the 'Grid SOP' with another geometry with 1000 points.
 
 
+### 12.7.4 Adding Velocity
+
+In this section, we're going to remove the random noise that is driving the particles and add a constant velocity. We won't spend much time going into depth on some of the physics concepts, if they're new to you, we recommend either:
+
+- [Nature of Code](http://natureofcode.com/) which is a great Processing book about modeling natural forces
+- [Khan Academy](https://www.khanacademy.org/science/physics) for learning the physics concepts on their own
+
+We're going to make some simple UI controls that will allow us to add a constant velocity in XYZ space to all the particles. How the particles are controlled is important because it's additive using data from the last frame. Think about a particle traveling over a few frames. Every frame it needs to know where it was the last frame and then add velocity to it's previous position. In the previous examples, the noise only ever had the current frame worth of data. 
+
+The main element we're going to add in this example is a feedback loop so that we can continuously feed in the last frame's data, update it with new positions, then feed it back as the input. 
+
+Start by deleting the 'Noise TOP' and unplugging the ```chopto1``` from the 'GLSL TOP'. Follow these steps:
+
+1. Create a 'Feedback TOP'
+2. Connect the output of ```chopto1``` to the input of the 'Feedback TOP'
+3. Connect the output of the 'Feedback TOP' to the first input of the 'GLSL TOP' 
+4. Set the 'Target TOP' parameter of the 'Feedback TOP' to the name of the 'GLSL TOP', in the example project this is ```glsl2```
+
+This should look like the image below:
+
+![](../img/12.7.4/step1.PNG)
+
