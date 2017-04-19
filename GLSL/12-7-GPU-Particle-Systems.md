@@ -303,9 +303,9 @@ In this section, we're going to remove the random noise that is driving the part
 - [Nature of Code](http://natureofcode.com/) which is a great Processing book about modeling natural forces
 - [Khan Academy](https://www.khanacademy.org/science/physics) for learning the physics concepts on their own
 
-We're going to make some simple UI controls that will allow us to add a constant velocity in XYZ space to all the particles. How the particles are controlled is important because it's additive using data from the last frame. Think about a particle traveling over a few frames. Every frame it needs to know where it was the last frame and then add velocity to it's previous position. In the previous examples, the noise only ever had the current frame worth of data. 
+We're going to make some simple UI controls that will allow us to add a constant velocity in XYZ space to all the particles. How the particles are controlled is important because data from the last frame is added to the current frame to find the new positions. Think about a particle traveling over a few frames. For every frame the particle needs to know where it was the last frame so it can add the velocity and calculate it's new position. In the previous examples, the noise only ever had the current frame worth of data.
 
-The main element we're going to add in this example is a feedback loop so that we can continuously feed in the last frame's data, update it with new positions, then feed it back as the input. 
+The main element we're going to add in this example is a feedback loop so that we can continuously feed in the last frame's data, update the texture with new positions, then feed it back as the input. 
 
 You can follow along with example ```01_adding_velocity.toe``` in the folder ```TouchDesigner Example Files/12.7.4```.
 
@@ -372,7 +372,7 @@ void main()
 }
 ```
 
-The final element that we need are an interface to change the ```uVel``` uniform parameter, and then a button to reset the particles by resetting the feedback.
+The final elements that we need are an interface to change the ```uVel``` uniform parameter, and a button to reset the particles by resetting the feedback.
 
 In the example, we created a 2D slider for the XY velocity of the particles and a slider for the Z velocity. You can experiment with other kinds of sliders and buttons, as long as you reference the channel values in the first three values of the ```uVel``` uniform on the 'Vectors 1' page of the 'GLSL TOP' parameters.
 
