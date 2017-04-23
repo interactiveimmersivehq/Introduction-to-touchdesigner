@@ -388,7 +388,9 @@ Next, delete the sliders/UI elements created to control the particle velocity *b
 
 Depending on what kind of elements you had created to control the particles, we'll need to remove any of the Python code associated with them from the 'Panel Execute DAT' connected to the reset button. Inside the ```def offToOn``` callback you should only have a line that resets the 'Feedback TOP':
 
-```op('feedback1').par.resetpulse.pulse()```
+```
+op('feedback1').par.resetpulse.pulse()
+```
 
 The final element we need in the network is a 'Noise TOP' with a resolution of 1000 pixels by 1 pixel, to match the resolution of our 'CHOP to TOP'. Set the 'Noise TOP' type to ```Random (GPU)```. Turn of the ```Monochrome``` toggle. Set the ```Amplitude``` to 0.5, and set the ```Offset``` to 0.5. Changing these two parameters is an easy way to move the noise values from the range of 0 and 1 with a floor of 0 to a range of 0 and 1 with a 0.5 center. 
 
