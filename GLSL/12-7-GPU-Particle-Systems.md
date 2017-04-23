@@ -377,3 +377,23 @@ The final elements that we need are an interface to change the ```uVel``` unifor
 In the example, we created a 2D slider for the XY velocity of the particles and a slider for the Z velocity. You can experiment with other kinds of sliders and buttons, as long as you reference the channel values in the first three values of the ```uVel``` uniform on the 'Vectors 1' page of the 'GLSL TOP' parameters.
 
 The script you'll add to your reset button will vary depending on the type of interface you create, but there will be one line that should always be at the end of it. This line will pulse the 'Reset' parameter of the 'Feedback TOP', which will then clear the feedback and pass through the original point positions of the grid again. In the example reset script, the UI elements are all reset to a 0 position, and then the 'Feedback TOP' is reset.
+
+### 12.7.5 Random Velocity
+
+Now we have the most basic particle system imaginable: a system where all the particles move with the same constant velocity. In this section we're going to give each of the points their own random velocity instead of controlling them with UI elements. This will create the effect of a particle explosion from the 'Grid SOP'.
+
+Start by removing the ```uVel``` uniform from the 'GLSL TOP' and clearing the parameters that reference our UI elements. Your ```Vectors 1``` parameter page of the 'GLSL TOP' should be clear.
+
+Next, delete the sliders/UI elements created to control the particle velocity *but do not delete the reset button*. We will continue to use the reset button in this example. 
+
+Depending on what kind of elements you had created to control the particles, we'll need to remove any of the Python code associated with them from the 'Panel Execute DAT' connected to the reset button. Inside the ```def offToOn``` callback you should only have a line that resets the 'Feedback TOP':
+
+```op('feedback1').par.resetpulse.pulse()```
+
+The final element we need in the network is a 'Noise TOP' with a resolution of 1000 pixels by 1 pixel, to match the resolution of our 'CHOP to TOP'. Set the 'Noise TOP' type to ```Random (GPU)```. Set the ```Amplitude``` to 0.5, and set the ```Offset``` to 0.5. Changing these two parameters is an easy way to move the noise values from the range between -1 and 1 to a range of 0 and 1. With these parameters set, plug the 'Noise TOP' into the second input of the 'GLSL TOP'.
+
+Your network should now look like this:
+
+![](../img/12.7.5/network.PNG)
+
+
