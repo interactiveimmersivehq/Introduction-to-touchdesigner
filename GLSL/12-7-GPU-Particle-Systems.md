@@ -390,7 +390,7 @@ Depending on what kind of elements you had created to control the particles, we'
 
 ```op('feedback1').par.resetpulse.pulse()```
 
-The final element we need in the network is a 'Noise TOP' with a resolution of 1000 pixels by 1 pixel, to match the resolution of our 'CHOP to TOP'. Set the 'Noise TOP' type to ```Random (GPU)```. Set the ```Amplitude``` to 0.5, and set the ```Offset``` to 0.5. Changing these two parameters is an easy way to move the noise values from the range of 0 and 1 with a floor of 0 to a range of 0 and 1 with a 0.5 center. 
+The final element we need in the network is a 'Noise TOP' with a resolution of 1000 pixels by 1 pixel, to match the resolution of our 'CHOP to TOP'. Set the 'Noise TOP' type to ```Random (GPU)```. Turn of the ```Monochrome``` toggle. Set the ```Amplitude``` to 0.5, and set the ```Offset``` to 0.5. Changing these two parameters is an easy way to move the noise values from the range of 0 and 1 with a floor of 0 to a range of 0 and 1 with a 0.5 center. 
 
 To visualize this, it is a move from this kind of noise:
 
@@ -410,4 +410,13 @@ In our shader, we only have to make a few changes.
 
 After the line where we sample the input positions from the grid, we'll add a line that samples our noise texture and creates a new vec4 named ```velocity```:
 
-```vec4 velocity = texture(sTD2DInputs[1], vUV.st) 
+```vec4 velocity = texture(sTD2DInputs[1], vUV.st) * 2 - 1;```
+
+This should look very familiar by now. The ```* 2 - 1``` at the end is some simple math that changes the noise range of 0 and 1 to a range of -1 and 1.
+
+Now in the next line of code, instead of adding the ```uVel``` uniform, we'll add the new ```velocity``` vector:
+
+```pos.xyz += velocity.xyz;```
+
+Now you can click your reset button and watch the particle system explode away from the 'Grid SOP' points. Experiment with the 'Noise TOP' settings and the ranging math in the shader to see how you can create different results.
+
