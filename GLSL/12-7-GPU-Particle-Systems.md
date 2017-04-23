@@ -412,13 +412,17 @@ In our shader, we only have to make a few changes.
 
 After the line where we sample the input positions from the grid, we'll add a line that samples our noise texture and creates a new vec4 named ```velocity```:
 
-```vec4 velocity = texture(sTD2DInputs[1], vUV.st) * 2 - 1;```
+```
+vec4 velocity = texture(sTD2DInputs[1], vUV.st) * 2 - 1;
+```
 
 This should look very familiar by now. The ```* 2 - 1``` at the end is some simple math that changes the noise range of 0 and 1 to a range of -1 and 1.
 
 Now in the next line of code, instead of adding the ```uVel``` uniform, we'll add the new ```velocity``` vector:
 
-```pos.xyz += velocity.xyz;```
+```
+pos.xyz += velocity.xyz;
+```
 
 Now you can click your reset button and watch the particle system explode away from the 'Grid SOP' points. Experiment with the 'Noise TOP' settings and the ranging math in the shader to see how you can create different results.
 
