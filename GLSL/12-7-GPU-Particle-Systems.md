@@ -390,10 +390,24 @@ Depending on what kind of elements you had created to control the particles, we'
 
 ```op('feedback1').par.resetpulse.pulse()```
 
-The final element we need in the network is a 'Noise TOP' with a resolution of 1000 pixels by 1 pixel, to match the resolution of our 'CHOP to TOP'. Set the 'Noise TOP' type to ```Random (GPU)```. Set the ```Amplitude``` to 0.5, and set the ```Offset``` to 0.5. Changing these two parameters is an easy way to move the noise values from the range between -1 and 1 to a range of 0 and 1. With these parameters set, plug the 'Noise TOP' into the second input of the 'GLSL TOP'.
+The final element we need in the network is a 'Noise TOP' with a resolution of 1000 pixels by 1 pixel, to match the resolution of our 'CHOP to TOP'. Set the 'Noise TOP' type to ```Random (GPU)```. Set the ```Amplitude``` to 0.5, and set the ```Offset``` to 0.5. Changing these two parameters is an easy way to move the noise values from the range of 0 and 1 with a floor of 0 to a range of 0 and 1 with a 0.5 center. 
+
+To visualize this, it is a move from this kind of noise:
+
+![](../img/12.7.5/noise1.PNG)
+
+To this kind of noise:
+
+![](../img/12.7.5/noise2.PNG)
+
+With these parameters set, plug the 'Noise TOP' into the second input of the 'GLSL TOP'.
 
 Your network should now look like this:
 
 ![](../img/12.7.5/network.PNG)
 
+In our shader, we only have to make a few changes.
 
+After the line where we sample the input positions from the grid, we'll add a line that samples our noise texture and creates a new vec4 named ```velocity```:
+
+```vec4 velocity = texture(sTD2DInputs[1], vUV.st) 
