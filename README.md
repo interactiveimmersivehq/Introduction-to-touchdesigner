@@ -53,6 +53,7 @@ The second aspect of the description is that TouchDesigner is node-based. This m
 Everything in TouchDesigner has a visual counterpart. All the Operators have viewers. Everything, whether it be text, control data, audio, videos, and more, is visualized through each and every operation that is performed. This is unlike any traditional programming, and even node-based, language, but it is what makes TouchDesigner a fantastic environment to work with. Learning how to do many complex tasks is greatly simplified by the ability to visualize the steps involved, every step of the way. 
 
 <br>
+
 ## Accessing the book
 
 There are multiple ways to access an Introduction to TouchDesigner 088. Since converting the book to using Gitbooks, you may now  download the PDF, epub, or mobi version of the book from the link below:
@@ -72,6 +73,7 @@ You can also download the Markdown source code from this GitHub repo and build u
 For more general information about this resource, visit http://book.nvoid.com
 
 <br>
+
 ## Compiling the book
 
 Unlike the previous LaTeX version, no build environment is required to contribute to the book. You can use plain Markdown, and when you're done and your changes are accepted to the repository, Gitbooks automatically takes care of creating a new web version, PDF, epub, and mobi version of the book. 
