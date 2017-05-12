@@ -79,6 +79,7 @@ For more general information about this resource, visit http://book.nvoid.com
 Unlike the previous LaTeX version, no build environment is required to contribute to the book. You can use plain Markdown, and when you're done and your changes are accepted to the repository, Gitbooks automatically takes care of creating a new web version, PDF, epub, and mobi version of the book. 
 
 <br>
+
 ## Attribution and Licensing
 
 This resource is licensed under Creative Commons - Attribution-NonCommercial-ShareAlike-4.0 International.
