@@ -61,6 +61,7 @@ There are multiple ways to access an Introduction to TouchDesigner 088. Since co
 https://www.gitbook.com/book/nvoid/introduction-to-touchdesigner/details
 
 The example files are found in the ```TouchDesigner Example Files``` folder of the GitHub repo, which can be cloned or downloaded here:
+
 https://github.com/nVoid/Introduction-to-touchdesigner
 
 The hours of HD video tutorials are available in a single Vimeo channel. All the files can be downloaded from Vimeo for offline viewing. The link for this is below:
