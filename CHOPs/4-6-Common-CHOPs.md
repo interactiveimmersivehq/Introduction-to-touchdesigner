@@ -6,7 +6,7 @@ This section is an introduction to some of the channel operators that are used i
 ##### Constant
 The Constant CHOP holds up to 40 unique constant values. The channel name is defined in text field on the left, and the value is defined with the number field slider on the right.
 
-When a Constant CHOP is created, only 1 channel is active. If a channel is not active, it's number field is greyed out.
+When a Constant CHOP is created, only 1 channel is active. If a channel is not active, its number field is greyed out.
 To activate a channel just give it a name, and the number field will light up as well as show up in the operator viewer.
 
 To create multiple channels with the same value, you can name the channels using pattern matching.

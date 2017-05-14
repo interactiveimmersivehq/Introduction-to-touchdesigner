@@ -1,7 +1,7 @@
 
 ### *10.3 Creating an Output Raster*
 
-As a general rule, to get the best performance possible, one should always strive to only use 1 Window COMP at a time. This doesn't apply while programming, but when it comes to deployment and performance, having more than one window open will greatly decrease the systems performance. So what should be done if there are multiple outputs with different positions and rotations?
+As a general rule, to get the best performance possible, one should always strive to only use 1 Window COMP at a time. This doesn't apply while programming, but when it comes to deployment and performance, having more than one window open will greatly decrease the system's performance. So what should be done if there are multiple outputs with different positions and rotations?
 
 The answer is to create a raster for the output and create a single, all-encompassing, window that will span all of the real-world outputs.
 
