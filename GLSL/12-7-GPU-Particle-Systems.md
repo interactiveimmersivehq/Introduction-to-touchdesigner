@@ -135,8 +135,7 @@ void main()
 
     // move point from object space to screen space and output to gl_Position
     vec4 worldSpaceVert = TDDeform(newPosition);
-    vec4 camSpaceVert = uTDMat.cam * worldSpaceVert;
-    gl_Position = TDCamToProj(camSpaceVert);
+    gl_Position = TDWorldToProj(worldSpaceVert);
 }
 ```
 
@@ -184,13 +183,12 @@ Before we finish assigning the new point position, we use this handy piece of GL
 gl_PointSize = 1.0;
 ```
 
-Finally, the code below takes our 'newPosition' values from object space, uses 'TDDeform()' to move them to world space. It then multiplies the position by 'uTDMat.cam' to move the point into camera space. And finally, 'TDCamToProj()' is used to convert the camera space point to screen space points, which are assigned to 'gl\_Position', which is the built-in output for each points position.
+Finally, the code below takes our 'newPosition' values from object space, uses 'TDDeform()' to move them to world space. Then 'TDWorldToProj()' is used to convert the world space point to screen space points, which are assigned to 'gl\_Position', which is the built-in output for each points position.
 
 ```
 // move point from object space to screen space and output to gl_Position
 vec4 worldSpaceVert = TDDeform(newPosition);
-vec4 camSpaceVert = uTDMat.cam * worldSpaceVert;
-gl_Position = TDCamToProj(camSpaceVert);
+gl_Position = TDWorldToProj(camSpaceVert);
 ```
 
 With that, we've finished the first goal, which was to move particles with textures. Although this may not seem like a traditional particle system, these steps lay the foundation for the next implementations.
