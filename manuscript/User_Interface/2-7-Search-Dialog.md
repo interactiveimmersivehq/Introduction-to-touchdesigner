@@ -4,7 +4,9 @@ The 'Search Dialog' is incredibly helpful as projects become more complicated, a
 
 The 'Basic' search can not only find Operators, but can search through Python code. Frequently, Python is used to change Operator parameter values. Sometimes, in the thick of Python scripts, it is easy to lose track of specific lines of code. A quick search for the code below will return a list of every single line of code that involves changing parameters of the Operators with 'transform' in their name:
 
-```op('transform').par```
+~~~~~~~~
+op('transform').par
+~~~~~~~~
 
 Sifting through the results is much easier than manually looking through Networks full of code. 
 

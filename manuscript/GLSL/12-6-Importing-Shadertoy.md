@@ -272,19 +272,19 @@ When the LMB is clicked, we want to write the values of `null2` to the`z` and `w
 
 Add the following code snippet to the 'offToOn' function:
 
-```
+~~~~~~~~
 z = op('null2')['x']
 w = op('null2')['y']
 op('constant1').par.value0 = z
 op('constant1').par.value1 = w
-```
+~~~~~~~~
 
 And add the following code to the 'onToOff' function:
 
-```
+~~~~~~~~
 op('constant1').par.value0 = 0
 op('constant1').par.value1 = 0
-```
+~~~~~~~~
 
 You can use another 'Merge' CHOP to merge `constant1` with `null2` and add another 'Null' CHOP after it. Go back to the 'GLSL' TOP and in the four `Value` fields of the `iMouse` uniform, you can reference the `x`, `y`, `z`, and `w` channels of `null3`. You can do this with Python references or exports.
 
@@ -334,7 +334,7 @@ We'll need to go through the main function, and wherever we find `gl_FragCoord` 
 
 This example only has 1 instance in each main function that needs to be changed. The main function for 'Buf_A' should look like this:
 
-```
+~~~~~~~~
 void main()
 {
     float r = pow(iMouse.x-gl_FragCoord.x,2.0) + pow(iMouse.y-gl_FragCoord.y,2.0);
@@ -350,17 +350,17 @@ void main()
         fragColor = c+rule(gl_FragCoord.xy);
     }
 }
-```
+~~~~~~~~
 
 and the main function for `Image` should look like this:
 
-```
+~~~~~~~~
 void main()
 {
     vec2 uv = gl_FragCoord.xy / iResolution.xy;
     fragColor = neiborhood(gl_FragCoord.xy)*vec4(uv,0.5+0.5*sin(iGlobalTime),1.0)*4.;
 }
-```
+~~~~~~~~
 
 Now we can go back up to the `Info` DAT and see what else needs to be changed.
 

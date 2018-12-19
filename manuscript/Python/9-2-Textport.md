@@ -4,29 +4,29 @@ The Textport has a few important roles in regards to scripting inside of TouchDe
 
 The first is that it can be used similarly to the IDLE shell that comes with Python installations. For example, open the Textport, type the following, and hit 'Enter' on the keyboard:
 
-```
+~~~~~~~~
 print(2+2+2+2)
-```
+~~~~~~~~
 
 Running this in Python would print the result of the equation, which is 8. After hitting 'Enter' in the Textport, the result of the equation is displayed. This is because the Textport works as a Python interpreter. Type Python code into the Textport, it will be processed, and the results will be returned.
 
 It can similarly do the same for tscript, the scripting language that was used in TouchDesigner 077. Notice that when the Textport is opened, the first thing printed is:
 
-```
+~~~~~~~~
 python >>
-```
+~~~~~~~~
 
 This is because in TouchDesigner 088, the Textport interpreter is set to interpret Python by default. To work with tscript in the Textport, the mode of the Textport needs to be changed from Python to tscript. This is done by clicking on the Python logo in the top left corner of the Textport. Once clicked, it will change to the letter 'T' and the next line of the Textport will be:
 
-```
+~~~~~~~~
 tscript ->
-```
+~~~~~~~~
 
 This means the Textport is now in tscript mode. To confirm this, type the following tscript code into the Textport:
 
-```
+~~~~~~~~
 echo Hello!
-```
+~~~~~~~~
 
 Similar to the Python Print function, the above tscript code will print 'Hello!'' to the Textport.
 
@@ -34,40 +34,40 @@ Another great use of the Textport is as a Python debugger. Open example 'Textpor
 
 This is a very simple example that highlights how beneficial the Textport becomes when using Python scripts. Open the Textport, and then click on the 'Good Python' button in the middle of the Network. This will run a script that prints to the Textport:
 
-```
+~~~~~~~~
 this will not error
-```
+~~~~~~~~
 
 Now click on the 'Bad Python' button. The Textport will display something very different.
 
-```
+~~~~~~~~
 File "/project1/chopexec1", line 11
 	Print(this will error)
 			     ^
 SyntaxError: Invalid syntax
-```
+~~~~~~~~
 
 This is a Python error, occurring because some of the code being interpreted is invalid. Learning to read these errors can greatly speed up debugging large Python scripts. Let's examine the different portions of this error.
 
 The first line indicates exactly where the error is in the Network, and which line of the script the Python interpreter believes is invalid:
 
-```
+~~~~~~~~
 File "/project1/chopexec1", line 11
-```
+~~~~~~~~
 
 In this example, the Operator with the error is 'chopexec1' inside of the component 'project1'. The Python stops interpreting the script at line 11.
 
 Below that, the Textport prints the line with the error:
 
-```
+~~~~~~~~
 Print(this will error)
-```
+~~~~~~~~
 
 More often that not, spelling mistakes and slip-ups can easily be caught by these two lines. In this case, it is clear that the string being printed is not enclosed in quotation marks. Knowing where the error is, and more specifically what the line the error is occurring on, means this would result in the problem being quickly solved. For the sake of this example look at the last line of the error:
 
-```
+~~~~~~~~
 SyntaxError: Invalid syntax
-```
+~~~~~~~~
 
 The last line of the error is the type of error Python is encountering. More detailed information on the different types of errors can be found by looking through the official Python 3.3 documentation, under the 'Errors and Exceptions' section. The 'SyntaxErrror' is a very common error, and is caused by the Python interpreter encountering code that isn't valid Python syntax. As mentioned, the above line of code is the missing the quotation marks around the string being printed.
 

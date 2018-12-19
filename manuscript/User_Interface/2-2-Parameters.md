@@ -21,8 +21,6 @@ Once hovering over the parameter's name, click it and it will expand, displaying
 
 There are three main elements that are available once a parameter is expanded. The first on the left, is the parameter's scripting name. This scripting name is needed whenever that parameter is referenced in any of TouchDesigner's scripting languages. In the above diagram, the scripting name for the Noise CHOP's Roughness is 'rough'. Continuing the above example, the Python script to set the Roughness of the above Noise CHOP to '1' would be:
 
-    op('noise1').par.rough = 1
-
 ~~~~~~~~
 op('noise1').par.rough = 1
 ~~~~~~~~

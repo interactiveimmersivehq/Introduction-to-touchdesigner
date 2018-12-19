@@ -8,15 +8,15 @@ It is important to note that, as of writing, TouchDesigner 088 uses Python 3.3.1
 
 For example, in Python 2.7, the Print function could be used without parentheses, where in Python 3, this will raise an error. Below is an example of how many Python 2.7 courses use the Print function:
 
-```
+~~~~~~~~
 print 'text'
-```
+~~~~~~~~
 
 This is in contrast to how the Print function is used in Python 3, where the parentheses are required:
 
-```
+~~~~~~~~
 print ('text')
-```
+~~~~~~~~
 
 An incredible feature of Python, aside from it's readability, is that there are many external libraries, many of which can natively connect to most of the webs most active spaces, like Facebook, Twitter, Instagram, Foursquare, etc. These kind of native integrations unlock a world of real-time data driven projects, as well as incredible real-time data sets for visualizations and client presentations.
 
