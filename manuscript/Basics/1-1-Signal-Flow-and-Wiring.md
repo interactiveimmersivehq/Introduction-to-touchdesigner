@@ -1,5 +1,6 @@
 # 1 Basics
-### *1.1 Signal Flow and Wiring*
+
+## *1.1 Signal Flow and Wiring*
 
 Wiring Operators is the most basic operation in TouchDesigner. All projects are made up of nothing more than groups of Operators wired together. Each Operator, on its own, does a very specific thing, but when they are combined together into a ’Network’, they can solve extremely complex problems.
 

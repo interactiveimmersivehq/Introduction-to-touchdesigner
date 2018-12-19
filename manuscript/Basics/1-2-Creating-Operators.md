@@ -1,5 +1,5 @@
 
-### *1.2 Creating Operators*
+## *1.2 Creating Operators*
 
 The OP Create Dialog can be reached in a multitude of ways. Each has a correct time and place of usage. When creating Operators from scratch the two easiest methods are to hit ’Tab’ on the keyboard, or to double click on the Network background.
 

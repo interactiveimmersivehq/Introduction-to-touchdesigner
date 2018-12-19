@@ -1,4 +1,5 @@
 # 5 DATs
+
 ### *5.1 Introduction*
 
 Data Operators, or DATs, perform operations on data. They can edit, parse, create, send, and receive data in various forms. These forms of data can range from text strings, tables, Python scripts, XML, JSON, MIDI, Serial, OSC, and much more.
