@@ -1,6 +1,6 @@
 # 9 Python
 
-## *9.1 Introduction*
+## 9.1 Introduction
 
 Python scripting is one of the most powerful features of TouchDesigner 088. It is capable of doing incredibly complex operations, like iterating through large data sets, natively communicating with a myriad web APIs, controlling and changing the parameters of other Operators in extremely rapid succession, and much more.
 

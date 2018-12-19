@@ -1,6 +1,6 @@
 #2 User Interface
 
-## *2.1 Parameter Window*
+## 2.1 Parameter Window
 
 The 'Parameter Window' is where all an Operator's parameters can be accessed.
 

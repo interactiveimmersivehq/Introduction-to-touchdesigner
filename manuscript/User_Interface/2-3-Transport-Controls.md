@@ -1,4 +1,4 @@
-## *2.3 Transport Controls*
+## 2.3 Transport Controls
 
 The transport bar functions similarly to the transport bars of many other applications. To go through it quickly, from left to right the buttons do the following:
 
