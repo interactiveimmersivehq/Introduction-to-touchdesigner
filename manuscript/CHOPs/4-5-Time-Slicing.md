@@ -11,5 +11,5 @@ Using the example above, when the timeline is running consistently at 30 FPS, ev
 
 The diagram below illustrates the above example, where the dotted-blue line is a non-Time sliced CHOP, the dotted-red line is a Time sliced CHOP, and the vertical dotted-green lines represent a cooked frame: 
 
-![Time Slicing](../img/4.4/Timeslice.png)
+![Time Slicing](images/4.4/Timeslice.png)
 

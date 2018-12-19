@@ -6,15 +6,15 @@ The answer is to create a raster for the output and create a single, all-encompa
 
 This is more simply expressed with an example. In this example scenario, there are four SXGA+ projectors, each with a resolution of 1400x1050. In the real-world setup, there are two projects beaming horizontally on side walls, and two projectors beaming vertically, and edge blended, on the center wall. The diagram below illustrates the desired setup.
 
-![10.3.1](../img/10.3/raster-1.png)
+![10.3.1](images/10.3/raster-1.png)
 
 This setup isn't particularly complex, thus knowing how to deal with it most effectively is important. Let's take this setup, and lay it out in 2D. 
 
-![10.3.2](../img/10.3/raster-2.png)
+![10.3.2](images/10.3/raster-2.png)
 
 A beginners's first instinct might be to use four Window COMPs because there are four outputs, two of which need to be rotated. The challenge is finding the most efficient layout for these four canvases, to create a single raster. In this instance, because all four outputs are the same resolution, an easy solution is to make a 2x2 grid. 
 
-![10.3.3](../img/10.3/raster-3.png)
+![10.3.3](images/10.3/raster-3.png)
 
 In the above diagram, all of the outputs are placed into a single raster. This setup can efficiently use one Window COMP that is 2800x2100 pixels. At this point, the nVidia or AMD control panel should be used to create a similar setup out of the monitors in Windows, which should then be connected to the correct outputs on the graphics card.
 
