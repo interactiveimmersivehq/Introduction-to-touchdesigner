@@ -1,5 +1,5 @@
 
-### *4.4 Sample Rates*
+## *4.4 Sample Rates*
 
 Many applications never expose the granular functions and operations that are happening behind the scenes. Because of this, many people aren't used to processing audio in a mathematical fashion. Audio is, at its core, numerical data being processed incredibly fast. Knowing this lays the groundwork for how to work with audio in TouchDesigner. 
 

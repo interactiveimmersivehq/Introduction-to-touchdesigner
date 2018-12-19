@@ -1,5 +1,5 @@
 
-### *4.2 Communication Methods*
+## *4.2 Communication Methods*
 
 MIDI works with an extensive amount of existing software and hardware. Digital Audio Workstations, or DAWs, like Ableton Live, Avid Pro Tools, Propellerhead Reason, and more, all support MIDI input and output. It is a relatively fast, stable, and time-tested protocol. Audio performance controllers often come equipped with MIDI over USB. These controllers include inputs hardware with controls such as: buttons, faders, piano keys, touch strips, jog wheels, drum pads, and potentiometers.
 

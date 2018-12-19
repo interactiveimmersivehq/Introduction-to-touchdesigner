@@ -1,5 +1,4 @@
-
-### *2.6 Palette Browser*
+## *2.6 Palette Browser*
 
 The Palette Browser can be thought of as a component library. The Palette Browser holds '.tox' files (or TouchDesigner Component files). These files contain a single Component Operator, that can hold a Network of other Operators. This means that a series of frequently used Operators, UI components, Python scripts, and more, can be created inside of a single Component Operator, saved as a '.tox' file, and quickly accessed at any time in the future.
 

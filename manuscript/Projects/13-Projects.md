@@ -1,4 +1,3 @@
-
 # 13 Projects
 
 This section will revolve around materials that are outside of the book itself. In the 'Projects' folder, there are two subfolders - 'Beginner' and 'Advanced'. Each will house a series of tutorials that include project files and videos. 

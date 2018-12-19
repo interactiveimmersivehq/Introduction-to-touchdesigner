@@ -1,5 +1,4 @@
-
-### *9.4 Commenting Code*
+## *9.4 Commenting Code*
 
 Commenting is a practice that should not be overlooked by new users of Python. As easy as it is to write a few lines of script, it takes only a few more seconds to quickly document what those lines do. This comes in handy in a multitude of situations such as:
 

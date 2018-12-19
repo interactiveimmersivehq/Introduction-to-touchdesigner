@@ -1,4 +1,4 @@
-### *12.6 Importing Shaders from Shadertoy*
+## *12.6 Importing Shaders from Shadertoy*
 ##### Chapter by Matthew Hedlin
 
 This section will demonstrate the basics of porting a shader from Shadertoy.com to TouchDesigner. We recommend using a feature-rich code editor, such as Sublime Text, Atom, or Notepad++, as there a strong Find-and-Replace function is essential.

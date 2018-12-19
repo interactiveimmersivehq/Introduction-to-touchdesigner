@@ -1,5 +1,4 @@
-
-### *11.3 Using Performance Monitor*
+## *11.3 Using Performance Monitor*
 
 The Performance Monitor is a tool for analyzing the cook time of a frame. This is useful when trying to optimize and debug a project's performance.
 

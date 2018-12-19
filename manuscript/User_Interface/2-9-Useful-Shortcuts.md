@@ -1,5 +1,4 @@
-
-### *2.9 Useful Shortcuts*
+## *2.9 Useful Shortcuts*
 
 Below is a bullet point list of some useful shortcuts:
 

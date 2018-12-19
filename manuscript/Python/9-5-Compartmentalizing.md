@@ -1,5 +1,4 @@
-
-### *9.5 Compartmentalizing*
+## *9.5 Compartmentalizing*
 
 The more complicated projects become, scripts will slowly become longer and longer. At a certain point, it will take more time to search through code, than it will take to actually change and add to it. Because of this, it is important to compartmentalize all of a projects scripts.
 

@@ -1,5 +1,4 @@
-
-### *2.7 Search Dialog*
+## *2.7 Search Dialog*
 
 The 'Search Dialog' is incredibly helpful as projects become more complicated, and riddled with Python scripts and nested Networks. The 'Search Dialog' can find a multitude of things in a multitude of places, and searches can be as broad, or specific, as needed. It is accessible in the 'Edit' menu at the top of  the screen, or by pressing 'F3' on the keyboard.
 

@@ -1,5 +1,5 @@
 
-### *4.5 Time Slicing*
+## *4.5 Time Slicing*
 
 Time slicing is something that is unique to TouchDesigner, and can be a bit tricky to understand at first. 
 

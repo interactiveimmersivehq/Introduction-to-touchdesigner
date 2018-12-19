@@ -1,5 +1,4 @@
-
-### *12.2 Types of Shaders and Rendering Pipeline*
+## *12.2 Types of Shaders and Rendering Pipeline*
 
 The two main types of shaders that can be programmed in TouchDesigner are the Vertex shader and the Pixel (or Fragment) shader. In a standard rendering pipeline, they are processed in that order, as can be seen in the diagram below:
 

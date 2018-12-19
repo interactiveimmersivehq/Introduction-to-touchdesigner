@@ -1,5 +1,4 @@
-
-### *1.3 Mouse and Keyboard Navigation*
+## *1.3 Mouse and Keyboard Navigation*
 
 The mouse plays a vital role in TouchDesigner programming, and a high-quality mouse is highly recommended. The mouse is used to move around the Network and work with Operators.
 

@@ -1,5 +1,4 @@
-
-### *11.6 GPU Memory Fragmentation*
+## *11.6 GPU Memory Fragmentation*
 
 Operators that use the GPU will often allocate the resources required for their tasks, and hold onto them until the task has been completed or changed.
 

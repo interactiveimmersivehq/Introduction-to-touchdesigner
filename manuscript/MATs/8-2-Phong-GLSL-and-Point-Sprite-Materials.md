@@ -1,5 +1,4 @@
-
-### *8.2 Phong, GLSL, and Point Sprite Materials*
+## *8.2 Phong, GLSL, and Point Sprite Materials*
 
 The three most used MATs are:
 

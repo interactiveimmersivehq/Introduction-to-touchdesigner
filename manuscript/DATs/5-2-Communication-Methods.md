@@ -1,5 +1,5 @@
 
-### *5.2 Communication Methods*
+## *5.2 Communication Methods*
 
 There are quite a few DATs that are capable of providing inputs and outputs over the many standard communication protocols. TouchDesigner is able to communicate natively over MIDI, OSC, TCP, UDP, UDT, and Websocket, giving it the ability to speak to many different types of programs, web applications and services, show control hardware, other computer systems, and etc.
 

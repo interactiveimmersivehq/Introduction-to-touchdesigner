@@ -1,5 +1,4 @@
-
-### *9.3 Common Practices*
+## *9.3 Common Practices*
 
 There are some common practices that should be upheld when working with Python. Something that is interesting about the Python language is that it is built around the idea of readability and simplicity. Python has an easter egg built inside of it, which can be accessed by entering the following code into a Python interpreter or the Textport:
 

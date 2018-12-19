@@ -1,5 +1,4 @@
-
-### *11.4 Operator Cooking*
+## *11.4 Operator Cooking*
 
 Better performance can always be achieved by decreasing the amount of Operators that cook every frame. Many beginners never take this into account when creating Networks. Admittedly, everyone has worked on prototypes with tight deadlines, and has had to created Networks without much foresight. However, not taking cooking into account can be quite hazardous if a project can't afford any dropped frames.
 

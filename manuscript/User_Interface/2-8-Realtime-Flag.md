@@ -1,5 +1,4 @@
-
-### *2.8 Realtime Flag*
+## *2.8 Realtime Flag*
 
 ![](../img/2.8/realtime-1.png)
 

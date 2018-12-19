@@ -1,5 +1,4 @@
-
-### *3.4 Null TOPs and Select TOPs*
+## *3.4 Null TOPs and Select TOPs*
 
 In contrast to expensive TOPs, like the Blur TOP, some TOPs are 'free', and should be used generously! Two specific examples are Null TOPs and Select TOPs. These two Operators, although they don't alter any pixel, are incredibly helpful in creating more efficient workflows.
 

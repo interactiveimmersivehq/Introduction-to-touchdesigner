@@ -1,5 +1,4 @@
-
-### *11.5 Resolution*
+## *11.5 Resolution*
 
 When it comes to working with 2D textures, resolution is extremely important, because of the almost 1:1 ratio of pixels processed compared to processing power used.
 

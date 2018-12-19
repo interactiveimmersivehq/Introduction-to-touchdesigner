@@ -1,5 +1,4 @@
-
-### *1.4 Networks and Paths*
+## *1.4 Networks and Paths*
 
 All TouchDesigner projects are made of Networks. A Network is a group of Operators. Networks are encapsulated inside of components, such as a Container COMP, Base COMP, Geometry COMP, etc. Networks can be infinitely nested. The top level is called the ’root’ level. TouchDesigner system and UI elements can be found at the ’root’ level.
 

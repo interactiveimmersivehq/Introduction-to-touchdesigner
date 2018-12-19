@@ -1,5 +1,4 @@
-
-### *11.7 Windows System Processes*
+## *11.7 Windows System Processes*
 
 Windows is a complex operating system, and there are many processes and system-related applications running behind the scenes. Many of these processes and applications can negatively impact performance of a computer, and TouchDesigner. 
 

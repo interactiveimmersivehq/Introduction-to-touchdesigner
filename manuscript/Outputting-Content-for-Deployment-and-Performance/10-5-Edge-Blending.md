@@ -1,5 +1,4 @@
-
-### *10.5 Edge Blending*
+## *10.5 Edge Blending*
 
 Video projectors are an incredibly flexible and are able to create infinitely large canvases. This is done by creating arrays of projectors with overlapping edges that are blended together to create a seamless canvas. This act of blending the overlapping sections is called 'Edge blending'.
 

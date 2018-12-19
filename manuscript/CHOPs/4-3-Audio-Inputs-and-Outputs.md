@@ -1,5 +1,5 @@
 
-### *4.3 Audio Inputs and Outputs*
+## *4.3 Audio Inputs and Outputs*
 
 Audio can be processed from a variety of sources, and can be processed in a variety of ways. TouchDesigner is capable of processing audio from audio files, movie files, external audio interfaces, internet audio streams, and can even synthesize audio from nothing. 
 

@@ -1,5 +1,4 @@
-
-### *3.3 Preloading Movies*
+## *3.3 Preloading Movies*
 
 When creating real-time applications, continuous dropped frames can greatly detract from presentation and impact. Diagnosing performance issues is something that will be discussed in a later chapter, but many preventative measures can be taken. Preloading and unloading Movie In TOPs is one of these preventative measures. The simple procedure of preloading and unloading movies is often overlooked by new users because the easiest methods involve scripting.
 

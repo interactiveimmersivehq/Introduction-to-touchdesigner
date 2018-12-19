@@ -1,5 +1,4 @@
-
-### *9.7 Where to Learn Python*
+## *9.7 Where to Learn Python*
 
 Below is a very basic list of some free, online, Python tutorials. (Note: some of the tutorials are for Python 2.7, but are incredibly well made, and thus included).
 

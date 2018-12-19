@@ -1,5 +1,5 @@
 
-### *7.2 Window COMP*
+## *7.2 Window COMP*
 
 The Window COMP is used in almost every project to display the contents of an Operator in a new window. Whether using the Window COMP to create a full-screen output, or to create more of a traditional windowed application, there are a number of options that will need modifying. Because of the unique nature of every project, there are no 'best settings' to consistently rely on. Spend some time and go over the parameters on the Wiki, and experiment to find works best in each and every new situation.
 

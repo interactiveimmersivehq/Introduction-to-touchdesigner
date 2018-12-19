@@ -1,6 +1,6 @@
 # 7 COMPs
 
-### *7.1 Introduction*
+## *7.1 Introduction*
 
 There are 3 types of Component Operators, or COMPs, and each have different uses:
 

@@ -1,5 +1,4 @@
-
-### *6.2 Rendering*
+## *6.2 Rendering*
 
 One thing many beginners struggle with is the process of quickly and effectively transitioning from a 3D workflow to a 2D workflow. The Internet is full of 3D workflow tutorials that can explain many of the finer points of 3D rendering, but for this chapter, the goal is to get from point A, a simple 3D object, to Point B, a Render TOP.
 

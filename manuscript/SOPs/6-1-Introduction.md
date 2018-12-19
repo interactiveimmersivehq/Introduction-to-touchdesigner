@@ -1,6 +1,6 @@
 # 6 SOPs
 
-### *6.1 Introduction*
+## *6.1 Introduction*
 
 The Surface Operators, or SOPs, family of Operators are used for any and all 3D operations. This includes working with simple 3D geometry, particle systems, architectural models, 3D characters, and more. SOPs are the oft ignored operators by many beginners because of their steep learning curve, but rest assured that a firm knowledge over the SOP family of operators will open up many incredibly interesting opportunities, project-wise, as well as offer many extremely efficient ways of solving problems.
 

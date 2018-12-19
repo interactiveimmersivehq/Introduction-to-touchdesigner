@@ -1,4 +1,4 @@
-### *4.6 Common Channel Operators*
+## *4.6 Common Channel Operators*
 
 This section is an introduction to some of the channel operators that are used in many situations. There is an example file that is included in the .zip folder.
 

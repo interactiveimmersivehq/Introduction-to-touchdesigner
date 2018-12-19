@@ -1,5 +1,4 @@
-
-### *8.3 UV Maps*
+## *8.3 UV Maps*
 
 UV mapping is an essential to working with complex 3D geometry. As with certain other aspects of 3D modelling, it is easier to create and work with UV maps in a dedicated modelling program.
 

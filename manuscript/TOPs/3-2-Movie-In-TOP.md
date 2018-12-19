@@ -1,5 +1,4 @@
-
-### *3.2 Movie In TOP*
+## *3.2 Movie In TOP*
 
 The Movie In TOP is one of the most used TOPs. It's function is to load assets into TouchDesigner. It is capable of loading many different types of assets, ranging from still images to a variety of movie codecs. Below is a small list of common file formats used with the Movie In TOP:
 

@@ -1,5 +1,4 @@
-
-### *2.5 Panes*
+## *2.5 Panes*
 
 Using panes regularly can save a ton of time when moving back and forth between Networks. Having to travel through 3 Networks to change a parameter, only to have to travel back to see the changes is a waste of time. Panes take the current window, split it horizontally or vertically as many times as desired. Each pane layout can be saved for later use. 
 

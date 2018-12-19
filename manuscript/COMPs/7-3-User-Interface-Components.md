@@ -1,5 +1,5 @@
 
-### *7.3 User Interface Components*
+## *7.3 User Interface Components*
 
 Component Operators are incredibly important as they create user interfaces in TouchDesigner. Specifically, the Panel Components are what provide this functionality. Many user interfaces will be created in later examples, so only a few basic examples will be examined in this section.
 

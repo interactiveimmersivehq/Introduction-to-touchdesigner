@@ -1,5 +1,4 @@
-
-### *3.5 Codecs*
+## *3.5 Codecs*
 
 Movie playback is a taxing process. It is wise to spend time experimenting with different codecs to see which one suits a project in terms of visual quality and performance.
 

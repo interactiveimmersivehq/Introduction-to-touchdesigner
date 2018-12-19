@@ -1,5 +1,4 @@
-
-### *10.2 Performing with the Network Editor*
+## *10.2 Performing with the Network Editor*
 
 Every situation is different, and it is possible that programming might have to be done during a live performance. If that is the case, there are a few things that can help manage the impact the Network Editor has on the system. The first is to turn off the viewers on any Operators that don't need to be monitored. See the diagrams below:
 

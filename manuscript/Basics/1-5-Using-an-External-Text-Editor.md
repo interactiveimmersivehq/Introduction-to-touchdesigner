@@ -1,5 +1,5 @@
 
-### *1.5 Using an External Text Editor*
+## *1.5 Using an External Text Editor*
 
 Small Python scripts can be created and edited inside of TouchDesigner, but as scripts grow, an external text editor can save a lot of time and trouble.
 
