@@ -10,4 +10,5 @@ As mentioned in the Component chapter, it is recommended that Container COMPs ar
 
 Open example 'Perform\_mode.toe'. In this example, the Container COMP, 'container1', is used as the source for Perform mode. Press the 'F1' key to enter Perform mode, and the contents of the container will be displayed in a new window. Press the 'ESC' key to exit Perform mode and return to the Network editor. There is a UI button that can be used to enter Perform mode via the mouse.
 
+{width=100%,float=left}
 ![10.1.1](images/10.1/perform.png)

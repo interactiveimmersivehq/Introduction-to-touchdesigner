@@ -11,6 +11,7 @@ This example takes the previous example and adds two Operators. The first is the
 
 The sample rate of different Operators is something that is overlooked by many beginners, but is essential to having artifact-free audio. The Oscillator CHOP is being sampled 44,100 times a second, and the Filter CHOP is being sampled 60 times a second. This discrepancy means that there will not be a 1:1 ratio between the samples of audio and the samples of the ramp when they are multiplied. More accurately, there will be a 735:1 ratio between samples of audio and samples of the ramp. This means when the two values are multiplied, the audio will step up or down in volume every 735 samples. Examine the diagram below, where the dotted blue line is a 1:1 ratio, and the dotted red line represents a 735:1 ratio.
 
+{width=100%,float=left}
 ![](images/4.4/sample-rate.png)
 
 Looking at the diagram above, there is a very distinct stepping that happens when the two channels that have different sample rates are multiplied. Many CHOPs use the project FPS as their default sample rate, causing the stepping to become exaggerated when the project is set to run at 30 FPS. Using the same example as above, the ratio of samples of audio and samples of the ramp would jump from 735:1 to 1470:1. This means in a 30 FPS project, there would only be an incremental volume change every 1470 samples! 

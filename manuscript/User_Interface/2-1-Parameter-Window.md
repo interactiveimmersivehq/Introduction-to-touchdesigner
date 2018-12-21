@@ -10,6 +10,7 @@ The second way to access the 'Parameter Window' is by right clicking on an Opera
 
 Every Operator has a different set of parameters, but all 'Parameter Windows' have the same set of options. Below is a diagram highlighting the options:
 
+{width=100%,float=left}
 ![image 2.1.1](images/2.1/parameter-window.png)
 
 From left to right, the options are as follows:

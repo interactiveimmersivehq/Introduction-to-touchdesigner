@@ -14,8 +14,10 @@ In the diagram below, there is an example with a Constant TOP and a Null TOP. In
 
 {width=100%,float=left}
 ![img 1.2.1](images/1.2/creating-operators-1.png)
+
 {width=100%,float=left}
 ![img 1.2.2](images/1.2/creating-operators-2.png)
+
 {width=100%,float=left}
 ![img 1.2.3](images/1.2/creating-operators-3.png)
 

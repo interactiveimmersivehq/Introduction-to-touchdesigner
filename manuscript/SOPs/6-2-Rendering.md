@@ -31,9 +31,10 @@ The last aspect to rendering a 3D scene is the camera. The camera is the eye and
 
 There are two main types of cameras: perspective cameras and orthographic cameras.
 
-
+{width=100%,float=left}
 ![](images/6.2/rendering-1.png)
 
+{width=100%,float=left}
 ![](images/6.2/rendering-2.png)
 
 Perspective cameras need very little explanation, as they work similarly to the human eye. Perspective cameras have a perspective point, and a view frustum that are used to determine what the camera sees and how that is rendered. With a perspective camera, imagine all light in the 3D scene funnelling towards the perspective point. Perspective correction, or 'foreshortening', is applied on all objects in the scene, meaning that objects farther away from the camera appear smaller. This camera ends up being used most often as it functions like human eyes. An example of this type of camera can be found in example file 'Camera\_1.toe'.

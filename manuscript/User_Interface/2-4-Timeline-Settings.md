@@ -4,4 +4,5 @@ Unless media or animations is locked to the timeline, the 'Timeline settings' wo
 
 The 'Timeline settings' are use more in situations where animations and media need to be locked to a consistent timeline. The frame controls include 'Start' and 'End', which control the start frame and end frame of the timeline, as well as 'RStart' and 'REnd', which control the loop start and loop end of the timeline. With these settings, it is possible to create an animation that spans the entire timeline, which could be 4000 frames, while still leaving the option to loop a small section of the timeline to work within. 
 
+{width=100%,float=left}
 ![](images/2.4/timeline.png)

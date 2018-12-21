@@ -16,6 +16,8 @@ The third step is a relatively common operation in TouchDesigner. As long as the
 
 Below is an example of a simple 3D box, and it's UV map:
 
+{width=100%,float=left}
 ![](images/8.3/3D-geo.png)
 
+{width=100%,float=left}
 ![](images/8.3/Geo-map.png)

@@ -2,6 +2,7 @@
 
 The transport bar functions similarly to the transport bars of many other applications. To go through it quickly, from left to right the buttons do the following:
 
+{width=100%,float=left}
 ![](images/2.3/transport-1.png)
 
 

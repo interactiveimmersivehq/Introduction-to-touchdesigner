@@ -13,6 +13,7 @@ There are three ways to access the Performance Monitor:
 
 There are only a few buttons, and they perform simple tasks that are almost self-explanatory.
 
+{width=100%,float=left}
 ![Performance Monitor](images/11.3/performance-monitor-1.png)
 
 1. Performs an analyses on the current frame
@@ -32,6 +33,7 @@ It is important to note that cook times are based on the CPU. This doesn't mean 
 
 Here is an example analyses from the Performance Montior.
 
+{width=100%,float=left}
 ![Performance Monitor 2](images/11.3/performance-monitor-2.png)
 
 The analyses above is taken from a simple project with a few Movie In TOPs and a few Over TOPs. Every frame that is analyzed will have some similar Operators. These are the Operators responsible for the functionality and user interface elements of TouchDesigner.
