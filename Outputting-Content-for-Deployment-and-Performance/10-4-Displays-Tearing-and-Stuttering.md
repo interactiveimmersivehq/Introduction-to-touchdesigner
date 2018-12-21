@@ -7,7 +7,7 @@ Examine the image below. Is it an example of what a frame with tearing will look
 
 
 ![](../img/10.4/tearing.jpg)
-<br><span style="font-size:80%;">*Image courtesy of Wikipedia*</span>
+*Image courtesy of Wikipedia*
 
 Tearing occurs when a display refreshes its image out of sync with when the graphics card renders its image. The result is part of the image being from the previous frame, and part of it being from the next frame. On slow moving content, this can sometimes be hard to notice, but once there is any sort of motion in the content, tearing becomes incredibly distracting.
 
