@@ -13,13 +13,13 @@ Similar results can be achieved by right clicking on the wire itself and clickin
 
 In the diagram below, there is an example with a Constant TOP and a Null TOP. In the next diagram, the wire connecting them was right clicked and a Transform TOP was created using ’Insert Operator’. In the proceeding diagram, the wire connecting the Operators was right clicked and a Transform TOP was created using ’Add Operator’. Notice how it is pre-wired in parallel to the first Transform TOP.
 
-{width=100%,float=left}
+{width=100%}
 ![img 1.2.1](../img/1.2/creating-operators-1.png)
 
-{width=100%,float=left}
+{width=100%}
 ![img 1.2.2](../img/1.2/creating-operators-2.png)
 
-{width=100%,float=left}
+{width=100%}
 ![img 1.2.3](../img/1.2/creating-operators-3.png)
 
 There are two useful key commands when working with the OP Create Dialog: ’Control’ and ’Shift’. Open the OP Create dialog, hold down ’Control’ on the keyboard, and then begin to select multiple Operators in a row. Each one will be added to the Network below the last. This is useful for quickly populating a Network with a few different Operators.

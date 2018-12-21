@@ -5,7 +5,7 @@ All TouchDesigner projects are made of Networks. A Network is a group of Operato
 
 Encapsulating and organizing Networks from the start of the project is a great practice to get in the habit of. The current path is always visible in the ’Path Bar’ at the top of the ’Network Editor’.
 
-{width=100%,float=left}
+{width=100%}
 ![](../img/1.4/path-1.png)
 
 All TouchDesigner Operators have a path. These paths are similar to Unix file paths. There are two kinds of paths to an Operator: the ’absolute path’ and the ’relative path’. The ’absolute path’ is the path to the Operator from the ’root’ of the project, or ’/’. The ’relative path’ is the path to an Operator from another Operator. These paths start from the Network of the referencing Operator, instead of starting from the ’root’.

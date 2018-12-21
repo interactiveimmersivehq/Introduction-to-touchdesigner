@@ -9,5 +9,5 @@ Under the 'Derivative' section, navigate to 'Tools', and then finally drag and d
 
 One of the goals of this book is to create some tools that can be added to the Palette Browser, so that they may be used regularly. There are two ways to add a component to the Palette Browser. The first is a drag and drop method. To do so, select 'My Components' from the top portion of the browser. Then drag any component from the Network and drop it into the lower portion of the Palette Browser. It will then be added to 'My Components' repository. The second method of adding a component is to drag a saved '.tox' file from Windows Explorer, and drop it in the same region mentioned above. The diagram below illustrates exactly where components should be dropped.  
 
-{width=100%,float=left}
+{width=100%}
 ![](../img/2.6/palette-1.png)
