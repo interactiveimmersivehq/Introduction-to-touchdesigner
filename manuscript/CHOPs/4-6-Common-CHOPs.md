@@ -3,6 +3,7 @@
 This section is an introduction to some of the channel operators that are used in many situations. There is an example file that is included in the .zip folder.
 
 ### Generator CHOPs
+
 #### Constant
 The Constant CHOP holds up to 40 unique constant values. The channel name is defined in text field on the left, and the value is defined with the number field slider on the right.
 
