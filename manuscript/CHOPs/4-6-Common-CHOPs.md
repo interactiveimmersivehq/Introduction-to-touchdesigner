@@ -63,6 +63,7 @@ On the `Outputs` parameter page, you can select what information you would like 
 * `Done` is a value of `0` while the timer is initialized or running, and turns to `1` when the timer has finished. It will turn back to `0` once the `Init` or `Start` button is triggered again.
 
 ### Filter CHOPs
+
 #### Math
 This is probably the most commonly used CHOP. It takes data from its inputs and manipulates it in different ways :
 
@@ -72,7 +73,7 @@ The most intuitive use would be to take a value and perform some simple math, li
 
 Commonly, we need to take a value, or set of values, and adjust them according to another value or set of values. For example, if our end desire is to have a value moving up and down over time, but we also want to add a random jitter, we could use a Pattern CHOP to create a SIN wave, a Noise CHOP to create a random set of numbers, and using the `OP` parameter page of a Math CHOP, we could set the `Combine CHOPs` drop-down menu to `Add`. The result could look something like this :
 
-![Combine Chops](imagesg/4.6/math2.JPG "Combine Chops")
+![Combine Chops](images/4.6/math2.JPG "Combine Chops")
 
 Another very useful function of the Math CHOP is the `Range` parameter page. This takes a range of values, and re-maps them to a new range. For example, if you have an LFO CHOP that ramps from 0 to 1, but you need that same movement to fit between the specific values of 7.9 and 51.4, it is much faster to use the `From Range` and `To Range` parameters than to adjust it using order of operations.
 
