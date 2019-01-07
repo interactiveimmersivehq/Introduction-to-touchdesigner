@@ -9,6 +9,7 @@ All data in TouchDesigner flows from left to right. Any inputs that an Operator 
 ![img 1.1.1](../img/1.1/signal-flow-1.png)
 
 
+
 Components, interestingly, have the same data signal flow as Operators, flowing from left to right, but they are also capable of parent and child relationships, which flow from top to bottom. The component at the top of the signal chain is the parent, and the components below it are its children, and below that are the children’s children, and so on. In the example below, there is a small UI, that is made of a few sliders. In this example, the Slider COMPs are the children of the Container COMP, which is the parent.
 
 {width=100%}
