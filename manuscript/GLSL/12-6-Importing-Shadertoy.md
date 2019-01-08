@@ -1,4 +1,5 @@
 ## *12.6 Importing Shaders from Shadertoy*
+
 #### Chapter by Matthew Hedlin
 
 This section will demonstrate the basics of porting a shader from Shadertoy.com to TouchDesigner. We recommend using a feature-rich code editor, such as Sublime Text, Atom, or Notepad++, as there a strong Find-and-Replace function is essential.
@@ -322,6 +323,7 @@ https://www.shadertoy.com/view/4tV3Wd
 Shadertoy has implemented the use of multiple buffers, separating functions into separate processes. This example demonstrates one way of importing these multi-pass shaders.
 
 ##### Setup
+
 ###### Connect the Buffers
 On the Shadertoy website, the previous examples only had one tab that contained code called 'Image'. This example has an 'Image' tab as well as a 'Buf A' tab. This means we'll have to use 2 different 'GLSL' TOPs to represent each of the shader functions or `buffers`.
 
