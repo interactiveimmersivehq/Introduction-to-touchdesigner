@@ -1,4 +1,5 @@
 # 10 Outputting Content for Deployment and Performance
+
 ## *10.1 Perform Mode*
 
 Perform mode should be used whenever possible when deploying projects. The basic premise behind Perform mode is that when a project is ready to be delivered, it will be in a state that won't require on-demand programming, and thus won't require the Network editor. It is surprising how much system resources can go towards just rendering the Network editor, especially if there are many Operators with visible viewers, displaying CHOP channels, TOP previews, DAT tables, etc.

@@ -1,4 +1,5 @@
 # 12  GLSL
+
 ## *12.1 Introduction*
 
 GLSL, or OpenGL Shading Language, is an incredible tool to have in one's back pocket. With a little bit of code, one can program directly on the GPU.
