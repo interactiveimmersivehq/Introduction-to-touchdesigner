@@ -1,5 +1,4 @@
-
-### *12.5 Shaders in 2D*
+## *12.5 Shaders in 2D*
 
 Even if one doesn't want to spend a ton of time learning about GLSL for 3D use, the Pixel shader can be extremely useful as a tool for generative visuals and compositing 2D textures. Simple GLSL shaders can be especially useful when compositing textures, as it can save quite a lot of graphics memory when doing repititious work.
 

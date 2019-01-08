@@ -1,5 +1,4 @@
-
-### *12.4 Shaders in 3D*
+## *12.4 Shaders in 3D*
 
 Let's start by looking at a few very simple 3D scenes that utilize Vertex and Pixel shaders.
 

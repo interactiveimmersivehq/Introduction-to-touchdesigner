@@ -1,5 +1,5 @@
 # 8 MATs
-### *8.1 Introduction*
+## *8.1 Introduction*
 
 Material Operators, or MATs, are used for materials and shaders for 3D geometry.
 

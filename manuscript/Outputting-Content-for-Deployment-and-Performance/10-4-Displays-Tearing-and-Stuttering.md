@@ -1,12 +1,12 @@
 
-### *10.4 Displays, Tearing, and Stuttering*
+## *10.4 Displays, Tearing, and Stuttering*
 
 There has not been much hardware discussion throughout this book, but it is important to keep a few things in mind when working with multiple displays. The most important rule is to always try to have all display hardware be exactly the same. Any difference in the signal flow, can cause what is called 'tearing'. The image below is an example of a frame that has tearing.
 
 Examine the image below. Is it an example of what a frame with tearing will look like. Notice the two horizontal cuts across the frame:
 
 {width=100%}
-![](../img/10.4/tearing.jpg)
+![](images/10.4/tearing.jpg)
 
 *Image courtesy of Wikipedia*
 

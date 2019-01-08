@@ -1,5 +1,5 @@
 
-### *12.7 GPU Particle Systems*
+## *12.7 GPU Particle Systems*
 
 
 #### *12.7.1 Introduction*
@@ -59,7 +59,7 @@ me.inputPoint.index
 What this does is create a custom attribute on each point that we can use in the GLSL code. In this case, we've taken the point index of each point, and assigned it to a float value named 'pointIndex'. Now we've finished the first two steps, and we have 1000 particles that we will feed into the GLSL MAT. This should look like this (Note: You will not see anything in your SOP viewers at this stage unless you activate different display options to make points visible!):
 
 {width=100%}
-![](../img/12.6.2/step1_2.PNG)
+![](images/12.6.2/step1_2.PNG)
 
 The next thing we're going to do is create some noise that we will use as our point positions. The first thing to do is create a 'Noise TOP'. In the 'Common' parameters, change the resolution to 1000 pixels by 1 pixels and the 'Pixel Format' to '32-bit float (RGBA)'. This gives us one pixel of noise for every particle we have (1000 pixels of noise for 1000 particles). Changing the 'Pixel Format' to '32-bit float (RGBA)' means that every pixel will have 32-bits per color channel, meaning a lot more precise data can be held in each color channel. The next step is to set the 'Monochrome' parameter to 'off'. This returns a different noise value for each of the color channels, which will be translated into different noise values for our X,Y,Z positions of the particles. You can then choose to animate the noise however you like for the example, but the easiest is the add the following code to the 'Translate' parameter's 'tx' value:
 
@@ -90,17 +90,17 @@ We'll quickly review the code above, but please refer to previous sections in th
 After the scaling and translating, the 'outPosition' is assigned to the 'fragColor' output. If you'd like to see the positions that the particles will be receiving, you can connect the 'GLSL TOP' to a 'TOP to CHOP' operator and view each color channels values. This finishes step 3 and 4 of the item list.
 
 {width=100%}
-![Particle](../img/12.6.2/step3_4.PNG)
+![Particle](images/12.6.2/step3_4.PNG)
 
 Now create a basic render setup by adding a 'Camera COMP', a 'Light COMP', a 'Geometry COMP', and a 'Render TOP'. They can all be set to their default values for this exercise. Make sure to add an 'In SOP' to the 'Geometry COMP' so that you can input your set of points and turn on the render and display flags on the 'In SOP' inside of the 'Geometry COMP'. That will complete step 5.
 
 {width=100%}
-![Particle 2](../img/12.6.2/step5.PNG)
+![Particle 2](images/12.6.2/step5.PNG)
 
 Next, create a 'GLSL MAT' operator, an 'Info DAT', and two 'Text DAT''s. Reference the 'GLSL MAT' in the 'Info DAT''s 'Operator' parameter to help debug any errors. Name one of the 'Text DAT''s 'vertex' and the other 'pixel'. These will be the GLSL vertex and pixel shaders. Reference 'vertex' in the 'GLSL MAT''s 'Vertex Shader' parameter, and reference 'pixel' in the 'GLSL MAT''s 'Pixel Shader' parameter. Then we need to reference the 'GLSL TOP' we created. To do so, on the 'Samplers 1' parameter page of the 'GLSL MAT', add 'sPointPosition' to the first 'Sampler Name' parameter, and add the name of the noise texture to the first 'TOP' parameter. In the example file, a 'Null TOP' named 'null1' was added after the 'GLSL TOP', and that is the operator name that is referenced in the 'TOP' parameter. Be very careful with the 'Sampler Name' parameter, as this will the name used in the code and if it is different than the code, you won't see any outputs as you won't be able to reference the particle position. Finally, on the 'Vectors 1' page of the 'GLSL MAT', add 'uPointsPerInstance' to the first 'Uniform Name', and enter '1.0 / 1000' as the first value of the parameter 'value0x'. This last vector will be used in the shader to scale the point index from 0-1000 to the normalized 0.0 to 1.0 UV co-ordinate when sampling the point position noise texture. With that setup complete, we can move from step 6 to step 7.
 
 {width=100%}
-![](../img/12.6.2/step6.PNG)
+![](images/12.6.2/step6.PNG)
 
 From here, we will finish all the remaining steps in the GLSL shaders. First, edit 'pixel', the 'Text DAT' we will use to hold the pixel shader, and enter the follow:
 
@@ -198,7 +198,7 @@ gl_Position = TDWorldToProj(camSpaceVert);
 With that, we've finished the first goal, which was to move particles with textures. Although this may not seem like a traditional particle system, these steps lay the foundation for the next implementations.
 
 {width=100%}
-![Particles final](../img/12.6.2/final_step.PNG)
+![Particles final](images/12.6.2/final_step.PNG)
 
 
 ### 12.7.3 Using Source Geometry
@@ -223,7 +223,7 @@ This creates a CHOP with all the point positions as separate channels. We can tr
 This complete the first step of the example.
 
 {width=100%}
-![](../img/12.6.3/step1.PNG)
+![](images/12.6.3/step1.PNG)
 
 Now that we have a texture, let's make a few additions to our shader. Below is our final shader from the previous example:
 
@@ -296,7 +296,7 @@ fragColor = outPosition;
 Once you save, you should the columns of the grid being effected by the noise texture.
 
 {width=100%}
-![](../img/12.6.3/step2_3.PNG)
+![](images/12.6.3/step2_3.PNG)
 
 Feel free to experiment by replacing the 'Grid SOP' with another geometry with 1000 points.
 
@@ -324,7 +324,7 @@ Start by deleting the 'Noise TOP' and unplugging the ```chopto1``` from the 'GLS
 This should look like the image below:
 
 {width=100%}
-![](../img/12.7.4/step1.PNG)
+![](images/12.7.4/step1.PNG)
 
 Now let's create a new uniform on the 'Vectors 1' page of the 'GLSL TOP' parameters. Name it it ```uVel``` and leave the values at 0.
 
@@ -403,19 +403,19 @@ The final element we need in the network is a 'Noise TOP' with a resolution of 1
 To visualize this, it is a move from this kind of noise:
 
 {width=100%}
-![](../img/12.7.5/noise1.PNG)
+![](images/12.7.5/noise1.PNG)
 
 To this kind of noise:
 
 {width=100%}
-![](../img/12.7.5/noise2.PNG)
+![](images/12.7.5/noise2.PNG)
 
 With these parameters set, plug the 'Noise TOP' into the second input of the 'GLSL TOP'.
 
 Your network should now look like this:
 
 {width=100%}
-![](../img/12.7.5/network.PNG)
+![](images/12.7.5/network.PNG)
 
 In our shader, we only have to make a few changes.
 

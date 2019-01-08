@@ -1,5 +1,5 @@
 
-### *12.7 What Next?*
+## *12.7 What Next?*
 
 This chapter should have helped unravel a bit of the introductory mysteries of GLSL without getting unnecessarily technical.
 

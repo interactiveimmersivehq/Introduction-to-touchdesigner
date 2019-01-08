@@ -1,5 +1,5 @@
 
-### *9.2 Textport*
+## *9.2 Textport*
 
 The Textport has a few important roles in regards to scripting inside of TouchDesigner. There are two ways to open the Textport. The first is by using key command 'Alt + T'. The second is by selecting 'Textport' from 'Dialogs' in the menu bar at the top of the TouchDesigner window.
 

@@ -1,5 +1,5 @@
 
-### *12.3 Debugging*
+## *12.3 Debugging*
 
 Before getting too deep into the world of GLSL, it is important to know how to debug compiling issues. There are two signs that denote a compiling error.
 
