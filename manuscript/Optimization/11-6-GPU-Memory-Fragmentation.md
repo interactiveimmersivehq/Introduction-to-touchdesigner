@@ -1,4 +1,5 @@
-## *11.6 GPU Memory Fragmentation*
+
+### *11.6 GPU Memory Fragmentation*
 
 Operators that use the GPU will often allocate the resources required for their tasks, and hold onto them until the task has been completed or changed.
 
@@ -10,8 +11,7 @@ The two diagrams below try to outline memory fragmentation in the simplest way p
 
 There are two case studies, both with similar parameters: There are 3GB of GPU RAM and there are three 1GB static textures to load and hold in RAM indefinitely.
 
-{width=100%,float=left}
-![Memory Fragmentation](images/11.6/memory-frag-1.png)
+![Memory Fragmentation](../img/11.6/memory-frag-1.png)
 
 In Case 1, the 3GB GPU of RAM would be able to perfectly fit the three 1GB static textures. They are called static textures because once they've allocated to memory, they aren't changed. This is the equivalent to loading a large image into a Movie In TOP at the start of a project and leaving it there indefinitely.
 
@@ -32,14 +32,16 @@ Case 2 describes a situation where memory fragmentation will occur. To the alrea
 
 This would simulate a situation where a texture is loaded, displayed, and then replaced with another texture. 
 
-{width=100%,float=left}
-![Memory Fragmentation 2](images/11.6/memory-frag-2.png)
+{width=100%}
+![Memory Fragmentation 2](../img/11.6/memory-frag-2.png)
 
 In diagram 'Case 2.1', Steps 1 through 3 are completed, and there is 800MB free. At first glance, this might seem perfect, because if the 200MB texture is unloaded, there would be 1GB of free space for the final texture. Unfortunately, this isn't how graphics cards work.
 
-{width=100%,float=left}
-![Memory Fragmentation 3](images/11.6/memory-frag-3.png)
+{width=100%}
+![Memory Fragmentation 3](../img/11.6/memory-frag-3.png)
 
 As seen above, in diagram 'Case 2.2', Step 4 has been completed, and the 200MB texture has been unloaded. What remains is a prime example of GPU memory fragmentation. There is a total of 1GB of free GPU memory, but there isn't a single block of 1GB to allocate to the 1GB texture. The already-loaded 1GB textures, in their static state, can't be shifted in the GPU memory without a full unload and reload process occurring, and because the memory can't be shifted, the 200MB of free space has been trapped between the static textures. This 200MB allocation can be filled with 200MB or smaller textures, but it will not be able to load the third 1GB static texture.
 
 The best way to prevent heavy memory fragmentation is to try to and restrict the amount of varying resolutions in a project. When an asset is swapped out for one that is the same resolution, often times it can take it's place in the memory.
+
+{pagebreak}

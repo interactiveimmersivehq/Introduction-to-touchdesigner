@@ -61,4 +61,5 @@ GLSL/12-4-Shaders-in-3D.md
 GLSL/12-5-Shaders-in-2D.md 
 GLSL/12-6-Importing-Shadertoy.md 
 GLSL/12-7-GPU-Particle-Systems.md 
-GLSL/12-8-What-Next.md 
+GLSL/12-8-What-Next.md
+Credits/14-Credits.md

@@ -69,17 +69,17 @@ This is probably the most commonly used CHOP. It takes data from its inputs and 
 
 The most intuitive use would be to take a value and perform some simple math, like add 10, or multiply the given value by 10. This is done on the `Mult-Add` parameter page.
 
-{width=100%,float=left}
+{width=100%}
 ![Order of Operations](images/4.6/math1.JPG "Order of Operations")
 
 Commonly, we need to take a value, or set of values, and adjust them according to another value or set of values. For example, if our end desire is to have a value moving up and down over time, but we also want to add a random jitter, we could use a Pattern CHOP to create a SIN wave, a Noise CHOP to create a random set of numbers, and using the `OP` parameter page of a Math CHOP, we could set the `Combine CHOPs` drop-down menu to `Add`. The result could look something like this :
 
-{width=100%,float=left}
+{width=100%}
 ![Combine Chops](images/4.6/math2.JPG "Combine Chops")
 
 Another very useful function of the Math CHOP is the `Range` parameter page. This takes a range of values, and re-maps them to a new range. For example, if you have an LFO CHOP that ramps from 0 to 1, but you need that same movement to fit between the specific values of 7.9 and 51.4, it is much faster to use the `From Range` and `To Range` parameters than to adjust it using order of operations.
 
-{width=100%,float=left}
+{width=100%}
 ![Range](images/4.6/math3.JPG "Range")
 
 #### Select
@@ -98,10 +98,10 @@ The Merge CHOP is the opposite of the Select CHOP. It takes channels from multip
 
 This is a straightforward idea, but if the results are different than what you expected, you will need to middle-mouse-click on the input CHOPs to see if the `Start/End` samples match.
 
-{width=100%,float=left}
+{width=100%}
 ![Range](images/4.6/mmc1.JPG "Range")
 
-{width=100%,float=left}
+{width=100%}
 ![Range](images/4.6/mmc2.JPG "Range")
 
 In the CHOPs pictured above, both the Start samples and the End samples differ. This is dealt with by setting the Extend Conditions on the `Channel` parameter page of the Generator CHOPs that are being input, as well as the `Align` options on the `Merge` parameter page of the Merge CHOP.
@@ -115,7 +115,7 @@ You can also open up the example project and experiment with the extend conditio
 #### Trail
 The Trail CHOP creates a visual display of how the value of it's inputs have changed over a given time. This can be very useful when you need to see subtle differences of a channels movement, or how a channel's value changes compared to another.
 
-{width=100%,float=left}
+{width=100%}
 ![Trail](images/4.6/trail.JPG "Trail")
 
 
@@ -127,7 +127,7 @@ Filter and Lag CHOPs create a smooth transition between values over a given time
 
 Filter CHOP applies a smoothing effect or time, and you can choose the shape of the smoothing, with different options for different shapes. 
 
-{width=100%,float=left}
+{width=100%}
 ![Filter Types](images/4.6/Filter.JPG "Filter Types")
 
 *(see **/filter_lag/ example 1** of the example project file)*
@@ -142,15 +142,16 @@ This CHOP takes an event and creates an ADSR envelope (Attack, Decay, Sustain, a
 The envelope can be triggered by the `Trigger Pulse` on the `Trigger` Parameter page, or by connecting a CHOP to its input, such as the Out of a Button.
 These are the different parts of the envelope:
 
-{width=100%,float=left}
+{width=100%}
 ![Filter Types](images/4.6/Trigger_ADSR_an.jpg "Filter Types")
 
 The different sections of the envelope can have easings as well.
 Here is an example of with the `Attack Shape` set to `Ease out`, `Decay Shape` set to `Ease in Ease out` and the `Release Shape` set to `Ease in`:
 
-{width=100%,float=left}
+{width=100%}
 ![Filter Types](images/4.6/Trigger_ADSR_Ease.JPG "Filter Types")
 
+{pagebreak}
 
 
 

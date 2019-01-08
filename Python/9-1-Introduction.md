@@ -20,3 +20,5 @@ print ('text')
 An incredible feature of Python, aside from it's readability, is that there are many external libraries, many of which can natively connect to most of the webs most active spaces, like Facebook, Twitter, Instagram, Foursquare, etc. These kind of native integrations unlock a world of real-time data driven projects, as well as incredible real-time data sets for visualizations and client presentations.
 
 There will be quite a bit of Python scripting in later examples, and although it is not mandatory to do so, it is highly recommended that some time be spent learning Python through introductory tutorials. There are many fantastic resources for learning Python, some of them gamified, and most of them often quite easy to pick up and put down. Often times, 10-15 minutes a day of tutorials, over the course of a few weeks, can provide a strong fundamental knowledge of Python, and more than enough knowledge to do quite a bit of scripting in TouchDesigner.
+
+{pagebreak}

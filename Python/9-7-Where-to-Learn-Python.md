@@ -8,3 +8,5 @@ Below is a very basic list of some free, online, Python tutorials. (Note: some o
 **Coursera** [https://www.coursera.org/course/interactivepython](https://www.coursera.org/course/interactivepython)
 **Google Developers** [https://developers.google.com/edu/python/?csw=1](https://developers.google.com/edu/python/?csw=1)
 **Learn Python The Hard Way** [http://learnpythonthehardway.org/](http://learnpythonthehardway.org/)
+
+{pagebreak}

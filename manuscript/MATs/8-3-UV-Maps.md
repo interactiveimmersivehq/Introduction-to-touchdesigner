@@ -1,4 +1,5 @@
-## *8.3 UV Maps*
+
+### *8.3 UV Maps*
 
 UV mapping is an essential to working with complex 3D geometry. As with certain other aspects of 3D modelling, it is easier to create and work with UV maps in a dedicated modelling program.
 
@@ -16,8 +17,10 @@ The third step is a relatively common operation in TouchDesigner. As long as the
 
 Below is an example of a simple 3D box, and it's UV map:
 
-{width=100%,float=left}
-![](images/8.3/3D-geo.png)
+{width=100%}
+![](../img/8.3/3D-geo.png)
 
-{width=100%,float=left}
-![](images/8.3/Geo-map.png)
+{width=100%}
+![](../img/8.3/Geo-map.png)
+
+{pagebreak}

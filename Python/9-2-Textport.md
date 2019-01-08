@@ -81,3 +81,5 @@ Open example 'Textport\_2.toe'. In this example, there are two sequences of scri
 Open the Textport and click the 'Textport Sequence' button. Contrary to the first sequence, this sequence prints a message to the Textport as each script is run. There may not be buttons visually changing states in the Network, but a number of new abilities are gained. The first is the ability to monitor these scripts from anywhere in the project. The second is that it is possible to compare the timing of these sequences to any other scripts that are running elsewhere in the project. The third, and possibly the most valuable, is the ability to pause the project and have a written history of the most recent sequence of events.
 
 This history becomes absolutely invaluable when debugging complex logic systems. In a project with 30 Networks and 300 independent scripts, when a series of actions fail without raising any Python errors, without an ordered log of events, it would be impossible to trace bugs. As a script becomes longer and more complex, it is easy to create more of these pseudo-checkpoints throughout the script, such as 'running X section of Y script'.
+
+{pagebreak}

@@ -32,9 +32,10 @@ The last aspect to rendering a 3D scene is the camera. The camera is the eye and
 
 There are two main types of cameras: perspective cameras and orthographic cameras.
 
-
+{width=100%}
 ![](../img/6.2/rendering-1.png)
 
+{width=100%}
 ![](../img/6.2/rendering-2.png)
 
 Perspective cameras need very little explanation, as they work similarly to the human eye. Perspective cameras have a perspective point, and a view frustum that are used to determine what the camera sees and how that is rendered. With a perspective camera, imagine all light in the 3D scene funnelling towards the perspective point. Perspective correction, or 'foreshortening', is applied on all objects in the scene, meaning that objects farther away from the camera appear smaller. This camera ends up being used most often as it functions like human eyes. An example of this type of camera can be found in example file 'Camera\_1.toe'.
@@ -51,3 +52,5 @@ Open example 'Camera\_2.toe'. This example is exactly the same as 'Camera\_1.toe
 None of this is to say that Z-depth is irrelevant when using an orthographic camera. Z depth becomes imperative when layering different pieces of geometry in a scene. 
 
 The camera is equally important for projection mapping projects. Projection mapping will be explored in later examples, but for now, the key is to understand another of the Camera's roles. In projection mapping, the primary goal is to turn real-world objects into 3D display surfaces. To achieve this, a 3D model of the object is imported into TouchDesigner and textured using a variety of sources. This textured object then needs to be rendered. Camera COMPs come into play to simulate real-world projectors. Gathering as much information about the characteristics of a projector and its lens, the Camera COMP can accurately replicate the point of view of the projector inside of TouchDesigner. These points of view are then rendered, output, calibrated, and lined up to the real-world object. This is the basis of projection mapping.
+
+{pagebreak}

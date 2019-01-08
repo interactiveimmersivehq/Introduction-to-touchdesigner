@@ -63,3 +63,5 @@ in tandem. For example, a project requires 3 chains of Operators. The first will
 
 
 After closing the OP Create Dialog, all the required Operators will be wired and ready to go in the project. These key commands have not only saved having to open and close the OP Create Dialog for every Operator, but they’ve saved the need to manually wire them.
+
+{pagebreak}

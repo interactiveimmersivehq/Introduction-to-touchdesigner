@@ -1,4 +1,5 @@
-## *10.5 Edge Blending*
+
+### *10.5 Edge Blending*
 
 Video projectors are an incredibly flexible and are able to create infinitely large canvases. This is done by creating arrays of projectors with overlapping edges that are blended together to create a seamless canvas. This act of blending the overlapping sections is called 'Edge blending'.
 
@@ -10,15 +11,15 @@ There is an excellent paper written by Paul Bourke that goes much more in-depth 
 
 The best way to learn the basics of edge blending is through an example setup. In this example, the goal will be to blend two 1920 x 1080 projectors in a 1 x 2 array (1 unit tall and 2 units across). Below is a diagram of a 1 x 2 array of projectors:
 
-{width=100%,float=left}
-![10.5.1](images/10.5/blending_layout.png)
+{width=100%}
+![10.5.1](../img/10.5/blending_layout.png)
 
 The act of blending both of these projectors will require an overlapping section. The amount of overlap needed will vary based on many factors such as projector resolution and installation parameters. Starting with a blend zone that is a power of 2 close to 10\% of your single projector size can be a good place to start experimenting. For this example, 10\% of the length of a 1920 x 1080 screen is 192 pixels, and the nearest power of 2 is 256. 
 
 This overlapping section can cause problems if all of its implications aren't considered. For the image to overlap, that means the both projectors must have the same content on their blending edges. In this example, that means that the right edge of Projector A and the left edge of Projector B must have the exact same content. Filling in some numbers, that means that the 256 pixels on the right edge of Projector A must be the same as the 256 pixels on the left edge of Projector B, as per the diagram below:
 
-{width=100%,float=left}
-![10.5.2](images/10.5/blended_edge_layout.png)
+{width=100%}
+![10.5.2](../img/10.5/blended_edge_layout.png)
 
 It's important to take this fact into consideration in regards to the full production pipeline and workflow. It seems natural at first to think that a 1 x 2 array of 1920 x 1080 projectors would need content created at 3840 x 1080, but that assumption can lead undesirable consequences.
 
@@ -26,8 +27,8 @@ A projector has a set amount of physical pixels just like a monitor. Two 1920 x 
 
 In this example, if the content creation team created a 3840 x 1080 asset, 256 pixels would need to be discarded from somewhere to account for the 256 pixels that are going to be doubled in the blend zone. Where these pixels are discarded from is a matter of preference and tool choice, but the preferred method is to discard half of the blend zone from each non-blended edges opposite the blend zone. This method keeps the absolute center of the canvas the area where blending will occur, as per the diagram below:
 
-{width=100%,float=left}
-![Discarded Edge Layout](images/10.5/discarded_edge_layout.png)
+{width=100%}
+![Discarded Edge Layout](../img/10.5/discarded_edge_layout.png)
 
 Always be aware of this loss of pixels when edge blending projectors to avoid placing critical information or content around areas where pixels may be discarded. So why remove only half the blend zone (128 pixels) on each side and not remove the whole blend zone from each side (256 pixels)? The answer is that to create an overlap of 256 pixels in the center, each side needs to be shifted 128 pixels towards the other. When both sides are moved 128 pixels towards each other, the resulting overlap is 256 pixels.
 
@@ -39,11 +40,11 @@ For projects that do have a projectionist or other experienced individual on sta
 
 Whichever route is chosen, the diagrams below illustrate firstly the final output of each projector side by side as seen by Windows and TouchDesigner, and secondly the projected image as seen on the projection surface after the blending.
 
-{width=100%,float=left}
-![Full Layout](images/10.5/full_layout.png)
+{width=100%}
+![Full Layout](../img/10.5/full_layout.png)
 
-{width=100%,float=left}
-![Full Image Layout](images/10.5/full_image_layout.png)
+{width=100%}
+![Full Image Layout](../img/10.5/full_image_layout.png)
 
 Implementing this example is straightforward in TouchDesigner thanks to built-in edge blending tools. Before using the built-in edge blending component, let's take a look at the base elements of an edge blending workflow in a simple example.
 
@@ -65,8 +66,8 @@ The difference of outputs can be seen clearly, whereas the top example loses the
 
 With these outputs prepared, it's a matter of sending the correct texture to the correct projector. How to rig projectors and work with complex rigs is outside of the scope of this chapter. In an ideal situation, both projectors are parallel with the projection surface as such:
 
-{width=100%,float=left}
-![Projectors](images/10.5/projectors.png)
+{width=100%}
+![Projectors](../img/10.5/projectors.png)
 
 If the amount of pixels in the blend zone are already known, input them into the 'Region' parameter of the 'EdgeBlend' component. Then try turning off the 'Enable Blend' button to make sure your image is correctly overlapping. At this point, the overlapped images should match and be lined up. Always remember the main purpose of an edge blending tool is to remove the seams, not line up the content.
 
@@ -77,3 +78,5 @@ At this point, use the 'Blend' slider to adjust power of the blend. A higher val
 You may need to perform gamma correction on the contents of the blend zone. This is because light isn't perceived linearly, so the luminance of a pixel being input at 0.5 might not be double that of brightness of a pixel being input at 0.25 (pixel values being normalized from 0-1). Almost all video data already passes through gamma correction but because of the variance of projector technologies and the fact that there are two projectors overlapping, you may find subtle changes need to be made. These sliders are used to compensate or lessen the intensity of the gamma correction.
 
 The 'Luminance' slider controls the overall luminance of the blend zone. If the blend zone is brighter or darker than the rest of image, bringing this slider below 0.5 will make the blend zone darker, while raising this slider above 0.5 will brighten the blend zone.
+
+{pagebreak}

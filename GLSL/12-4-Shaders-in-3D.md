@@ -217,3 +217,5 @@ This line takes 'texCoord0' that was declared earlier, and assigns it the built-
 The '.st' here is assigning the two values contained in the 2-component vector 'uv' to the 2 components of 'texCoord0'. As mentioned earlier, where '.xyzw' are used for vertex positions, '.stpq' are often used for texture co-ordinates. These are mostly just for convention so that the same letters (such as XYZW and RGBA) don't mean multiple different things. You may also see '.uv' used instead of '.st', depending on the software package.
 
 With these two extra lines of code, the Box SOP is now being textured by the Ramp TOP.
+
+{pagebreak}

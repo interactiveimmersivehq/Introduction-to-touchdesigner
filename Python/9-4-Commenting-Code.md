@@ -49,3 +49,5 @@ op('lines').par.text = d + e + c
 Without taking the time to create meaningful variable and Operator names, the above script is still much easier to read through. Even out of context, the function of the script is apparent.
 
 This kind of simple addition can make collaborating with other developers much easier and more enjoyable.
+
+{pagebreak}

@@ -13,3 +13,5 @@ Left-click on the ’i’ to get more detailed information about the selected op
 There are several key commands used to navigate TouchDesigner projects. Two of these key commands are ’u’ and ’i’. Press ’u’ will move up one Network, and out of the current component. To go inside of a Network or component (like a Container COMP or Base COMP), select the component and hit ’i’.
 
 To centralize the screen on all the Operators in a Network, use the ’h’ key on the keyboard. This performs the ’Home’ action on the current Network.
+
+{pagebreak}

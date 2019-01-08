@@ -1,8 +1,10 @@
-## *12.2 Types of Shaders and Rendering Pipeline*
+
+### *12.2 Types of Shaders and Rendering Pipeline*
 
 The two main types of shaders that can be programmed in TouchDesigner are the Vertex shader and the Pixel (or Fragment) shader. In a standard rendering pipeline, they are processed in that order, as can be seen in the diagram below:
 
-![GLSL Pipeline](images/12.2/pipeline.png)
+{width=100%}
+![GLSL Pipeline](../img/12.2/pipeline.png)
 
 There is also a geometry shader that can be applied between the Vertex and Pixel shaders for layered rendering and transform feedbacks, but it is not used commonly.
 
@@ -15,3 +17,5 @@ The Pixel shader takes these fragments, processes them, and outputs the color an
 For a more in-depth look at the render pipeline, there is a more thorough explanation on the OpenGL website:
 
 [http://www.opengl.org/wiki/Rendering_Pipeline_Overview](http://www.opengl.org/wiki/Rendering_Pipeline_Overview)
+
+{pagebreak}

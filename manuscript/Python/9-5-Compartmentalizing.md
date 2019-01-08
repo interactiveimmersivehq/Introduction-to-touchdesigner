@@ -1,4 +1,5 @@
-## *9.5 Compartmentalizing*
+
+### *9.5 Compartmentalizing*
 
 The more complicated projects become, scripts will slowly become longer and longer. At a certain point, it will take more time to search through code, than it will take to actually change and add to it. Because of this, it is important to compartmentalize all of a projects scripts.
 
@@ -30,3 +31,5 @@ This compartmentalized workflow helps cut hard to manage scripts, some more than
 Open example 'Scripting\_3.toe'. This example takes advantage of Python functions. A Python function is a small cluster of code that can be called to perform as series of action. Inside of the Text DAT named 'actions', a function has been defined that contains the set of actions that need to be performed on each Movie In TOP. From the Text DAT named 'set\_movie\_tops', instead of retyping the same set of actions over and over, the new function is called by passing it the name of each Movie In TOP.
 
 Although the series of actions have been slightly arbitrary, the idea is simple: compartmentalize Python scripts for ease of maintenance, easier co-operative workflows, re-usability, and ease of management.
+
+{pagebreak}

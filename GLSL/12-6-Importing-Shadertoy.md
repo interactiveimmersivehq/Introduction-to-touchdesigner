@@ -43,6 +43,8 @@ While these conventions do the same thing, they can not be combined. To refer to
 
 
 #### Example 1: Waterly Video - Test
+
+{width=100%}
 ![Example 1: Waterly Video - Test](../img/12.6_shade/ex1_1.jpeg)
 
 Shader written by: [FabriceNeyret2](https://www.shadertoy.com/user/FabriceNeyret2)
@@ -103,6 +105,7 @@ As the first `Uniform Name` we'll write `iGlobalTime` and for the value we will 
 
 It should look like this: 
 
+{width=100%}
 ![iGlobalTime : absTime.seconds](../img/12.6_shade/ex1_2.JPG)
 
 
@@ -121,10 +124,13 @@ Next, go to the `Vectors 1` page of the 'GLSL' TOPs parameters, and next to the 
 
 Your GLSL TOP should now compile successfully and look something like this :
 
+{width=100%}
 ![Example 1 compiled](../img/12.6_shade/ex1_3.JPG)
 
 
 #### Example 2: Shard
+
+{width=100%}
 ![Example 2: Shard](../img/12.6_shade/ex2_1.jpg)
 
 Shader written by: [simesgreen ](https://www.shadertoy.com/user/simesgreen)
@@ -149,6 +155,7 @@ In Shadertoy there are 4 noise textures: a monochrome and color noise at a resol
 
 For this example, create a 'Noise' TOP and set the resolution to 64 x 64 in the `Common` settings. We can look at the noise texture on Shadertoy and estimate the settings. These are the settings you can use for now:
 
+{width=100%}
 ![Ex2: Noise](../img/12.6_shade/ex2_2.JPG)
 
 ##### Background Image
@@ -164,6 +171,7 @@ Connect the new 'Movie File In' TOP to a 'Cube Map' TOP.
 
 Set the `Input Layout` to `Vertical Cross` and connect the 'Cube Map' TOP to the second input of `glsl1`.
 
+{width=100%}
 ![Ex2: Cube Map](../img/12.6_shade/ex2_3.JPG)
 
 
@@ -182,6 +190,7 @@ Connect the 'CHOP To' TOP to the third input of the 'GLSL' TOP.
 
 The network should look like this:
 
+{width=100%}
 ![Ex2: Audio](../img/12.6_shade/ex2_4.JPG)
 
 Now that the inputs are set up, we can take a look at the `Info` DAT and see what we'll need to change in the code.
@@ -206,6 +215,7 @@ Now you can search for all references to `fragCoord` (there should only be one, 
 ###### iChannel0
 Similar to the last example, iChannel0 is a 2D input, so we'll find all `iChannel0` references and replace them with `sTD2DInputs[0]`. In GLSL 3.30 and later, we don’t need to use a different `texture()` function for different texture types, so use Find-and-Replace to replace all `texture2D` functions to `texture`. `texture2D` may will still work on some drivers, but will not on many so to ensure your shader works on all GPUs and driver versions, you'll want to change these. As of the latest update to this article, the shader correctly has `texture()` calls instead of `texture2D()`, so no changes are needed.
 
+{width=100%}
 ![Ex2: texture](../img/12.6_shade/ex2_5.JPG)
 
 ###### iChannel1
@@ -221,6 +231,7 @@ If you save the shader and look at the 'Info' DAT, you should have fixed all of 
 ###### iMouse
 To find out what we need in order to mimic Shadertoy's iMouse uniform, we need to go back to the Shader Input list. Click the question mark at the bottom right of the window, and if you scroll down, you'll find iMouse:
 
+{width=100%}
 ![Ex2: iMouse Definition](../img/12.6_shade/ex2_8.JPG)
 
 `iMouse` is a `vec4` with the 4 values defined as:
@@ -236,6 +247,7 @@ after the other uniform declarations near the top of the code.
 
 The 'GLSL' TOP should now be free of errors, and should look something like this:
 
+{width=100%}
 ![Ex2: iMouse success](../img/12.6_shade/ex2_9.JPG)
 
 ###### iMouse Functionality
@@ -261,12 +273,14 @@ We'll need to convert these values from 0 - 1 values to the full resolution. Add
 
 Now, create a 'Merge' CHOP and connect `math1` and `math2` to it. As always, add a 'Null' CHOP after that. So far, it should look like this:
 
+{width=100%}
 ![Ex2: iMouse Network](../img/12.6_shade/ex2_10.JPG)
 
 Now we have our '.xy' values, so now we need to set up the '.zw' values. We need to read the position of the mouse when the LMB is first clicked, and hold that value until LMB is released.
 
 To do this, create a 'Chop Execute' DAT and set the `CHOP` field to `select3`. Turn the `Off to On` and `On to Off` toggles `on`, and set the `Value Change` toggle to `off`. Add a 'Constant' CHOP to the network and in the first two `Name` fields, create the channels `z` and `w`. This should look like this:
 
+{width=100%}
 ![Ex2: iMouse Constant CHOP](../img/12.6_shade/ex2_11.JPG)
 
 When the LMB is clicked, we want to write the values of `null2` to the`z` and `w` channels of `constant1`, and when it's released, we want to set them back to `0`.
@@ -291,11 +305,14 @@ You can use another 'Merge' CHOP to merge `constant1` with `null2` and add anoth
 
 The 'Vectors 1' page should now look like this:
 
+{width=100%}
 ![Ex2: Final iMouse Network](../img/12.6_shade/ex2_12.JPG)
 
 If you view the container, you should now be able to click and drag to rotate around the Shard!<br>
 
 #### Example 3: Cyclic Cellular Automaton
+
+{width=100%}
 ![Ex2: Example 3: Cyclic Cellular Automaton](../img/12.6_shade/ex3_1.jpg)
 
 shader written by: [zolozulman](https://www.shadertoy.com/user/zolozulman)
@@ -313,6 +330,7 @@ Start by creating those, and setting both TOPs to have the resolution 1280 by 72
 Now we can copy the code from each of the buffers and paste it into the corresponding `GLSL` pixel shaders.<br>
 It should look like this:
 
+{width=100%}
 ![Ex2: Example 3: GLSL TOP per buffer](../img/12.6_shade/ex3_2.JPG)<br>
 
 ###### Noise and Feedback TOP
@@ -322,6 +340,7 @@ It should look like this:
    
 Our network should look like this:
 
+{width=100%}
 ![Ex2: Example 3: Noise and Feedback](../img/12.6_shade/ex3_3.JPG)
 
 ##### Main Function and fragColor
@@ -383,4 +402,8 @@ Next, we can copy and paste the same network we created for iMouse in the previo
 The only thing left to convert, is changing any references of `iChannel0` to `sTD2DInputs[0]` and `iChannel1` to `sTD2DInputs[1]`. You can do this for both pixel shaders.
 
 Both of your 'GLSL' TOPs should be working now, and your network might look something like this:
+
+{width=100%}
 ![Ex2: Example 3: Noise and Feedback](../img/12.6_shade/ex3_4.JPG)
+
+{pagebreak}

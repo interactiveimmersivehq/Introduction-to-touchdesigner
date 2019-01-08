@@ -16,3 +16,5 @@ There are two different audio drivers that can be accessed from within TouchDesi
 ASIO is a new addition to TouchDesigner 088. It has been developed by Steinberg to improve on one of DirectX's main drawbacks, which is that DirectX feeds all audio through the Windows operating system. Bypassing the operating system, the ASIO driver is able to communicate directly with external audio hardware, thus creating lower latencies than what was previously possible with DirectSound.
 
 Once inputs and outputs are setup in TouchDesigner, they can be routed much like any other data. 
+
+{pagebreak}

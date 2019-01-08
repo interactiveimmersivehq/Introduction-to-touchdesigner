@@ -1,5 +1,5 @@
 
-## *12.8 What Next?*
+### *12.7 What Next?*
 
 This chapter should have helped unravel a bit of the introductory mysteries of GLSL without getting unnecessarily technical.
 
@@ -12,3 +12,5 @@ If you'd like to continue learning GLSL to experiment with more complex 3D scene
 1. Derivative Wiki: [http://www.derivative.ca/wiki088/index.php?title=Glsl](http://www.derivative.ca/wiki088/index.php?title=Glsl)
 
 1. Shader Toy: [https://www.shadertoy.com/](https://www.shadertoy.com/)
+
+{pagebreak}
