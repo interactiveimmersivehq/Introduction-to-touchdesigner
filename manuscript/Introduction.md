@@ -1,3 +1,5 @@
+# Introduction
+
 ## Foreword
 
 Between the artist and the tool are countless techniques and bits of know-how that contribute to the artist becoming more fluid and well-equipped for the challenges of production. When I caught wind of Elburz’ TouchDesigner book project, I thought, yes I’d like to know what he knows! Elburz’ deep storage of TouchDesigner wisdom was absorbed from multiple sources - helping and conversing with a myriad of users on the forums, red-lining on-the-job on time-critical projects, working with Derivative using beta builds of TouchDesigner, and his purely exploratory endeavors mixed with his side-life as a hip-hop trombonist and VJ.
@@ -6,12 +8,10 @@ The book is a good keyboard-side or bed-side companion that explores the concept
 
 Many thanks to Elburz for this initiative to enrich the TouchDesigner community. I’m sure it will trigger a great chain reaction.
 
-<br>
-*Greg Hermanovic<br>
-Founder<br>
-Derivative*
-<br>
 
+*Greg Hermanovic
+Founder
+Derivative*
 
 
 ## Foreword by Author
@@ -40,7 +40,7 @@ In the end, this resource is a tribute to many TouchDesigner programmers and Der
 
 
 *Elburz Sorkhabi & nVoid Art-Tech Limited*
-<br>
+
 
 ## What is TouchDesigner?
 
@@ -52,7 +52,6 @@ The second aspect of the description is that TouchDesigner is node-based. This m
 
 Everything in TouchDesigner has a visual counterpart. All the Operators have viewers. Everything, whether it be text, control data, audio, videos, and more, is visualized through each and every operation that is performed. This is unlike any traditional programming, and even node-based, language, but it is what makes TouchDesigner a fantastic environment to work with. Learning how to do many complex tasks is greatly simplified by the ability to visualize the steps involved, every step of the way. 
 
-<br>
 
 ## Accessing the book
 
@@ -72,13 +71,13 @@ You can also download the Markdown source code from this GitHub repo and build u
 
 For more general information about this resource, visit http://book.nvoid.com
 
-<br>
+
 
 ## Compiling the book
 
 Unlike the previous LaTeX version, no build environment is required to contribute to the book. You can use plain Markdown, and when you're done and your changes are accepted to the repository, Gitbooks automatically takes care of creating a new web version, PDF, epub, and mobi version of the book. 
 
-<br>
+
 
 ## Attribution and Licensing
 
