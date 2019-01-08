@@ -30,3 +30,5 @@ With an Operator(s) selected:
 * 'Control + V' - Paste copied Operators
 
 * 'Control + Shift + V' - Paste copied Operators at the mouse
+
+{pagebreak}

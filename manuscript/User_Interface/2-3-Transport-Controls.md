@@ -2,7 +2,7 @@
 
 The transport bar functions similarly to the transport bars of many other applications. To go through it quickly, from left to right the buttons do the following:
 
-{width=100%,float=left}
+{width=100%}
 ![](images/2.3/transport-1.png)
 
 
@@ -25,3 +25,5 @@ The transport bar functions similarly to the transport bars of many other applic
 
 
 The most used functions of the timeline are 'Play' and 'Pause', which can be accessed quickly by pressing the 'Space bar' on the keyboard.
+
+{pagebreak}
