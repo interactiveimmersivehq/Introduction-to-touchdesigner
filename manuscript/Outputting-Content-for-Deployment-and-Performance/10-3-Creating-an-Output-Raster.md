@@ -13,7 +13,7 @@ This is more simply expressed with an example. In this example scenario, there a
 This setup isn't particularly complex, thus knowing how to deal with it most effectively is important. Let's take this setup, and lay it out in 2D. 
 
 {width=100%}
-![10.3.2](imagesg/10.3/raster-2.png)
+![10.3.2](images/10.3/raster-2.png)
 
 A beginners's first instinct might be to use four Window COMPs because there are four outputs, two of which need to be rotated. The challenge is finding the most efficient layout for these four canvases, to create a single raster. In this instance, because all four outputs are the same resolution, an easy solution is to make a 2x2 grid. 
 
