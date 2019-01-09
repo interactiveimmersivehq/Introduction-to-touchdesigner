@@ -1,4 +1,4 @@
-#2 User Interface
+#2 *User Interface*
 
 ## 2.1 Parameter Window
 

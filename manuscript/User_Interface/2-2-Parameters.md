@@ -1,4 +1,4 @@
-## 2.2 Parameters
+## *2.2 Parameters*
 
 Parameters can be entered in a number of ways. Depending on the situation, some parameters may require a static value, and some may need to be driven by other values and inputs. Each parameter has three modes. Each mode is quite different and each defines how the parameter behaves. The three modes are:
 
