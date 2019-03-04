@@ -1,5 +1,5 @@
 
-### *9.6 External Modules*
+## *9.6 External Modules*
 
 One of the underused benefits of Python integration in TouchDesginer is the ability to import third-party Python libraries and use them natively. This includes the ability to use libraries such as the popular Requests or Beautiful Soup libraries. Importing a library is a simple process.
 
