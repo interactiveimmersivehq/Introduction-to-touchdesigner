@@ -7,9 +7,9 @@ The book is a good keyboard-side or bed-side companion that explores the concept
 Many thanks to Elburz for this initiative to enrich the TouchDesigner community. I’m sure it will trigger a great chain reaction.
 
 <br>
-*Greg Hermanovic<br>
+Greg Hermanovic<br>
 Founder<br>
-Derivative*
+Derivative
 <br>
 
 
@@ -71,12 +71,6 @@ https://vimeo.com/channels/845218
 You can also download the Markdown source code from this GitHub repo and build use the parts separately. You are free to change, edit, add, delete, and modify the text by branching the source files. When you are finished, submit your changes and they will be reviewed by our administration, and merged into the main branch, at which point you will be added to the list of contributors in the Contributors chapter of the book, along with your contributions.
 
 For more general information about this resource, visit http://book.nvoid.com
-
-<br>
-
-## Compiling the book
-
-Unlike the previous LaTeX version, no build environment is required to contribute to the book. You can use plain Markdown, and when you're done and your changes are accepted to the repository, Gitbooks automatically takes care of creating a new web version, PDF, epub, and mobi version of the book. 
 
 <br>
 
