@@ -22,25 +22,25 @@ There is a list of common debugging methods on the Derivative Wiki page for 'Tea
 
 Generally the steps to begin with are as follows, in no particular order:
 
-* Verify the project isn't dropping any frames. Dropped frames can sometimes trigger tearing
+* Verify the project isn't dropping any frames. Dropped frames can sometimes trigger tearing.
 
 * Verify no other applications are interrupting or mirroring the graphics card drivers, such as VNC and LogMeIn.
 
-* Disconnect every display connected to computer, and one by one connect them until tearing occurs. Then isolate that display on it's own, and figure out if it's being cause by a single display, or by the layout
+* Disconnect every display connected to computer, and one by one connect them until tearing occurs. Then isolate that display on it's own, and figure out if it's being caused by a single display, or by the layout.
 
-* Verify all displays are configured to the same resolution, colour bit depth, and refresh rate, in the nVidia or AMD control panel
+* Verify all displays are configured to the same resolution, colour bit depth, and refresh rate, in the nVidia or AMD control panel.
 
-* Verify that none of the displays have any rotation applied in Windows. this can cause unpredictable behaviour.
+* Verify that none of the displays have any rotation applied in Windows. This can cause unpredictable behaviour.
 
-* Check the graphics card driver version and update it if necessary
+* Check the graphics card driver version and update it if necessary.
 
-* Check for drivers or firmware updates on external video splitters - such as the Datapath X4 or Matrox TripleHead2Go
+* Check for drivers or firmware updates on external video splitters - such as the Datapath X4 or Matrox TripleHead2Go.
 
-* Confirm only 1 Window COMP is being rendered
+* Confirm only 1 Window COMP is being rendered.
 
 * Verify Windows Aero is disabled. In Windows 7, Aero can cause dropped frames and stutters, but won't tear. Once disabled, the system might tear, but stutter free playback is guaranteed.
 
-* Configure a Premium Mosaic using the nVidia Control Panel to create a single logical display 
+* Configure a Premium Mosaic using the nVidia Control Panel to create a single logical display.
 
 
 There are many instances in which a system that performs perfectly, and doesn't drop a single frame, will occasionally stutter. This may occur because of how displays and graphics cards negotiate different refresh rates. 

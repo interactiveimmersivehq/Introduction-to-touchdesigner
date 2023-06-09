@@ -15,7 +15,7 @@ The combination of these three steps are referred to as UV mapping.
 
 The third step is a relatively common operation in TouchDesigner. As long as the 3D geometry is exported correctly from its modelling software, it will include co-ordinates indicating to other applications where the UV maps should be applied. In these situations the texture is loaded in a Movie In TOP and applied using a Phong MAT to the geometry. If any changes need to be made to how the UV map is applied, the Texture SOP can be used. 
 
-Below is an example of a simple 3D box, and it's UV map:
+Below is an example of a simple 3D box, and its UV map:
 
 {width=100%}
 ![](../img/8.3/3D-geo.png)
@@ -24,3 +24,4 @@ Below is an example of a simple 3D box, and it's UV map:
 ![](../img/8.3/Geo-map.png)
 
 {pagebreak}
+

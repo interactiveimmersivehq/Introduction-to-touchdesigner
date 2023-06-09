@@ -13,6 +13,6 @@ UDT is one of the newer communication protocols. It is essentially the better pa
 
 A benefit of connection-less protocols is that they support a feature called 'Multicast messaging'. This means that regardless of how many computers are connected, each message is only sent over the network once. When sending the same message to many computers, this removes the overhead of sending the same message to each individual computer. This is the opposite of 'Unicast messaging', in which each connected computer receives an individual message, even if the message being sent to every machine is the same.
 
-Websocket is the go-to communication method when working with web browsers and real-time web application. It has been designed from the ground up to be used as an interface between web browsers and servers, and the protocol has simplified some key functionality in regards to bi-directional web communication. 
+Websocket is the go-to communication method when working with web browsers and real-time web applications. It has been designed from the ground up to be used as an interface between web browsers and servers, and the protocol has simplified some key functionality in regards to bi-directional web communication. 
 
 {pagebreak}
