@@ -57,7 +57,7 @@ Everything in TouchDesigner has a visual counterpart. All the Operators have vie
 
 ## *Accessing the book*
 
-There are multiple ways to access an Introduction to TouchDesigner 088. Since converting the book to using Gitbooks, you may now  download the PDF, epub, or mobi version of the book from the link below:
+There are multiple ways to access an Introduction to TouchDesigner. Since converting the book to using Gitbooks, you may now  download the PDF, epub, or mobi version of the book from the link below:
 
 https://www.gitbook.com/book/nvoid/introduction-to-touchdesigner/details
 

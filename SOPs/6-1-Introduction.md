@@ -5,7 +5,7 @@ The Surface Operators, or SOPs, family of Operators are used for any and all 3D 
 
 Many projects involving projection mapping, real-time 3D motion capture, architectural LED facade installations, and layered video players, would either be impossible or extremely difficult without the SOP family of operators.
 
-TouchDesigner 088 currently supports the following 3D file types:
+TouchDesigner currently supports the following 3D file types:
 
 * .fbx
 

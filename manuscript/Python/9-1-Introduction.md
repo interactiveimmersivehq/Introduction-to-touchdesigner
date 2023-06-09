@@ -2,9 +2,9 @@
 
 ## *9.1 Introduction*
 
-Python scripting is one of the most powerful features of TouchDesigner 088. It is capable of doing incredibly complex operations, like iterating through large data sets, natively communicating with a myriad web APIs, controlling and changing the parameters of other Operators in extremely rapid succession, and much more.
+Python scripting is one of the most powerful features of TouchDesigner. It is capable of doing incredibly complex operations, like iterating through large data sets, natively communicating with a myriad web APIs, controlling and changing the parameters of other Operators in extremely rapid succession, and much more.
 
-It is important to note that, as of writing, TouchDesigner 088 uses Python 3.3.1. Python 3 differs from Python 2.7 in a number of ways, but most issues can be resolved with a quick Google search. Most questions have probably already been asked, and the solution could be as simple as a set of parentheses.
+It is important to note that, as of writing, TouchDesigner uses Python 3.3.1. Python 3 differs from Python 2.7 in a number of ways, but most issues can be resolved with a quick Google search. Most questions have probably already been asked, and the solution could be as simple as a set of parentheses.
 
 For example, in Python 2.7, the Print function could be used without parentheses, where in Python 3, this will raise an error. Below is an example of how many Python 2.7 courses use the Print function:
 

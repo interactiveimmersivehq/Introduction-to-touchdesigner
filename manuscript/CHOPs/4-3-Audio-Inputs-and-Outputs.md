@@ -13,7 +13,7 @@ These devices provide analog and digital audio inputs and outputs. These can be 
 
 There are two different audio drivers that can be accessed from within TouchDesigner. DirectSound has been available since previous versions of TouchDesigner, and has been developed as a part of DirectX. It is a mature driver, having been in development for many years, and provides relatively low latencies even under heavy use. 
 
-ASIO is a new addition to TouchDesigner 088. It has been developed by Steinberg to improve on one of DirectX's main drawbacks, which is that DirectX feeds all audio through the Windows operating system. Bypassing the operating system, the ASIO driver is able to communicate directly with external audio hardware, thus creating lower latencies than what was previously possible with DirectSound.
+ASIO is a new addition to TouchDesigner. It has been developed by Steinberg to improve on one of DirectX's main drawbacks, which is that DirectX feeds all audio through the Windows operating system. Bypassing the operating system, the ASIO driver is able to communicate directly with external audio hardware, thus creating lower latencies than what was previously possible with DirectSound.
 
 Once inputs and outputs are setup in TouchDesigner, they can be routed much like any other data. 
 
