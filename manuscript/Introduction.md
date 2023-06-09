@@ -20,7 +20,7 @@ Derivative*
 
 The purpose of this book is two-fold:
 
-* to teach the fundamentals of TouchDesigner 088
+* to teach the fundamentals of TouchDesigner
 
 * to create a community-driven resource for beginners
 

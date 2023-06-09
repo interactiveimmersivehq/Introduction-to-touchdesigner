@@ -9,7 +9,7 @@ If you'd like to continue learning GLSL to experiment with more complex 3D scene
 
 1. OpenGL General information: [http://www.opengl.org/wiki/General_OpenGL](http://www.opengl.org/wiki/General_OpenGL)
 
-1. Derivative Wiki: [http://www.derivative.ca/wiki088/index.php?title=Glsl](http://www.derivative.ca/wiki088/index.php?title=Glsl)
+1. Derivative Wiki: [https://docs.derivative.ca/GLSL](https://docs.derivative.ca/GLSL)
 
 1. Shader Toy: [https://www.shadertoy.com/](https://www.shadertoy.com/)
 

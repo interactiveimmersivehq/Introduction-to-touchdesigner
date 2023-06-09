@@ -98,7 +98,7 @@ This is a straightforward idea, but if the results are different than what you e
 
 In the CHOPs pictured above, both the Start samples and the End samples differ. This is dealt with by setting the Extend Conditions on the `Channel` parameter page of the Generator CHOPs that are being input, as well as the `Align` options on the `Merge` parameter page of the Merge CHOP.
 
-There is an explanation of the different Extend methods located on Extend CHOP wiki page, located [here](http://www.derivative.ca/wiki088/index.php?title=Extend_CHOP "Extend CHOP wiki page")
+There is an explanation of the different Extend methods located on Extend CHOP wiki page, located [here](https://docs.derivative.ca/index.php?title=Extend_CHOP "Extend CHOP wiki page")
 
 You can also open up the example project and experiment with the extend conditions and the different `Align` options.
 
