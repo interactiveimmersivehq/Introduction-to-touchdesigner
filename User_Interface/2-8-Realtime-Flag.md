@@ -1,6 +1,7 @@
 
 ### *2.8 Realtime Flag*
 
+{width=100%}
 ![](../img/2.8/realtime-1.png)
 
 The Realtime flag changes TouchDesigner's behaviour significantly. When it is active (it is active by default), TouchDesigner will always prioritize real-world time. In a simple example, if a movie file is 30 seconds long, no matter what happens, TouchDesigner will try to play it over the course of 30 seconds. If this means that frames need to be dropped, TouchDesigner will try to honour time. This is the mode used for most real-time installation and performance work. 

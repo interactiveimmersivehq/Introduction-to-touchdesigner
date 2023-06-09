@@ -30,5 +30,8 @@ Once the setup is complete, right click on a DAT and click the â€™Edit Contentsâ
 
 Two well-respected editors that are used frequently in the TouchDesigner community, and are crossplatform, are linked below:
 
-*Sublime Text 3* [http://www.sublimetext.com/](http://www.sublimetext.com/)<br>
+*Sublime Text 3* [http://www.sublimetext.com/](http://www.sublimetext.com/)
+
 *Notepad++* [http://notepad-plus-plus.org/](http://notepad-plus-plus.org/)
+
+{pagebreak}

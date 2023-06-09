@@ -19,3 +19,5 @@ To quickly break this down, the first thing is the line number. In this case, '0
 The next section highlights that this is a syntax error, and then there is more information about the error.
 
 For beginners, the majority of these errors will be because of forgotten semi-colons at the end of lines, or errors trying to cast one data type into another incompatible data type.
+
+{pagebreak}

@@ -1,0 +1,10 @@
+
+## *11.5 Resolution*
+
+When it comes to working with 2D textures, resolution is extremely important, because of the almost 1:1 ratio of pixels processed compared to processing power used.
+
+An incredibly easy way to demonstrate this fact is through example. Open example 'Resolution\_1.toe'. This is a simple setup. The butterfly is composited on a bigger canvas, then using some LFOs, the opacity and blur are modulated before it is composited onto the forest background.  Middle clicking on any of the TOPs will reveal that this example requires just over 100MB of GPU RAM. That's not a lot of memory on a system with 4+ GB of GPU RAM, but this can quickly add up. Try to composite 40 of these butterflies in real-time, and 4GB can easily be spent. 
+
+Now contrast this to example 'Resolution\_2.toe'. It creates the exact same results, but for only 60MB of GPU RAM. That is a significant difference. Take the above example of compositing 40 butterflies, and using this second method, only about 2.4 GB of GPU RAM are needed. All of the extra headroom from a simple change in resolution. The source butterfly asset is only 512x512 pixels, and in the first example, it is immediately composited on a 1920x1080 pixel canvas that is modulated. This creates a scenario where TouchDesigner is constantly re-drawing all 1920x1080 pixels every frame that the butterfly is modulated. 'Empty' pixels that have neither colour or alpha data are also re-drawn. In the second example, the exact same operations are being performed, but only on the source asset, which is a much lower resolution. This modulated asset is then composited on the 1920x1080 canvas. This saves the GPU having to re-draw a large canvas of pixels, when only a small section requires processing, thus saving quite a bit of GPU RAM and processing power.
+
+{pagebreak}

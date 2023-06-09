@@ -18,4 +18,4 @@ The Channel Operators, or CHOP, family of Operators handle all channel operation
 
 * Loudspeakers
 
-* Other audio-video application like Max/MSP, Ableton Live, Resolume Arena
+* Other audio-video applications like Max/MSP, Ableton Live, Resolume Arena

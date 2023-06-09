@@ -58,6 +58,7 @@ me.inputPoint.index
 
 What this does is create a custom attribute on each point that we can use in the GLSL code. In this case, we've taken the point index of each point, and assigned it to a float value named 'pointIndex'. Now we've finished the first two steps, and we have 1000 particles that we will feed into the GLSL MAT. This should look like this (Note: You will not see anything in your SOP viewers at this stage unless you activate different display options to make points visible!):
 
+{width=100%}
 ![](../img/12.6.2/step1_2.PNG)
 
 The next thing we're going to do is create some noise that we will use as our point positions. The first thing to do is create a 'Noise TOP'. In the 'Common' parameters, change the resolution to 1000 pixels by 1 pixels and the 'Pixel Format' to '32-bit float (RGBA)'. This gives us one pixel of noise for every particle we have (1000 pixels of noise for 1000 particles). Changing the 'Pixel Format' to '32-bit float (RGBA)' means that every pixel will have 32-bits per color channel, meaning a lot more precise data can be held in each color channel. The next step is to set the 'Monochrome' parameter to 'off'. This returns a different noise value for each of the color channels, which will be translated into different noise values for our X,Y,Z positions of the particles. You can then choose to animate the noise however you like for the example, but the easiest is the add the following code to the 'Translate' parameter's 'tx' value:
@@ -88,14 +89,17 @@ We'll quickly review the code above, but please refer to previous sections in th
 
 After the scaling and translating, the 'outPosition' is assigned to the 'fragColor' output. If you'd like to see the positions that the particles will be receiving, you can connect the 'GLSL TOP' to a 'TOP to CHOP' operator and view each color channels values. This finishes step 3 and 4 of the item list.
 
+{width=100%}
 ![Particle](../img/12.6.2/step3_4.PNG)
 
 Now create a basic render setup by adding a 'Camera COMP', a 'Light COMP', a 'Geometry COMP', and a 'Render TOP'. They can all be set to their default values for this exercise. Make sure to add an 'In SOP' to the 'Geometry COMP' so that you can input your set of points and turn on the render and display flags on the 'In SOP' inside of the 'Geometry COMP'. That will complete step 5.
 
+{width=100%}
 ![Particle 2](../img/12.6.2/step5.PNG)
 
 Next, create a 'GLSL MAT' operator, an 'Info DAT', and two 'Text DAT''s. Reference the 'GLSL MAT' in the 'Info DAT''s 'Operator' parameter to help debug any errors. Name one of the 'Text DAT''s 'vertex' and the other 'pixel'. These will be the GLSL vertex and pixel shaders. Reference 'vertex' in the 'GLSL MAT''s 'Vertex Shader' parameter, and reference 'pixel' in the 'GLSL MAT''s 'Pixel Shader' parameter. Then we need to reference the 'GLSL TOP' we created. To do so, on the 'Samplers 1' parameter page of the 'GLSL MAT', add 'sPointPosition' to the first 'Sampler Name' parameter, and add the name of the noise texture to the first 'TOP' parameter. In the example file, a 'Null TOP' named 'null1' was added after the 'GLSL TOP', and that is the operator name that is referenced in the 'TOP' parameter. Be very careful with the 'Sampler Name' parameter, as this will the name used in the code and if it is different than the code, you won't see any outputs as you won't be able to reference the particle position. Finally, on the 'Vectors 1' page of the 'GLSL MAT', add 'uPointsPerInstance' to the first 'Uniform Name', and enter '1.0 / 1000' as the first value of the parameter 'value0x'. This last vector will be used in the shader to scale the point index from 0-1000 to the normalized 0.0 to 1.0 UV co-ordinate when sampling the point position noise texture. With that setup complete, we can move from step 6 to step 7.
 
+{width=100%}
 ![](../img/12.6.2/step6.PNG)
 
 From here, we will finish all the remaining steps in the GLSL shaders. First, edit 'pixel', the 'Text DAT' we will use to hold the pixel shader, and enter the follow:
@@ -135,8 +139,7 @@ void main()
 
     // move point from object space to screen space and output to gl_Position
     vec4 worldSpaceVert = TDDeform(newPosition);
-    vec4 camSpaceVert = uTDMat.cam * worldSpaceVert;
-    gl_Position = TDCamToProj(camSpaceVert);
+    gl_Position = TDWorldToProj(worldSpaceVert);
 }
 ```
 
@@ -184,17 +187,17 @@ Before we finish assigning the new point position, we use this handy piece of GL
 gl_PointSize = 1.0;
 ```
 
-Finally, the code below takes our 'newPosition' values from object space, uses 'TDDeform()' to move them to world space. It then multiplies the position by 'uTDMat.cam' to move the point into camera space. And finally, 'TDCamToProj()' is used to convert the camera space point to screen space points, which are assigned to 'gl\_Position', which is the built-in output for each points position.
+Finally, the code below takes our 'newPosition' values from object space, uses 'TDDeform()' to move them to world space. Then 'TDWorldToProj()' is used to convert the world space point to screen space points, which are assigned to 'gl\_Position', which is the built-in output for each points position.
 
 ```
 // move point from object space to screen space and output to gl_Position
 vec4 worldSpaceVert = TDDeform(newPosition);
-vec4 camSpaceVert = uTDMat.cam * worldSpaceVert;
-gl_Position = TDCamToProj(camSpaceVert);
+gl_Position = TDWorldToProj(camSpaceVert);
 ```
 
 With that, we've finished the first goal, which was to move particles with textures. Although this may not seem like a traditional particle system, these steps lay the foundation for the next implementations.
 
+{width=100%}
 ![Particles final](../img/12.6.2/final_step.PNG)
 
 
@@ -219,6 +222,7 @@ This creates a CHOP with all the point positions as separate channels. We can tr
 
 This complete the first step of the example.
 
+{width=100%}
 ![](../img/12.6.3/step1.PNG)
 
 Now that we have a texture, let's make a few additions to our shader. Below is our final shader from the previous example:
@@ -291,8 +295,144 @@ fragColor = outPosition;
 
 Once you save, you should the columns of the grid being effected by the noise texture.
 
+{width=100%}
 ![](../img/12.6.3/step2_3.PNG)
 
 Feel free to experiment by replacing the 'Grid SOP' with another geometry with 1000 points.
 
 
+### 12.7.4 Adding Velocity
+
+In this section, we're going to remove the random noise that is driving the particles and add a constant velocity. We won't spend much time going into depth on some of the physics concepts, if they're new to you, we recommend either:
+
+- [Nature of Code](http://natureofcode.com/) which is a great Processing book about modeling natural forces
+- [Khan Academy](https://www.khanacademy.org/science/physics) for learning the physics concepts on their own
+
+We're going to make some simple UI controls that will allow us to add a constant velocity in XYZ space to all the particles. How the particles are controlled is important because data from the last frame is added to the current frame to find the new positions. Think about a particle traveling over a few frames. For every frame the particle needs to know where it was the last frame so it can add the velocity and calculate it's new position. In the previous examples, the noise only ever had the current frame worth of data.
+
+The main element we're going to add in this example is a feedback loop so that we can continuously feed in the last frame's data, update the texture with new positions, then feed it back as the input. 
+
+You can follow along with example ```01_adding_velocity.toe``` in the folder ```TouchDesigner Example Files/12.7.4```.
+
+Start by deleting the 'Noise TOP' and unplugging the ```chopto1``` from the 'GLSL TOP'. Follow these steps:
+
+1. Create a 'Feedback TOP'
+2. Connect the output of ```chopto1``` to the input of the 'Feedback TOP'
+3. Connect the output of the 'Feedback TOP' to the first input of the 'GLSL TOP' 
+4. Set the 'Target TOP' parameter of the 'Feedback TOP' to the name of the 'GLSL TOP', in the example project this is ```glsl2```
+
+This should look like the image below:
+
+{width=100%}
+![](../img/12.7.4/step1.PNG)
+
+Now let's create a new uniform on the 'Vectors 1' page of the 'GLSL TOP' parameters. Name it it ```uVel``` and leave the values at 0.
+
+You can see the final shader if you skip down a little bit, but here are the individual changes explained.
+
+Add a line to get our new uniform value at the start of the shader:
+
+```
+uniform vec3 uVel;
+
+```
+
+We're going to change the name of our vec4 output from ```fragColor``` to ```oPosition```, which is a short name for 'output position'.
+
+Then, instead of sampling noise positions and grid positions, we're going to sample the new input positions that are fed back to the shader from the 'Feedback TOP':
+
+```
+vec4 pos = texture(sTD2DInputs[0], vUV.st);
+```
+
+We will add our new velocity value to the previous point position:
+
+```
+pos.xyz += uVel.xyz;
+```
+
+And finally, output the new point position:
+
+```
+oPosition = pos;
+```
+
+The final shader for this example will look like this:
+
+```
+uniform vec3 uVel;
+
+out vec4 oPosition;
+
+void main()
+{
+	// get input positions
+	vec4 pos = texture(sTD2DInputs[0], vUV.st);
+
+	// add our single velocity values to every point position
+	pos.xyz += uVel.xyz;
+
+	// output the new point position
+	oPosition = pos;
+	
+}
+```
+
+The final elements that we need are an interface to change the ```uVel``` uniform parameter, and a button to reset the particles by resetting the feedback.
+
+In the example, we created a 2D slider for the XY velocity of the particles and a slider for the Z velocity. You can experiment with other kinds of sliders and buttons, as long as you reference the channel values in the first three values of the ```uVel``` uniform on the 'Vectors 1' page of the 'GLSL TOP' parameters.
+
+The script you'll add to your reset button will vary depending on the type of interface you create, but there will be one line that should always be at the end of it. This line will pulse the 'Reset' parameter of the 'Feedback TOP', which will then clear the feedback and pass through the original point positions of the grid again. In the example reset script, the UI elements are all reset to a 0 position, and then the 'Feedback TOP' is reset.
+
+### 12.7.5 Random Velocity
+
+Now we have the most basic particle system imaginable: a system where all the particles move with the same constant velocity. In this section we're going to give each of the points their own random velocity instead of controlling them with UI elements. This will create the effect of a particle explosion from the 'Grid SOP'.
+
+Start by removing the ```uVel``` uniform from the 'GLSL TOP' and clearing the parameters that reference our UI elements. Your ```Vectors 1``` parameter page of the 'GLSL TOP' should be clear.
+
+Next, delete the sliders/UI elements created to control the particle velocity *but do not delete the reset button*. We will continue to use the reset button in this example. 
+
+Depending on what kind of elements you had created to control the particles, we'll need to remove any of the Python code associated with them from the 'Panel Execute DAT' connected to the reset button. Inside the ```def offToOn``` callback you should only have a line that resets the 'Feedback TOP':
+
+```
+op('feedback1').par.resetpulse.pulse()
+```
+
+The final element we need in the network is a 'Noise TOP' with a resolution of 1000 pixels by 1 pixel, to match the resolution of our 'CHOP to TOP'. Set the 'Noise TOP' type to ```Random (GPU)```. Turn of the ```Monochrome``` toggle. Set the ```Amplitude``` to 0.5, and set the ```Offset``` to 0.5. Changing these two parameters is an easy way to move the noise values from the range of 0 and 1 with a floor of 0 to a range of 0 and 1 with a 0.5 center. 
+
+To visualize this, it is a move from this kind of noise:
+
+{width=100%}
+![](../img/12.7.5/noise1.PNG)
+
+To this kind of noise:
+
+{width=100%}
+![](../img/12.7.5/noise2.PNG)
+
+With these parameters set, plug the 'Noise TOP' into the second input of the 'GLSL TOP'.
+
+Your network should now look like this:
+
+{width=100%}
+![](../img/12.7.5/network.PNG)
+
+In our shader, we only have to make a few changes.
+
+After the line where we sample the input positions from the grid, we'll add a line that samples our noise texture and creates a new vec4 named ```velocity```:
+
+```
+vec4 velocity = texture(sTD2DInputs[1], vUV.st) * 2 - 1;
+```
+
+This should look very familiar by now. The ```* 2 - 1``` at the end is some simple math that changes the noise range of 0 and 1 to a range of -1 and 1.
+
+Now in the next line of code, instead of adding the ```uVel``` uniform, we'll add the new ```velocity``` vector:
+
+```
+pos.xyz += velocity.xyz;
+```
+
+Now you can click your reset button and watch the particle system explode away from the 'Grid SOP' points. Experiment with the 'Noise TOP' settings and the ranging math in the shader to see how you can create different results.
+
+{pagebreak}

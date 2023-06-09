@@ -1,20 +1,23 @@
 
 ### *10.3 Creating an Output Raster*
 
-As a general rule, to get the best performance possible, one should always strive to only use 1 Window COMP at a time. This doesn't apply while programming, but when it comes to deployment and performance, having more than one window open will greatly decrease the systems performance. So what should be done if there are multiple outputs with different positions and rotations?
+As a general rule, to get the best performance possible, one should always strive to only use 1 Window COMP at a time. This doesn't apply while programming, but when it comes to deployment and performance, having more than one window open will greatly decrease the system's performance. So what should be done if there are multiple outputs with different positions and rotations?
 
 The answer is to create a raster for the output and create a single, all-encompassing, window that will span all of the real-world outputs.
 
 This is more simply expressed with an example. In this example scenario, there are four SXGA+ projectors, each with a resolution of 1400x1050. In the real-world setup, there are two projectors beaming horizontally on side walls, and two projectors beaming vertically, and edge blended, on the center wall. The diagram below illustrates the desired setup.
 
+{width=100%}
 ![10.3.1](../img/10.3/raster-1.png)
 
 This setup isn't particularly complex, thus knowing how to deal with it most effectively is important. Let's take this setup, and lay it out in 2D. 
 
+{width=100%}
 ![10.3.2](../img/10.3/raster-2.png)
 
 A beginners's first instinct might be to use four Window COMPs because there are four outputs, two of which need to be rotated. The challenge is finding the most efficient layout for these four canvases, to create a single raster. In this instance, because all four outputs are the same resolution, an easy solution is to make a 2x2 grid. 
 
+{width=100%}
 ![10.3.3](../img/10.3/raster-3.png)
 
 In the above diagram, all of the outputs are placed into a single raster. This setup can efficiently use one Window COMP that is 2800x2100 pixels. At this point, the nVidia or AMD control panel should be used to create a similar setup out of the monitors in Windows, which should then be connected to the correct outputs on the graphics card.
@@ -34,3 +37,5 @@ With all the cropping, rotating, and blending done, the two projector outputs ar
 The final projector is as simple as the first, and using the trusty Over TOP, the final piece of the puzzle is positioned.
  
 As mentioned in an earlier chapter, it is best practice to use Container COMPs instead of TOPs as the source for Window COMPs. In this project, there is a container that is 2800x2100 pixels that holds the completed raster. The 'final' container is set as the Window COMPs 'Operator', the 'Borders' setting is turned off in the Window COMP, and the window size is set to 2800x2100 pixels. With that, the project is ready to be output to the above, 4 projector, setup.
+
+{pagebreak}

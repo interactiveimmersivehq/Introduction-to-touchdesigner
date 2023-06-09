@@ -58,7 +58,7 @@ Confusion aside, some popular codec choices are currently the HAP family, H.264,
 
 * Can experience colour quantization if proper care is not taken in encoding
 
-* Bit rate is highly dependant on content
+* Bit rate is highly dependent on content
 
 * 4096 pixel size resolution in both length and width
 

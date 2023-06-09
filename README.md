@@ -30,7 +30,7 @@ The second purpose of this book is slightly more asking of the community. We rea
 
 What this means is that anyone can feel free to add, comment, change, mark up, delete, or increment upon the resources in this book. All of the book has been completely written using LaTeX, and the code to compile the book, project files, examples, diagrams, and videos, and whatever else ends up within it, will all be hosted on GitHub, and will be free (under a Creative Commons license) for anyone to download, share, and build upon.
 
-For quality control purposes, everyone will be able to branch the repository, but we will review all changes before integratating updates back into a main branch. Everyone who contributes will be thanked and added to the 'Credits' portion of the book. This way, a new user only has to look for a single PDF, or download link, to receive the communities most up-to-date knowledge.
+For quality control purposes, everyone will be able to branch the repository, but we will review all changes before integrating updates back into a main branch. Everyone who contributes will be thanked and added to the 'Credits' portion of the book. This way, a new user only has to look for a single PDF, or download link, to receive the communities most up-to-date knowledge.
 
 We really hope that the community engages with this and helps create the ultimate how-to resource for beginners!
 
@@ -53,15 +53,16 @@ The second aspect of the description is that TouchDesigner is node-based. This m
 Everything in TouchDesigner has a visual counterpart. All the Operators have viewers. Everything, whether it be text, control data, audio, videos, and more, is visualized through each and every operation that is performed. This is unlike any traditional programming, and even node-based, language, but it is what makes TouchDesigner a fantastic environment to work with. Learning how to do many complex tasks is greatly simplified by the ability to visualize the steps involved, every step of the way. 
 
 <br>
+
 ## Accessing the book
 
 There are multiple ways to access an Introduction to TouchDesigner 088. Since converting the book to using Gitbooks, you may now  download the PDF, epub, or mobi version of the book from the link below:
 
 https://www.gitbook.com/book/nvoid/introduction-to-touchdesigner/details
 
-Then you should proceed to download the package from our website, which includes a PDF of the book, all the example .toe files, and the project files that go along with the hours of HD video tutorials. The link for this is below:
+The example files are found in the ```TouchDesigner Example Files``` folder of the GitHub repo, which can be cloned or downloaded here:
 
-https://d31vryd1jmut49.cloudfront.net/Introduction_to_TouchDesigner.zip
+https://github.com/nVoid/Introduction-to-touchdesigner
 
 The hours of HD video tutorials are available in a single Vimeo channel. All the files can be downloaded from Vimeo for offline viewing. The link for this is below:
 
@@ -72,11 +73,13 @@ You can also download the Markdown source code from this GitHub repo and build u
 For more general information about this resource, visit http://book.nvoid.com
 
 <br>
+
 ## Compiling the book
 
 Unlike the previous LaTeX version, no build environment is required to contribute to the book. You can use plain Markdown, and when you're done and your changes are accepted to the repository, Gitbooks automatically takes care of creating a new web version, PDF, epub, and mobi version of the book. 
 
 <br>
+
 ## Attribution and Licensing
 
 This resource is licensed under Creative Commons - Attribution-NonCommercial-ShareAlike-4.0 International.
