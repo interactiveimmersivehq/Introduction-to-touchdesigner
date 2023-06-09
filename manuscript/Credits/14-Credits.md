@@ -16,3 +16,4 @@ Malcolm Bechard - proof-reading & editing
 
 Ben Voigt - proof-reading & editing
 
+Marijn Eken - typos and corrections
