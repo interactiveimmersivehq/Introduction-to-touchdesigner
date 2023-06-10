@@ -56,13 +56,13 @@ Everything in TouchDesigner has a visual counterpart. All the Operators have vie
 
 ## Accessing the book
 
-There are multiple ways to access an Introduction to TouchDesigner. Since converting the book to using Gitbooks, you may now  download the PDF, epub, or mobi version of the book from the link below:
+There are multiple ways to access an Introduction to TouchDesigner. Since converting the book to using Gitbooks, you may now  download the PDF, epub, or online version of the book from the link below:
 
-https://www.gitbook.com/book/nvoid/introduction-to-touchdesigner/details
+https://interactiveimmersivehq.github.io/touchdesigner-book/
 
 The example files are found in the ```TouchDesigner Example Files``` folder of the GitHub repo, which can be cloned or downloaded here:
 
-https://github.com/nVoid/Introduction-to-touchdesigner
+https://https://github.com/interactiveimmersivehq/Introduction-to-touchdesigner
 
 The hours of HD video tutorials are available in a single Vimeo channel. All the files can be downloaded from Vimeo for offline viewing. The link for this is below:
 
@@ -70,7 +70,7 @@ https://vimeo.com/channels/845218
 
 You can also download the Markdown source code from this GitHub repo and build use the parts separately. You are free to change, edit, add, delete, and modify the text by branching the source files. When you are finished, submit your changes and they will be reviewed by our administration, and merged into the main branch, at which point you will be added to the list of contributors in the Contributors chapter of the book, along with your contributions.
 
-For more general information about this resource, visit http://book.nvoid.com
+For more general information about this resource, visit https://interactiveimmersivehq.github.io/touchdesigner-book/
 
 <br>
 
