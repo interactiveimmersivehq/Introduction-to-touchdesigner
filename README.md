@@ -62,7 +62,7 @@ https://interactiveimmersivehq.github.io/touchdesigner-book/
 
 The example files are found in the ```TouchDesigner Example Files``` folder of the GitHub repo, which can be cloned or downloaded here:
 
-https://https://github.com/interactiveimmersivehq/Introduction-to-touchdesigner
+https://github.com/interactiveimmersivehq/Introduction-to-touchdesigner
 
 The hours of HD video tutorials are available in a single Vimeo channel. All the files can be downloaded from Vimeo for offline viewing. The link for this is below:
 

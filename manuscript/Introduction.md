@@ -55,15 +55,15 @@ The second aspect of the description is that TouchDesigner is node-based. This m
 Everything in TouchDesigner has a visual counterpart. All the Operators have viewers. Everything, whether it be text, control data, audio, videos, and more, is visualized through each and every operation that is performed. This is unlike any traditional programming, and even node-based, language, but it is what makes TouchDesigner a fantastic environment to work with. Learning how to do many complex tasks is greatly simplified by the ability to visualize the steps involved, every step of the way. 
 
 
-## *Accessing the book*
+## Accessing the book
 
-There are multiple ways to access an Introduction to TouchDesigner. Since converting the book to using Gitbooks, you may now  download the PDF, epub, or mobi version of the book from the link below:
+There are multiple ways to access an Introduction to TouchDesigner. Since converting the book to using Gitbooks, you may now  download the PDF, epub, or online version of the book from the link below:
 
-https://www.gitbook.com/book/nvoid/introduction-to-touchdesigner/details
+https://interactiveimmersivehq.github.io/touchdesigner-book/
 
 The example files are found in the ```TouchDesigner Example Files``` folder of the GitHub repo, which can be cloned or downloaded here:
 
-https://github.com/nVoid/Introduction-to-touchdesigner
+https://https://github.com/interactiveimmersivehq/Introduction-to-touchdesigner
 
 The hours of HD video tutorials are available in a single Vimeo channel. All the files can be downloaded from Vimeo for offline viewing. The link for this is below:
 
@@ -71,14 +71,9 @@ https://vimeo.com/channels/845218
 
 You can also download the Markdown source code from this GitHub repo and build use the parts separately. You are free to change, edit, add, delete, and modify the text by branching the source files. When you are finished, submit your changes and they will be reviewed by our administration, and merged into the main branch, at which point you will be added to the list of contributors in the Contributors chapter of the book, along with your contributions.
 
-For more general information about this resource, visit http://book.nvoid.com
+For more general information about this resource, visit https://interactiveimmersivehq.github.io/touchdesigner-book/
 
-
-
-## *Compiling the book*
-
-Unlike the previous LaTeX version, no build environment is required to contribute to the book. You can use plain Markdown, and when you're done and your changes are accepted to the repository, Gitbooks automatically takes care of creating a new web version, PDF, epub, and mobi version of the book. 
-
+<br>
 
 
 ## *Attribution and Licensing*
